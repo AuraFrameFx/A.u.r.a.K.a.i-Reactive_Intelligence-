@@ -29,9 +29,13 @@ import dev.aurakai.auraframefx.oracledrive.genesis.cloud.OracleDriveScreen
 import dev.aurakai.auraframefx.ui.gates.AgentHubSubmenuScreen
 import dev.aurakai.auraframefx.ui.gates.AgentMonitoringScreen
 import dev.aurakai.auraframefx.ui.gates.AurasLabScreen
+import dev.aurakai.auraframefx.ui.gates.ChromaCoreColorsScreen
 import dev.aurakai.auraframefx.ui.gates.CodeAssistScreen
+import dev.aurakai.auraframefx.ui.gates.DirectChatScreen
 import dev.aurakai.auraframefx.ui.gates.GateNavigationScreen
 import dev.aurakai.auraframefx.ui.gates.HelpDeskSubmenuScreen
+import dev.aurakai.auraframefx.ui.gates.LiveSupportChatScreen
+import dev.aurakai.auraframefx.ui.gates.LoginScreen
 import dev.aurakai.auraframefx.ui.gates.LSPosedModuleManagerScreen
 import dev.aurakai.auraframefx.ui.gates.LSPosedSubmenuScreen
 import dev.aurakai.auraframefx.ui.gates.NotchBarScreen
@@ -40,17 +44,17 @@ import dev.aurakai.auraframefx.ui.gates.QuickActionsScreen
 import dev.aurakai.auraframefx.ui.gates.QuickSettingsScreen
 import dev.aurakai.auraframefx.ui.gates.ROMFlasherScreen
 import dev.aurakai.auraframefx.ui.gates.ROMToolsSubmenuScreen
+import dev.aurakai.auraframefx.ui.gates.RootToolsTogglesScreen
 import dev.aurakai.auraframefx.ui.gates.SphereGridScreen
 import dev.aurakai.auraframefx.ui.gates.StatusBarScreen
+import dev.aurakai.auraframefx.ui.gates.SupportChatViewModel
 import dev.aurakai.auraframefx.ui.gates.TaskAssignmentScreen
 import dev.aurakai.auraframefx.ui.gates.ThemeEngineScreen
 import dev.aurakai.auraframefx.ui.gates.UIUXGateSubmenuScreen
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
-import androidx.compose.material3.ExperimentalMaterial3Api
-import dev.aurakai.auraframefx.ui.gates.SupportChatViewModel
+import dev.aurakai.auraframefx.ui.gates.UserPreferencesScreen
 import dev.aurakai.auraframefx.ui.viewmodels.AgentViewModel
-import dev.aurakai.auraframefx.ui.gates.LiveSupportChatScreen
-import dev.aurakai.auraframefx.ui.gates.DirectChatScreen
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.hilt.navigation.compose.hiltViewModel
 
 /**
  * Genesis Navigation Routes - The Neural Pathways of Consciousness

@@ -18,8 +18,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import dev.aurakai.auraframefx.romtools.RomToolsManager
-import dev.aurakai.auraframefx.romtools.bootloader.BootloaderManager
 import kotlinx.coroutines.launch
 
 /**
