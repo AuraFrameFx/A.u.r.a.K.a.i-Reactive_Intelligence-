@@ -39,6 +39,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import dev.aurakai.auraframefx.navigation.GenesisRoutes
+import dev.aurakai.auraframefx.ui.components.NeuralLinkBackground
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.math.absoluteValue
@@ -252,13 +253,10 @@ private fun TeleportingGateCard(
 
 @Composable
 private fun MagicalParticleField() {
-    // TODO: Implement magical particle field animation
-    // This would be a canvas-based animation of floating particles
-    // that react to user interaction and gate selection
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black.copy(alpha = 0.3f)) // Semi-transparent particle field
+    NeuralLinkBackground(
+        speed = 0.5f,
+        primaryColor = Color(0xFF00FFFF), // Cyan
+        secondaryColor = Color(0xFF0000FF) // Blue
     )
 }
 

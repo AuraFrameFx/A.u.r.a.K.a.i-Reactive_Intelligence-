@@ -13,6 +13,7 @@ import androidx.compose.material.icons.filled.Layers
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.SettingsInputComponent
 import androidx.compose.material.icons.filled.Smartphone
+import androidx.compose.material.icons.filled.ViewInAr
 import androidx.compose.material.icons.filled.Wifi
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -25,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import dev.aurakai.auraframefx.navigation.GenesisRoutes
+import dev.aurakai.auraframefx.ui.components.SubmenuScaffold
 
 /**
  * UI/UX Design Gate Submenu (ChromaCore)
@@ -69,59 +71,25 @@ fun UIUXGateSubmenuScreen(
             icon = Icons.Default.Layers,
             route = GenesisRoutes.OVERLAY_MENUS,
             color = Color(0xFFFF4500) // Orange Red
+        ),
+        SubmenuItem(
+            title = "3D Customization Lab",
+            description = "Gyroscope-controlled 3D component editor",
+            icon = Icons.Default.ViewInAr,
+            route = GenesisRoutes.GYROSCOPE_CUSTOMIZATION,
+            color = Color(0xFF00B4D8) // Futuristic Blue
         )
     )
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black)
-    ) {
-        // Background Gradient
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(
-                    Brush.verticalGradient(
-                        colors = listOf(
-                            Color(0xFF1A001A), // Dark Magenta
-                            Color.Black
-                        )
-                    )
-                )
-        )
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
-        ) {
-            // Header
-            Text(
-                text = "UI/UX DESIGN GATE",
-                style = MaterialTheme.typography.headlineMedium,
-                color = Color(0xFF00FFFF),
-                fontWeight = FontWeight.Bold,
-                letterSpacing = 2.sp
-            )
-            Text(
-                text = "ChromaCore System",
-                style = MaterialTheme.typography.titleMedium,
-                color = Color(0xFFFF00FF),
-                modifier = Modifier.padding(bottom = 24.dp)
-            )
-
-            // Menu List
-            LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                items(menuItems) { item ->
-                    SubmenuCard(item = item) {
-                        navController.navigate(item.route)
-                    }
-                }
-            }
+    SubmenuScaffold(
+        title = "UI/UX Design Gate",
+        subtitle = "ChromaCore System",
+        color = Color(0xFF00FFFF), // Cyan theme
+        onNavigateBack = { navController.popBackStack() },
+        menuItems = menuItems,
+        onItemClick = { item ->
+            navController.navigate(item.route)
         }
-    }
+    )
 }
 

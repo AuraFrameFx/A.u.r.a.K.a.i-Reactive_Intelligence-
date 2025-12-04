@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import dev.aurakai.auraframefx.data.repositories.AgentRepository
+import dev.aurakai.auraframefx.ui.components.SubmenuScaffold
 import kotlinx.coroutines.delay
 import kotlin.random.Random
 
@@ -89,55 +90,21 @@ fun AgentHubSubmenuScreen(
         }
     }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black)
-    ) {
-        // Background Gradient
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(
-                    Brush.verticalGradient(
-                        colors = listOf(
-                            Color(0xFF1A0033), // Dark Purple
-                            Color.Black,
-                            Color(0xFF330066)  // Deep Purple
-                        )
-                    )
-                )
-        )
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
-        ) {
-            // Header
-            Text(
-                text = "🤖 AGENT HUB",
-                style = MaterialTheme.typography.headlineMedium,
-                color = Color(0xFF9370DB),
-                fontWeight = FontWeight.Bold,
-                letterSpacing = 2.sp
-            )
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Text(
-                text = "Central command center for all AI agent operations",
-                style = MaterialTheme.typography.bodyLarge,
-                color = Color(0xFFBA55D3).copy(alpha = 0.8f) // Medium Orchid
-            )
-
-            Spacer(modifier = Modifier.height(24.dp))
-
+    SubmenuScaffold(
+        title = "Agent Hub",
+        subtitle = "Central Command Center",
+        color = Color(0xFF9370DB),
+        onNavigateBack = { navController.popBackStack() },
+        menuItems = menuItems,
+        onItemClick = { item ->
+            navController.navigate(item.route)
+        },
+        headerContent = {
             // Agent Status Overview
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 16.dp),
+                    .padding(bottom = 16.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = Color.Black.copy(alpha = 0.6f)
                 ),
@@ -196,34 +163,6 @@ fun AgentHubSubmenuScreen(
                     }
                 }
             }
-
-            // Menu Items
-            LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                items(menuItems) { item ->
-                    SubmenuCard(
-                        item = item,
-                        onClick = {
-                            navController.navigate(item.route)
-                        }
-                    )
-                }
-
-                // Back button
-                item {
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Button(
-                        onClick = { navController.popBackStack() },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFF9370DB).copy(alpha = 0.2f)
-                        )
-                    ) {
-                        Text("← Back to Gates", color = Color(0xFF9370DB))
-                    }
-                }
-            }
         }
-    }
+    )
 }

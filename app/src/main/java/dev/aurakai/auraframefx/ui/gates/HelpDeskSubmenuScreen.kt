@@ -19,6 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import dev.aurakai.auraframefx.ui.components.SubmenuScaffold
 
 /**
  * Help Desk Gate Submenu
@@ -59,55 +60,21 @@ fun HelpDeskSubmenuScreen(
         )
     )
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(Color.Black)
-    ) {
-        // Background Gradient
-        Box(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(
-                    Brush.verticalGradient(
-                        colors = listOf(
-                            Color(0xFF1A0033), // Dark Purple
-                            Color.Black,
-                            Color(0xFF330066)  // Deep Purple
-                        )
-                    )
-                )
-        )
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp)
-        ) {
-            // Header
-            Text(
-                text = "❓ HELP DESK",
-                style = MaterialTheme.typography.headlineMedium,
-                color = Color(0xFF4169E1),
-                fontWeight = FontWeight.Bold,
-                letterSpacing = 2.sp
-            )
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Text(
-                text = "User support and documentation center",
-                style = MaterialTheme.typography.bodyLarge,
-                color = Color(0xFF6495ED).copy(alpha = 0.8f) // Cornflower Blue
-            )
-
-            Spacer(modifier = Modifier.height(24.dp))
-
+    SubmenuScaffold(
+        title = "Help Desk",
+        subtitle = "User Support Center",
+        color = Color(0xFF4169E1),
+        onNavigateBack = { navController.popBackStack() },
+        menuItems = menuItems,
+        onItemClick = { item ->
+            navController.navigate(item.route)
+        },
+        headerContent = {
             // Support Status Overview
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(vertical = 16.dp),
+                    .padding(bottom = 16.dp),
                 colors = CardDefaults.cardColors(
                     containerColor = Color.Black.copy(alpha = 0.6f)
                 ),
@@ -166,34 +133,6 @@ fun HelpDeskSubmenuScreen(
                     }
                 }
             }
-
-            // Menu Items
-            LazyColumn(
-                verticalArrangement = Arrangement.spacedBy(12.dp)
-            ) {
-                items(menuItems) { item ->
-                    SubmenuCard(
-                        item = item,
-                        onClick = {
-                            navController.navigate(item.route)
-                        }
-                    )
-                }
-
-                // Back button
-                item {
-                    Spacer(modifier = Modifier.height(16.dp))
-                    Button(
-                        onClick = { navController.popBackStack() },
-                        modifier = Modifier.fillMaxWidth(),
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFF4169E1).copy(alpha = 0.2f)
-                        )
-                    ) {
-                        Text("← Back to Gates", color = Color(0xFF4169E1))
-                    }
-                }
-            }
         }
-    }
+    )
 }
