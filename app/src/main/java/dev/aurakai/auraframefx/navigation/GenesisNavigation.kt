@@ -53,6 +53,7 @@ import dev.aurakai.auraframefx.ui.gates.TaskAssignmentScreen
 import dev.aurakai.auraframefx.ui.gates.ThemeEngineScreen
 import dev.aurakai.auraframefx.ui.gates.UIUXGateSubmenuScreen
 import dev.aurakai.auraframefx.ui.gates.UserPreferencesScreen
+import dev.aurakai.auraframefx.ui.customization.GyroscopeCustomizationScreen
 import dev.aurakai.auraframefx.ui.viewmodels.AgentViewModel
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -130,6 +131,7 @@ object GenesisRoutes {
     const val QUICK_SETTINGS = "quick_settings"
     const val OVERLAY_MENUS = "overlay_menus"
     const val THEME_ENGINE = "theme_engine"
+    const val GYROSCOPE_CUSTOMIZATION = "gyroscope_customization"
 
     // AI Chat & Support
     const val DIRECT_CHAT = "direct_chat"
@@ -276,6 +278,9 @@ fun GenesisNavigationHost(
             // Additional missing routes from submenu screens - using real implementations
             composable("theme_engine") {
                 ThemeEngineScreen(onNavigateBack = { navController.popBackStack() })
+            }
+            composable(GenesisRoutes.GYROSCOPE_CUSTOMIZATION) {
+                GyroscopeCustomizationScreen(onNavigateBack = { navController.popBackStack() })
             }
             composable("quick_settings") {
                 QuickSettingsScreen()

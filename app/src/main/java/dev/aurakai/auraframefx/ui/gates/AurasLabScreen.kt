@@ -18,7 +18,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.aurakai.auraframefx.oracledrive.genesis.cloud.OracleDriveSandbox
+import androidx.hilt.navigation.compose.hiltViewModel
 
 /**
  * Aura's Lab Screen (Sandbox Environment)
@@ -26,16 +26,21 @@ import dev.aurakai.auraframefx.oracledrive.genesis.cloud.OracleDriveSandbox
  */
 @Composable
 fun AurasLabScreen(
-    onNavigateBack: () -> Unit = {}
+    onNavigateBack: () -> Unit = {},
+    viewModel: AurasLabViewModel = hiltViewModel()
 ) {
-    // Mock state for now - in real app, this would come from OracleDriveSandbox
-    var sandboxes by remember { mutableStateOf(listOf(
-        SandboxItem("Project Neon", "UI_THEMING", "SAFE", true),
-        SandboxItem("System Overdrive", "PERFORMANCE", "WARNING", false),
-        SandboxItem("Kernel Test", "CUSTOM_ROM", "DANGER", false)
-    )) }
+    val sandboxes by viewModel.sandboxes.collectAsState()
+    val statusMessage by viewModel.statusMessage.collectAsState()
 
     var showCreateDialog by remember { mutableStateOf(false) }
+    var showImportDialog by remember { mutableStateOf(false) }
+
+    // Show status messages
+    LaunchedEffect(statusMessage) {
+        statusMessage?.let {
+            // Status is shown in UI card, could also use SnackbarHost
+        }
+    }
 
     Box(
         modifier = Modifier
@@ -134,7 +139,7 @@ fun AurasLabScreen(
                 }
 
                 OutlinedButton(
-                    onClick = { /* Import logic */ },
+                    onClick = { showImportDialog = true },
                     colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFFFF69B4)),
                     border = androidx.compose.foundation.BorderStroke(1.dp, Color(0xFFFF69B4)),
                     modifier = Modifier.weight(1f).padding(start = 8.dp)
@@ -160,6 +165,28 @@ fun AurasLabScreen(
                     SandboxCard(sandbox)
                 }
             }
+        }
+
+        // Create Sandbox Dialog
+        if (showCreateDialog) {
+            CreateSandboxDialog(
+                onDismiss = { showCreateDialog = false },
+                onConfirm = { name, type ->
+                    viewModel.createSandbox(name, type)
+                    showCreateDialog = false
+                }
+            )
+        }
+
+        // Import Sandbox Dialog
+        if (showImportDialog) {
+            ImportSandboxDialog(
+                onDismiss = { showImportDialog = false },
+                onConfirm = { path ->
+                    viewModel.importSandbox(path)
+                    showImportDialog = false
+                }
+            )
         }
     }
 }
@@ -219,3 +246,148 @@ data class SandboxItem(
     val safetyLevel: String,
     val isActive: Boolean
 )
+
+/**
+ * Dialog for creating a new sandbox environment
+ */
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun CreateSandboxDialog(
+    onDismiss: () -> Unit,
+    onConfirm: (name: String, type: String) -> Unit
+) {
+    var sandboxName by remember { mutableStateOf("") }
+    var selectedType by remember { mutableStateOf("UI_THEMING") }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text(
+                "Create New Sandbox",
+                color = Color(0xFFFF69B4),
+                fontWeight = FontWeight.Bold
+            )
+        },
+        text = {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                // Sandbox Name
+                OutlinedTextField(
+                    value = sandboxName,
+                    onValueChange = { sandboxName = it },
+                    label = { Text("Sandbox Name") },
+                    placeholder = { Text("e.g., Project Neon") },
+                    singleLine = true,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = Color(0xFFFF69B4),
+                        focusedLabelColor = Color(0xFFFF69B4)
+                    )
+                )
+
+                // Sandbox Type Selection
+                Text("Sandbox Type:", style = MaterialTheme.typography.labelMedium)
+
+                val types = listOf("UI_THEMING", "PERFORMANCE", "SECURITY", "CUSTOM_ROM", "SYSTEM_MODIFICATION")
+                types.forEach { type ->
+                    Row(
+                        modifier = Modifier.fillMaxWidth(),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = selectedType == type,
+                            onClick = { selectedType = type },
+                            colors = RadioButtonDefaults.colors(
+                                selectedColor = Color(0xFFFF69B4)
+                            )
+                        )
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(type, style = MaterialTheme.typography.bodySmall)
+                    }
+                }
+            }
+        },
+        confirmButton = {
+            Button(
+                onClick = { if (sandboxName.isNotBlank()) onConfirm(sandboxName, selectedType) },
+                enabled = sandboxName.isNotBlank(),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF69B4))
+            ) {
+                Text("Create")
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text("Cancel", color = Color.White)
+            }
+        },
+        containerColor = Color(0xFF1A0A14)
+    )
+}
+
+/**
+ * Dialog for importing an existing sandbox
+ */
+@Composable
+fun ImportSandboxDialog(
+    onDismiss: () -> Unit,
+    onConfirm: (path: String) -> Unit
+) {
+    var importPath by remember { mutableStateOf("") }
+
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        title = {
+            Text(
+                "Import Sandbox",
+                color = Color(0xFFFF69B4),
+                fontWeight = FontWeight.Bold
+            )
+        },
+        text = {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+                Text(
+                    "Import a sandbox from a backup file or shared configuration.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = Color.White.copy(alpha = 0.7f)
+                )
+
+                OutlinedTextField(
+                    value = importPath,
+                    onValueChange = { importPath = it },
+                    label = { Text("File Path or URI") },
+                    placeholder = { Text("/sdcard/Download/sandbox.aura") },
+                    singleLine = true,
+                    colors = OutlinedTextFieldDefaults.colors(
+                        focusedBorderColor = Color(0xFFFF69B4),
+                        focusedLabelColor = Color(0xFFFF69B4)
+                    )
+                )
+
+                Text(
+                    "⚠️ Feature coming soon!",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = Color.Yellow,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        },
+        confirmButton = {
+            Button(
+                onClick = { if (importPath.isNotBlank()) onConfirm(importPath) },
+                enabled = importPath.isNotBlank(),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF69B4))
+            ) {
+                Text("Import")
+            }
+        },
+        dismissButton = {
+            TextButton(onClick = onDismiss) {
+                Text("Cancel", color = Color.White)
+            }
+        },
+        containerColor = Color(0xFF1A0A14)
+    )
+}

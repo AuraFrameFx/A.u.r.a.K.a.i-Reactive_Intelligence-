@@ -1,43 +1,32 @@
 package dev.aurakai.auraframefx.aura.ui
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import collabcanvas.ui.CanvasViewModel
 
+/**
+ * Wrapper for Collaborative Canvas with WebSocket support
+ *
+ * This delegates to the real collabcanvas.ui.CanvasScreen with WebSocket integration
+ */
 @Composable
 fun CanvasScreen(
     modifier: Modifier = Modifier,
-    onNavigateBack: () -> Unit = {}
+    onNavigateBack: () -> Unit = {},
+    viewModel: CanvasViewModel = hiltViewModel()
 ) {
-    Box(
-        modifier = modifier
-            .fillMaxSize()
-            .background(Color.Black),
-        contentAlignment = Alignment.Center
-    ) {
-        // Small back affordance for testing/navigation
-        Text(
-            text = "← Back",
-            color = MaterialTheme.colorScheme.primary,
-            modifier = Modifier
-                .align(Alignment.TopStart)
-                .padding(12.dp)
-                .clickable { onNavigateBack() }
-        )
-        Text(
-            text = "Canvas (placeholder)",
-            color = MaterialTheme.colorScheme.onBackground,
-            textAlign = TextAlign.Center
-        )
+    // Connect to WebSocket when screen opens
+    LaunchedEffect(Unit) {
+        viewModel.connect("genesis-canvas-session")
     }
+
+    // Use the real collaborative canvas from the collabcanvas module
+    collabcanvas.ui.CanvasScreen(
+        modifier = modifier,
+        onBack = onNavigateBack,
+        isCollaborative = true,
+        collaborationEvents = null // TODO: Wire to viewModel.webSocketEvents
+    )
 }

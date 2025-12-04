@@ -15,10 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import dev.aurakai.auraframefx.utils.LSPosedDetector
 import kotlinx.coroutines.launch
 
 /**
@@ -29,6 +31,17 @@ import kotlinx.coroutines.launch
 fun LSPosedSubmenuScreen(
     navController: NavController
 ) {
+    val context = LocalContext.current
+    val detectionResult = remember { LSPosedDetector.getDetectionSummary(context) }
+
+    // Show error screen if LSPosed is not installed
+    if (!detectionResult.isInstalled) {
+        LSPosedNotInstalledScreen(
+            onNavigateBack = { navController.popBackStack() }
+        )
+        return
+    }
+
     val menuItems = listOf(
         SubmenuItem(
             title = "Module Manager",
@@ -460,6 +473,160 @@ private fun HookItem(
                 color = color,
                 fontWeight = FontWeight.Bold
             )
+        )
+    }
+}
+
+/**
+ * Error screen shown when LSPosed is not installed
+ */
+@Composable
+private fun LSPosedNotInstalledScreen(
+    onNavigateBack: () -> Unit
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.Black)
+    ) {
+        // Background Gradient
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(
+                    Brush.verticalGradient(
+                        colors = listOf(
+                            Color(0xFF330000), // Dark Red
+                            Color.Black,
+                            Color(0xFF330000)
+                        )
+                    )
+                )
+        )
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(24.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            // Error Icon
+            Icon(
+                imageVector = Icons.Default.Warning,
+                contentDescription = "LSPosed Not Found",
+                tint = Color(0xFFFF6B35),
+                modifier = Modifier.size(120.dp)
+            )
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            // Error Title
+            Text(
+                text = "LSPosed Not Detected",
+                style = MaterialTheme.typography.headlineMedium.copy(
+                    fontWeight = FontWeight.Bold,
+                    letterSpacing = 1.sp
+                ),
+                color = Color(0xFFFF6B35),
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            // Error Description
+            Text(
+                text = "LSPosed framework is not installed on this device. This feature requires LSPosed to function.",
+                style = MaterialTheme.typography.bodyLarge,
+                color = Color.White.copy(alpha = 0.8f),
+                textAlign = androidx.compose.ui.text.style.TextAlign.Center
+            )
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            // Information Card
+            Card(
+                modifier = Modifier.fillMaxWidth(),
+                colors = CardDefaults.cardColors(
+                    containerColor = Color(0xFF1A1A1A)
+                ),
+                shape = RoundedCornerShape(12.dp)
+            ) {
+                Column(
+                    modifier = Modifier.padding(16.dp),
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    Text(
+                        text = "How to install LSPosed:",
+                        style = MaterialTheme.typography.titleMedium.copy(
+                            fontWeight = FontWeight.Bold
+                        ),
+                        color = Color.White
+                    )
+
+                    InfoStep("1", "Root your device with Magisk or KernelSU")
+                    InfoStep("2", "Install LSPosed module from Magisk Manager")
+                    InfoStep("3", "Reboot your device")
+                    InfoStep("4", "Return to this screen to access features")
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    Text(
+                        text = "⚠️ Warning: Modifying system files requires root access and carries risks. Proceed with caution.",
+                        style = MaterialTheme.typography.bodySmall.copy(
+                            color = Color.Yellow,
+                            fontWeight = FontWeight.Bold
+                        )
+                    )
+                }
+            }
+
+            Spacer(modifier = Modifier.height(32.dp))
+
+            // Back Button
+            Button(
+                onClick = onNavigateBack,
+                modifier = Modifier.fillMaxWidth(),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = Color(0xFFFF6B35)
+                )
+            ) {
+                Icon(Icons.Default.ArrowBack, null, modifier = Modifier.size(20.dp))
+                Spacer(modifier = Modifier.width(8.dp))
+                Text("Back to Gates", fontWeight = FontWeight.Bold)
+            }
+        }
+    }
+}
+
+/**
+ * Information step item for installation instructions
+ */
+@Composable
+private fun InfoStep(number: String, text: String) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        Box(
+            modifier = Modifier
+                .size(32.dp)
+                .background(Color(0xFFFF6B35).copy(alpha = 0.2f), RoundedCornerShape(16.dp))
+                .border(2.dp, Color(0xFFFF6B35), RoundedCornerShape(16.dp)),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(
+                text = number,
+                style = MaterialTheme.typography.labelLarge.copy(
+                    fontWeight = FontWeight.Bold
+                ),
+                color = Color(0xFFFF6B35)
+            )
+        }
+        Text(
+            text = text,
+            style = MaterialTheme.typography.bodyMedium,
+            color = Color.White.copy(alpha = 0.9f)
         )
     }
 }

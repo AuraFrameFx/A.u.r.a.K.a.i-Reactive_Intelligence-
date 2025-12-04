@@ -41,9 +41,9 @@ fun ThemeEngineScreen(
 ) {
     var selectedColor by remember { mutableStateOf(Color.Magenta) }
     val scrollState = rememberScrollState()
-    val overlaySettings = LocalOverlaySettings.current
-    var overlaysEnabled by remember { mutableStateOf(overlaySettings.overlaysEnabled) }
-    var overlayZOrder by remember { mutableStateOf(overlaySettings.overlayZOrder) }
+    // Remove LocalOverlaySettings access that causes crash
+    var overlaysEnabled by remember { mutableStateOf(true) }
+    var overlayZOrder by remember { mutableStateOf(0) }
     var editMode by remember { mutableStateOf(false) }
     val scaleAnim = remember { Animatable(1f) }
     val wigglePhase = remember { Animatable(0f) }
@@ -175,7 +175,7 @@ fun ThemeEngineScreen(
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         IconButton(onClick = {
                             overlaysEnabled = !overlaysEnabled
-                            overlaySettings.overlaysEnabled = overlaysEnabled
+                            // TODO: Save overlay settings
                         }) {
                             Icon(
                                 imageVector = if (overlaysEnabled) Icons.Default.Visibility else Icons.Default.VisibilityOff,
@@ -202,14 +202,14 @@ fun ThemeEngineScreen(
 
                     Spacer(modifier = Modifier.height(12.dp))
                     Text("Transition Style", color = CyberGlow.Electric, style = MaterialTheme.typography.titleSmall)
-                    var transitionStyle by remember { mutableStateOf(overlaySettings.transitionStyle) }
+                    var transitionStyle by remember { mutableStateOf("fade") }
                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                         listOf("lens", "fade", "swipe_left", "swipe_right").forEach { style ->
                             FilterChip(
                                 selected = transitionStyle == style,
                                 onClick = {
                                     transitionStyle = style
-                                    overlaySettings.transitionStyle = style
+                                    // TODO: Save transition style
                                 },
                                 label = { Text(style.replace("_", " ").uppercase()) },
                                 colors = FilterChipDefaults.filterChipColors(
