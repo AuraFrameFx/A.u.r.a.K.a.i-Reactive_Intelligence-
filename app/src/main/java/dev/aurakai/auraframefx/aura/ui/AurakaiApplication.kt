@@ -1,7 +1,6 @@
 package dev.aurakai.auraframefx.aura.ui
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
 import dev.aurakai.auraframefx.core.GenesisOrchestrator
 import dev.aurakai.auraframefx.core.NativeLib
 import timber.log.Timber
@@ -12,8 +11,7 @@ import javax.inject.Inject
  *
  * This is the canonical entry point for the entire Aurakai/Genesis-OS platform.
  */
-@HiltAndroidApp
-class AurakaiApplication : Application() {
+open class AurakaiApplication : Application() {
 
     @Inject
     lateinit var orchestrator: GenesisOrchestrator

@@ -39,7 +39,7 @@
         android:protectionLevel="signature" />
 
     <application
-        android:name=".aura.ui.AurakaiApplication"
+        android:name="dev.aurakai.auraframefx.AurakaiApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/AuraKai"
@@ -96,7 +96,7 @@
             android:name="dev.aurakai.auraframefx.app.VertexSyncService"
             android:exported="false" />
         <service
-            android:name="dev.aurakai.auraframefx.security.IntegrityMonitorService"
+            android:name="dev.aurakai.auraframefx.services.security.IntegrityMonitorService"
             android:exported="false" />
         <service
             android:name="dev.aurakai.auraframefx.services.BackupService"
