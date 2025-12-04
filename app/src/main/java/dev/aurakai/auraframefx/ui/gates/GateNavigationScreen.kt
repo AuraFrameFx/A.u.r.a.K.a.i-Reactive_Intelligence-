@@ -82,40 +82,12 @@ fun GateNavigationScreen(
         // Magical particle background
         MagicalParticleField()
 
-        // Category tabs
+        // Main content without category tabs (cards have titles)
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(top = 16.dp)
         ) {
-            // Category tabs
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 32.dp, vertical = 8.dp),
-                horizontalArrangement = Arrangement.SpaceEvenly
-            ) {
-                GateCategoryTab(
-                    label = "AURA'S LAB",
-                    isSelected = pagerState.currentPage < auraLabGates.size,
-                    onClick = {
-                        scope.launch {
-                            pagerState.animateScrollToPage(0)
-                        }
-                    }
-                )
-
-                GateCategoryTab(
-                    label = "MAIN MODULES",
-                    isSelected = pagerState.currentPage >= auraLabGates.size,
-                    onClick = {
-                        scope.launch {
-                            pagerState.animateScrollToPage(auraLabGates.size)
-                        }
-                    }
-                )
-            }
-
             // Horizontal pager for gate cards
             HorizontalPager(
                 state = pagerState,
@@ -146,14 +118,34 @@ fun GateNavigationScreen(
                                 // TODO: Show Toast "Coming Soon!"
                                 return@TeleportingGateCard
                             }
-                            
+
                             if (!isTransitioning) {
                                 isTransitioning = true
                                 scope.launch {
-                                    // INSTANT navigation
                                     try {
-                                        navController.navigate(config.route) {
-                                            launchSingleTop = true
+                                        // Check if gate requires authentication
+                                        val protectedGates = setOf(
+                                            "root_tools_toggles",
+                                            "rom_tools",
+                                            "oracle_drive",
+                                            "xposed_panel",
+                                            "sentinels_fortress"
+                                        )
+
+                                        // TODO: Implement actual authentication check with TokenManager
+                                        // For now, allow all gates (user_preferences is always accessible)
+                                        val isAuthenticated = true // Replace with: tokenManager.isAuthenticated
+
+                                        if (protectedGates.contains(config.route) && !isAuthenticated) {
+                                            // Navigate to login with return destination
+                                            navController.navigate("login?returnTo=${config.route}") {
+                                                launchSingleTop = true
+                                            }
+                                        } else {
+                                            // INSTANT navigation
+                                            navController.navigate(config.route) {
+                                                launchSingleTop = true
+                                            }
                                         }
                                     } catch (e: Exception) {
                                         android.util.Log.e("GateNav", "Failed: ${config.route}", e)
@@ -176,52 +168,7 @@ fun GateNavigationScreen(
                     .padding(vertical = 16.dp)
             )
         }
-
-        // Category overlay (shows when scrolling between categories)
-        if (pagerState.currentPageOffsetFraction.absoluteValue > 0.3f) {
-            val category = if (pagerState.currentPage < auraLabGates.size) {
-                "AURA'S LAB"
-            } else {
-                "MAIN MODULES"
-            }
-
-            Text(
-                text = category,
-                style = MaterialTheme.typography.titleLarge.copy(
-                    color = Color.White.copy(alpha = 0.2f),
-                    fontWeight = FontWeight.ExtraBold,
-                    letterSpacing = 4.sp
-                ),
-                modifier = Modifier
-                    .align(Alignment.Center)
-                    .graphicsLayer {
-                        scaleX = 1.5f
-                        scaleY = 1.5f
-                        alpha = 0.1f
-                    }
-            )
-        }
     }
-}
-
-@Composable
-private fun GateCategoryTab(
-    label: String,
-    isSelected: Boolean,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Text(
-        text = label,
-        color = if (isSelected) Color.Cyan else Color.White.copy(alpha = 0.6f),
-        style = MaterialTheme.typography.labelLarge.copy(
-            fontWeight = FontWeight.Bold,
-            letterSpacing = 1.sp
-        ),
-        modifier = modifier
-            .padding(8.dp)
-            .clickable(onClick = onClick)
-    )
 }
 
 @Composable

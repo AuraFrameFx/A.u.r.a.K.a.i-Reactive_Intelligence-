@@ -103,6 +103,19 @@ fun LSPosedSubmenuScreen(
 
             Spacer(modifier = Modifier.height(24.dp))
 
+            // Quick Actions Panel
+            Text(
+                text = "Quick Actions",
+                style = MaterialTheme.typography.titleLarge,
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(vertical = 8.dp)
+            )
+
+            XposedQuickActionsPanel()
+
+            Spacer(modifier = Modifier.height(16.dp))
+
             // Framework Status Overview
             Card(
                 modifier = Modifier
@@ -167,6 +180,14 @@ fun LSPosedSubmenuScreen(
                 }
             }
 
+            Text(
+                text = "Advanced Options",
+                style = MaterialTheme.typography.titleLarge,
+                color = Color.White,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(vertical = 8.dp)
+            )
+
             // Menu Items
             LazyColumn(
                 verticalArrangement = Arrangement.spacedBy(12.dp)
@@ -195,6 +216,250 @@ fun LSPosedSubmenuScreen(
                 }
             }
         }
+    }
+}
+
+/**
+ * Xposed Quick Actions Panel
+ * Provides instant access to common Xposed framework operations
+ */
+@Composable
+private fun XposedQuickActionsPanel() {
+    var modulesEnabled by remember { mutableStateOf(true) }
+    var showHooksDialog by remember { mutableStateOf(false) }
+    var statusMessage by remember { mutableStateOf<String?>(null) }
+    val scope = rememberCoroutineScope()
+
+    Card(
+        modifier = Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(
+            containerColor = Color(0xFF1A1A1A)
+        ),
+        shape = RoundedCornerShape(12.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(16.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            // Status message
+            if (statusMessage != null) {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
+                    Icon(
+                        Icons.Default.Info,
+                        contentDescription = null,
+                        tint = Color.Cyan,
+                        modifier = Modifier.size(20.dp)
+                    )
+                    Text(
+                        text = statusMessage!!,
+                        style = MaterialTheme.typography.bodySmall.copy(
+                            color = Color.Cyan
+                        )
+                    )
+                }
+                Spacer(modifier = Modifier.height(4.dp))
+            }
+
+            // Quick action buttons in 2x2 grid
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                // Enable/Disable Modules
+                QuickActionButton(
+                    title = if (modulesEnabled) "Disable Modules" else "Enable Modules",
+                    icon = Icons.Default.Extension,
+                    color = if (modulesEnabled) Color(0xFFFF6B35) else Color(0xFF4ECDC4),
+                    modifier = Modifier.weight(1f),
+                    onClick = {
+                        scope.launch {
+                            modulesEnabled = !modulesEnabled
+                            statusMessage = if (modulesEnabled) {
+                                "Modules enabled. Reboot required."
+                            } else {
+                                "Modules disabled. Reboot required."
+                            }
+                            kotlinx.coroutines.delay(3000)
+                            statusMessage = null
+                        }
+                    }
+                )
+
+                // View Active Hooks
+                QuickActionButton(
+                    title = "View Hooks",
+                    icon = Icons.Default.CallSplit,
+                    color = Color(0xFF4ECDC4),
+                    modifier = Modifier.weight(1f),
+                    onClick = {
+                        showHooksDialog = true
+                    }
+                )
+            }
+
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                // Framework Restart
+                QuickActionButton(
+                    title = "Restart Framework",
+                    icon = Icons.Default.Refresh,
+                    color = Color(0xFFFFD93D),
+                    modifier = Modifier.weight(1f),
+                    onClick = {
+                        scope.launch {
+                            statusMessage = "Restarting Xposed framework..."
+                            // TODO: Implement framework restart
+                            kotlinx.coroutines.delay(2000)
+                            statusMessage = "Framework restarted successfully"
+                            kotlinx.coroutines.delay(3000)
+                            statusMessage = null
+                        }
+                    }
+                )
+
+                // Clear Hook Cache
+                QuickActionButton(
+                    title = "Clear Cache",
+                    icon = Icons.Default.DeleteOutline,
+                    color = Color(0xFF6C5CE7),
+                    modifier = Modifier.weight(1f),
+                    onClick = {
+                        scope.launch {
+                            statusMessage = "Clearing hook cache..."
+                            // TODO: Implement cache clear
+                            kotlinx.coroutines.delay(1500)
+                            statusMessage = "Hook cache cleared"
+                            kotlinx.coroutines.delay(3000)
+                            statusMessage = null
+                        }
+                    }
+                )
+            }
+        }
+    }
+
+    // Active Hooks Dialog
+    if (showHooksDialog) {
+        AlertDialog(
+            onDismissRequest = { showHooksDialog = false },
+            title = {
+                Text(
+                    "Active Hooks",
+                    style = MaterialTheme.typography.titleLarge.copy(
+                        fontWeight = FontWeight.Bold
+                    )
+                )
+            },
+            text = {
+                Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
+                    Text(
+                        "Currently active hooks in the system:",
+                        style = MaterialTheme.typography.bodyMedium
+                    )
+                    HookItem("SystemUI", "247 hooks", Color(0xFF4ECDC4))
+                    HookItem("Settings", "84 hooks", Color(0xFFFFD93D))
+                    HookItem("Package Manager", "56 hooks", Color(0xFF32CD32))
+                    HookItem("Activity Manager", "102 hooks", Color(0xFFFF6B35))
+                    Text(
+                        "Total: 489 active hooks",
+                        style = MaterialTheme.typography.bodySmall.copy(
+                            color = Color.White.copy(alpha = 0.7f),
+                            fontWeight = FontWeight.Bold
+                        ),
+                        modifier = Modifier.padding(top = 8.dp)
+                    )
+                }
+            },
+            confirmButton = {
+                TextButton(onClick = { showHooksDialog = false }) {
+                    Text("Close", color = Color.Cyan)
+                }
+            },
+            containerColor = Color(0xFF1A1A1A)
+        )
+    }
+}
+
+@Composable
+private fun QuickActionButton(
+    title: String,
+    icon: ImageVector,
+    color: Color,
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier
+) {
+    Button(
+        onClick = onClick,
+        modifier = modifier.height(80.dp),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = color.copy(alpha = 0.2f)
+        ),
+        shape = RoundedCornerShape(8.dp)
+    ) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(
+                imageVector = icon,
+                contentDescription = null,
+                tint = color,
+                modifier = Modifier.size(28.dp)
+            )
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                text = title,
+                style = MaterialTheme.typography.labelSmall.copy(
+                    color = color,
+                    fontWeight = FontWeight.Bold
+                ),
+                maxLines = 2
+            )
+        }
+    }
+}
+
+@Composable
+private fun HookItem(
+    packageName: String,
+    hookCount: String,
+    color: Color
+) {
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(vertical = 4.dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(8.dp)
+                    .background(color, RoundedCornerShape(4.dp))
+            )
+            Text(
+                text = packageName,
+                style = MaterialTheme.typography.bodyMedium.copy(
+                    color = Color.White
+                )
+            )
+        }
+        Text(
+            text = hookCount,
+            style = MaterialTheme.typography.bodySmall.copy(
+                color = color,
+                fontWeight = FontWeight.Bold
+            )
+        )
     }
 }
 

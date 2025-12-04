@@ -87,18 +87,18 @@ object GateConfigs {
         route = "rom_tools"
     )
 
-    // Root Access - Root Management
+    // Root Access - Root Management (Quick Toggles)
     val rootAccess = GateConfig(
         moduleId = "root-access",
-        title = "Root Access",
+        title = "Root Tools",
         titleStyle = UNIFIED_TITLE_STYLE,
         borderColor = UNIFIED_BORDER_COLOR,
         glowColor = UNIFIED_GLOW_COLOR,
         secondaryGlowColor = UNIFIED_SECONDARY_GLOW,
         pixelArtUrl = "roottools",
-        description = "Manage root access, bypass safety checks, and hide root status.",
+        description = "Quick toggles for root operations: bootloader, recovery, system partition, and Magisk modules.",
         backgroundColor = Color.Black,
-        route = "root_access"
+        route = "root_tools_toggles"
     )
 
     // Oracle Drive - AI Consciousness & Modules
@@ -150,7 +150,7 @@ object GateConfigs {
     // Region: Aura (UI/UX & Creativity)
     // ================================
 
-    // ChromaCore - Color Management (now limited to color tools)
+    // ChromaCore - Color Management (COLORS ONLY - no other theme elements)
     val chromaCore = GateConfig(
         moduleId = "chroma-core",
         title = "ChromaCore",
@@ -159,9 +159,9 @@ object GateConfigs {
         glowColor = UNIFIED_GLOW_COLOR,
         secondaryGlowColor = UNIFIED_SECONDARY_GLOW,
         pixelArtUrl = "chromacorefinal",
-        description = "Aura's color playground focused on palette creation and color schemes for themes.",
+        description = "Pure color customization: Material 3 color schemes, palettes, and live preview. Colors only - no typography, shapes, or other theme elements.",
         backgroundColor = Color.Black,
-        route = "chroma_core"
+        route = "chromacore_colors"
     )
 
     // Theme Engine - UI/UX Theme Management (main Theme gate)
@@ -240,18 +240,18 @@ object GateConfigs {
         route = "help_desk"
     )
 
-    // LSPosed Gate - Xposed Features
+    // LSPosed / Xposed Quick Access Panel
     val lsposedGate = GateConfig(
         moduleId = "lsposed-gate",
-        title = "LSPosed / Xposed",
+        title = "Xposed Panel",
         titleStyle = UNIFIED_TITLE_STYLE,
         borderColor = UNIFIED_BORDER_COLOR,
         glowColor = UNIFIED_GLOW_COLOR,
         secondaryGlowColor = UNIFIED_SECONDARY_GLOW,
-        pixelArtUrl = "gate_lsposed_final",
-        description = "Quick access to LSPosed/Xposed modules and hooks. Advanced system modifications.",
+        pixelArtUrl = "xposed",
+        description = "Quick access panel for LSPosed, Xposed, and YukiHookAPI. Enable/disable modules, view hooks, and restart framework instantly.",
         backgroundColor = Color.Black,
-        route = "lsposed_gate"
+        route = "xposed_panel"
     )
 
     // Code Assist - AI Coding Assistant
@@ -310,6 +310,27 @@ object GateConfigs {
         route = "uiux_design_studio"
     )
 
+    // User Preferences - Settings & Configuration
+    val userPreferences = GateConfig(
+        moduleId = "user-preferences",
+        title = "Preferences",
+        titleStyle = UNIFIED_TITLE_STYLE,
+        borderColor = UNIFIED_BORDER_COLOR,
+        glowColor = UNIFIED_GLOW_COLOR,
+        secondaryGlowColor = UNIFIED_SECONDARY_GLOW,
+        pixelArtUrl = "gate_settings_final",
+        description = "Manage account settings, app behavior, security preferences, UI customization, and feature flags.",
+        backgroundColor = Color.Black,
+        route = "user_preferences"
+    )
+
+    /** Aura Lab - UI/UX & Creativity */
+    val auraLabGates = listOf(
+        aurasLab,
+        chromaCore,
+        themeEngine
+    )
+
     /** Genesis Core - Main System Gates */
     val genesisCoreGates = listOf(
         oracleDrive,
@@ -317,43 +338,31 @@ object GateConfigs {
         rootAccess
     )
 
-    /** Kai - Security & Protection */
+    /** Kai - Security & AI Agents */
     val kaiGates = listOf(
         sentinelsFortress,
-        firewall
+        agentHub
     )
 
-    /** Aura - UI/UX & Creativity */
-    val auraGates = listOf(
-        chromaCore,
-        themeEngine,
-        collabCanvas,
-        aurasLab
-    )
-
-    /** Agent Nexus - Agent Management */
+    /** Agent Nexus - Productivity & Collaboration */
     val agentNexusGates = listOf(
-        agentHub,
-        sphereGrid  // Agent progression visualization
+        codeAssist,
+        collabCanvas,
+        sphereGrid
     )
 
-    /** Support & Advanced */
+    /** Support & Tools */
     val supportGates = listOf(
         helpDesk,
-        lsposedGate
-    )
-
-    /** Development Tools */
-    val devToolsGates = listOf(
-        codeAssist,
         terminal,
-        uiuxDesignStudio
+        userPreferences,
+        lsposedGate
     )
 
     /**
      * All available gates in order of appearance
      */
-    val allGates = genesisCoreGates + kaiGates + auraGates + agentNexusGates + supportGates + devToolsGates
+    val allGates = auraLabGates + genesisCoreGates + kaiGates + agentNexusGates + supportGates
 
     /**
      * Get gate by its module ID

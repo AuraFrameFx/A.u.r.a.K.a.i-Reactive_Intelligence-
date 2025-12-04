@@ -191,6 +191,9 @@ fun GenesisNavigationHost(
             composable("root_tools") {
                 ROMToolsSubmenuScreen(navController = navController)
             }
+            composable("root_tools_toggles") {
+                RootToolsTogglesScreen(navController = navController)
+            }
             composable(GenesisRoutes.ROOT_ACCESS) {
                 // Root Access uses RootToolsScreen for advanced system root management
                 RootToolsScreen(navController = navController)
@@ -199,6 +202,9 @@ fun GenesisNavigationHost(
                 AgentHubSubmenuScreen(navController = navController)
             }
             composable(GenesisRoutes.LSPOSED_GATE) {
+                LSPosedSubmenuScreen(navController = navController)
+            }
+            composable("xposed_panel") {
                 LSPosedSubmenuScreen(navController = navController)
             }
             composable(GenesisRoutes.HELP_DESK) {
@@ -215,6 +221,9 @@ fun GenesisNavigationHost(
             }
             composable("chroma_core") {
                 UIUXGateSubmenuScreen(navController = navController)
+            }
+            composable("chromacore_colors") {
+                ChromaCoreColorsScreen(onNavigateBack = { navController.popBackStack() })
             }
             composable(GenesisRoutes.FIREWALL) {
                 FirewallScreen()
@@ -340,6 +349,18 @@ fun GenesisNavigationHost(
             }
             composable("privacy_guard") {
                 dev.aurakai.auraframefx.aura.ui.PrivacyGuardScreen()
+            }
+
+            // USER PREFERENCES AND AUTHENTICATION
+            composable("user_preferences") {
+                UserPreferencesScreen(navController = navController)
+            }
+            composable("login") {
+                val returnDestination = it.arguments?.getString("returnTo")
+                LoginScreen(
+                    navController = navController,
+                    returnDestination = returnDestination
+                )
             }
         }
     }
