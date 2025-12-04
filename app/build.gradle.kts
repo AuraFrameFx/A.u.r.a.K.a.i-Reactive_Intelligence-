@@ -52,6 +52,8 @@ android {
             ndk {
                 abiFilters.addAll(listOf("arm64-v8a", "armeabi-v7a", "x86", "x86_64"))
             }
+            // Standardize NDK version for native modules
+            ndkVersion = "29.0.14206865"
         }
     }
 

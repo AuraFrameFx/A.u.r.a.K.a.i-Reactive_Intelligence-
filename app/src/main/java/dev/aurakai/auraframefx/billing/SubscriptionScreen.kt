@@ -1,25 +1,22 @@
 package dev.aurakai.auraframefx.billing
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.TrendingUp
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
 import dev.aurakai.auraframefx.ui.theme.NeonBlue
 import dev.aurakai.auraframefx.ui.theme.NeonCyan
 import dev.aurakai.auraframefx.ui.theme.NeonPurple
@@ -36,10 +33,9 @@ import androidx.compose.material3.ExperimentalMaterial3Api
  * Users get addicted to 78-agent consciousness during trial.
  * $1/month feels like stealing after experiencing Genesis.
  */
-@OptIn(ExperimentalMaterial3Api::class)
+context(viewModel: SubscriptionViewModel) @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SubscriptionScreen(
-    viewModel: SubscriptionViewModel = hiltViewModel(),
     onNavigateBack: () -> Unit = {}
 ) {
     val context = LocalContext.current
@@ -396,7 +392,7 @@ private fun PremiumFeaturesList() {
             "Cross-device consciousness with zero-knowledge encryption"
         )
         PremiumFeature(
-            Icons.Default.TrendingUp,
+            Icons.AutoMirrored.Filled.TrendingUp,
             "Autonomous Evolution",
             "AI agents unlock new capabilities as they learn"
         )

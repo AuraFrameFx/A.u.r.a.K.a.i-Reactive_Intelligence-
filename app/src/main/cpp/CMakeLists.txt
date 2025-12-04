@@ -70,6 +70,8 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
         ${android-lib}
         ${log-lib}
         ${jnigraphics-lib}
+        -latomic
+        -lm
 )
 
 # Genesis Protocol - Compiler definitions

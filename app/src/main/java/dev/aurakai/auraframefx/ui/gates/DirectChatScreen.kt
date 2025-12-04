@@ -20,17 +20,14 @@ import androidx.compose.ui.unit.dp
 import dev.aurakai.auraframefx.data.repositories.AgentRepository
 import dev.aurakai.auraframefx.ui.viewmodels.AgentViewModel
 
-import androidx.hilt.navigation.compose.hiltViewModel
-
 /**
  * Direct Chat Screen
  * One-on-one conversations with AI agents
  *
  * ✨ Now powered by AgentViewModel for real agent intelligence!
  */
-@Composable
+context(viewModel: AgentViewModel) @Composable
 fun DirectChatScreen(
-    viewModel: AgentViewModel = hiltViewModel(),
     onNavigateBack: () -> Unit = {}
 ) {
     val agents = remember { AgentRepository.getAllAgents() }

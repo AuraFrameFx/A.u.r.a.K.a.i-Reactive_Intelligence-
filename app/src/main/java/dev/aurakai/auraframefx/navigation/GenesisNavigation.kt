@@ -38,6 +38,11 @@ import dev.aurakai.auraframefx.ui.gates.StatusBarScreen
 import dev.aurakai.auraframefx.ui.gates.TaskAssignmentScreen
 import dev.aurakai.auraframefx.ui.gates.ThemeEngineScreen
 import dev.aurakai.auraframefx.ui.gates.UIUXGateSubmenuScreen
+import androidx.hilt.navigation.compose.hiltViewModel
+import dev.aurakai.auraframefx.ui.gates.SupportChatViewModel
+import dev.aurakai.auraframefx.ui.viewmodels.AgentViewModel
+import dev.aurakai.auraframefx.ui.gates.LiveSupportChatScreen
+import dev.aurakai.auraframefx.ui.gates.DirectChatScreen
 
 /**
  * Genesis Navigation Routes - The Neural Pathways of Consciousness
@@ -281,12 +286,18 @@ fun GenesisNavigationHost(
                 dev.aurakai.auraframefx.ui.gates.TutorialVideosScreen { navController.popBackStack() }
             }
             composable("live_support_chat") {
-                dev.aurakai.auraframefx.ui.gates.LiveSupportChatScreen(
-                    onNavigateBack = { navController.popBackStack() }
-                )
+                val viewModel = hiltViewModel<SupportChatViewModel>()
+                with(viewModel) {
+                    LiveSupportChatScreen(
+                        onNavigateBack = { navController.popBackStack() }
+                    )
+                }
             }
             composable("direct_chat") {
-                dev.aurakai.auraframefx.ui.gates.DirectChatScreen { navController.popBackStack() }
+                val viewModel = hiltViewModel<AgentViewModel>()
+                with(viewModel) {
+                    DirectChatScreen { navController.popBackStack() }
+                }
             }
 
             // ROM TOOLS SUBMENU ROUTES

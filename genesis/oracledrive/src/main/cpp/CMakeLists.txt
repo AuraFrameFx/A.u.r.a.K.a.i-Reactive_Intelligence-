@@ -3,8 +3,8 @@ cmake_minimum_required(VERSION 3.22.1)
 # Oracle Drive Integration - C++ Module for Oracle Drive AI native processing
 project("oracle_drive_integration" CXX)
 
-# Genesis Protocol - C++23 Standard
-set(CMAKE_CXX_STANDARD 23)
+# Genesis Protocol - C++20 Standard (standardize to C++20 for NDK compatibility)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # AI Optimization Flags
@@ -14,6 +14,7 @@ set(CMAKE_CXX_FLAGS_DEBUG "-g -DDEBUG -DGENESIS_AI_DEBUG")
 # Find required packages
 find_library(log-lib log)
 find_library(android-lib android)
+find_library(jnigraphics-lib jnigraphics)
 
 # Native library
 add_library(oracle_drive_integration SHARED
@@ -29,6 +30,9 @@ target_include_directories(oracle_drive_integration PRIVATE
 target_link_libraries(oracle_drive_integration
         ${log-lib}
         ${android-lib}
+        ${jnigraphics-lib}
+        -latomic
+        -lm
 )
 
 # Genesis Protocol - Multi-architecture support

@@ -1,17 +1,59 @@
 package dev.aurakai.auraframefx.navigation
 
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import dev.aurakai.auraframefx.ui.gates.*
-import dev.aurakai.auraframefx.ui.screens.*
-import dev.aurakai.auraframefx.navigation.NavDestination
+import dev.aurakai.auraframefx.ui.gates.AgentHubSubmenuScreen
+import dev.aurakai.auraframefx.ui.gates.AgentMonitoringScreen
+import dev.aurakai.auraframefx.ui.gates.AurasLabScreen
+import dev.aurakai.auraframefx.ui.gates.BootloaderManagerScreen
+import dev.aurakai.auraframefx.ui.gates.CodeAssistScreen
+import dev.aurakai.auraframefx.ui.gates.DocumentationScreen
+import dev.aurakai.auraframefx.ui.gates.FAQBrowserScreen
+import dev.aurakai.auraframefx.ui.gates.FusionModeScreen
+import dev.aurakai.auraframefx.ui.gates.GateNavigationScreen
+import dev.aurakai.auraframefx.ui.gates.HelpDeskSubmenuScreen
+import dev.aurakai.auraframefx.ui.gates.HookManagerScreen
+import dev.aurakai.auraframefx.ui.gates.LSPosedModuleManagerScreen
+import dev.aurakai.auraframefx.ui.gates.LSPosedSubmenuScreen
+import dev.aurakai.auraframefx.ui.gates.LiveROMEditorScreen
+import dev.aurakai.auraframefx.ui.gates.LogsViewerScreen
+import dev.aurakai.auraframefx.ui.gates.ModuleCreationScreen
+import dev.aurakai.auraframefx.ui.gates.ModuleManagerScreen
+import dev.aurakai.auraframefx.ui.gates.NotchBarScreen
+import dev.aurakai.auraframefx.ui.gates.OracleDriveSubmenuScreen
+import dev.aurakai.auraframefx.ui.gates.OverlayMenusScreen
+import dev.aurakai.auraframefx.ui.gates.QuickActionsScreen
+import dev.aurakai.auraframefx.ui.gates.QuickSettingsScreen
+import dev.aurakai.auraframefx.ui.gates.ROMFlasherScreen
+import dev.aurakai.auraframefx.ui.gates.ROMToolsSubmenuScreen
+import dev.aurakai.auraframefx.ui.gates.RecoveryToolsScreen
+import dev.aurakai.auraframefx.ui.gates.SphereGridScreen
+import dev.aurakai.auraframefx.ui.gates.StatusBarScreen
+import dev.aurakai.auraframefx.ui.gates.SystemOverridesScreen
+import dev.aurakai.auraframefx.ui.gates.TaskAssignmentScreen
+import dev.aurakai.auraframefx.ui.gates.ThemeEngineScreen
+import dev.aurakai.auraframefx.ui.gates.TutorialVideosScreen
+import dev.aurakai.auraframefx.ui.gates.UIUXGateSubmenuScreen
+import dev.aurakai.auraframefx.ui.screens.AgentProfileScreen
+import dev.aurakai.auraframefx.ui.screens.EcosystemMenuScreen
+import dev.aurakai.auraframefx.ui.screens.HolographicMenuScreen
+import dev.aurakai.auraframefx.ui.screens.IntroScreen
+import dev.aurakai.auraframefx.ui.screens.JournalPDAScreen
+import dev.aurakai.auraframefx.ui.screens.MainScreen
+import dev.aurakai.auraframefx.ui.screens.UISettingsScreen
+import dev.aurakai.auraframefx.ui.screens.WorkingLabScreen
+import androidx.hilt.navigation.compose.hiltViewModel
+import dev.aurakai.auraframefx.ui.gates.LiveSupportChatScreen
+import dev.aurakai.auraframefx.ui.gates.SupportChatViewModel
 
 /**
  * Main navigation graph for the AuraFrameFX app
  * All 90+ screens properly wired and functional
  */
+@ExperimentalMaterial3Api
 @Composable
 fun AppNavGraph(navController: NavHostController) {
     NavHost(
@@ -68,10 +110,6 @@ fun AppNavGraph(navController: NavHostController) {
 
         composable(route = NavDestination.AgentHub.route) {
             AgentHubSubmenuScreen(navController = navController)
-        }
-
-        composable(route = NavDestination.DirectChat.route) {
-            DirectChatScreen(onNavigateBack = { navController.popBackStack() })
         }
 
         composable(route = NavDestination.TaskAssignment.route) {
@@ -189,9 +227,10 @@ fun AppNavGraph(navController: NavHostController) {
         }
 
         composable(route = NavDestination.LiveSupport.route) {
-            LiveSupportChatScreen(
-                onNavigateBack = { navController.popBackStack() }
-            )
+            val viewModel = hiltViewModel<SupportChatViewModel>()
+            with(viewModel) {
+                LiveSupportChatScreen(onNavigateBack = { navController.popBackStack() })
+            }
         }
 
         composable(route = NavDestination.Documentation.route) {
@@ -213,3 +252,5 @@ fun AppNavGraph(navController: NavHostController) {
         }
     }
 }
+
+
