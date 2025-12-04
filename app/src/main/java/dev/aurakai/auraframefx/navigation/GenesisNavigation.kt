@@ -382,8 +382,7 @@ fun GenesisNavigationHost(
                 )
             }
             composable(GenesisRoutes.APP_BUILDER) {
-                val subscriptionViewModel: SubscriptionViewModel = hiltViewModel()
-                with(subscriptionViewModel) {
+                with(hiltViewModel<SubscriptionViewModel>()) {
                     AppBuilderScreen(onNavigateBack = { navController.popBackStack() })
                 }
             }
