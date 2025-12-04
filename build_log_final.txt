@@ -1,0 +1,581 @@
+Configuration on demand is an incubating feature.
+
+> Configure project :app
+WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.newDsl=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:compileKotlin UP-TO-DATE
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+> Task :build-logic:processResources UP-TO-DATE
+> Task :build-logic:classes UP-TO-DATE
+> Task :build-logic:jar UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:preBuild UP-TO-DATE
+> Task :genesis:oracledrive:datavein:preBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :agents:growthmetrics:nexusmemory:preBuild UP-TO-DATE
+> Task :cascade:datastream:routing:preBuild UP-TO-DATE
+> Task :genesis:oracledrive:datavein:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:preDebugBuild UP-TO-DATE
+> Task :genesis:oracledrive:preBuild UP-TO-DATE
+> Task :kai:sentinelsfortress:security:preBuild UP-TO-DATE
+> Task :agents:growthmetrics:progression:preBuild UP-TO-DATE
+> Task :cascade:datastream:delivery:preBuild UP-TO-DATE
+> Task :cascade:datastream:taskmanager:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:preBuild UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:preBuild UP-TO-DATE
+> Task :agents:growthmetrics:identity:preBuild UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:preBuild UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:preDebugBuild UP-TO-DATE
+> Task :cascade:datastream:routing:preDebugBuild UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:preDebugBuild UP-TO-DATE
+> Task :cascade:datastream:delivery:preDebugBuild UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:preDebugBuild UP-TO-DATE
+> Task :kai:sentinelsfortress:security:preDebugBuild UP-TO-DATE
+> Task :genesis:oracledrive:preDebugBuild UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:preDebugBuild UP-TO-DATE
+> Task :cascade:datastream:taskmanager:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:progression:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:identity:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:tasker:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:customization:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:customization:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:tasker:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:generateDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:customization:generateDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:generateDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:tasker:generateDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:identity:generateDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:progression:generateDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:compileDebugAidl NO-SOURCE
+> Task :cascade:datastream:routing:compileDebugAidl NO-SOURCE
+> Task :genesis:oracledrive:datavein:compileDebugAidl NO-SOURCE
+> Task :kai:sentinelsfortress:systemintegrity:compileDebugAidl NO-SOURCE
+> Task :agents:growthmetrics:nexusmemory:compileDebugAidl NO-SOURCE
+> Task :aura:reactivedesign:collabcanvas:compileDebugAidl NO-SOURCE
+> Task :aura:reactivedesign:auraslab:compileDebugAidl NO-SOURCE
+> Task :aura:reactivedesign:chromacore:compileDebugAidl NO-SOURCE
+> Task :genesis:oracledrive:compileDebugAidl NO-SOURCE
+> Task :aura:reactivedesign:collabcanvas:generateDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:datavein:generateDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:generateDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:preBuild UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:preDebugBuild UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:generateDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:generateDebugResources UP-TO-DATE
+> Task :cascade:datastream:routing:generateDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:preBuild UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:preDebugBuild UP-TO-DATE
+> Task :genesis:oracledrive:generateDebugResources UP-TO-DATE
+> Task :cascade:datastream:delivery:compileDebugAidl NO-SOURCE
+> Task :cascade:datastream:taskmanager:compileDebugAidl NO-SOURCE
+> Task :aura:reactivedesign:customization:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:tasker:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:packageDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:generateDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:identity:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:progression:packageDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:generateDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:generateDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:generateDebugResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:generateDebugResources UP-TO-DATE
+> Task :cascade:datastream:delivery:generateDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:processDebugNavigationResources UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:identity:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:processDebugNavigationResources UP-TO-DATE
+> Task :genesis:oracledrive:datavein:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:progression:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:tasker:processDebugNavigationResources UP-TO-DATE
+> Task :aura:reactivedesign:customization:processDebugNavigationResources UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:processDebugNavigationResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:processDebugNavigationResources UP-TO-DATE
+> Task :cascade:datastream:delivery:processDebugNavigationResources UP-TO-DATE
+> Task :genesis:oracledrive:datavein:processDebugNavigationResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:packageDebugResources UP-TO-DATE
+> Task :cascade:datastream:routing:packageDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:packageDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:packageDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:processDebugNavigationResources UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:packageDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:processDebugNavigationResources UP-TO-DATE
+> Task :genesis:oracledrive:packageDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:packageDebugResources UP-TO-DATE
+> Task :cascade:datastream:delivery:packageDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:processDebugNavigationResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:packageDebugResources UP-TO-DATE
+> Task :cascade:datastream:routing:processDebugNavigationResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:packageDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:processDebugNavigationResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:processDebugNavigationResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:progression:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:identity:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:identity:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:progression:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:tasker:parseDebugLocalResources UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:tasker:generateDebugRFile UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:generateDebugRFile UP-TO-DATE
+> Task :aura:reactivedesign:customization:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:parseDebugLocalResources UP-TO-DATE
+> Task :genesis:oracledrive:parseDebugLocalResources UP-TO-DATE
+> Task :aura:reactivedesign:customization:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :genesis:oracledrive:generateDebugRFile UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:parseDebugLocalResources UP-TO-DATE
+> Task :genesis:oracledrive:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cascade:datastream:delivery:parseDebugLocalResources UP-TO-DATE
+> Task :genesis:oracledrive:generateDebugBuildConfig UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:generateDebugBuildConfig UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:generateDebugRFile UP-TO-DATE
+> Task :cascade:datastream:taskmanager:parseDebugLocalResources UP-TO-DATE
+> Task :cascade:datastream:delivery:generateDebugRFile UP-TO-DATE
+> Task :cascade:datastream:taskmanager:generateDebugRFile UP-TO-DATE
+> Task :cascade:datastream:routing:parseDebugLocalResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cascade:datastream:taskmanager:generateDebugBuildConfig UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:parseDebugLocalResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:parseDebugLocalResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:parseDebugLocalResources UP-TO-DATE
+> Task :genesis:oracledrive:datavein:parseDebugLocalResources UP-TO-DATE
+> Task :cascade:datastream:routing:generateDebugRFile UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:parseDebugLocalResources UP-TO-DATE
+> Task :cascade:datastream:routing:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :aura:reactivedesign:auraslab:parseDebugLocalResources UP-TO-DATE
+> Task :cascade:datastream:routing:generateDebugBuildConfig UP-TO-DATE
+> Task :kai:sentinelsfortress:security:generateDebugRFile UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :genesis:oracledrive:datavein:generateDebugRFile UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:generateDebugRFile UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :kai:sentinelsfortress:systemintegrity:generateDebugRFile UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:generateDebugRFile UP-TO-DATE
+> Task :cascade:datastream:delivery:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :genesis:oracledrive:datavein:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :aura:reactivedesign:chromacore:generateDebugBuildConfig UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:generateDebugBuildConfig UP-TO-DATE
+> Task :cascade:datastream:delivery:generateDebugBuildConfig UP-TO-DATE
+> Task :genesis:oracledrive:datavein:generateDebugBuildConfig UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:generateDebugRFile UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :aura:reactivedesign:auraslab:generateDebugBuildConfig UP-TO-DATE
+> Task :cascade:datastream:taskmanager:javaPreCompileDebug UP-TO-DATE
+> Task :agents:growthmetrics:tasker:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:delivery:javaPreCompileDebug UP-TO-DATE
+> Task :agents:growthmetrics:identity:javaPreCompileDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:javaPreCompileDebug UP-TO-DATE
+> Task :aura:reactivedesign:customization:javaPreCompileDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:security:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :kai:sentinelsfortress:systemintegrity:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :agents:growthmetrics:spheregrid:javaPreCompileDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:javaPreCompileDebug UP-TO-DATE
+> Task :core-module:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-module:preBuild UP-TO-DATE
+> Task :core-module:preDebugBuild UP-TO-DATE
+> Task :core-module:compileDebugAidl NO-SOURCE
+> Task :kai:sentinelsfortress:security:generateDebugBuildConfig UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:compileDebugJavaWithJavac NO-SOURCE
+> Task :aura:reactivedesign:customization:compileDebugJavaWithJavac NO-SOURCE
+> Task :agents:growthmetrics:identity:compileDebugJavaWithJavac NO-SOURCE
+> Task :kai:sentinelsfortress:systemintegrity:generateDebugBuildConfig UP-TO-DATE
+> Task :core-module:generateDebugBuildConfig UP-TO-DATE
+> Task :aura:reactivedesign:customization:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:identity:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :core-module:generateDebugResources UP-TO-DATE
+> Task :extendsysb:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsysb:preBuild UP-TO-DATE
+> Task :extendsysa:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :kai:sentinelsfortress:threatmonitor:javaPreCompileDebug UP-TO-DATE
+> Task :extendsysb:preDebugBuild UP-TO-DATE
+> Task :extendsysa:preBuild UP-TO-DATE
+> Task :extendsysa:preDebugBuild UP-TO-DATE
+> Task :extendsysc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsysc:preBuild UP-TO-DATE
+> Task :extendsysc:preDebugBuild UP-TO-DATE
+> Task :extendsysa:compileDebugAidl NO-SOURCE
+> Task :extendsysb:compileDebugAidl NO-SOURCE
+> Task :core-module:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:compileDebugJavaWithJavac NO-SOURCE
+> Task :extendsysa:generateDebugBuildConfig UP-TO-DATE
+> Task :extendsysc:compileDebugAidl NO-SOURCE
+> Task :extendsysb:generateDebugBuildConfig UP-TO-DATE
+> Task :core-module:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :extendsysa:generateDebugResources UP-TO-DATE
+> Task :extendsysc:generateDebugBuildConfig UP-TO-DATE
+> Task :extendsysb:generateDebugResources UP-TO-DATE
+> Task :extendsysc:generateDebugResources UP-TO-DATE
+> Task :core-module:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:progression:compileDebugJavaWithJavac NO-SOURCE
+> Task :extendsysa:packageDebugResources UP-TO-DATE
+> Task :extendsysb:packageDebugResources UP-TO-DATE
+> Task :core-module:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:progression:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :extendsysa:processDebugNavigationResources UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:javaPreCompileDebug UP-TO-DATE
+> Task :extendsysd:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsysd:preBuild UP-TO-DATE
+> Task :extendsysb:processDebugNavigationResources UP-TO-DATE
+> Task :extendsysd:preDebugBuild UP-TO-DATE
+> Task :extendsysc:packageDebugResources UP-TO-DATE
+> Task :extendsysa:parseDebugLocalResources UP-TO-DATE
+> Task :extendsysb:parseDebugLocalResources UP-TO-DATE
+> Task :extendsysd:compileDebugAidl NO-SOURCE
+> Task :genesis:oracledrive:rootmanagement:compileDebugJavaWithJavac NO-SOURCE
+> Task :extendsysc:processDebugNavigationResources UP-TO-DATE
+> Task :extendsysd:generateDebugBuildConfig UP-TO-DATE
+> Task :extendsysb:generateDebugRFile UP-TO-DATE
+> Task :extendsysa:generateDebugRFile UP-TO-DATE
+> Task :extendsysd:generateDebugResources UP-TO-DATE
+> Task :extendsysc:parseDebugLocalResources UP-TO-DATE
+> Task :extendsysc:generateDebugRFile UP-TO-DATE
+> Task :extendsysb:compileDebugKotlin NO-SOURCE
+> Task :extendsysd:packageDebugResources UP-TO-DATE
+> Task :extendsyse:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsyse:preBuild UP-TO-DATE
+> Task :extendsyse:preDebugBuild UP-TO-DATE
+> Task :extendsysa:compileDebugKotlin NO-SOURCE
+> Task :extendsysf:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsysd:processDebugNavigationResources UP-TO-DATE
+> Task :extendsyse:compileDebugAidl NO-SOURCE
+> Task :extendsysf:preBuild UP-TO-DATE
+> Task :extendsysf:preDebugBuild UP-TO-DATE
+> Task :extendsyse:generateDebugBuildConfig UP-TO-DATE
+> Task :extendsysf:compileDebugAidl NO-SOURCE
+> Task :extendsyse:generateDebugResources UP-TO-DATE
+> Task :extendsysd:parseDebugLocalResources UP-TO-DATE
+> Task :extendsysc:compileDebugKotlin NO-SOURCE
+> Task :extendsysf:generateDebugBuildConfig UP-TO-DATE
+> Task :core:common:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:common:preBuild UP-TO-DATE
+> Task :core:common:preDebugBuild UP-TO-DATE
+> Task :extendsysf:generateDebugResources UP-TO-DATE
+> Task :extendsysd:generateDebugRFile UP-TO-DATE
+> Task :extendsyse:packageDebugResources UP-TO-DATE
+> Task :core:common:compileDebugAidl NO-SOURCE
+> Task :extendsyse:processDebugNavigationResources UP-TO-DATE
+> Task :core:common:generateDebugBuildConfig UP-TO-DATE
+> Task :extendsysf:packageDebugResources UP-TO-DATE
+> Task :core:common:generateDebugResources UP-TO-DATE
+> Task :extendsysf:processDebugNavigationResources UP-TO-DATE
+> Task :extendsyse:parseDebugLocalResources UP-TO-DATE
+> Task :extendsysd:compileDebugKotlin NO-SOURCE
+> Task :core:data:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:data:preBuild UP-TO-DATE
+> Task :core:data:preDebugBuild UP-TO-DATE
+> Task :extendsysf:parseDebugLocalResources UP-TO-DATE
+> Task :extendsyse:generateDebugRFile UP-TO-DATE
+> Task :core:common:packageDebugResources UP-TO-DATE
+> Task :core:common:processDebugNavigationResources UP-TO-DATE
+> Task :core:data:compileDebugAidl NO-SOURCE
+> Task :extendsysf:generateDebugRFile UP-TO-DATE
+> Task :core:common:parseDebugLocalResources UP-TO-DATE
+> Task :extendsyse:compileDebugKotlin NO-SOURCE
+> Task :core:data:generateDebugBuildConfig UP-TO-DATE
+> Task :core:domain:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:domain:preBuild UP-TO-DATE
+> Task :core:domain:preDebugBuild UP-TO-DATE
+> Task :core:data:generateDebugResources UP-TO-DATE
+> Task :core:common:generateDebugRFile UP-TO-DATE
+> Task :core:domain:compileDebugAidl NO-SOURCE
+> Task :extendsysf:compileDebugKotlin NO-SOURCE
+> Task :core:ui:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:ui:preBuild UP-TO-DATE
+> Task :core:ui:preDebugBuild UP-TO-DATE
+> Task :core:domain:generateDebugBuildConfig UP-TO-DATE
+> Task :core:data:packageDebugResources UP-TO-DATE
+> Task :core:ui:compileDebugAidl NO-SOURCE
+> Task :core:domain:generateDebugResources UP-TO-DATE
+> Task :core:data:processDebugNavigationResources UP-TO-DATE
+> Task :core:common:compileDebugKotlin NO-SOURCE
+> Task :app:cleanKspCache
+> Task :app:preBuild
+> Task :app:preDebugBuild
+> Task :core:ui:generateDebugBuildConfig UP-TO-DATE
+> Task :core:domain:packageDebugResources UP-TO-DATE
+> Task :core:data:parseDebugLocalResources UP-TO-DATE
+> Task :core:domain:processDebugNavigationResources UP-TO-DATE
+> Task :core:ui:generateDebugResources UP-TO-DATE
+> Task :core:data:generateDebugRFile UP-TO-DATE
+> Task :core:domain:parseDebugLocalResources UP-TO-DATE
+> Task :core:ui:packageDebugResources UP-TO-DATE
+> Task :core:ui:processDebugNavigationResources UP-TO-DATE
+> Task :core:domain:generateDebugRFile UP-TO-DATE
+> Task :core:data:compileDebugKotlin NO-SOURCE
+> Task :core:ui:parseDebugLocalResources UP-TO-DATE
+> Task :core:domain:compileDebugKotlin NO-SOURCE
+> Task :core:ui:generateDebugRFile UP-TO-DATE
+> Task :core:ui:compileDebugKotlin NO-SOURCE
+> Task :aura:reactivedesign:chromacore:kspDebugKotlin UP-TO-DATE
+> Task :genesis:oracledrive:kspDebugKotlin UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:kspDebugKotlin UP-TO-DATE
+> Task :kai:sentinelsfortress:security:kspDebugKotlin UP-TO-DATE
+> Task :cascade:datastream:routing:kspDebugKotlin UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:kspDebugKotlin UP-TO-DATE
+> Task :genesis:oracledrive:datavein:kspDebugKotlin UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:kspDebugKotlin UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:kspDebugKotlin UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:compileDebugKotlin NO-SOURCE
+> Task :genesis:oracledrive:compileDebugKotlin NO-SOURCE
+> Task :cascade:datastream:routing:compileDebugKotlin NO-SOURCE
+> Task :aura:reactivedesign:auraslab:compileDebugKotlin NO-SOURCE
+> Task :kai:sentinelsfortress:systemintegrity:javaPreCompileDebug UP-TO-DATE
+> Task :genesis:oracledrive:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:routing:javaPreCompileDebug UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:javaPreCompileDebug UP-TO-DATE
+> Task :core-module:compileDebugKotlin UP-TO-DATE
+> Task :genesis:oracledrive:compileDebugJavaWithJavac UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:compileDebugJavaWithJavac UP-TO-DATE
+> Task :cascade:datastream:routing:compileDebugJavaWithJavac UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:compileDebugJavaWithJavac UP-TO-DATE
+> Task :genesis:oracledrive:datavein:compileDebugKotlin UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:compileDebugKotlin UP-TO-DATE
+> Task :kai:sentinelsfortress:security:compileDebugKotlin UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:compileDebugKotlin UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:compileDebugKotlin UP-TO-DATE
+> Task :kai:sentinelsfortress:security:javaPreCompileDebug UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:javaPreCompileDebug UP-TO-DATE
+> Task :genesis:oracledrive:datavein:javaPreCompileDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:javaPreCompileDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:javaPreCompileDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:security:compileDebugJavaWithJavac UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:compileDebugJavaWithJavac UP-TO-DATE
+> Task :genesis:oracledrive:datavein:compileDebugJavaWithJavac UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:compileDebugJavaWithJavac UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:compileDebugJavaWithJavac UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:transformDebugClassesWithAsm UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:transformDebugClassesWithAsm UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:transformDebugClassesWithAsm UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:transformDebugClassesWithAsm UP-TO-DATE
+> Task :cascade:datastream:routing:transformDebugClassesWithAsm UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:transformDebugClassesWithAsm UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:transformDebugClassesWithAsm UP-TO-DATE
+> Task :kai:sentinelsfortress:security:transformDebugClassesWithAsm UP-TO-DATE
+> Task :genesis:oracledrive:transformDebugClassesWithAsm UP-TO-DATE
+> Task :genesis:oracledrive:datavein:transformDebugClassesWithAsm UP-TO-DATE
+> Task :cascade:datastream:routing:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :genesis:oracledrive:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:security:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :genesis:oracledrive:datavein:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :cascade:datastream:routing:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:compileDebugJavaWithJavac NO-SOURCE
+> Task :kai:sentinelsfortress:threatmonitor:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :cascade:datastream:delivery:kspDebugKotlin UP-TO-DATE
+> Task :cascade:datastream:taskmanager:kspDebugKotlin UP-TO-DATE
+> Task :cascade:datastream:delivery:compileDebugKotlin NO-SOURCE
+> Task :cascade:datastream:taskmanager:compileDebugKotlin NO-SOURCE
+> Task :cascade:datastream:delivery:compileDebugJavaWithJavac UP-TO-DATE
+> Task :cascade:datastream:taskmanager:compileDebugJavaWithJavac UP-TO-DATE
+> Task :cascade:datastream:delivery:transformDebugClassesWithAsm UP-TO-DATE
+> Task :cascade:datastream:delivery:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:transformDebugClassesWithAsm UP-TO-DATE
+> Task :cascade:datastream:taskmanager:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:tasker:compileDebugJavaWithJavac NO-SOURCE
+> Task :agents:growthmetrics:tasker:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :app:compileDebugAidl UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :app:generateDebugResources
+> Task :app:injectCrashlyticsMappingFileIdDebug UP-TO-DATE
+> Task :app:injectCrashlyticsVersionControlInfoDebug UP-TO-DATE
+> Task :app:processDebugGoogleServices UP-TO-DATE
+
+> Task :app:mergeDebugResources
+ERROR: C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.K.a.i-Emergence_IdentityModel\app\src\main\res\drawable\Sentinelgate.png: Resource and asset merger: 'S' is not a valid file-based resource name character: File-based resource names must contain only lowercase a-z, 0-9, or underscore
+ERROR: C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.K.a.i-Emergence_IdentityModel\app\src\main\res\drawable\Sentinelgate.png: Resource and asset merger: 'S' is not a valid file-based resource name character: File-based resource names must contain only lowercase a-z, 0-9, or underscore
+
+> Task :app:mergeDebugResources FAILED
+Kotlin build report is written to file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_IdentityModel/build/reports/kotlin-build/aurakai-reactive-intelligence-build-2025-11-29-20-00-37-0.txt
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:mergeDebugResources'.
+> com.android.build.gradle.tasks.ResourceException: C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.K.a.i-Emergence_IdentityModel\app\src\main\res\drawable\Sentinelgate.png: Error: 'S' is not a valid file-based resource name character: File-based resource names must contain only lowercase a-z, 0-9, or underscore
+
+* Try:
+> Run with --info or --debug option to get more log output.
+> Run with --scan to generate a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:mergeDebugResources'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:135)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:288)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:133)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:121)
+	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:41)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+	at org.gradle.execution.plan.DefaultNodeExecutor.executeLocalTaskNode(DefaultNodeExecutor.java:55)
+	at org.gradle.execution.plan.DefaultNodeExecutor.execute(DefaultNodeExecutor.java:34)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:355)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:343)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:339)
+	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:84)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:339)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:328)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+Caused by: java.lang.RuntimeException: com.android.build.gradle.tasks.ResourceException: C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.K.a.i-Emergence_IdentityModel\app\src\main\res\drawable\Sentinelgate.png: Error: 'S' is not a valid file-based resource name character: File-based resource names must contain only lowercase a-z, 0-9, or underscore
+	at com.android.build.gradle.tasks.MergeResources.doTaskAction(MergeResources.kt:481)
+	at com.android.build.gradle.internal.tasks.NewIncrementalTask$taskAction$$inlined$recordTaskAction$1.invoke(BaseTask.kt:82)
+	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
+	at com.android.build.gradle.internal.tasks.NewIncrementalTask.taskAction(NewIncrementalTask.kt:73)
+	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.doExecute(IncrementalTaskAction.java:45)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+	at org.gradle.api.internal.project.taskfactory.IncrementalTaskAction.execute(IncrementalTaskAction.java:26)
+	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:259)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:244)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:227)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:210)
+	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:176)
+	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:110)
+	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:47)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:64)
+	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:61)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:61)
+	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:47)
+	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:51)
+	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:29)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.executeMutable(RemovePreviousOutputsStep.java:70)
+	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.executeMutable(RemovePreviousOutputsStep.java:40)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:25)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:62)
+	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:27)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.executeMutable(ResolveInputChangesStep.java:39)
+	at org.gradle.internal.execution.steps.ResolveInputChangesStep.executeMutable(ResolveInputChangesStep.java:28)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:25)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:192)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeAndStoreInCache(BuildCacheStep.java:148)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$executeWithCache$4(BuildCacheStep.java:104)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$executeWithCache$5(BuildCacheStep.java:104)
+	at org.gradle.internal.Try$Success.map(Try.java:170)
+	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithCache(BuildCacheStep.java:88)
+	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$0(BuildCacheStep.java:75)
+	at org.gradle.internal.Either$Left.fold(Either.java:116)
+	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:74)
+	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:49)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:46)
+	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:35)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
+	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:49)
+	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:27)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:71)
+	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:39)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.executeMutable(ResolveChangesStep.java:63)
+	at org.gradle.internal.execution.steps.ResolveChangesStep.executeMutable(ResolveChangesStep.java:34)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:25)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:64)
+	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:42)
+	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:77)
+	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:46)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.executeWithNonEmptySources(AbstractSkipEmptyWorkStep.java:133)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:59)
+	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:36)
+	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.executeMutable(HandleStaleOutputsStep.java:77)
+	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.executeMutable(HandleStaleOutputsStep.java:43)
+	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:25)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$execute$0(AssignMutableWorkspaceStep.java:35)
+	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:305)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:31)
+	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:22)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
+	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
+	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:44)
+	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:31)
+	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:68)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:132)
+	... 30 more
+Caused by: com.android.build.gradle.tasks.ResourceException: C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.K.a.i-Emergence_IdentityModel\app\src\main\res\drawable\Sentinelgate.png: Error: 'S' is not a valid file-based resource name character: File-based resource names must contain only lowercase a-z, 0-9, or underscore
+	at com.android.build.gradle.tasks.MergeResources.doFullTaskAction(MergeResources.kt:331)
+	at com.android.build.gradle.tasks.MergeResources.doTaskAction(MergeResources.kt:406)
+	... 132 more
+Caused by: C:\Users\Wehtt\AndroidStudioProjects\A.u.r.a.K.a.i-Emergence_IdentityModel\app\src\main\res\drawable\Sentinelgate.png: Error: 'S' is not a valid file-based resource name character: File-based resource names must contain only lowercase a-z, 0-9, or underscore
+	at com.android.ide.common.resources.MergingException.throwIfNonEmpty(MergingException.java:170)
+	at com.android.ide.common.resources.DataSet.loadFromFiles(DataSet.java:272)
+	at com.android.ide.common.resources.DataSet.loadFromFiles(DataSet.java:243)
+	at com.android.build.gradle.tasks.MergeResources$doFullTaskAction$1$1$1.invoke(MergeResources.kt:281)
+	at com.android.build.gradle.internal.tasks.Blocks.recordSpan(Blocks.java:51)
+	at com.android.build.gradle.tasks.MergeResources.doFullTaskAction(MergeResources.kt:275)
+	... 133 more
+
+
+BUILD FAILED in 16s
+263 actionable tasks: 3 executed, 260 up-to-date

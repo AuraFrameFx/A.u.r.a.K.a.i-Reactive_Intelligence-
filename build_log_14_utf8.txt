@@ -1,0 +1,2772 @@
+﻿Configuration on demand is an incubating feature.
+Calculating task graph as configuration cache cannot be reused because the file system entry '.gradle\configuration-cache\0676a272-dac0-4f9e-bd86-2d0fef71f9c4\.globals.work.bin' has been removed.
+
+> Configure project :app
+WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.newDsl=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+
+> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :build-logic:compileKotlin UP-TO-DATE
+> Task :build-logic:compileJava NO-SOURCE
+> Task :build-logic:pluginDescriptors UP-TO-DATE
+> Task :build-logic:processResources UP-TO-DATE
+> Task :build-logic:classes UP-TO-DATE
+> Task :build-logic:jar UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:preBuild UP-TO-DATE
+> Task :genesis:oracledrive:preBuild UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:preBuild UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:preBuild UP-TO-DATE
+> Task :genesis:oracledrive:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:tasker:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:preBuild UP-TO-DATE
+> Task :agents:growthmetrics:progression:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:customization:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:preBuild UP-TO-DATE
+> Task :agents:growthmetrics:identity:preBuild UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:preDebugBuild UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:preDebugBuild UP-TO-DATE
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :agents:growthmetrics:tasker:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:preDebugBuild UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:preDebugBuild UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:preDebugBuild UP-TO-DATE
+> Task :genesis:oracledrive:generateDebugResources UP-TO-DATE
+> Task :app:injectCrashlyticsVersionControlInfoDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:generateDebugResources UP-TO-DATE
+> Task :app:injectCrashlyticsMappingFileIdDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:generateDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:identity:preDebugBuild UP-TO-DATE
+> Task :app:processDebugGoogleServices UP-TO-DATE
+> Task :agents:growthmetrics:tasker:generateDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:generateDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:generateDebugResources UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :aura:reactivedesign:customization:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:generateDebugResources UP-TO-DATE
+> Task :cascade:datastream:routing:preBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:generateDebugResources UP-TO-DATE
+> Task :cascade:datastream:routing:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:progression:generateDebugResources UP-TO-DATE
+> Task :cascade:datastream:delivery:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:generateDebugResources UP-TO-DATE
+> Task :cascade:datastream:delivery:preDebugBuild UP-TO-DATE
+> Task :aura:reactivedesign:customization:generateDebugResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:preBuild UP-TO-DATE
+> Task :cascade:datastream:taskmanager:preDebugBuild UP-TO-DATE
+> Task :agents:growthmetrics:identity:generateDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:datavein:preBuild UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:packageDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:datavein:preDebugBuild UP-TO-DATE
+> Task :cascade:datastream:routing:generateDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:preBuild UP-TO-DATE
+> Task :cascade:datastream:delivery:generateDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:tasker:packageDebugResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:generateDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:packageDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:preBuild UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:packageDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:preDebugBuild UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:preBuild UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:preDebugBuild UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:packageDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:customization:packageDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:preBuild UP-TO-DATE
+> Task :kai:sentinelsfortress:security:preDebugBuild UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:preDebugBuild UP-TO-DATE
+> Task :genesis:oracledrive:datavein:generateDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:processDebugNavigationResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:generateDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:generateDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:generateDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:packageDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:generateDebugResources UP-TO-DATE
+> Task :cascade:datastream:delivery:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:identity:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:progression:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:processDebugNavigationResources UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:tasker:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:processDebugNavigationResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:packageDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:packageDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:processDebugNavigationResources UP-TO-DATE
+> Task :app:packageDebugResources UP-TO-DATE
+> Task :cascade:datastream:delivery:processDebugNavigationResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:packageDebugResources UP-TO-DATE
+> Task :cascade:datastream:routing:processDebugNavigationResources UP-TO-DATE
+> Task :aura:reactivedesign:customization:processDebugNavigationResources UP-TO-DATE
+> Task :agents:growthmetrics:identity:packageDebugResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:processDebugNavigationResources UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:processDebugNavigationResources UP-TO-DATE
+> Task :cascade:datastream:routing:packageDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:packageDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:processDebugNavigationResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:processDebugNavigationResources UP-TO-DATE
+> Task :genesis:oracledrive:datavein:processDebugNavigationResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:packageDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:datavein:packageDebugResources UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:parseDebugLocalResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:processDebugNavigationResources UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:processDebugNavigationResources UP-TO-DATE
+> Task :genesis:oracledrive:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:progression:packageDebugResources UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:identity:parseDebugLocalResources UP-TO-DATE
+> Task :app:dataBindingMergeDependencyArtifactsDebug UP-TO-DATE
+> Task :agents:growthmetrics:tasker:parseDebugLocalResources UP-TO-DATE
+> Task :aura:reactivedesign:customization:parseDebugLocalResources UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:parseDebugLocalResources UP-TO-DATE
+> Task :genesis:oracledrive:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:parseDebugLocalResources UP-TO-DATE
+> Task :cascade:datastream:routing:parseDebugLocalResources UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:tasker:generateDebugRFile UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:parseDebugLocalResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:parseDebugLocalResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:parseDebugLocalResources UP-TO-DATE
+> Task :cascade:datastream:routing:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:identity:generateDebugRFile UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:generateDebugRFile UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:parseDebugLocalResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:progression:parseDebugLocalResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:parseDebugLocalResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:generateDebugRFile UP-TO-DATE
+> Task :cascade:datastream:delivery:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:generateDebugRFile UP-TO-DATE
+> Task :genesis:oracledrive:datavein:parseDebugLocalResources UP-TO-DATE
+> Task :genesis:oracledrive:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :genesis:oracledrive:compileDebugAidl NO-SOURCE
+> Task :genesis:oracledrive:rootmanagement:parseDebugLocalResources UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:generateDebugRFile UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:generateDebugRFile UP-TO-DATE
+> Task :aura:reactivedesign:customization:generateDebugRFile UP-TO-DATE
+> Task :app:generateDebugBuildConfig UP-TO-DATE
+> Task :genesis:oracledrive:generateDebugBuildConfig UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :genesis:oracledrive:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:generateDebugRFile UP-TO-DATE
+> Task :genesis:oracledrive:datavein:generateDebugRFile UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:identity:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:routing:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :agents:growthmetrics:spheregrid:javaPreCompileDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:compileDebugAidl NO-SOURCE
+> Task :agents:growthmetrics:nexusmemory:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cascade:datastream:routing:compileDebugAidl NO-SOURCE
+> Task :agents:growthmetrics:nexusmemory:generateDebugBuildConfig UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:routing:generateDebugBuildConfig UP-TO-DATE
+> Task :cascade:datastream:taskmanager:compileDebugAidl NO-SOURCE
+> Task :agents:growthmetrics:progression:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:progression:javaPreCompileDebug UP-TO-DATE
+> Task :agents:growthmetrics:tasker:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:generateDebugBuildConfig UP-TO-DATE
+> Task :agents:growthmetrics:identity:compileDebugJavaWithJavac NO-SOURCE
+> Task :aura:reactivedesign:auraslab:generateDebugBuildConfig UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:compileDebugJavaWithJavac NO-SOURCE
+> Task :aura:reactivedesign:auraslab:compileDebugAidl NO-SOURCE
+> Task :app:mergeDebugResources UP-TO-DATE
+> Task :cascade:datastream:delivery:generateDebugRFile UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :aura:reactivedesign:chromacore:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :cascade:datastream:taskmanager:javaPreCompileDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:generateDebugBuildConfig UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:javaPreCompileDebug UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :aura:reactivedesign:collabcanvas:compileDebugAidl NO-SOURCE
+> Task :cascade:datastream:routing:javaPreCompileDebug UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:javaPreCompileDebug UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:delivery:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :aura:reactivedesign:customization:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:delivery:compileDebugAidl NO-SOURCE
+> Task :cascade:datastream:delivery:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:delivery:generateDebugBuildConfig UP-TO-DATE
+> Task :genesis:oracledrive:datavein:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :aura:reactivedesign:collabcanvas:generateDebugBuildConfig UP-TO-DATE
+> Task :genesis:oracledrive:datavein:compileDebugAidl NO-SOURCE
+> Task :genesis:oracledrive:datavein:generateDebugBuildConfig UP-TO-DATE
+> Task :genesis:oracledrive:datavein:javaPreCompileDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:security:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :kai:sentinelsfortress:security:generateDebugBuildConfig UP-TO-DATE
+> Task :aura:reactivedesign:customization:compileDebugJavaWithJavac NO-SOURCE
+> Task :kai:sentinelsfortress:security:compileDebugAidl NO-SOURCE
+> Task :aura:reactivedesign:chromacore:compileDebugAidl NO-SOURCE
+> Task :kai:sentinelsfortress:security:javaPreCompileDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :agents:growthmetrics:spheregrid:compileDebugJavaWithJavac NO-SOURCE
+> Task :kai:sentinelsfortress:systemintegrity:generateDebugBuildConfig UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:javaPreCompileDebug UP-TO-DATE
+> Task :aura:reactivedesign:customization:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:compileDebugAidl NO-SOURCE
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :genesis:oracledrive:generateDebugAssets UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:javaPreCompileDebug UP-TO-DATE
+> Task :app:javaPreCompileDebug UP-TO-DATE
+> Task :genesis:oracledrive:mergeDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:identity:generateDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:generateDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:mergeDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:generateDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:mergeDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:progression:compileDebugJavaWithJavac NO-SOURCE
+> Task :agents:growthmetrics:progression:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:generateDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:identity:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:generateDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:identity:mergeDebugAssets UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:javaPreCompileDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:mergeDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:generateDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:generateDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:tasker:generateDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:mergeDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:mergeDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:mergeDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:generateDebugAssets UP-TO-DATE
+> Task :cascade:datastream:routing:generateDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:customization:generateDebugAssets UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:compileDebugJavaWithJavac NO-SOURCE
+> Task :cascade:datastream:delivery:generateDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:customization:mergeDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:tasker:mergeDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:mergeDebugAssets UP-TO-DATE
+> Task :cascade:datastream:delivery:mergeDebugAssets UP-TO-DATE
+> Task :cascade:datastream:taskmanager:generateDebugAssets UP-TO-DATE
+> Task :genesis:oracledrive:datavein:generateDebugAssets UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:generateDebugAssets UP-TO-DATE
+> Task :cascade:datastream:routing:mergeDebugAssets UP-TO-DATE
+> Task :kai:sentinelsfortress:security:generateDebugAssets UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:mergeDebugAssets UP-TO-DATE
+> Task :cascade:datastream:taskmanager:mergeDebugAssets UP-TO-DATE
+> Task :app:processDebugNavigationResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:generateDebugAssets UP-TO-DATE
+> Task :genesis:oracledrive:datavein:mergeDebugAssets UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:generateDebugAssets UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:mergeDebugAssets UP-TO-DATE
+> Task :kai:sentinelsfortress:security:mergeDebugAssets UP-TO-DATE
+> Task :app:parseDebugLocalResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:mergeDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:customization:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :app:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:identity:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :app:l8DexDesugarLibDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:processDebugJavaRes NO-SOURCE
+> Task :genesis:oracledrive:rootmanagement:processDebugJavaRes NO-SOURCE
+> Task :aura:reactivedesign:customization:processDebugJavaRes NO-SOURCE
+> Task :agents:growthmetrics:progression:processDebugJavaRes NO-SOURCE
+> Task :aura:reactivedesign:customization:createFullJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:processDebugJavaRes NO-SOURCE
+> Task :agents:growthmetrics:spheregrid:createFullJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:createFullJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:processDebugJavaRes NO-SOURCE
+> Task :app:desugarDebugFileDependencies UP-TO-DATE
+> Task :agents:growthmetrics:tasker:processDebugJavaRes NO-SOURCE
+> Task :agents:growthmetrics:metareflection:createFullJarDebug UP-TO-DATE
+> Task :genesis:oracledrive:writeDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:identity:processDebugJavaRes NO-SOURCE
+> Task :agents:growthmetrics:identity:writeDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:writeDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:writeDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:progression:writeDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:identity:createFullJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:writeDebugAarMetadata UP-TO-DATE
+> Task :app:mergeDebugAssets UP-TO-DATE
+> Task :agents:growthmetrics:tasker:writeDebugAarMetadata UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:writeDebugAarMetadata UP-TO-DATE
+> Task :app:compressDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:writeDebugAarMetadata UP-TO-DATE
+> Task :cascade:datastream:delivery:writeDebugAarMetadata UP-TO-DATE
+> Task :cascade:datastream:routing:writeDebugAarMetadata UP-TO-DATE
+> Task :aura:reactivedesign:customization:writeDebugAarMetadata UP-TO-DATE
+> Task :cascade:datastream:taskmanager:writeDebugAarMetadata UP-TO-DATE
+> Task :genesis:oracledrive:datavein:writeDebugAarMetadata UP-TO-DATE
+> Task :kai:sentinelsfortress:security:writeDebugAarMetadata UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:writeDebugAarMetadata UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:writeDebugAarMetadata UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:writeDebugAarMetadata UP-TO-DATE
+> Task :app:compileDebugNavigationResources UP-TO-DATE
+> Task :app:extractDeepLinksDebug UP-TO-DATE
+> Task :genesis:oracledrive:extractDeepLinksDebug UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:transformDebugClassesWithAsm UP-TO-DATE
+> Task :genesis:oracledrive:processDebugManifest UP-TO-DATE
+> Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :app:mapDebugSourceSetPaths UP-TO-DATE
+> Task :agents:growthmetrics:identity:extractDeepLinksDebug UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:extractDeepLinksDebug UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:extractDeepLinksDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:processDebugManifest UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:createFullJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:extractDeepLinksDebug UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:extractDeepLinksDebug UP-TO-DATE
+> Task :agents:growthmetrics:identity:processDebugManifest UP-TO-DATE
+> Task :app:dataBindingGenBaseClassesDebug UP-TO-DATE
+> Task :agents:growthmetrics:tasker:extractDeepLinksDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:processDebugManifest UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:processDebugManifest UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:extractDeepLinksDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:extractDeepLinksDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:processDebugManifest UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:extractDeepLinksDebug UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:processDebugManifest UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:processDebugManifest UP-TO-DATE
+> Task :aura:reactivedesign:customization:extractDeepLinksDebug UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:processDebugManifest UP-TO-DATE
+> Task :cascade:datastream:delivery:extractDeepLinksDebug UP-TO-DATE
+> Task :cascade:datastream:routing:extractDeepLinksDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:extractDeepLinksDebug UP-TO-DATE
+> Task :agents:growthmetrics:tasker:processDebugManifest UP-TO-DATE
+> Task :cascade:datastream:delivery:processDebugManifest UP-TO-DATE
+> Task :genesis:oracledrive:datavein:extractDeepLinksDebug UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:extractDeepLinksDebug UP-TO-DATE
+> Task :aura:reactivedesign:customization:processDebugManifest UP-TO-DATE
+> Task :kai:sentinelsfortress:security:extractDeepLinksDebug UP-TO-DATE
+> Task :cascade:datastream:routing:processDebugManifest UP-TO-DATE
+> Task :cascade:datastream:taskmanager:processDebugManifest UP-TO-DATE
+> Task :genesis:oracledrive:datavein:processDebugManifest UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:processDebugManifest UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:extractDeepLinksDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:extractDeepLinksDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:security:processDebugManifest UP-TO-DATE
+> Task :agents:growthmetrics:identity:compileDebugLibraryResources UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:compileDebugLibraryResources UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:compileDebugLibraryResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:processDebugManifest UP-TO-DATE
+> Task :genesis:oracledrive:compileDebugLibraryResources UP-TO-DATE
+> Task :agents:growthmetrics:progression:compileDebugLibraryResources UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:compileDebugLibraryResources UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:compileDebugLibraryResources UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:compileDebugLibraryResources UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:compileDebugLibraryResources UP-TO-DATE
+> Task :agents:growthmetrics:tasker:compileDebugLibraryResources UP-TO-DATE
+> Task :cascade:datastream:routing:compileDebugLibraryResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:compileDebugLibraryResources UP-TO-DATE
+> Task :aura:reactivedesign:customization:compileDebugLibraryResources UP-TO-DATE
+> Task :cascade:datastream:delivery:compileDebugLibraryResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:compileDebugLibraryResources UP-TO-DATE
+> Task :genesis:oracledrive:datavein:compileDebugLibraryResources UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:compileDebugLibraryResources UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:compileDebugLibraryResources UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:compileDebugLibraryResources UP-TO-DATE
+> Task :aura:reactivedesign:customization:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :app:mergeDebugJniLibFolders UP-TO-DATE
+> Task :genesis:oracledrive:mergeDebugJniLibFolders UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:mergeDebugJniLibFolders UP-TO-DATE
+> Task :genesis:oracledrive:mergeDebugNativeLibs NO-SOURCE
+> Task :genesis:oracledrive:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:mergeDebugNativeLibs NO-SOURCE
+> Task :agents:growthmetrics:identity:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :agents:growthmetrics:identity:mergeDebugJniLibFolders UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:mergeDebugJniLibFolders UP-TO-DATE
+> Task :agents:growthmetrics:identity:mergeDebugNativeLibs NO-SOURCE
+> Task :agents:growthmetrics:nexusmemory:mergeDebugNativeLibs NO-SOURCE
+> Task :agents:growthmetrics:nexusmemory:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :agents:growthmetrics:progression:mergeDebugJniLibFolders UP-TO-DATE
+> Task :agents:growthmetrics:identity:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :agents:growthmetrics:progression:mergeDebugNativeLibs NO-SOURCE
+> Task :agents:growthmetrics:tasker:mergeDebugJniLibFolders UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:mergeDebugJniLibFolders UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:mergeDebugJniLibFolders UP-TO-DATE
+> Task :agents:growthmetrics:progression:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :agents:growthmetrics:tasker:mergeDebugNativeLibs NO-SOURCE
+> Task :aura:reactivedesign:chromacore:mergeDebugJniLibFolders UP-TO-DATE
+> Task :agents:growthmetrics:tasker:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:mergeDebugNativeLibs NO-SOURCE
+> Task :agents:growthmetrics:spheregrid:mergeDebugNativeLibs NO-SOURCE
+> Task :agents:growthmetrics:spheregrid:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:mergeDebugJniLibFolders UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:mergeDebugNativeLibs NO-SOURCE
+> Task :aura:reactivedesign:customization:mergeDebugJniLibFolders UP-TO-DATE
+> Task :cascade:datastream:delivery:mergeDebugJniLibFolders UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :cascade:datastream:routing:mergeDebugJniLibFolders UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:mergeDebugNativeLibs NO-SOURCE
+> Task :aura:reactivedesign:customization:mergeDebugNativeLibs NO-SOURCE
+> Task :aura:reactivedesign:customization:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :cascade:datastream:routing:mergeDebugNativeLibs NO-SOURCE
+> Task :cascade:datastream:delivery:mergeDebugNativeLibs NO-SOURCE
+> Task :aura:reactivedesign:collabcanvas:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :cascade:datastream:taskmanager:mergeDebugJniLibFolders UP-TO-DATE
+> Task :cascade:datastream:routing:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :cascade:datastream:delivery:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :cascade:datastream:taskmanager:mergeDebugNativeLibs NO-SOURCE
+> Task :genesis:oracledrive:datavein:mergeDebugJniLibFolders UP-TO-DATE
+> Task :kai:sentinelsfortress:security:mergeDebugJniLibFolders UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:mergeDebugJniLibFolders UP-TO-DATE
+> Task :cascade:datastream:taskmanager:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :kai:sentinelsfortress:security:mergeDebugNativeLibs NO-SOURCE
+> Task :genesis:oracledrive:datavein:mergeDebugNativeLibs NO-SOURCE
+> Task :kai:sentinelsfortress:security:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:mergeDebugNativeLibs NO-SOURCE
+> Task :kai:sentinelsfortress:threatmonitor:mergeDebugJniLibFolders UP-TO-DATE
+> Task :genesis:oracledrive:datavein:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:mergeDebugJniLibFolders UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:mergeDebugNativeLibs NO-SOURCE
+> Task :app:validateSigningDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:mergeDebugNativeLibs NO-SOURCE
+> Task :genesis:oracledrive:rootmanagement:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :core-module:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core-module:preBuild UP-TO-DATE
+> Task :core-module:generateDebugAssets UP-TO-DATE
+> Task :core-module:preDebugBuild UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :app:writeDebugAppMetadata UP-TO-DATE
+> Task :core-module:prepareLintJarForPublish UP-TO-DATE
+> Task :core-module:compileDebugAidl NO-SOURCE
+> Task :core-module:mergeDebugJniLibFolders UP-TO-DATE
+> Task :core-module:generateDebugBuildConfig UP-TO-DATE
+> Task :core-module:mergeDebugNativeLibs NO-SOURCE
+> Task :core-module:generateDebugResources UP-TO-DATE
+> Task :core-module:stripDebugDebugSymbols NO-SOURCE
+> Task :app:checkDebugDuplicateClasses UP-TO-DATE
+> Task :core-module:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :core-module:processDebugNavigationResources UP-TO-DATE
+> Task :core-module:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :core-module:mergeDebugAssets UP-TO-DATE
+> Task :core-module:javaPreCompileDebug UP-TO-DATE
+> Task :core-module:packageDebugResources UP-TO-DATE
+> Task :core-module:checkDebugAarMetadata UP-TO-DATE
+> Task :core-module:parseDebugLocalResources UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:kspDebugKotlin UP-TO-DATE
+> Task :core-module:prepareDebugArtProfile UP-TO-DATE
+> Task :core-module:writeDebugAarMetadata UP-TO-DATE
+> Task :extendsysa:preBuild UP-TO-DATE
+> Task :extendsysa:preDebugBuild UP-TO-DATE
+> Task :cascade:datastream:routing:kspDebugKotlin UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:kspDebugKotlin UP-TO-DATE
+> Task :core-module:generateDebugRFile UP-TO-DATE
+> Task :cascade:datastream:routing:compileDebugKotlin NO-SOURCE
+> Task :extendsysa:checkDebugAarMetadata UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:kspDebugKotlin UP-TO-DATE
+> Task :genesis:oracledrive:datavein:kspDebugKotlin UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:kspDebugKotlin UP-TO-DATE
+> Task :cascade:datastream:routing:processDebugJavaRes NO-SOURCE
+> Task :extendsysa:compileDebugAidl NO-SOURCE
+> Task :genesis:oracledrive:kspDebugKotlin UP-TO-DATE
+> Task :extendsysa:mergeDebugJniLibFolders UP-TO-DATE
+> Task :extendsysa:mergeDebugNativeLibs NO-SOURCE
+> Task :cascade:datastream:routing:compileDebugJavaWithJavac UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:compileDebugKotlin NO-SOURCE
+> Task :extendsysa:stripDebugDebugSymbols NO-SOURCE
+> Task :kai:sentinelsfortress:systemintegrity:processDebugJavaRes NO-SOURCE
+> Task :genesis:oracledrive:compileDebugKotlin NO-SOURCE
+> Task :extendsysa:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :app:mergeDebugNativeLibs UP-TO-DATE
+> Task :kai:sentinelsfortress:security:kspDebugKotlin UP-TO-DATE
+> Task :app:stripDebugDebugSymbols UP-TO-DATE
+> Task :extendsysa:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :kai:sentinelsfortress:systemintegrity:compileDebugJavaWithJavac UP-TO-DATE
+> Task :extendsysa:generateDebugBuildConfig UP-TO-DATE
+> Task :genesis:oracledrive:processDebugJavaRes NO-SOURCE
+> Task :extendsysa:generateDebugResources UP-TO-DATE
+> Task :extendsysa:processDebugNavigationResources UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:kspDebugKotlin UP-TO-DATE
+> Task :extendsysa:packageDebugResources UP-TO-DATE
+> Task :genesis:oracledrive:compileDebugJavaWithJavac UP-TO-DATE
+> Task :extendsysa:parseDebugLocalResources UP-TO-DATE
+> Task :extendsysa:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :extendsysa:generateDebugAssets UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:compileDebugKotlin NO-SOURCE
+> Task :extendsysa:mergeDebugAssets UP-TO-DATE
+> Task :app:mergeExtDexDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:compileDebugKotlin UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:compileDebugKotlin UP-TO-DATE
+> Task :extendsysa:generateDebugRFile UP-TO-DATE
+> Task :cascade:datastream:routing:transformDebugClassesWithAsm UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:processDebugJavaRes NO-SOURCE
+> Task :cascade:datastream:routing:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:processDebugJavaRes UP-TO-DATE
+> Task :cascade:datastream:routing:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:transformDebugClassesWithAsm UP-TO-DATE
+> Task :genesis:oracledrive:datavein:compileDebugKotlin UP-TO-DATE
+> Task :cascade:datastream:routing:createFullJarDebug UP-TO-DATE
+> Task :genesis:oracledrive:transformDebugClassesWithAsm UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:compileDebugJavaWithJavac UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:compileDebugJavaWithJavac UP-TO-DATE
+> Task :genesis:oracledrive:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :genesis:oracledrive:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:createFullJarDebug UP-TO-DATE
+> Task :genesis:oracledrive:datavein:compileDebugJavaWithJavac UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :genesis:oracledrive:createFullJarDebug UP-TO-DATE
+> Task :genesis:oracledrive:datavein:processDebugJavaRes UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:compileDebugJavaWithJavac UP-TO-DATE
+> Task :genesis:oracledrive:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :core-module:compileDebugKotlin UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:processDebugJavaRes UP-TO-DATE
+> Task :cascade:datastream:routing:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :genesis:oracledrive:datavein:transformDebugClassesWithAsm UP-TO-DATE
+> Task :genesis:oracledrive:datavein:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :core-module:compileDebugJavaWithJavac UP-TO-DATE
+> Task :core-module:extractDebugAnnotations UP-TO-DATE
+> Task :genesis:oracledrive:datavein:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :genesis:oracledrive:datavein:createFullJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:compileDebugKotlin UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:transformDebugClassesWithAsm UP-TO-DATE
+> Task :core-module:processDebugJavaRes UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:transformDebugClassesWithAsm UP-TO-DATE
+> Task :genesis:oracledrive:datavein:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :core-module:mergeDebugJavaResource UP-TO-DATE
+> Task :core-module:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:processDebugJavaRes UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:transformDebugClassesWithAsm UP-TO-DATE
+> Task :core-module:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:createFullJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :core-module:syncDebugLibJars UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :extendsysa:prepareDebugArtProfile UP-TO-DATE
+> Task :extendsysa:prepareLintJarForPublish UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:createFullJarDebug UP-TO-DATE
+> Task :extendsysa:javaPreCompileDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:createFullJarDebug UP-TO-DATE
+> Task :extendsysa:processDebugManifest UP-TO-DATE
+> Task :extendsysa:compileDebugKotlin NO-SOURCE
+> Task :extendsysa:writeDebugAarMetadata UP-TO-DATE
+> Task :extendsysc:preBuild UP-TO-DATE
+> Task :extendsysc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsysc:preDebugBuild UP-TO-DATE
+> Task :extendsysc:generateDebugAssets UP-TO-DATE
+> Task :extendsysa:processDebugJavaRes NO-SOURCE
+> Task :extendsysc:compileDebugAidl NO-SOURCE
+> Task :extendsysa:mergeDebugJavaResource UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:compileDebugJavaWithJavac UP-TO-DATE
+> Task :extendsysc:mergeDebugJniLibFolders UP-TO-DATE
+> Task :extendsysc:generateDebugBuildConfig UP-TO-DATE
+> Task :extendsysa:compileDebugJavaWithJavac UP-TO-DATE
+> Task :cascade:datastream:taskmanager:kspDebugKotlin UP-TO-DATE
+> Task :extendsysa:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :cascade:datastream:taskmanager:compileDebugKotlin NO-SOURCE
+> Task :extendsysb:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsysb:generateDebugAssets UP-TO-DATE
+> Task :extendsysb:preBuild UP-TO-DATE
+> Task :extendsysb:preDebugBuild UP-TO-DATE
+> Task :extendsysa:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :cascade:datastream:taskmanager:processDebugJavaRes NO-SOURCE
+> Task :extendsysc:generateDebugResources UP-TO-DATE
+> Task :extendsysa:extractDebugAnnotations UP-TO-DATE
+> Task :extendsysc:processDebugNavigationResources UP-TO-DATE
+> Task :extendsysc:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :extendsysb:mergeDebugJniLibFolders UP-TO-DATE
+> Task :extendsysc:mergeDebugNativeLibs NO-SOURCE
+> Task :extendsysb:compileDebugAidl NO-SOURCE
+> Task :extendsysb:mergeDebugNativeLibs NO-SOURCE
+> Task :extendsysb:stripDebugDebugSymbols NO-SOURCE
+> Task :extendsysb:prepareLintJarForPublish UP-TO-DATE
+> Task :extendsysb:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :extendsysb:generateDebugBuildConfig UP-TO-DATE
+> Task :extendsysb:prepareDebugArtProfile UP-TO-DATE
+> Task :extendsysb:generateDebugResources UP-TO-DATE
+> Task :extendsysc:checkDebugAarMetadata UP-TO-DATE
+> Task :extendsysb:processDebugNavigationResources UP-TO-DATE
+> Task :extendsysc:stripDebugDebugSymbols NO-SOURCE
+> Task :extendsysb:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :extendsysb:javaPreCompileDebug UP-TO-DATE
+> Task :extendsysb:mergeDebugAssets UP-TO-DATE
+> Task :extendsysb:checkDebugAarMetadata UP-TO-DATE
+> Task :extendsysb:writeDebugAarMetadata UP-TO-DATE
+> Task :extendsysa:syncDebugLibJars UP-TO-DATE
+> Task :extendsysc:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :extendsysc:mergeDebugAssets UP-TO-DATE
+> Task :extendsysc:javaPreCompileDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:compileDebugJavaWithJavac UP-TO-DATE
+> Task :extendsysd:preBuild UP-TO-DATE
+> Task :extendsysd:preDebugBuild UP-TO-DATE
+> Task :extendsysc:prepareDebugArtProfile UP-TO-DATE
+> Task :extendsysb:processDebugManifest UP-TO-DATE
+> Task :extendsysc:writeDebugAarMetadata UP-TO-DATE
+> Task :extendsysa:bundleDebugAar UP-TO-DATE
+> Task :extendsysc:packageDebugResources UP-TO-DATE
+> Task :extendsysb:packageDebugResources UP-TO-DATE
+> Task :extendsysa:assembleDebug UP-TO-DATE
+> Task :extendsysd:compileDebugAidl NO-SOURCE
+> Task :extendsysd:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsysc:prepareLintJarForPublish UP-TO-DATE
+> Task :extendsysd:mergeDebugJniLibFolders UP-TO-DATE
+> Task :extendsysd:generateDebugResources UP-TO-DATE
+> Task :extendsysd:processDebugNavigationResources UP-TO-DATE
+> Task :extendsysc:parseDebugLocalResources UP-TO-DATE
+> Task :extendsysd:generateDebugAssets UP-TO-DATE
+> Task :extendsysd:generateDebugBuildConfig UP-TO-DATE
+> Task :extendsysb:parseDebugLocalResources UP-TO-DATE
+> Task :extendsysd:mergeDebugNativeLibs NO-SOURCE
+> Task :extendsysd:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :extendsysd:stripDebugDebugSymbols NO-SOURCE
+> Task :extendsysc:processDebugManifest UP-TO-DATE
+> Task :extendsysd:javaPreCompileDebug UP-TO-DATE
+> Task :extendsysc:generateDebugRFile UP-TO-DATE
+> Task :extendsysb:generateDebugRFile UP-TO-DATE
+> Task :extendsysd:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :extendsysd:prepareDebugArtProfile UP-TO-DATE
+> Task :extendsysd:processDebugManifest UP-TO-DATE
+> Task :extendsysc:compileDebugKotlin NO-SOURCE
+> Task :cascade:datastream:taskmanager:transformDebugClassesWithAsm UP-TO-DATE
+> Task :extendsyse:preBuild UP-TO-DATE
+> Task :extendsysd:writeDebugAarMetadata UP-TO-DATE
+> Task :extendsysd:prepareLintJarForPublish UP-TO-DATE
+> Task :extendsysd:packageDebugResources UP-TO-DATE
+> Task :cascade:datastream:taskmanager:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :extendsysc:processDebugJavaRes NO-SOURCE
+> Task :agents:growthmetrics:tasker:compileDebugJavaWithJavac NO-SOURCE
+> Task :agents:growthmetrics:tasker:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :extendsysb:compileDebugKotlin NO-SOURCE
+> Task :extendsysc:compileDebugJavaWithJavac UP-TO-DATE
+> Task :extendsysc:extractDebugAnnotations UP-TO-DATE
+> Task :extendsysc:mergeDebugJavaResource UP-TO-DATE
+> Task :agents:growthmetrics:tasker:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:createFullJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:tasker:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :extendsysd:checkDebugAarMetadata UP-TO-DATE
+> Task :extendsyse:preDebugBuild UP-TO-DATE
+> Task :extendsysd:parseDebugLocalResources UP-TO-DATE
+> Task :extendsysc:syncDebugLibJars UP-TO-DATE
+> Task :extendsysc:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :extendsysd:mergeDebugAssets UP-TO-DATE
+> Task :extendsysb:processDebugJavaRes NO-SOURCE
+> Task :extendsysb:compileDebugJavaWithJavac UP-TO-DATE
+> Task :extendsyse:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsyse:compileDebugAidl NO-SOURCE
+> Task :extendsyse:mergeDebugJniLibFolders UP-TO-DATE
+> Task :extendsysc:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :extendsyse:generateDebugBuildConfig UP-TO-DATE
+> Task :extendsyse:generateDebugResources UP-TO-DATE
+> Task :extendsyse:mergeDebugNativeLibs NO-SOURCE
+> Task :agents:growthmetrics:tasker:createFullJarDebug UP-TO-DATE
+> Task :extendsyse:stripDebugDebugSymbols NO-SOURCE
+> Task :extendsysd:generateDebugRFile UP-TO-DATE
+> Task :extendsyse:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :extendsysb:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :extendsysc:bundleDebugAar UP-TO-DATE
+> Task :extendsyse:generateDebugAssets UP-TO-DATE
+> Task :extendsysc:assembleDebug UP-TO-DATE
+> Task :extendsysb:extractDebugAnnotations UP-TO-DATE
+> Task :extendsyse:packageDebugResources UP-TO-DATE
+> Task :extendsyse:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :extendsyse:javaPreCompileDebug UP-TO-DATE
+> Task :extendsyse:mergeDebugAssets UP-TO-DATE
+> Task :extendsyse:processDebugNavigationResources UP-TO-DATE
+> Task :extendsysf:preBuild UP-TO-DATE
+> Task :extendsysd:compileDebugKotlin NO-SOURCE
+> Task :extendsyse:writeDebugAarMetadata UP-TO-DATE
+> Task :extendsyse:parseDebugLocalResources UP-TO-DATE
+> Task :extendsysd:processDebugJavaRes NO-SOURCE
+> Task :extendsyse:processDebugManifest UP-TO-DATE
+> Task :extendsysf:preDebugBuild UP-TO-DATE
+> Task :extendsysb:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :extendsyse:checkDebugAarMetadata UP-TO-DATE
+> Task :extendsyse:prepareDebugArtProfile UP-TO-DATE
+> Task :extendsysf:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsyse:prepareLintJarForPublish UP-TO-DATE
+> Task :extendsysf:generateDebugBuildConfig UP-TO-DATE
+> Task :extendsysf:compileDebugAidl NO-SOURCE
+> Task :extendsysf:generateDebugResources UP-TO-DATE
+> Task :extendsyse:generateDebugRFile UP-TO-DATE
+> Task :extendsysf:processDebugNavigationResources UP-TO-DATE
+> Task :extendsysf:generateDebugAssets UP-TO-DATE
+> Task :extendsysd:mergeDebugJavaResource UP-TO-DATE
+> Task :extendsysf:mergeDebugJniLibFolders UP-TO-DATE
+> Task :extendsysf:checkDebugAarMetadata UP-TO-DATE
+> Task :extendsysf:mergeDebugNativeLibs NO-SOURCE
+> Task :extendsysb:mergeDebugJavaResource UP-TO-DATE
+> Task :extendsysd:compileDebugJavaWithJavac UP-TO-DATE
+> Task :extendsysf:packageDebugResources UP-TO-DATE
+> Task :extendsysf:mergeDebugAssets UP-TO-DATE
+> Task :extendsysf:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :extendsysf:prepareDebugArtProfile UP-TO-DATE
+> Task :extendsyse:compileDebugKotlin NO-SOURCE
+> Task :aura:reactivedesign:collabcanvas:transformDebugClassesWithAsm UP-TO-DATE
+> Task :extendsysf:stripDebugDebugSymbols NO-SOURCE
+> Task :extendsysf:prepareLintJarForPublish UP-TO-DATE
+> Task :extendsysf:processDebugManifest UP-TO-DATE
+> Task :extendsysd:extractDebugAnnotations UP-TO-DATE
+> Task :extendsysf:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :extendsyse:processDebugJavaRes NO-SOURCE
+> Task :aura:reactivedesign:collabcanvas:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :extendsysb:syncDebugLibJars UP-TO-DATE
+> Task :extendsysd:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :extendsysf:parseDebugLocalResources UP-TO-DATE
+> Task :extendsyse:mergeDebugJavaResource UP-TO-DATE
+> Task :extendsyse:compileDebugJavaWithJavac UP-TO-DATE
+> Task :extendsysf:writeDebugAarMetadata UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:createFullJarDebug UP-TO-DATE
+> Task :extendsysd:syncDebugLibJars UP-TO-DATE
+> Task :core:common:preBuild UP-TO-DATE
+> Task :core:common:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:common:generateDebugAssets UP-TO-DATE
+> Task :core:common:preDebugBuild UP-TO-DATE
+> Task :core:common:compileDebugAidl NO-SOURCE
+> Task :core:data:preBuild UP-TO-DATE
+> Task :core:data:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :extendsysd:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :extendsyse:extractDebugAnnotations UP-TO-DATE
+> Task :core:common:mergeDebugJniLibFolders UP-TO-DATE
+> Task :extendsyse:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :extendsysf:generateDebugRFile UP-TO-DATE
+> Task :core:common:generateDebugBuildConfig UP-TO-DATE
+> Task :core:common:generateDebugResources UP-TO-DATE
+> Task :core:common:prepareLintJarForPublish UP-TO-DATE
+> Task :core:common:mergeDebugNativeLibs NO-SOURCE
+> Task :extendsyse:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :core:common:processDebugNavigationResources UP-TO-DATE
+> Task :core:common:javaPreCompileDebug UP-TO-DATE
+> Task :extendsyse:syncDebugLibJars UP-TO-DATE
+> Task :core:common:packageDebugResources UP-TO-DATE
+> Task :core:common:stripDebugDebugSymbols NO-SOURCE
+> Task :core:common:mergeDebugAssets UP-TO-DATE
+> Task :extendsysf:compileDebugKotlin NO-SOURCE
+> Task :core:common:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :extendsyse:bundleDebugAar UP-TO-DATE
+> Task :extendsyse:assembleDebug UP-TO-DATE
+> Task :core:common:processDebugManifest UP-TO-DATE
+> Task :core:common:parseDebugLocalResources UP-TO-DATE
+> Task :core:data:preDebugBuild UP-TO-DATE
+> Task :core:common:writeDebugAarMetadata UP-TO-DATE
+> Task :extendsysf:processDebugJavaRes NO-SOURCE
+> Task :core:common:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :core:common:prepareDebugArtProfile UP-TO-DATE
+> Task :core:data:mergeDebugJniLibFolders UP-TO-DATE
+> Task :core:data:compileDebugAidl NO-SOURCE
+> Task :extendsysf:mergeDebugJavaResource UP-TO-DATE
+> Task :core:common:generateDebugRFile UP-TO-DATE
+> Task :core:data:generateDebugBuildConfig UP-TO-DATE
+> Task :core:data:mergeDebugNativeLibs NO-SOURCE
+> Task :core:data:processDebugNavigationResources UP-TO-DATE
+> Task :core:data:generateDebugAssets UP-TO-DATE
+> Task :core:data:stripDebugDebugSymbols NO-SOURCE
+> Task :core:common:checkDebugAarMetadata UP-TO-DATE
+> Task :extendsysb:bundleDebugAar UP-TO-DATE
+> Task :extendsysb:assembleDebug UP-TO-DATE
+> Task :core:common:compileDebugKotlin NO-SOURCE
+> Task :core:data:mergeDebugAssets UP-TO-DATE
+> Task :core:data:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :core:data:prepareDebugArtProfile UP-TO-DATE
+> Task :core:data:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :extendsysd:bundleDebugAar UP-TO-DATE
+> Task :extendsysd:assembleDebug UP-TO-DATE
+> Task :core:common:processDebugJavaRes NO-SOURCE
+> Task :core:data:writeDebugAarMetadata UP-TO-DATE
+> Task :core:data:processDebugManifest UP-TO-DATE
+> Task :core:domain:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:domain:preBuild UP-TO-DATE
+> Task :core:domain:generateDebugAssets UP-TO-DATE
+> Task :core:domain:preDebugBuild UP-TO-DATE
+> Task :core:domain:prepareLintJarForPublish UP-TO-DATE
+> Task :core:data:javaPreCompileDebug UP-TO-DATE
+> Task :extendsysf:extractDebugAnnotations UP-TO-DATE
+> Task :core:common:compileDebugJavaWithJavac UP-TO-DATE
+> Task :core:domain:compileDebugAidl NO-SOURCE
+> Task :core:domain:generateDebugBuildConfig UP-TO-DATE
+> Task :core:domain:mergeDebugJniLibFolders UP-TO-DATE
+> Task :core:data:prepareLintJarForPublish UP-TO-DATE
+> Task :core:domain:generateDebugResources UP-TO-DATE
+> Task :core:common:extractDebugAnnotations UP-TO-DATE
+> Task :core:domain:processDebugNavigationResources UP-TO-DATE
+> Task :core:common:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :core:domain:mergeDebugNativeLibs NO-SOURCE
+> Task :core:domain:javaPreCompileDebug UP-TO-DATE
+> Task :core:domain:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :core:domain:stripDebugDebugSymbols NO-SOURCE
+> Task :core:common:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :core:domain:mergeDebugAssets UP-TO-DATE
+> Task :core:domain:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :core:domain:packageDebugResources UP-TO-DATE
+> Task :core:ui:preBuild UP-TO-DATE
+> Task :core:ui:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :core:ui:preDebugBuild UP-TO-DATE
+> Task :core:domain:writeDebugAarMetadata UP-TO-DATE
+> Task :core:domain:parseDebugLocalResources UP-TO-DATE
+> Task :core:domain:prepareDebugArtProfile UP-TO-DATE
+> Task :core:ui:compileDebugAidl NO-SOURCE
+> Task :core:ui:mergeDebugJniLibFolders UP-TO-DATE
+> Task :core:ui:generateDebugResources UP-TO-DATE
+> Task :core:domain:generateDebugRFile UP-TO-DATE
+> Task :core:domain:processDebugManifest UP-TO-DATE
+> Task :core:ui:generateDebugBuildConfig UP-TO-DATE
+> Task :core:ui:mergeDebugNativeLibs NO-SOURCE
+> Task :core:ui:processDebugNavigationResources UP-TO-DATE
+> Task :core:ui:generateDebugAssets UP-TO-DATE
+> Task :core:ui:packageDebugResources UP-TO-DATE
+> Task :core:ui:mergeDebugAssets UP-TO-DATE
+> Task :core:ui:javaPreCompileDebug UP-TO-DATE
+> Task :core:ui:parseDebugLocalResources UP-TO-DATE
+> Task :core:ui:stripDebugDebugSymbols NO-SOURCE
+> Task :core:ui:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :core:ui:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :core:ui:generateDebugRFile UP-TO-DATE
+> Task :core:ui:prepareLintJarForPublish UP-TO-DATE
+> Task :core:domain:compileDebugKotlin NO-SOURCE
+> Task :core:ui:prepareDebugArtProfile UP-TO-DATE
+> Task :core:domain:processDebugJavaRes NO-SOURCE
+> Task :kai:sentinelsfortress:security:compileDebugKotlin UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:writeDebugAarMetadata UP-TO-DATE
+> Task :core:domain:mergeDebugJavaResource UP-TO-DATE
+> Task :core-module:processDebugManifest UP-TO-DATE
+> Task :core:domain:compileDebugJavaWithJavac UP-TO-DATE
+> Task :kai:sentinelsfortress:security:processDebugJavaRes UP-TO-DATE
+> Task :core-module:bundleDebugAar UP-TO-DATE
+> Task :core:ui:checkDebugAarMetadata UP-TO-DATE
+> Task :core-module:assembleDebug UP-TO-DATE
+> Task :extendsysf:javaPreCompileDebug UP-TO-DATE
+> Task :core:domain:checkDebugAarMetadata UP-TO-DATE
+> Task :core:data:generateDebugResources UP-TO-DATE
+> Task :core:common:mergeDebugJavaResource UP-TO-DATE
+> Task :core:ui:compileDebugKotlin NO-SOURCE
+> Task :genesis:oracledrive:stripDebugDebugSymbols NO-SOURCE
+> Task :core:ui:writeDebugAarMetadata UP-TO-DATE
+> Task :core:ui:processDebugManifest UP-TO-DATE
+> Task :core:common:syncDebugLibJars UP-TO-DATE
+> Task :core:domain:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :genesis:oracledrive:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :core:ui:processDebugJavaRes NO-SOURCE
+> Task :kai:sentinelsfortress:security:compileDebugJavaWithJavac UP-TO-DATE
+> Task :core:domain:extractDebugAnnotations UP-TO-DATE
+> Task :core:domain:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :genesis:oracledrive:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :core:ui:mergeDebugJavaResource UP-TO-DATE
+> Task :extendsysf:compileDebugJavaWithJavac UP-TO-DATE
+> Task :core:domain:syncDebugLibJars UP-TO-DATE
+> Task :core:common:bundleDebugAar UP-TO-DATE
+> Task :core:data:checkDebugAarMetadata UP-TO-DATE
+> Task :core:common:assembleDebug UP-TO-DATE
+> Task :extendsysf:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:processDebugManifest UP-TO-DATE
+> Task :core:ui:compileDebugJavaWithJavac UP-TO-DATE
+> Task :core:domain:bundleDebugAar UP-TO-DATE
+> Task :core:domain:assembleDebug UP-TO-DATE
+> Task :extendsysf:syncDebugLibJars UP-TO-DATE
+> Task :core:ui:extractDebugAnnotations UP-TO-DATE
+> Task :core:ui:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :extendsysf:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :genesis:oracledrive:mergeDebugJavaResource UP-TO-DATE
+> Task :genesis:oracledrive:prepareDebugArtProfile UP-TO-DATE
+> Task :genesis:oracledrive:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :genesis:oracledrive:prepareLintJarForPublish UP-TO-DATE
+> Task :core:ui:syncDebugLibJars UP-TO-DATE
+> Task :agents:growthmetrics:identity:stripDebugDebugSymbols NO-SOURCE
+> Task :extendsysf:bundleDebugAar UP-TO-DATE
+> Task :genesis:oracledrive:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:identity:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :agents:growthmetrics:identity:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :agents:growthmetrics:identity:prepareDebugArtProfile UP-TO-DATE
+> Task :agents:growthmetrics:identity:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :core:ui:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :extendsysf:assembleDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:stripDebugDebugSymbols NO-SOURCE
+> Task :agents:growthmetrics:identity:prepareLintJarForPublish UP-TO-DATE
+> Task :agents:growthmetrics:identity:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :core:ui:bundleDebugAar UP-TO-DATE
+> Task :core:ui:assembleDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:prepareDebugArtProfile UP-TO-DATE
+> Task :agents:growthmetrics:identity:checkDebugAarMetadata UP-TO-DATE
+> Task :kai:sentinelsfortress:security:transformDebugClassesWithAsm UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:stripDebugDebugSymbols NO-SOURCE
+> Task :genesis:oracledrive:checkDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:identity:extractDebugAnnotations UP-TO-DATE
+> Task :cascade:datastream:delivery:kspDebugKotlin UP-TO-DATE
+> Task :agents:growthmetrics:identity:mergeDebugJavaResource UP-TO-DATE
+> Task :core:data:packageDebugResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:security:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :core:data:parseDebugLocalResources UP-TO-DATE
+> Task :kai:sentinelsfortress:security:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:prepareLintJarForPublish UP-TO-DATE
+> Task :agents:growthmetrics:identity:syncDebugLibJars UP-TO-DATE
+> Task :kai:sentinelsfortress:security:createFullJarDebug UP-TO-DATE
+> Task :cascade:datastream:delivery:compileDebugKotlin NO-SOURCE
+> Task :agents:growthmetrics:metareflection:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:mergeDebugJavaResource UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:checkDebugAarMetadata UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:compileDebugJavaWithJavac NO-SOURCE
+> Task :cascade:datastream:delivery:processDebugJavaRes NO-SOURCE
+> Task :agents:growthmetrics:nexusmemory:checkDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:identity:bundleDebugAar UP-TO-DATE
+> Task :genesis:oracledrive:extractDebugAnnotations UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:extractDebugAnnotations UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:createFullJarDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :agents:growthmetrics:identity:assembleDebug UP-TO-DATE
+> Task :genesis:oracledrive:syncDebugLibJars UP-TO-DATE
+> Task :cascade:datastream:delivery:compileDebugJavaWithJavac UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:prepareDebugArtProfile UP-TO-DATE
+> Task :agents:growthmetrics:progression:stripDebugDebugSymbols NO-SOURCE
+> Task :core:data:generateDebugRFile UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:prepareLintJarForPublish UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:mergeDebugJavaResource UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:syncDebugLibJars UP-TO-DATE
+> Task :genesis:oracledrive:bundleDebugAar UP-TO-DATE
+> Task :genesis:oracledrive:assembleDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:progression:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :agents:growthmetrics:progression:prepareDebugArtProfile UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:stripDebugDebugSymbols NO-SOURCE
+> Task :agents:growthmetrics:progression:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:progression:prepareLintJarForPublish UP-TO-DATE
+> Task :agents:growthmetrics:progression:mergeDebugJavaResource UP-TO-DATE
+> Task :agents:growthmetrics:progression:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:bundleDebugAar UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:prepareDebugArtProfile UP-TO-DATE
+> Task :agents:growthmetrics:metareflection:assembleDebug UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:prepareLintJarForPublish UP-TO-DATE
+> Task :core:data:compileDebugKotlin NO-SOURCE
+> Task :agents:growthmetrics:nexusmemory:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:tasker:stripDebugDebugSymbols NO-SOURCE
+> Task :agents:growthmetrics:spheregrid:mergeDebugJavaResource UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:checkDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:extractDebugAnnotations UP-TO-DATE
+> Task :agents:growthmetrics:tasker:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :agents:growthmetrics:tasker:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:tasker:prepareDebugArtProfile UP-TO-DATE
+> Task :agents:growthmetrics:tasker:prepareLintJarForPublish UP-TO-DATE
+> Task :agents:growthmetrics:tasker:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:tasker:extractDebugAnnotations UP-TO-DATE
+> Task :agents:growthmetrics:tasker:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:stripDebugDebugSymbols NO-SOURCE
+> Task :aura:reactivedesign:auraslab:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :app:checkDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:tasker:mergeDebugJavaResource UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:prepareDebugArtProfile UP-TO-DATE
+> Task :agents:growthmetrics:progression:checkDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:syncDebugLibJars UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:tasker:checkDebugAarMetadata UP-TO-DATE
+> Task :app:processDebugMainManifest UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:bundleDebugAar UP-TO-DATE
+> Task :agents:growthmetrics:spheregrid:assembleDebug UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:prepareLintJarForPublish UP-TO-DATE
+> Task :cascade:datastream:delivery:transformDebugClassesWithAsm UP-TO-DATE
+> Task :core:data:compileDebugJavaWithJavac UP-TO-DATE
+> Task :agents:growthmetrics:tasker:syncDebugLibJars UP-TO-DATE
+> Task :core:data:extractDebugAnnotations UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :cascade:datastream:delivery:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:checkDebugAarMetadata UP-TO-DATE
+> Task :agents:growthmetrics:tasker:bundleDebugAar UP-TO-DATE
+> Task :agents:growthmetrics:tasker:assembleDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:extractDebugAnnotations UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:stripDebugDebugSymbols NO-SOURCE
+> Task :aura:reactivedesign:chromacore:prepareDebugArtProfile UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:prepareLintJarForPublish UP-TO-DATE
+> Task :cascade:datastream:delivery:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :cascade:datastream:delivery:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:mergeDebugJavaResource UP-TO-DATE
+> Task :cascade:datastream:delivery:createFullJarDebug UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:stripDebugDebugSymbols NO-SOURCE
+> Task :core:data:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:extractDebugAnnotations UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :core:data:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:checkDebugAarMetadata UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:prepareLintJarForPublish UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:prepareDebugArtProfile UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:mergeDebugJavaResource UP-TO-DATE
+> Task :aura:reactivedesign:customization:checkDebugAarMetadata UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:checkDebugAarMetadata UP-TO-DATE
+> Task :app:mergeLibDexDebug UP-TO-DATE
+> Task :aura:reactivedesign:customization:stripDebugDebugSymbols NO-SOURCE
+> Task :aura:reactivedesign:customization:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :aura:reactivedesign:customization:prepareLintJarForPublish UP-TO-DATE
+> Task :aura:reactivedesign:customization:prepareDebugArtProfile UP-TO-DATE
+> Task :cascade:datastream:delivery:stripDebugDebugSymbols NO-SOURCE
+> Task :aura:reactivedesign:customization:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :core:data:processDebugJavaRes NO-SOURCE
+> Task :cascade:datastream:delivery:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :cascade:datastream:delivery:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :cascade:datastream:delivery:prepareDebugArtProfile UP-TO-DATE
+> Task :aura:reactivedesign:customization:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :aura:reactivedesign:customization:mergeDebugJavaResource UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:mergeDebugJavaResource UP-TO-DATE
+> Task :aura:reactivedesign:customization:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :cascade:datastream:delivery:prepareLintJarForPublish UP-TO-DATE
+> Task :cascade:datastream:delivery:mergeDebugJavaResource UP-TO-DATE
+> Task :aura:reactivedesign:customization:extractDebugAnnotations UP-TO-DATE
+> Task :cascade:datastream:routing:stripDebugDebugSymbols NO-SOURCE
+> Task :agents:growthmetrics:nexusmemory:extractDebugAnnotations UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:syncDebugLibJars UP-TO-DATE
+> Task :cascade:datastream:routing:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :cascade:datastream:routing:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :core:data:mergeDebugJavaResource UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:extractDebugAnnotations UP-TO-DATE
+> Task :cascade:datastream:delivery:checkDebugAarMetadata UP-TO-DATE
+> Task :cascade:datastream:delivery:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:extractDebugAnnotations UP-TO-DATE
+> Task :cascade:datastream:delivery:extractDebugAnnotations UP-TO-DATE
+> Task :cascade:datastream:delivery:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :agents:growthmetrics:progression:syncDebugLibJars UP-TO-DATE
+> Task :app:processDebugManifest UP-TO-DATE
+> Task :cascade:datastream:delivery:syncDebugLibJars UP-TO-DATE
+> Task :aura:reactivedesign:customization:syncDebugLibJars UP-TO-DATE
+> Task :cascade:datastream:routing:checkDebugAarMetadata UP-TO-DATE
+> Task :cascade:datastream:routing:extractDebugAnnotations UP-TO-DATE
+> Task :cascade:datastream:routing:prepareDebugArtProfile UP-TO-DATE
+> Task :aura:reactivedesign:customization:bundleDebugAar UP-TO-DATE
+> Task :aura:reactivedesign:customization:assembleDebug UP-TO-DATE
+> Task :cascade:datastream:routing:prepareLintJarForPublish UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:syncDebugLibJars UP-TO-DATE
+> Task :cascade:datastream:routing:mergeDebugJavaResource UP-TO-DATE
+> Task :cascade:datastream:routing:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :cascade:datastream:taskmanager:stripDebugDebugSymbols NO-SOURCE
+> Task :cascade:datastream:taskmanager:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :cascade:datastream:routing:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :cascade:datastream:delivery:bundleDebugAar UP-TO-DATE
+> Task :cascade:datastream:delivery:assembleDebug UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:bundleDebugAar UP-TO-DATE
+> Task :agents:growthmetrics:progression:bundleDebugAar UP-TO-DATE
+> Task :aura:reactivedesign:collabcanvas:assembleDebug UP-TO-DATE
+> Task :agents:growthmetrics:progression:assembleDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:mergeDebugJavaResource UP-TO-DATE
+> Task :core:data:syncDebugLibJars UP-TO-DATE
+> Task :app:processDebugManifestForPackage UP-TO-DATE
+> Task :genesis:oracledrive:datavein:stripDebugDebugSymbols NO-SOURCE
+> Task :aura:reactivedesign:auraslab:bundleDebugAar UP-TO-DATE
+> Task :genesis:oracledrive:datavein:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :aura:reactivedesign:auraslab:assembleDebug UP-TO-DATE
+> Task :genesis:oracledrive:datavein:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:syncDebugLibJars UP-TO-DATE
+> Task :cascade:datastream:taskmanager:extractDebugAnnotations UP-TO-DATE
+> Task :genesis:oracledrive:datavein:prepareLintJarForPublish UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:syncDebugLibJars UP-TO-DATE
+> Task :cascade:datastream:taskmanager:checkDebugAarMetadata UP-TO-DATE
+> Task :core:data:bundleDebugAar UP-TO-DATE
+> Task :cascade:datastream:taskmanager:prepareLintJarForPublish UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:stripDebugDebugSymbols NO-SOURCE
+> Task :core:data:assembleDebug UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:bundleDebugAar UP-TO-DATE
+> Task :agents:growthmetrics:nexusmemory:assembleDebug UP-TO-DATE
+> Task :genesis:oracledrive:datavein:checkDebugAarMetadata UP-TO-DATE
+> Task :cascade:datastream:taskmanager:syncDebugLibJars UP-TO-DATE
+> Task :cascade:datastream:routing:syncDebugLibJars UP-TO-DATE
+> Task :cascade:datastream:taskmanager:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :cascade:datastream:taskmanager:prepareDebugArtProfile UP-TO-DATE
+> Task :cascade:datastream:taskmanager:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :cascade:datastream:routing:bundleDebugAar UP-TO-DATE
+> Task :cascade:datastream:routing:assembleDebug UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:prepareLintJarForPublish UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:bundleDebugAar UP-TO-DATE
+> Task :aura:reactivedesign:chromacore:assembleDebug UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:mergeDebugJavaResource UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :genesis:oracledrive:datavein:prepareDebugArtProfile UP-TO-DATE
+> Task :genesis:oracledrive:datavein:mergeDebugJavaResource UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :kai:sentinelsfortress:security:checkDebugAarMetadata UP-TO-DATE
+> Task :kai:sentinelsfortress:security:prepareLintJarForPublish UP-TO-DATE
+> Task :kai:sentinelsfortress:security:prepareDebugArtProfile UP-TO-DATE
+> Task :cascade:datastream:taskmanager:bundleDebugAar UP-TO-DATE
+> Task :cascade:datastream:taskmanager:assembleDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:security:mergeDebugJavaResource UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:prepareDebugArtProfile UP-TO-DATE
+> Task :genesis:oracledrive:datavein:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:security:stripDebugDebugSymbols NO-SOURCE
+> Task :kai:sentinelsfortress:systemintegrity:stripDebugDebugSymbols NO-SOURCE
+> Task :kai:sentinelsfortress:security:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:prepareLintJarForPublish UP-TO-DATE
+> Task :genesis:oracledrive:datavein:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:extractDebugAnnotations UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:checkDebugAarMetadata UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:stripDebugDebugSymbols NO-SOURCE
+> Task :kai:sentinelsfortress:systemintegrity:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :kai:sentinelsfortress:security:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:prepareDebugArtProfile UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :kai:sentinelsfortress:security:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:checkDebugAarMetadata UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :kai:sentinelsfortress:security:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:prepareDebugArtProfile UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:prepareLintJarForPublish UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:extractDebugAnnotations UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:mergeDebugJavaResource UP-TO-DATE
+> Task :genesis:oracledrive:datavein:extractDebugAnnotations UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:syncDebugLibJars UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:mergeDebugJavaResource UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:checkDebugAarMetadata UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:bundleDebugAar UP-TO-DATE
+> Task :genesis:oracledrive:rootmanagement:assembleDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:syncDebugLibJars UP-TO-DATE
+> Task :genesis:oracledrive:datavein:syncDebugLibJars UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:bundleDebugAar UP-TO-DATE
+> Task :kai:sentinelsfortress:systemintegrity:assembleDebug UP-TO-DATE
+> Task :genesis:oracledrive:datavein:bundleDebugAar UP-TO-DATE
+> Task :genesis:oracledrive:datavein:assembleDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:extractDebugAnnotations UP-TO-DATE
+> Task :kai:sentinelsfortress:security:extractDebugAnnotations UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:syncDebugLibJars UP-TO-DATE
+> Task :kai:sentinelsfortress:security:syncDebugLibJars UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:bundleDebugAar UP-TO-DATE
+> Task :kai:sentinelsfortress:threatmonitor:assembleDebug UP-TO-DATE
+> Task :kai:sentinelsfortress:security:bundleDebugAar UP-TO-DATE
+> Task :kai:sentinelsfortress:security:assembleDebug UP-TO-DATE
+> Task :app:processDebugResources UP-TO-DATE
+> Task :app:kspDebugKotlin
+> Task :app:compileDebugKotlin
+./gradlew : e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emerge
+nce_IdentityModel/app/src/main/java/dev/aurakai/auraframefx/api/client/apis/AIAg
+entsApi.kt:20:58 Unresolved reference 'request'.
+At line:1 char:1
++ ./gradlew assembleDebug > build_log_14.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (e: file:///C:/U...ence 'request'.: 
+   String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/api/client/apis/AIAgentsApi.kt:1
+07:16 Unresolved reference 'request'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/api/client/apis/TasksApi.kt:114:
+16 None of the following candidates is applicable:
+static fun request(p0: PixelCopy.Request, p1: Executor, p2: 
+Consumer<PixelCopy.Result!>): Unit
+static fun request(p0: Surface, p1: Bitmap, p2: 
+PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
+static fun request(p0: Surface, p1: Rect?, p2: Bitmap, p3: 
+PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
+static fun request(p0: SurfaceView, p1: Bitmap, p2: 
+PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
+static fun request(p0: SurfaceView, p1: Rect?, p2: Bitmap, p3: 
+PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
+static fun request(p0: Window, p1: Bitmap, p2: 
+PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
+static fun request(p0: Window, p1: Rect?, p2: Bitmap, p3: 
+PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/api/client/apis/TasksApi.kt:203:
+16 None of the following candidates is applicable:
+static fun request(p0: PixelCopy.Request, p1: Executor, p2: 
+Consumer<PixelCopy.Result!>): Unit
+static fun request(p0: Surface, p1: Bitmap, p2: 
+PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
+static fun request(p0: Surface, p1: Rect?, p2: Bitmap, p3: 
+PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
+static fun request(p0: SurfaceView, p1: Bitmap, p2: 
+PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
+static fun request(p0: SurfaceView, p1: Rect?, p2: Bitmap, p3: 
+PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
+static fun request(p0: Window, p1: Bitmap, p2: 
+PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
+static fun request(p0: Window, p1: Rect?, p2: Bitmap, p3: 
+PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/api/client/models/AgentStatus.kt
+:18:39 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/api/client/models/AgentStatus.kt
+:38:20 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:138:18 
+Return type mismatch: expected 'Map<String, Any?>', actual 'Map<AgentType, 
+String>'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:139:60 
+Unresolved reference 'toMutableStateMap'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:146:29 
+Argument type mismatch: actual type is 'HierarchyAgentConfig', but 'AgentType' 
+was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:149:17 
+Unresolved reference 'Timber'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:213:51 Type 
+inference failed. The value of the type parameter 'T' must be mentioned in 
+input types (argument types, receiver type, or expected type). Try to specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:259:53 
+Assignment type mismatch: actual type is 'HierarchyAgentConfig', but 
+'AgentType?' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:299:21 
+Incompatible types 'HierarchyAgentConfig' and 'AgentType'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:300:21 
+Incompatible types 'HierarchyAgentConfig' and 'AgentType'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:301:21 
+Incompatible types 'HierarchyAgentConfig' and 'AgentType'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:302:21 
+Incompatible types 'HierarchyAgentConfig' and 'AgentType'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:306:27 Type 
+inference failed. The value of the type parameter 'K' must be mentioned in 
+input types (argument types, receiver type, or expected type). Try to specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:334:38 
+Unresolved reference 'currentAgentType'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:399:14 
+Unresolved reference 'clickable'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:524:34 
+Unresolved reference 'animateItemPlacement'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:603:36 
+Unresolved reference 'value'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:614:25 
+Unresolved reference 'value'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:614:41 
+Cannot infer type for value parameter 'task'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HomeScreen.kt:14:37 
+Unresolved reference 'animations'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HomeScreen.kt:119:26 
+Overload resolution ambiguity between candidates:
+fun Modifier.cyberEdgeGlow(): Modifier
+fun Modifier.cyberEdgeGlow(): Modifier
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HomeScreen.kt:272:26 
+Overload resolution ambiguity between candidates:
+fun Modifier.digitalGlitchEffect(): Modifier
+fun Modifier.digitalGlitchEffect(): Modifier
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HomeScreen.kt:346:9 No 
+value passed for parameter 'onClick'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenCustomizer.kt:
+258:16 Null cannot be a value of a non-null type 'Unit'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:42:2
+9 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:42:7
+7 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:52:2
+8 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:54:2
+9 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:54:7
+7 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:64:2
+8 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:66:2
+9 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:66:7
+8 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:120:
+17 Unresolved reference 'AuraSparkleButton'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:124:
+21 @Composable invocations can only happen from the context of a @Composable 
+function
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:127:
+47 @Composable invocations can only happen from the context of a @Composable 
+function
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsCustomizer.
+kt:75:38 Unresolved reference 'RECTANGLE'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsCustomizer.
+kt:156:84 Unresolved reference 'RECTANGLE'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:4
+2:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:4
+4:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:4
+4:79 Argument type mismatch: actual type is 'Exception', but 'String' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:6
+4:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:6
+7:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:6
+7:76 Argument type mismatch: actual type is 'Exception', but 'String' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:7
+7:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:7
+9:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:7
+9:81 Argument type mismatch: actual type is 'Exception', but 'String' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/TrinityUiState.kt:4:44 
+Unresolved reference 'Theme'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/TrinityUiState.kt:40:35 
+Unresolved reference 'Theme'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/TrinityUiState.kt:40:44 
+Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/billing/BillingManager.kt:63:36 
+No value passed for parameter 'p0'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/billing/SubscriptionScreen.kt:51
+:13 This material API is experimental and is likely to change or to be removed 
+in the future.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:3:
+39 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:14
+:16 Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+annotate type or property with @Contextual
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:14
+:16 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:29
+:27 Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+annotate type or property with @Contextual
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:29
+:27 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:29
+:54 Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/pipeline/AIPipelineProce
+ssor.kt:93:27 Argument type mismatch: actual type is 'Unit', but 'String' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/pipeline/AIPipelineProce
+ssor.kt:417:48 Only safe (?.) or non-null asserted (!!.) calls are allowed on a 
+nullable receiver of type 'AgentType?'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/pipeline/AIPipelineProce
+ssor.kt:429:9 Function 'generateText' must have a body.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityCoordinat
+orService.kt:63:42 Unresolved reference 'activateFusion'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityCoordinat
+orService.kt:133:28 Too many arguments for 'suspend fun processRequest(request: 
+AiRequest): Flow<AgentResponse>'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityCoordinat
+orService.kt:161:28 Too many arguments for 'suspend fun processRequest(request: 
+AiRequest): Flow<AgentResponse>'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityCoordinat
+orService.kt:198:45 Unresolved reference 'activateFusion'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityNav.kt:7:
+35 Unresolved reference 'trinity'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityNav.kt:20
+:13 Unresolved reference 'TrinityScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
+y.kt:15:48 Unresolved reference 'UserData'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
+y.kt:20:18 Argument type mismatch: actual type is 'Result<uninferred T (of fun 
+<T> failure)>', but 'Result<ERROR CLASS: Symbol not found for UserData>' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
+y.kt:20:25 Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
+y.kt:25:65 Unresolved reference 'AgentStatus'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
+y.kt:30:18 Argument type mismatch: actual type is 'Result<uninferred T (of fun 
+<T> failure)>', but 'Result<ERROR CLASS: Symbol not found for AgentStatus>' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
+y.kt:30:25 Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
+y.kt:34:65 Unresolved reference 'AgentRequest'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
+y.kt:34:93 Unresolved reference 'AgentResponse'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
+y.kt:39:18 Argument type mismatch: actual type is 'Result<uninferred T (of fun 
+<T> failure)>', but 'Result<ERROR CLASS: Symbol not found for AgentResponse>' 
+was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
+y.kt:39:25 Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:31:39 Unresolved reference 'Error'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:32:59 Unresolved reference 'Error'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:32:66 Unresolved reference 'message'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:60:31 Unresolved reference 'Loading'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:71:31 Unresolved reference 'Error'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:76:31 Unresolved reference 'Processing'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:91:31 Unresolved reference 'Success'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:101:41 Argument type mismatch: actual type is 'UserData?', but 'User?' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:188:56 Unresolved reference 'AgentResponse'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:189:36 Unresolved reference 'status'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:220:35 Unresolved reference 'status'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:226:24 Unresolved reference 'message'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:228:35 Unresolved reference 'message'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:273:60 Unresolved reference 'AgentResponse'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:292:33 Unresolved reference 'message'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:297:26 Unresolved reference 'timestamp'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
+:299:37 Unresolved reference 'timestamp'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityViewModel
+.kt:36:48 No parameter with name 'role' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/conference/ConferenceRoom.kt:18:
+39 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/conference/ConferenceRoom.kt:45:
+23 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/conference/ConferenceRoom.kt:49:
+59 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/conference/ConferenceRoomCreateR
+equest.kt:18:39 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/conference/ConferenceRoomCreateR
+equest.kt:39:28 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/conference/ConferenceRoomJoinReq
+uest.kt:18:39 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/conference/ConferenceRoomJoinReq
+uest.kt:34:20 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/conference/ConferenceRoomLeaveRe
+quest.kt:18:39 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/conference/ConferenceRoomLeaveRe
+quest.kt:34:20 Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:3:42 
+Unresolved reference 'CanonicalMemoryItem'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:4:39 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:14:43 
+Unresolved reference 'CanonicalMemoryItem'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:14:66 
+Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:19:27 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:19:62 
+Cannot infer type for type parameter 'K'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:19:62 
+Cannot infer type for type parameter 'V'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:27:16 
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+annotate type or property with @Contextual
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:27:16 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:39:27 
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+annotate type or property with @Contextual
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:39:27 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:39:54 
+Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/data/DataStoreManager.kt:325:30 
+Public-API inline function cannot access non-public-API property.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/data/DataStoreManager.kt:337:17 
+Public-API inline function cannot access non-public-API property.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/data/DataStoreManager.kt:351:21 
+Public-API inline function cannot access non-public-API property.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/ChatBubble.kt:175:89 
+Unresolved reference 'ArrowBack'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/ChatBubble.kt:232:85 
+Unresolved reference 'Send'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/EmbodimentEngine.kt:4
+39:23 Unresolved reference 'milliseconds'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WalkingDemo.kt:207:23
+ Unresolved reference 'WALKING_AURA'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WalkingDemo.kt:209:23
+ Unresolved reference 'WALKING_AURA'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WalkingDemo.kt:211:23
+ Unresolved reference 'WALKING_AURA'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WalkingDemo.kt:213:23
+ Unresolved reference 'WALKING_AURA'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
+92:19 'when' expression must be exhaustive. Add the 'MAINTENANCE' branch or an 
+'else' branch.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
+190:41 Cannot access 'val bounds: ScreenBounds': it is private in 
+'dev.aurakai.auraframefx.embodiment.WanderingPathGenerator'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
+191:42 Cannot access 'val bounds: ScreenBounds': it is private in 
+'dev.aurakai.auraframefx.embodiment.WanderingPathGenerator'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
+231:37 Unresolved reference 'tween'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
+231:71 Unresolved reference 'FastOutSlowInEasing'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
+239:37 Unresolved reference 'tween'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
+239:71 Unresolved reference 'FastOutSlowInEasing'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WorkingBehaviors.kt:3
+71:32 'fun launch(context: CoroutineContext = ..., start: CoroutineStart = ..., 
+block: suspend CoroutineScope.() -> Unit): Job' is deprecated. 'launch' can not 
+be called without the corresponding coroutine scope. Consider wrapping 'launch' 
+in 'coroutineScope { }', using 'runBlocking { }', or using some other 
+'CoroutineScope'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WorkingBehaviors.kt:3
+72:32 'fun launch(context: CoroutineContext = ..., start: CoroutineStart = ..., 
+block: suspend CoroutineScope.() -> Unit): Job' is deprecated. 'launch' can not 
+be called without the corresponding coroutine scope. Consider wrapping 'launch' 
+in 'coroutineScope { }', using 'runBlocking { }', or using some other 
+'CoroutineScope'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/behaviors/WelcomeAndC
+oordination.kt:150:34 Unresolved reference 'MovementBehavior'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/behaviors/WelcomeAndC
+oordination.kt:151:20 Unresolved reference 'MovementBehavior'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/cutscenes/AnnoyanceSc
+enes.kt:63:23 Unresolved reference 'MovementBehavior'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/cutscenes/AnnoyanceSc
+enes.kt:107:38 Unresolved reference 'INTERFACE_PANEL'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/cutscenes/AnnoyanceSc
+enes.kt:108:54 Unresolved reference 'CENTER_RIGHT'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/cutscenes/AnnoyanceSc
+enes.kt:121:32 Unresolved reference 'MovementPresets'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/cutscenes/AnnoyanceSc
+enes.kt:185:54 Unresolved reference 'CENTER_LEFT'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/cutscenes/AnnoyanceSc
+enes.kt:190:54 Unresolved reference 'CENTER_RIGHT'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/cutscenes/AnnoyanceSc
+enes.kt:262:38 Unresolved reference 'SHIELD_CALM'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/cutscenes/AnnoyanceSc
+enes.kt:352:39 Unresolved reference 'SCIENTIST'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/cutscenes/AnnoyanceSc
+enes.kt:422:69 Unresolved reference 'MovementBehavior'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/retrobackdrop/MegaMan
+BackdropRenderer.kt:20:32 Unresolved reference 'romtools'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/retrobackdrop/MegaMan
+BackdropRenderer.kt:40:24 Unresolved reference 'OperationProgress'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/retrobackdrop/MegaMan
+BackdropRenderer.kt:57:39 Unresolved reference 'progress'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/iconify/IconPicker.kt:507:40 
+Unresolved reference 'selectedIcon'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/iconify/IconPicker.kt:509:33 
+Unresolved reference 'selectedIcon'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskExecutionModel.kt:4:39 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskExecutionModel.kt:14:16 
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+annotate type or property with @Contextual
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskExecutionModel.kt:14:16 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:3:39 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:15:21 
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+annotate type or property with @Contextual
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:15:21 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:15:47 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskScheduleRequest.kt:18:39
+ Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskScheduleRequest.kt:41:20
+ Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/system/UnifiedLoggingSystem.
+kt:81:33 Unresolved reference 'getCurrentSessionId'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:4:39 
+Unresolved reference 'SystemStates'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:24:43 
+Unresolved reference 'ACTIVE'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:112:30 
+Unresolved reference 'ACTIVE'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:149:30 
+Unresolved reference 'ACTIVE'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:186:30 
+Unresolved reference 'EVOLVING'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:224:30 
+Unresolved reference 'ACTIVE'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:260:30 
+Unresolved reference 'ACTIVE'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentTypes.kt:28:15 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentTypes.kt:39:22 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentTypes.kt:40:27 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/ErrorModel.kt:3:39 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/ErrorModel.kt:13:16 
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+annotate type or property with @Contextual
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/ErrorModel.kt:13:16 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/HistoricalTask.kt:12:20 
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+annotate type or property with @Contextual
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/HistoricalTask.kt:12:20 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/OrchestrationResponse.kt:
+38:43 Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
+AgentMessage'. To use context serializer as fallback, explicitly annotate type 
+or property with @Contextual
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/OrchestrationResponse.kt:
+38:55 Unresolved reference 'AgentMessage'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/SerializationModule.kt:19
+:5 Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/SerializationModule.kt:19
+:37 Unresolved reference 'serializer'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/SerializationModule.kt:20
+:5 Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/SerializationModule.kt:20
+:42 Unresolved reference 'serializer'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/lsposed/ThemeModule.kt:30
+:50 Unresolved reference 'DynamicResource'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/lsposed/ThemeModule.kt:31
+:21 'getValue' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/lsposed/ThemeModule.kt:56
+:58 Unresolved reference 'DynamicResource'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/models/lsposed/ThemeModule.kt:57
+:29 'getValue' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:9:43 
+Unresolved reference 'AiChatScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:12:43 
+Unresolved reference 'ProfileScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:70:28 
+No parameter with name 'navController' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:70:28 
+No value passed for parameter 'onBack'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:82:13 
+Unresolved reference 'AiChatScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:88:13 
+Unresolved reference 'ProfileScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:101:48
+ Unresolved reference 'oracledrive'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:136:86
+ Unresolved reference 'title'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/ConferenceRoomScreen.
+kt:84:45 @Composable invocations can only happen from the context of a 
+@Composable function
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/ConferenceRoomScreen.
+kt:89:45 @Composable invocations can only happen from the context of a 
+@Composable function
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/ConferenceRoomScreen.
+kt:94:45 @Composable invocations can only happen from the context of a 
+@Composable function
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/ConferenceRoomScreen.
+kt:197:14 Expression 'weight' of type 'Float' cannot be invoked as a function. 
+Function 'invoke()' is not found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/GenesisNavigation.kt:
+105:13 Unresolved reference 'AgentManagementScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/GenesisNavigation.kt:
+112:13 Unresolved reference 'AgentAdvancementScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/GenesisNavigation.kt:
+133:13 Unresolved reference 'AIFeaturesScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/GenesisNavigation.kt:
+139:13 Unresolved reference 'FusionModeScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/GenesisNavigation.kt:
+147:13 Unresolved reference 'EvolutionTreeScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/GenesisNavigation.kt:
+199:13 Unresolved reference 'AurakaiEcoSysScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/GenesisNavigation.kt:
+200:41 Cannot infer type for value parameter 'feature'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/GenesisNavigation.kt:
+212:13 Unresolved reference 'SettingsScreen'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/NavHost.kt:36:17 No 
+parameter with name 'onContinue' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/network/AuraApiService.kt:3:35 
+Unresolved reference 'config'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/network/AuraApiService.kt:24:32 
+Unresolved reference 'AIConfig'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/network/KtorClient.kt:35:13 
+Unresolved reference 'header'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/network/KtorClient.kt:36:13 
+Unresolved reference 'header'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/FileOperationUtils.k
+t:3:20 Unresolved reference 'genesis'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/FileOperationUtils.k
+t:4:20 Unresolved reference 'genesis'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/FileOperationUtils.k
+t:16:26 Unresolved reference 'Logger'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/FileOperationUtils.k
+t:94:23 Unresolved reference 'PerformanceMonitor'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/FileOperationUtils.k
+t:147:36 Unsupported escape sequence.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/SecureFileManager.kt
+:51:42 No value passed for parameter 'keyAlias'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/SecureFileManager.kt
+:95:58 No value passed for parameter 'keyAlias'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/ClaudeAIS
+ervice.kt:334:73 Cannot access 'val CACHE_TTL_MS: Long': it is private in 
+'dev.aurakai.auraframefx.ai.services.ClaudeAIService.Companion'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:61:4 'contextManager' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:66:4 Unresolved reference 'BaseAgent'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:68:4 'agentName' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:69:4 'agentType' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:222:58 Unresolved reference 'content'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:358:38 Unresolved reference 'generateContent'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:682:37 Argument type mismatch: actual type is 'String', but 'Boolean' 
+was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:682:48 Argument type mismatch: actual type is 'Float', but 'Map<String, 
+Any>' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:682:54 Argument type mismatch: actual type is 'String', but 'Long' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:840:30 Unresolved reference 'content'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1050:24 No value passed for parameter 'from'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1058:24 Argument type mismatch: actual type is 'AgentType', but 
+'String?' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1059:24 Argument type mismatch: actual type is 'Long', but 'String' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1060:24 Argument type mismatch: actual type is 'Float', but 'Int' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1079:24 No value passed for parameter 'from'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1087:24 Argument type mismatch: actual type is 'AgentType', but 
+'String?' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1088:24 Argument type mismatch: actual type is 'Long', but 'String' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1089:24 Argument type mismatch: actual type is 'Float', but 'Int' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1101:16 No value passed for parameter 'from'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1412:4 'iRequest' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1417:20 No parameter with name 'content' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1419:20 No value passed for parameter 'query'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1428:4 'iRequest' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1441:4 'initializeAdaptiveProtection' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1453:4 'addToScanHistory' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1462:4 'analyzeSecurity' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1462:55 Unresolved reference 'ActiveThreat'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+ent.kt:1466:15 Cannot infer type for type parameter 'T'. Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:7:40 Unresolved reference 'HistoricalTask'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:42:54 Unresolved reference 'HistoricalTask'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:42:71 Cannot infer type for type parameter 'T'. Specify it 
+explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:42:71 Argument type mismatch: actual type is 'List<uninferred T 
+(of fun <T> emptyList)>', but 'List<ERROR CLASS: Symbol not found for 
+HistoricalTask>' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:43:37 Unresolved reference 'HistoricalTask'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:54:17 No parameter with name 'role' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:54:34 Unresolved reference 'HIVE_MIND'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:55:42 Unresolved reference 'MASTER'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:60:17 No parameter with name 'role' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:60:34 Unresolved reference 'ANALYTICS'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:61:42 Unresolved reference 'BRIDGE'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:66:17 No parameter with name 'role' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:66:34 Unresolved reference 'CREATIVE'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:67:42 Unresolved reference 'AUXILIARY'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:72:17 No parameter with name 'role' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:72:34 Unresolved reference 'SECURITY'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:73:42 Unresolved reference 'AUXILIARY'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:91:46 'when' expression must be exhaustive. Add the 'CLAUDE', 
+'AURA_SHIELD', 'GEN_KIT_MASTER', 'DATAVEIN_CONSTRUCTOR' branches or an 'else' 
+branch.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:97:31 Unresolved reference 'AURASHIELD'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:120:17 'when' expression must be exhaustive. Add the 'CLAUDE', 
+'AURA_SHIELD', 'GEN_KIT_MASTER', 'DATAVEIN_CONSTRUCTOR' branches or an 'else' 
+branch.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:126:31 Unresolved reference 'AURASHIELD'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:130:17 'when' expression must be exhaustive. Add the 'CLAUDE', 
+'AURA_SHIELD', 'GEN_KIT_MASTER', 'DATAVEIN_CONSTRUCTOR' branches or an 'else' 
+branch.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:136:31 Unresolved reference 'AURASHIELD'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:177:23 Unresolved reference 'HistoricalTask'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:188:30 Cannot infer type for type parameter 'T'. Specify it 
+explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:214:42 Unresolved reference 'role'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
+entViewModel.kt:218:39 Operator '==' cannot be applied to 'Int' and 
+'AgentPriority'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:38:29 Unresolved reference 'HttpClient'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:134:35 Unresolved reference 'agentType'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:135:35 Unresolved reference 'parameters'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:136:27 Argument type mismatch: actual type is 'String', but 
+'Map<String, String>' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:140:32 Cannot infer type for type parameter 'T'. Specify it 
+explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:141:17 Cannot infer type for type parameter 'T'. Specify it 
+explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:145:23 Unresolved reference 'bodyAsText'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:154:33 No parameter with name 'requestId' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:154:53 Unresolved reference 'requestId'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:155:33 No parameter with name 'status' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:158:127 Unresolved reference 'orEmpty'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:159:33 No parameter with name 'isComplete' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:159:33 No value passed for parameter 'confidence'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:168:33 No parameter with name 'requestId' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:168:53 Unresolved reference 'requestId'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:169:33 No parameter with name 'status' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:171:33 No parameter with name 'isComplete' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:171:33 No value passed for parameter 'confidence'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:176:29 No parameter with name 'requestId' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:176:49 Unresolved reference 'requestId'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:177:29 No parameter with name 'status' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:179:29 No parameter with name 'isComplete' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:179:29 No value passed for parameter 'confidence'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:185:25 No parameter with name 'requestId' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:185:45 Unresolved reference 'requestId'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:186:25 No parameter with name 'status' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:188:25 No parameter with name 'isComplete' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:188:25 No value passed for parameter 'confidence'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:194:25 No parameter with name 'requestId' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:194:45 Unresolved reference 'requestId'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:195:25 No parameter with name 'status' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:197:25 No parameter with name 'isComplete' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:197:25 No value passed for parameter 'confidence'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:203:17 No parameter with name 'requestId' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:203:37 Unresolved reference 'requestId'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:204:17 No parameter with name 'status' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:206:17 No parameter with name 'isComplete' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:206:17 No value passed for parameter 'confidence'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:232:15 Unresolved reference 'bodyAsText'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:243:7 Unresolved reference 'mapError'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:243:18 Cannot infer type for value parameter 'error'. Specify it 
+explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:244:79 Unresolved reference 'message'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:281:75 Too many arguments for 'fun w(tag: String, message: 
+String): Unit'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:353:19 Unresolved reference 'bodyAsText'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
+idgeService.kt:369:20 Unresolved reference 'close'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+okEntry.kt:26:19 Unresolved reference 'BuildConfig'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+okEntry.kt:38:39 Argument type mismatch: actual type is 'PackageParam', but 
+'YukiBaseHooker' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+okEntry.kt:45:35 Argument type mismatch: actual type is 'PackageParam', but 
+'YukiBaseHooker' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+okEntry.kt:52:39 Argument type mismatch: actual type is 'PackageParam', but 
+'YukiBaseHooker' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+okEntry.kt:59:37 Argument type mismatch: actual type is 'PackageParam', but 
+'YukiBaseHooker' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+oks.kt:89:1 Class 'GenesisZygoteHooks' is not abstract and does not implement 
+abstract base class member:
+fun onHook(): Unit
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+oks.kt:99:45 Unresolved reference 'applicationInfo'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+oks.kt:155:1 Class 'GenesisSelfHooks' is not abstract and does not implement 
+abstract base class member:
+fun onHook(): Unit
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+oks.kt:163:23 Argument type mismatch: actual type is 'Class<Any>?', but 'Any' 
+was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+oks.kt:173:38 Unresolved reference 'toPackage'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
+oks.kt:173:79 Cannot infer type for value parameter 'aiClass'. Specify it 
+explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/RealVerte
+xAIClientImpl.kt:270:50 Argument type mismatch: actual type is 'String', but 
+'SecurityEvent' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/RealVerte
+xAIClientImpl.kt:270:75 Too many arguments for 'suspend fun 
+logSecurityEvent(event: SecurityEvent): Unit'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
+udService.kt:42:31 Serializer has not been found for type 'Any'. To use context 
+serializer as fallback, explicitly annotate type or property with @Contextual
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
+udService.kt:65:34 Unresolved reference 'isSecure'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
+udService.kt:72:28 Unresolved reference 'initialize'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
+udService.kt:145:32 Argument type mismatch: actual type is 'Map<String, 
+String?>', but 'Map<String, Any>' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
+udService.kt:158:51 Unresolved reference 'analyzeImage'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
+udService.kt:298:28 Unresolved reference 'cleanup'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:36:12 Unresolved reference 'example'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:78:16 Unresolved reference 'OracleDriveControlViewModel'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:78:46 Cannot infer type for type parameter 'VM'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:81:21 Property delegate must have a 'getValue(Nothing?, 
+KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. 
+None of the following functions is applicable:
+fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:81:24 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:81:34 Unresolved reference 'isServiceConnected'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:81:53 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:82:16 Property delegate must have a 'getValue(Nothing?, 
+KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. 
+None of the following functions is applicable:
+fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:82:19 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:82:29 Unresolved reference 'status'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:82:36 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:83:24 Property delegate must have a 'getValue(Nothing?, 
+KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. 
+None of the following functions is applicable:
+fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:83:27 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:83:37 Unresolved reference 'detailedStatus'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:83:52 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:84:24 Property delegate must have a 'getValue(Nothing?, 
+KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. 
+None of the following functions is applicable:
+fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:84:27 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:84:37 Unresolved reference 'diagnosticsLog'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:84:52 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:93:19 Unresolved reference 'bindService'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:94:19 Unresolved reference 'refreshStatus'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:98:31 Unresolved reference 'unbindService'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:106:23 Unresolved reference 'refreshStatus'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveControlScreen.kt:120:23 Unresolved reference 'toggleModule'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:39:47 Unresolved reference 'listFiles'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:47:61 Cannot infer type for value parameter 'file'. 
+Specify it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:49:37 Unresolved reference 'name'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:50:37 Unresolved reference 'size'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:51:44 Unresolved reference 'timeCreated'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:53:22 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:55:57 Unresolved reference 'size'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:98:43 Unresolved reference 'uploadFile'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:145:43 Unresolved reference 'downloadFile'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:161:39 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:161:39 Cannot infer type for type parameter 'R'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:161:45 Cannot infer type for type parameter 'T'. Specify 
+it explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveRepositoryImpl.kt:204:47 Unresolved reference 'deleteFile'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:24:16 Unresolved reference 'OracleDriveViewModel'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:24:39 Cannot infer type for type parameter 'VM'. Specify it 
+explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:26:28 Property delegate must have a 'getValue(Nothing?, 
+KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. 
+None of the following functions is applicable:
+fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:26:31 Cannot infer type for type parameter 'T'. Specify it 
+explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:26:41 Unresolved reference 'consciousnessState'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:26:60 Cannot infer type for type parameter 'T'. Specify it 
+explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:48:62 Unresolved reference 'isAwake'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:52:57 Unresolved reference 'consciousnessLevel'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:56:68 Unresolved reference 'connectedAgents'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:75:60 Unresolved reference 'storageCapacity'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:95:39 Unresolved reference 'initializeConsciousness'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:97:27 Argument type mismatch: actual type is 
+'WideNavigationRailValue', but 'Boolean' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:97:47 Unresolved reference 'isAwake'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:103:39 Unresolved reference 'optimizeStorage'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:105:46 Unresolved reference 'isAwake'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
+DriveScreen.kt:112:32 Unresolved reference 'isAwake'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/screens/HomeScreen.kt:12:43 
+Cannot access 'val RowColumnParentData?.weight: Float': it is internal in file.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/security/SecurityExtensions.kt:7
+:10 Unresolved reference 'validateAccess'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:84:2
+5 Unresolved reference 'startThreatDetection'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:637:
+29 Unresolved reference 'stopThreatDetection'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/service/NeuralWhisper.kt:465:15 
+Unresolved reference 'cancel'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt:35:
+59 This type is final, so it cannot be extended.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt:44:
+9 'getOracleDriveStatus' overrides nothing.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/services/BackupService.kt:59:33 
+Inapplicable candidate(s): fun <reified W : ListenableWorker> 
+PeriodicWorkRequestBuilder(repeatInterval: Long, repeatIntervalTimeUnit: 
+TimeUnit, flexTimeInterval: Long, flexTimeIntervalUnit: TimeUnit): 
+PeriodicWorkRequest.Builder
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/services/BackupService.kt:59:60 
+Unresolved reference 'ConsciousnessBackupWorker'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/AgentChatBubble.kt:143:14 
+Unresolved reference 'graphicsLayer'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/AgentChatBubble.kt:144:17 
+Unresolved reference 'scaleX'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/AgentChatBubble.kt:145:17 
+Unresolved reference 'scaleY'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/HistoricalTask.kt:18:39 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/HistoricalTask.kt:51:20 
+Unresolved reference 'AgentCapabilityCategory'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/HologramTransition
+.kt:154:40 @Composable invocations can only happen from the context of a 
+@Composable function
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/HologramTransition
+.kt:218:25 No parameter with name 'pivotX' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/HologramTransition
+.kt:219:25 No parameter with name 'pivotY' found.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+144:38 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+152:42 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+152:67 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+166:45 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+166:61 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+171:42 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+171:67 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+181:45 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+181:61 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+189:45 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+
+> Task :app:compileDebugKotlin FAILED
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/SentienceMeter.kt:
+189:61 None of the following candidates is applicable:
+fun Dp.toPx(): Float
+fun TextUnit.toPx(): Float
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/backgrounds/DataVi
+sualizationBackground.kt:163:2 Unresolved reference 'Preview'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/colorpicker/ThemeE
+ditor.kt:16:40 Unresolved reference 'UIComponentsPreview'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/colorpicker/ThemeE
+ditor.kt:43:9 Unresolved reference 'UIComponentsPreview'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/colorpicker/ThemeE
+ditor.kt:105:21 Unresolved reference 'ColorBlendr'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/colorpicker/ThemeE
+ditor.kt:113:45 Cannot infer type for value parameter 'newColor'. Specify it 
+explicitly.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/colorpicker/ThemeE
+ditor.kt:141:16 Invalid type of annotation member.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/colorpicker/ThemeE
+ditor.kt:142:26 Invalid type of annotation member.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/colorpicker/ThemeE
+ditor.kt:143:19 Invalid type of annotation member.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/effects/ShimmerPar
+ticles.kt:168:2 Unresolved reference 'Preview'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/customization/ComponentEditor
+.kt:354:36 Argument type mismatch: actual type is 'String?', but 'String' was 
+expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/effects/CameraEffects.kt:376:
+31 Unresolved reference 'lerp'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/effects/CameraEffects.kt:380:
+25 Argument type mismatch: actual type is 'AnimationState<Float, 
+AnimationVector1D>', but 'Color' was expected.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/overlays/IconOverlay3D.kt:33:
+21 Unresolved reference 'SvgDecoder'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/overlays/IconOverlay3D.kt:398
+:21 Unresolved reference 'SvgDecoder'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/overlays/IconOverlay3D.kt:608
+:30 Unresolved reference 'crossfade'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/screens/AgentProfileScreen.kt
+:203:37 Unresolved reference 'ACTIVE'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/screens/AgentProfileScreen.kt
+:204:37 Unresolved reference 'LEARNING'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/screens/AgentProfileScreen.kt
+:205:37 Unresolved reference 'EVOLVING'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/screens/AgentProfileScreen.kt
+:210:47 Unresolved reference 'name'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/screens/EcosystemMenuScreen.k
+t:12:37 Unresolved reference 'animations'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/screens/EcosystemMenuScreen.k
+t:31:5 Unresolved reference 'HologramTransition'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/screens/EcosystemMenuScreen.k
+t:32:9 @Composable invocations can only happen from the context of a 
+@Composable function
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/screens/HolographicMenuScreen
+.kt:209:28 Unresolved reference 'random'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/screens/HolographicMenuScreen
+.kt:266:40 None of the following candidates is applicable:
+fun times(other: Byte): Int
+fun times(other: Short): Int
+fun times(other: Int): Int
+fun times(other: Long): Long
+fun times(other: Float): Float
+fun times(other: Double): Double
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/utils/Kotlin22Features.kt:47:1 
+The feature "context parameters" is experimental and should be enabled 
+explicitly. This can be done by supplying the compiler argument 
+'-Xcontext-parameters', but note that no stability guarantees are provided.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/utils/Kotlin22Features.kt:78:60 
+To call contextual declarations, specify the '-Xcontext-parameters' compiler 
+option.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/utils/Kotlin22Features.kt:132:36
+ 'fun <T> async(context: CoroutineContext = ..., start: CoroutineStart = ..., 
+block: suspend CoroutineScope.() -> T): Deferred<T>' is deprecated. 'async' can 
+not be called without the corresponding coroutine scope. Consider wrapping 
+'async' in 'coroutineScope { }', using 'runBlocking { }', or using some other 
+'CoroutineScope'.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/utils/Kotlin22Features.kt:134:33
+ To call contextual declarations, specify the '-Xcontext-parameters' compiler 
+option.
+e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
+Model/app/src/main/java/dev/aurakai/auraframefx/viewmodel/ConferenceRoomViewMode
+l.kt:129:17 No value passed for parameter 'request'.
+Kotlin build report is written to file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_IdentityModel/build/reports/kotlin-build/aurakai-reactive-intelligence-build-2025-11-25-18-07-36-0.txt
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugKotlin'.
+> A failure occurred while executing org.jetbrains.kotlin.compilerRunner.GradleC
+ompilerRunnerWithWorkers$GradleKotlinCompilerWorkAction
+   > Compilation error. See log for more details
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to generate a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 1m 26s
+883 actionable tasks: 2 executed, 881 up-to-date
+Configuration cache entry stored.
