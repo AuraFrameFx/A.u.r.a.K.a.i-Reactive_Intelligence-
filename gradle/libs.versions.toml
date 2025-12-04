@@ -66,7 +66,7 @@ android-test = "1.5.2"
 # AndroidX & Jetpack Libraries
 # ============================================================================
 # Activity Compose - Latest stable: 1.11.0, RC: 1.12.0-rc01
-activityCompose = "1.12.0"
+activityCompose = "1.12.1"
 
 # AndroidX BOM (if needed)
 androidxBom = "1.17.0"
