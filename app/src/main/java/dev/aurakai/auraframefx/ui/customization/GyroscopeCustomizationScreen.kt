@@ -1,10 +1,17 @@
 package dev.aurakai.auraframefx.ui.customization
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.*
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -14,7 +21,10 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.geometry.Size
+import androidx.compose.ui.geometry.CornerRadius
 import androidx.compose.ui.graphics.*
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.drawscope.rotate
@@ -33,9 +43,9 @@ import kotlin.math.*
  *
  * RPG-style phone customization with:
  * - 3D phone model rotates with gyroscope
+ * - Granular Component Editor for UI elements
  * - AI prompt interface for customizations
  * - Real-time visual preview
- * - Integration with ChromaCore and Theme Engine
  *
  * Tilt your phone to rotate the 3D preview!
  */
@@ -49,9 +59,12 @@ fun GyroscopeCustomizationScreen(
     val customizationState by viewModel.customizationState.collectAsState()
     val rotationAngles by viewModel.rotationAngles.collectAsState()
     val aiResponse by viewModel.aiResponse.collectAsState()
+    val components by viewModel.components.collectAsState()
+    val selectedComponent by viewModel.selectedComponent.collectAsState()
 
     var promptText by remember { mutableStateOf("") }
     var showPromptBar by remember { mutableStateOf(true) }
+    var showComponentList by remember { mutableStateOf(false) }
 
     // Start gyroscope on screen load
     LaunchedEffect(Unit) {
@@ -98,6 +111,15 @@ fun GyroscopeCustomizationScreen(
                     }
                 },
                 actions = {
+                    // Toggle Component List
+                    IconButton(onClick = { showComponentList = !showComponentList }) {
+                        Icon(
+                            Icons.Default.Layers,
+                            "Components",
+                            tint = if (showComponentList) CyberpunkPink else Color.White
+                        )
+                    }
+                    
                     // Reset rotation
                     IconButton(onClick = { viewModel.resetRotation() }) {
                         Icon(Icons.Default.RestartAlt, "Reset View", tint = CyberpunkCyan)
@@ -118,6 +140,8 @@ fun GyroscopeCustomizationScreen(
                 Phone3DPreview(
                     rotationAngles = rotationAngles,
                     customization = customizationState,
+                    components = components,
+                    selectedComponentId = selectedComponent?.id,
                     modifier = Modifier.fillMaxSize()
                 )
 
@@ -138,10 +162,49 @@ fun GyroscopeCustomizationScreen(
                         .align(Alignment.TopEnd)
                         .padding(16.dp)
                 )
+                
+                // Component List Overlay
+                AnimatedVisibility(
+                    visible = showComponentList,
+                    enter = slideInHorizontally { it },
+                    exit = slideOutHorizontally { it },
+                    modifier = Modifier
+                        .align(Alignment.CenterEnd)
+                        .fillMaxHeight()
+                        .width(250.dp)
+                        .padding(top = 16.dp, bottom = 80.dp) // Avoid overlapping bottom bar
+                ) {
+                    ComponentListPanel(
+                        components = components,
+                        selectedId = selectedComponent?.id,
+                        onSelect = { 
+                            viewModel.selectComponent(it)
+                            // If we select a component, we might want to hide the list and show the editor?
+                            // Or keep list open. Let's keep list open for now.
+                        }
+                    )
+                }
             }
 
-            // AI Prompt Interface
-            if (showPromptBar) {
+            // Bottom Area: AI Prompt OR Component Editor
+            if (selectedComponent != null) {
+                // Show Component Editor
+                Box(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(400.dp) // Fixed height for editor
+                        .background(Color(0xFF1A1A1A))
+                ) {
+                    ComponentEditor(
+                        component = selectedComponent!!,
+                        onUpdate = { viewModel.updateComponent(it) },
+                        onClose = { viewModel.selectComponent(null) },
+                        iconifyService = viewModel.iconifyService,
+                        modifier = Modifier.fillMaxSize()
+                    )
+                }
+            } else if (showPromptBar) {
+                // Show AI Prompt Bar
                 AIPromptBar(
                     promptText = promptText,
                     onPromptChange = { promptText = it },
@@ -161,12 +224,14 @@ fun GyroscopeCustomizationScreen(
 }
 
 /**
- * 3D Phone Model with Gyroscope Rotation
+ * 3D Phone Model with Gyroscope Rotation and Dynamic Components
  */
 @Composable
 fun Phone3DPreview(
     rotationAngles: RotationAngles,
     customization: CustomizationState,
+    components: List<UIComponent>,
+    selectedComponentId: String?,
     modifier: Modifier = Modifier
 ) {
     val infiniteTransition = rememberInfiniteTransition(label = "glow")
@@ -205,8 +270,8 @@ fun Phone3DPreview(
                         centerX - phoneWidth / 2 + tiltX + depthOffset,
                         centerY - phoneHeight / 2 + tiltY + depthOffset
                     ),
-                    size = androidx.compose.ui.geometry.Size(phoneWidth, phoneHeight),
-                    cornerRadius = androidx.compose.ui.geometry.CornerRadius(40f)
+                    size = Size(phoneWidth, phoneHeight),
+                    cornerRadius = CornerRadius(40f)
                 )
             }
 
@@ -222,8 +287,8 @@ fun Phone3DPreview(
                     centerX - phoneWidth / 2 + tiltX,
                     centerY - phoneHeight / 2 + tiltY
                 ),
-                size = androidx.compose.ui.geometry.Size(phoneWidth, phoneHeight),
-                cornerRadius = androidx.compose.ui.geometry.CornerRadius(40f)
+                size = Size(phoneWidth, phoneHeight),
+                cornerRadius = CornerRadius(40f)
             )
 
             // Holographic glow border
@@ -240,8 +305,8 @@ fun Phone3DPreview(
                     centerX - phoneWidth / 2 + tiltX,
                     centerY - phoneHeight / 2 + tiltY
                 ),
-                size = androidx.compose.ui.geometry.Size(phoneWidth, phoneHeight),
-                cornerRadius = androidx.compose.ui.geometry.CornerRadius(40f),
+                size = Size(phoneWidth, phoneHeight),
+                cornerRadius = CornerRadius(40f),
                 style = Stroke(width = 4f)
             )
 
@@ -253,42 +318,48 @@ fun Phone3DPreview(
                     centerX - phoneWidth / 2 + screenPadding + tiltX,
                     centerY - phoneHeight / 2 + screenPadding + tiltY
                 ),
-                size = androidx.compose.ui.geometry.Size(
+                size = Size(
                     phoneWidth - screenPadding * 2,
                     phoneHeight - screenPadding * 2
                 ),
-                cornerRadius = androidx.compose.ui.geometry.CornerRadius(30f)
+                cornerRadius = CornerRadius(30f)
             )
 
-            // Status bar
-            drawRoundRect(
-                color = customization.accentColor.copy(alpha = 0.8f),
-                topLeft = Offset(
-                    centerX - phoneWidth / 2 + screenPadding + tiltX,
-                    centerY - phoneHeight / 2 + screenPadding + tiltY
-                ),
-                size = androidx.compose.ui.geometry.Size(
-                    phoneWidth - screenPadding * 2,
-                    40f
-                ),
-                cornerRadius = androidx.compose.ui.geometry.CornerRadius(30f, 30f)
-            )
+            // Render Dynamic Components
+            // Sort by Z-Index to draw in correct order
+            components.sortedBy { it.zIndex }.forEach { component ->
+                if (!component.isVisible) return@forEach
 
-            // Navigation bar
-            drawRoundRect(
-                color = customization.accentColor.copy(alpha = 0.6f),
-                topLeft = Offset(
-                    centerX - phoneWidth / 2 + screenPadding + tiltX,
-                    centerY + phoneHeight / 2 - screenPadding - 60f + tiltY
-                ),
-                size = androidx.compose.ui.geometry.Size(
-                    phoneWidth - screenPadding * 2,
-                    60f
-                ),
-                cornerRadius = androidx.compose.ui.geometry.CornerRadius(30f)
-            )
+                val isSelected = component.id == selectedComponentId
+                
+                // Calculate position relative to center + tilt
+                val compX = centerX + component.x + tiltX
+                val compY = centerY + component.y + tiltY
+                
+                // Apply component rotation
+                rotate(degrees = component.rotation, pivot = Offset(compX + component.width/2, compY + component.height/2)) {
+                    // Background
+                    drawRoundRect(
+                        color = component.backgroundColor.copy(alpha = component.opacity),
+                        topLeft = Offset(compX, compY),
+                        size = Size(component.width * component.scale, component.height * component.scale),
+                        cornerRadius = CornerRadius(component.cornerRadius)
+                    )
+                    
+                    // Border
+                    if (component.borderWidth > 0f || isSelected) {
+                        drawRoundRect(
+                            color = if (isSelected) CyberpunkPink else component.borderColor,
+                            topLeft = Offset(compX, compY),
+                            size = Size(component.width * component.scale, component.height * component.scale),
+                            cornerRadius = CornerRadius(component.cornerRadius),
+                            style = Stroke(width = if (isSelected) 4f else component.borderWidth)
+                        )
+                    }
+                }
+            }
 
-            // Camera punch-hole
+            // Camera punch-hole (always on top)
             drawCircle(
                 color = Color(0xFF0A0A0A),
                 radius = 15f,
@@ -306,6 +377,87 @@ fun Phone3DPreview(
                 ),
                 style = Stroke(width = 1f)
             )
+        }
+    }
+}
+
+@Composable
+fun ComponentListPanel(
+    components: List<UIComponent>,
+    selectedId: String?,
+    onSelect: (String) -> Unit
+) {
+    Card(
+        colors = CardDefaults.cardColors(containerColor = Color(0xFF1A1A1A).copy(alpha = 0.95f)),
+        shape = RoundedCornerShape(topStart = 16.dp, bottomStart = 16.dp),
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Column(modifier = Modifier.padding(16.dp)) {
+            Text(
+                "LAYERS",
+                style = MaterialTheme.typography.titleMedium,
+                color = CyberpunkCyan,
+                fontWeight = FontWeight.Bold,
+                modifier = Modifier.padding(bottom = 16.dp)
+            )
+            
+            LazyColumn(
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                items(components.sortedByDescending { it.zIndex }) { component ->
+                    ComponentListItem(
+                        component = component,
+                        isSelected = component.id == selectedId,
+                        onClick = { onSelect(component.id) }
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Composable
+fun ComponentListItem(
+    component: UIComponent,
+    isSelected: Boolean,
+    onClick: () -> Unit
+) {
+    Card(
+        colors = CardDefaults.cardColors(
+            containerColor = if (isSelected) CyberpunkPink.copy(alpha = 0.2f) else Color(0xFF2A2A2A)
+        ),
+        border = if (isSelected) androidx.compose.foundation.BorderStroke(1.dp, CyberpunkPink) else null,
+        modifier = Modifier.fillMaxWidth().clickable(onClick = onClick)
+    ) {
+        Row(
+            modifier = Modifier.padding(12.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Icon(
+                imageVector = when(component.type) {
+                    ComponentType.STATUS_BAR -> Icons.Default.Wifi
+                    ComponentType.NAVIGATION_BAR -> Icons.Default.SpaceBar
+                    ComponentType.WIDGET -> Icons.Default.Widgets
+                    else -> Icons.Default.Layers
+                },
+                contentDescription = null,
+                tint = if (isSelected) CyberpunkPink else Color.Gray,
+                modifier = Modifier.size(20.dp)
+            )
+            Spacer(modifier = Modifier.width(12.dp))
+            Column {
+                Text(
+                    component.name,
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = Color.White,
+                    fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Normal
+                )
+                Text(
+                    "Z: ${component.zIndex}",
+                    style = MaterialTheme.typography.labelSmall,
+                    color = Color.Gray
+                )
+            }
         }
     }
 }

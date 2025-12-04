@@ -9,6 +9,7 @@ import dev.aurakai.auraframefx.ui.theme.CyberpunkCyan
 import dev.aurakai.auraframefx.ui.theme.CyberpunkPink
 import dev.aurakai.auraframefx.ui.theme.CyberpunkPurple
 import dev.aurakai.auraframefx.utils.GyroscopeManager
+import dev.aurakai.auraframefx.iconify.IconifyService
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -28,7 +29,8 @@ import javax.inject.Inject
 @HiltViewModel
 class CustomizationViewModel @Inject constructor(
     application: Application,
-    private val gyroscopeManager: GyroscopeManager
+    private val gyroscopeManager: GyroscopeManager,
+    val iconifyService: IconifyService // Public so UI can access it
 ) : AndroidViewModel(application) {
 
     private val _customizationState = MutableStateFlow(CustomizationState())
@@ -247,6 +249,82 @@ class CustomizationViewModel @Inject constructor(
             isProcessing = false
         )
         Timber.i("Applied custom colors: $description")
+    }
+
+    private val _components = MutableStateFlow<List<UIComponent>>(emptyList())
+    val components: StateFlow<List<UIComponent>> = _components.asStateFlow()
+
+    private val _selectedComponent = MutableStateFlow<UIComponent?>(null)
+    val selectedComponent: StateFlow<UIComponent?> = _selectedComponent.asStateFlow()
+
+    init {
+        initializeDefaultComponents()
+    }
+
+    private fun initializeDefaultComponents() {
+        _components.value = listOf(
+            UIComponent(
+                id = "status_bar",
+                name = "Status Bar",
+                type = ComponentType.STATUS_BAR,
+                y = -280f, // Relative to center
+                width = 260f,
+                height = 40f,
+                zIndex = 10,
+                backgroundColor = CyberpunkCyan.copy(alpha = 0.8f),
+                cornerRadius = 30f
+            ),
+            UIComponent(
+                id = "nav_bar",
+                name = "Navigation Bar",
+                type = ComponentType.NAVIGATION_BAR,
+                y = 250f,
+                width = 260f,
+                height = 60f,
+                zIndex = 10,
+                backgroundColor = CyberpunkPink.copy(alpha = 0.6f),
+                cornerRadius = 30f
+            ),
+            UIComponent(
+                id = "clock_widget",
+                name = "Clock Widget",
+                type = ComponentType.WIDGET,
+                y = -150f,
+                width = 200f,
+                height = 100f,
+                zIndex = 5,
+                backgroundColor = Color(0xFF1A1A1A).copy(alpha = 0.8f),
+                borderColor = CyberpunkPurple,
+                borderWidth = 2f,
+                cornerRadius = 20f
+            ),
+            UIComponent(
+                id = "app_grid",
+                name = "App Grid",
+                type = ComponentType.CUSTOM,
+                y = 50f,
+                width = 240f,
+                height = 300f,
+                zIndex = 2,
+                backgroundColor = Color.Transparent,
+                borderColor = Color.White.copy(alpha = 0.1f),
+                borderWidth = 1f,
+                cornerRadius = 10f
+            )
+        )
+    }
+
+    fun selectComponent(componentId: String?) {
+        _selectedComponent.value = _components.value.find { it.id == componentId }
+    }
+
+    fun updateComponent(updatedComponent: UIComponent) {
+        _components.value = _components.value.map {
+            if (it.id == updatedComponent.id) updatedComponent else it
+        }
+        if (_selectedComponent.value?.id == updatedComponent.id) {
+            _selectedComponent.value = updatedComponent
+        }
     }
 
     /**
