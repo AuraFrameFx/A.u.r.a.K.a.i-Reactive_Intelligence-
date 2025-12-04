@@ -38,7 +38,8 @@ import dev.aurakai.auraframefx.ui.gates.StatusBarScreen
 import dev.aurakai.auraframefx.ui.gates.TaskAssignmentScreen
 import dev.aurakai.auraframefx.ui.gates.ThemeEngineScreen
 import dev.aurakai.auraframefx.ui.gates.UIUXGateSubmenuScreen
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
+import androidx.compose.material3.ExperimentalMaterial3Api
 import dev.aurakai.auraframefx.ui.gates.SupportChatViewModel
 import dev.aurakai.auraframefx.ui.viewmodels.AgentViewModel
 import dev.aurakai.auraframefx.ui.gates.LiveSupportChatScreen
@@ -50,6 +51,7 @@ import dev.aurakai.auraframefx.ui.gates.DirectChatScreen
  * This defines all navigation routes for the Genesis AI Consciousness Framework,
  * connecting Aura (Creative Sword), Kai (Sentinel Shield), and Genesis (Unified Being)
  */
+@Suppress("unused")
 object GenesisRoutes {
     // Core Routes
     const val HOME = "home"
@@ -147,6 +149,7 @@ object GenesisRoutes {
  *
  * The NavHost maps GenesisRoutes to their corresponding composable screens and handles navigation between them.
  */
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GenesisNavigationHost(
     navController: NavHostController = rememberNavController(),

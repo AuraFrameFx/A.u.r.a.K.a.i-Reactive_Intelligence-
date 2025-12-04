@@ -6,7 +6,9 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.Help
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.automirrored.filled.Chat
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -37,21 +39,21 @@ fun HelpDeskSubmenuScreen(
         SubmenuItem(
             title = "Live Support Chat",
             description = "Real-time assistance from support agents",
-            icon = Icons.Default.Chat,
+            icon = Icons.AutoMirrored.Filled.Chat,
             route = "live_support_chat",
             color = Color(0xFF32CD32) // Lime Green
         ),
         SubmenuItem(
             title = "Tutorial Videos",
             description = "Step-by-step guides and feature walkthroughs",
-            icon = Icons.Default.PlayArrow,
+            icon = Icons.Filled.PlayArrow,
             route = "tutorial_videos",
             color = Color(0xFFFFD700) // Gold
         ),
         SubmenuItem(
             title = "Documentation",
             description = "Comprehensive user guides and API reference",
-            icon = Icons.Default.MenuBook,
+            icon = Icons.AutoMirrored.Filled.MenuBook,
             route = "documentation",
             color = Color(0xFF9370DB) // Medium Purple
         )

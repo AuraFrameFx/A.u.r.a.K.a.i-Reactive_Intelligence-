@@ -7,7 +7,11 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.automirrored.filled.ArrowForward
+import androidx.compose.material.icons.automirrored.filled.Article
+import androidx.compose.material.icons.automirrored.filled.MenuBook
+import androidx.compose.material.icons.filled.Bookmark
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -21,6 +25,7 @@ import androidx.compose.ui.unit.sp
  * Documentation Screen
  * Comprehensive user guides and API reference
  */
+@Suppress("unused")
 @Composable
 fun DocumentationScreen(
     onNavigateBack: () -> Unit = {}
@@ -156,7 +161,7 @@ fun DocumentationScreen(
             modifier = Modifier.fillMaxWidth(),
             leadingIcon = {
                 Icon(
-                    imageVector = Icons.Default.Search,
+                    imageVector = Icons.Filled.Search,
                     contentDescription = "Search",
                     tint = Color(0xFF9370DB)
                 )
@@ -282,7 +287,7 @@ fun DocumentationScreen(
                     ) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             Icon(
-                                imageVector = Icons.Default.MenuBook,
+                                imageVector = Icons.AutoMirrored.Filled.MenuBook,
                                 contentDescription = "No documents",
                                 tint = Color.White.copy(alpha = 0.5f),
                                 modifier = Modifier.size(48.dp)
@@ -335,7 +340,7 @@ fun DocumentationScreen(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Icon(
-                            imageVector = Icons.Default.Bookmark,
+                            imageVector = Icons.Filled.Bookmark,
                             contentDescription = "Quick Access",
                             tint = Color(0xFF9370DB),
                             modifier = Modifier.size(20.dp)
@@ -354,7 +359,7 @@ fun DocumentationScreen(
                             )
                         }
                         Icon(
-                            imageVector = Icons.Default.ArrowForward,
+                            imageVector = Icons.AutoMirrored.Filled.ArrowForward,
                             contentDescription = "Open",
                             tint = Color(0xFF9370DB),
                             modifier = Modifier.size(16.dp)
@@ -391,7 +396,7 @@ private fun DocumentCard(document: Document) {
         ) {
             // Document Icon
             Icon(
-                imageVector = Icons.Default.MenuBook,
+                imageVector = Icons.AutoMirrored.Filled.MenuBook,
                 contentDescription = "Document",
                 tint = document.themeColor,
                 modifier = Modifier.size(48.dp)
@@ -446,7 +451,7 @@ private fun DocumentCard(document: Document) {
                     // Page count
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         Icon(
-                            imageVector = Icons.Default.Article,
+                            imageVector = Icons.AutoMirrored.Filled.Article,
                             contentDescription = "Pages",
                             tint = Color.White.copy(alpha = 0.5f),
                             modifier = Modifier.size(14.dp)

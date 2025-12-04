@@ -45,15 +45,18 @@ import dev.aurakai.auraframefx.ui.screens.JournalPDAScreen
 import dev.aurakai.auraframefx.ui.screens.MainScreen
 import dev.aurakai.auraframefx.ui.screens.UISettingsScreen
 import dev.aurakai.auraframefx.ui.screens.WorkingLabScreen
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import dev.aurakai.auraframefx.ui.gates.LiveSupportChatScreen
 import dev.aurakai.auraframefx.ui.gates.SupportChatViewModel
+import dev.aurakai.auraframefx.ui.customization.ComponentEditor
+import dev.aurakai.auraframefx.ui.customization.ZOrderEditor
+import dev.aurakai.auraframefx.ui.identity.GenderSelectionNavigator
 
 /**
  * Main navigation graph for the AuraFrameFX app
  * All 90+ screens properly wired and functional
  */
-@ExperimentalMaterial3Api
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppNavGraph(navController: NavHostController) {
     NavHost(
@@ -250,7 +253,50 @@ fun AppNavGraph(navController: NavHostController) {
         composable(route = NavDestination.AurasLab.route) {
             AurasLabScreen(onNavigateBack = { navController.popBackStack() })
         }
+
+        // ==================== CUSTOMIZATION TOOLS ====================
+
+        composable(route = NavDestination.ComponentEditor.route) {
+            ComponentEditor(
+                component = dev.aurakai.auraframefx.ui.customization.UIComponent(
+                    id = "sample",
+                    name = "Sample Component",
+                    type = dev.aurakai.auraframefx.ui.customization.ComponentType.STATUS_BAR,
+                    x = 0f,
+                    y = 0f,
+                    width = 100f,
+                    height = 50f,
+                    rotationZ = 0f,
+                    zIndex = 0,
+                    opacity = 1f,
+                    color = androidx.compose.ui.graphics.Color.White,
+                    animation = dev.aurakai.auraframefx.ui.customization.AnimationType.NONE,
+                    isVisible = true,
+                    isLocked = false
+                ),
+                onUpdate = { /* Handle component update */ },
+                onClose = { navController.popBackStack() }
+            )
+        }
+
+        composable(route = NavDestination.ZOrderEditor.route) {
+            ZOrderEditor(
+                elements = emptyList(), // TODO: Load from customization state
+                onReorder = { /* Handle reorder */ },
+                onElementSelected = { /* Handle selection */ },
+                onClose = { navController.popBackStack() }
+            )
+        }
+
+        // ==================== IDENTITY & ONBOARDING ====================
+
+        composable(route = NavDestination.GenderSelection.route) {
+            GenderSelectionNavigator(
+                onGenderSelected = { gender ->
+                    // TODO: Save gender preference and navigate to next onboarding step
+                    navController.popBackStack()
+                }
+            )
+        }
     }
 }
-
-

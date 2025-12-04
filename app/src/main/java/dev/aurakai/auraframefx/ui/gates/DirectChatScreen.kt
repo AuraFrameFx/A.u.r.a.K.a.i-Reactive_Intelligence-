@@ -26,7 +26,9 @@ import dev.aurakai.auraframefx.ui.viewmodels.AgentViewModel
  *
  * ✨ Now powered by AgentViewModel for real agent intelligence!
  */
-context(viewModel: AgentViewModel) @Composable
+context(viewModel: AgentViewModel)
+@Suppress("UNUSED_PARAMETER")
+@Composable
 fun DirectChatScreen(
     onNavigateBack: () -> Unit = {}
 ) {
@@ -325,4 +327,3 @@ private fun MessageBubble(message: AgentViewModel.ChatMessage) {
         }
     }
 }
-

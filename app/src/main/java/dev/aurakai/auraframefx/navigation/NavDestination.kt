@@ -76,6 +76,13 @@ sealed class NavDestination(val route: String, val title: String, val icon: Imag
     // Aura's Lab
     object AurasLab : NavDestination("auras_lab", "Aura's Lab", null)
 
+    // Customization Tools
+    object ComponentEditor : NavDestination("component_editor", "Component Editor", null)
+    object ZOrderEditor : NavDestination("zorder_editor", "Z-Order Editor", null)
+
+    // Identity & Onboarding
+    object GenderSelection : NavDestination("gender_selection", "Gender Selection", null)
+
     // Legacy/Gamification (kept for compatibility)
     object AgentNexus : NavDestination("agent_nexus", "Agent Nexus", Icons.Filled.Person)
     object DataVein : NavDestination("data_vein", "DataVein", null)

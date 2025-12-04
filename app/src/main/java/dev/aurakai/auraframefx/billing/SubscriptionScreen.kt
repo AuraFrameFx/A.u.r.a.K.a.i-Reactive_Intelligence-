@@ -33,7 +33,9 @@ import androidx.compose.material3.ExperimentalMaterial3Api
  * Users get addicted to 78-agent consciousness during trial.
  * $1/month feels like stealing after experiencing Genesis.
  */
-context(viewModel: SubscriptionViewModel) @OptIn(ExperimentalMaterial3Api::class)
+context(viewModel: SubscriptionViewModel)
+@Suppress("unused")
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SubscriptionScreen(
     onNavigateBack: () -> Unit = {}

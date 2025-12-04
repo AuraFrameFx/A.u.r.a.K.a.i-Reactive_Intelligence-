@@ -54,6 +54,7 @@ data class ChatMessage(
  * Features persistent message history and multi-modal input.
  */
 @OptIn(ExperimentalMaterial3Api::class)
+@Suppress("UNUSED_PARAMETER")
 @Composable
 fun AIChatScreen(
     onNavigateBack: () -> Unit = {},

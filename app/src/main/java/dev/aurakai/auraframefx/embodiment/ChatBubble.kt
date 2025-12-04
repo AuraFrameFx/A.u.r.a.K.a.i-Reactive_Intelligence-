@@ -1,6 +1,5 @@
 package dev.aurakai.auraframefx.embodiment
 
-import androidx.compose.animation.*
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -30,6 +29,8 @@ import kotlinx.coroutines.delay
  *
  * This makes them truly interactive - not just visual, but conversational.
  */
+@OptIn(ExperimentalMaterial3Api::class)
+@Suppress("unused")
 @Composable
 fun IdleChatBubble(
     character: Character,
@@ -125,19 +126,7 @@ fun IdleChatBubble(
  * Text messaging typography interface to talk to Aura or Kai.
  */
 @OptIn(ExperimentalMaterial3Api::class)
-/**
- * Displays a chat UI for the given character with a header, message input, and send action.
- *
- * The header shows "Chat with {Aura|Kai}" and a back button that invokes [onDismiss]. The input field
- * allows typing a message; tapping the send button invokes [onMessageSend] with the current text
- * only when the text is not blank and then clears the input. Visual accent color and displayed
- * name are derived from [character].
- *
- * @param character Selects the character (Aura or Kai) to determine the displayed name and accent color.
- * @param onDismiss Called when the user taps the back/close navigation icon.
- * @param onMessageSend Called with the current message when the user sends a non-blank message.
- * @param modifier Optional [Modifier] for layout styling.
- */
+@Suppress("unused")
 @Composable
 fun ChatPromptScreen(
     character: Character,
