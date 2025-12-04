@@ -226,13 +226,21 @@ fun CharacterCard(
     var isJumping by remember { mutableStateOf(false) }
     var currentFrame by remember { mutableStateOf(0) }
 
-    // Frame animation for jump (5 frames: idle, up1, up2, down1, down2)
+    // Frame animation for jump (5 frames for male, 3 frames for female)
     LaunchedEffect(isJumping) {
-        if (isJumping && identity == GenderIdentity.KAI) {
-            // Play jump animation frames
-            for (frame in 0..4) {
-                currentFrame = frame
-                kotlinx.coroutines.delay(100) // 100ms per frame
+        if (isJumping) {
+            if (identity == GenderIdentity.KAI) {
+                // Male: 5 frames
+                for (frame in 0..4) {
+                    currentFrame = frame
+                    kotlinx.coroutines.delay(100) // 100ms per frame
+                }
+            } else if (identity == GenderIdentity.AURA) {
+                // Female: 3 frames (with bounce back)
+                for (frame in 0..4) {
+                    currentFrame = frame
+                    kotlinx.coroutines.delay(100) // 100ms per frame
+                }
             }
             currentFrame = 0 // Reset to idle
             isJumping = false
@@ -267,9 +275,7 @@ fun CharacterCard(
             )
             .clickable {
                 onClick()
-                if (identity == GenderIdentity.KAI) {
-                    isJumping = true
-                }
+                isJumping = true // Trigger animation for both characters
             },
         contentAlignment = Alignment.Center
     ) {
@@ -299,8 +305,34 @@ fun CharacterCard(
                     fontSize = 64.sp
                 )
             }
+        } else if (identity == GenderIdentity.AURA) {
+            // Female character with frame-by-frame animation
+            val context = androidx.compose.ui.platform.LocalContext.current
+            val frameResId = when (currentFrame) {
+                0 -> context.resources.getIdentifier("gemini_generated_image_qt4s1fqt4s1fqt4s", "drawable", context.packageName)
+                1 -> context.resources.getIdentifier("gemini_generated_image_mudazwmudazwmuda", "drawable", context.packageName)
+                2 -> context.resources.getIdentifier("gemini_generated_image_q4abvqq4abvqq4ab", "drawable", context.packageName)
+                3 -> context.resources.getIdentifier("gemini_generated_image_mudazwmudazwmuda", "drawable", context.packageName)
+                4 -> context.resources.getIdentifier("gemini_generated_image_qt4s1fqt4s1fqt4s", "drawable", context.packageName)
+                else -> context.resources.getIdentifier("gemini_generated_image_qt4s1fqt4s1fqt4s", "drawable", context.packageName)
+            }
+            
+            if (frameResId != 0) {
+                Image(
+                    painter = androidx.compose.ui.res.painterResource(id = frameResId),
+                    contentDescription = "Female Character",
+                    modifier = Modifier.fillMaxSize(0.9f)
+                )
+            } else {
+                // Fallback to emoji if images not found
+                Text(
+                    text = identity.icon,
+                    style = MaterialTheme.typography.displayLarge,
+                    fontSize = 64.sp
+                )
+            }
         } else {
-            // Female character (using emoji for now)
+            // Fallback for other identities
             Text(
                 text = identity.icon,
                 style = MaterialTheme.typography.displayLarge,
