@@ -10,13 +10,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.aurakai.auraframefx.aura.ui.AIChatScreen
-import dev.aurakai.auraframefx.aura.ui.AgentAdvancementScreen
+import dev.aurakai.auraframefx.aura.ui.agents.AgentAdvancementScreen
 import dev.aurakai.auraframefx.aura.ui.AgentNexusScreen
 import dev.aurakai.auraframefx.aura.ui.AppBuilderScreen
 import dev.aurakai.auraframefx.aura.ui.CanvasScreen
 import dev.aurakai.auraframefx.aura.ui.ConferenceRoomScreen
 import dev.aurakai.auraframefx.aura.ui.ConsciousnessVisualizerScreen
-import dev.aurakai.auraframefx.aura.ui.EvolutionTreeScreen
 import dev.aurakai.auraframefx.aura.ui.FirewallScreen
 import dev.aurakai.auraframefx.aura.ui.FusionModeScreen
 import dev.aurakai.auraframefx.aura.ui.RootToolsScreen
@@ -25,6 +24,8 @@ import dev.aurakai.auraframefx.aura.ui.SentinelsFortressScreen
 import dev.aurakai.auraframefx.aura.ui.TerminalScreen
 import dev.aurakai.auraframefx.aura.ui.UIEngineScreen
 import dev.aurakai.auraframefx.aura.ui.XhancementScreen
+import dev.aurakai.auraframefx.billing.SubscriptionViewModel
+import dev.aurakai.auraframefx.ui.screens.EvolutionTreeScreen
 import dev.aurakai.auraframefx.oracledrive.genesis.cloud.OracleDriveScreen
 import dev.aurakai.auraframefx.ui.gates.AgentHubSubmenuScreen
 import dev.aurakai.auraframefx.ui.gates.AgentMonitoringScreen
@@ -381,8 +382,7 @@ fun GenesisNavigationHost(
                 )
             }
             composable(GenesisRoutes.APP_BUILDER) {
-                val subscriptionViewModel: SubscriptionViewModel = hiltViewModel()
-                with(subscriptionViewModel) {
+                with(hiltViewModel<SubscriptionViewModel>()) {
                     AppBuilderScreen(onNavigateBack = { navController.popBackStack() })
                 }
             }
