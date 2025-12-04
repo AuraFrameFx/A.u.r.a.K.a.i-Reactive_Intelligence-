@@ -54,6 +54,7 @@ import dev.aurakai.auraframefx.ui.gates.ThemeEngineScreen
 import dev.aurakai.auraframefx.ui.gates.UIUXGateSubmenuScreen
 import dev.aurakai.auraframefx.ui.gates.UserPreferencesScreen
 import dev.aurakai.auraframefx.ui.customization.GyroscopeCustomizationScreen
+import dev.aurakai.auraframefx.ui.onboarding.GenderSelectionScreen
 import dev.aurakai.auraframefx.ui.viewmodels.AgentViewModel
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -156,6 +157,9 @@ object GenesisRoutes {
     const val QUICK_ACTIONS = "quick_actions"
     const val SYSTEM_OVERRIDES = "system_overrides"
     const val RECOVERY_TOOLS = "recovery_tools"
+    
+    // Onboarding
+    const val GENDER_SELECTION = "gender_selection"
 }
 
 /**
@@ -409,6 +413,18 @@ fun GenesisNavigationHost(
             // KAI SECURITY SCREENS
             composable(GenesisRoutes.SECURE_COMM) {
                 SecureCommScreen()
+            }
+            
+            // ONBOARDING
+            composable(GenesisRoutes.GENDER_SELECTION) {
+                GenderSelectionScreen(
+                    onSelectionComplete = { identity ->
+                        // Navigate to main app after selection
+                        navController.navigate(GenesisRoutes.GATES) {
+                            popUpTo(GenesisRoutes.GENDER_SELECTION) { inclusive = true }
+                        }
+                    }
+                )
             }
         }
     }
