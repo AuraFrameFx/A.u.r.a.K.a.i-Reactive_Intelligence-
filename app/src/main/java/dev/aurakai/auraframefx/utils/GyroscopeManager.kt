@@ -23,7 +23,7 @@ import kotlin.math.PI
  * Used in customization editor for tilting phone to rotate preview
  */
 @Singleton
-class GyroscopeManager @Inject constructor(
+open class GyroscopeManager @Inject constructor(
     private val context: Context
 ) {
     private val sensorManager = context.getSystemService(Context.SENSOR_SERVICE) as SensorManager

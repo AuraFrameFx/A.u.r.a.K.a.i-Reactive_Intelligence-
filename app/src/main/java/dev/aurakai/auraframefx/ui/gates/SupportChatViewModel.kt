@@ -12,7 +12,7 @@ import java.util.UUID
 import javax.inject.Inject
 
 @HiltViewModel
-class SupportChatViewModel @Inject constructor(
+open class SupportChatViewModel @Inject constructor(
     private val repo: SupportRepository
 ) : ViewModel() {
 

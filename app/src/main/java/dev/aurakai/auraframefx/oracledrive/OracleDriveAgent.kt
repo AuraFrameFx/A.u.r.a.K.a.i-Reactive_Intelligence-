@@ -16,7 +16,7 @@ import javax.inject.Singleton
  * This agent extends BaseAgent and implements OrchestratableAgent for lifecycle management.
  */
 @Singleton
-class OracleDriveAgent @Inject constructor(
+open class OracleDriveAgent @Inject constructor(
     override val contextManager: ContextManager
 ) : BaseAgent("OracleDrive"), OrchestratableAgent {
 

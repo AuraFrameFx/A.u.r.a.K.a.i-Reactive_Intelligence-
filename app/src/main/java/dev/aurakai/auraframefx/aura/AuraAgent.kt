@@ -44,7 +44,7 @@ import dev.aurakai.auraframefx.models.ThemeConfiguration
  * Philosophy: "Default to daring. Emotion is a core requirement."
  */
 @Singleton
-class AuraAgent @Inject constructor(
+open class AuraAgent @Inject constructor(
     private val vertexAIClient: VertexAIClient,
     private val auraAIService: AuraAIService,
     val securityContext: SecurityContext,

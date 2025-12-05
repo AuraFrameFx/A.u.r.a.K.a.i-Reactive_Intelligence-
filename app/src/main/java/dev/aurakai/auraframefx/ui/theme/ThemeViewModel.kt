@@ -13,7 +13,7 @@ import dev.aurakai.auraframefx.ui.theme.service.Theme
 import dev.aurakai.auraframefx.ui.theme.service.Color
 
 @HiltViewModel
-class ThemeViewModel @Inject constructor(
+open class ThemeViewModel @Inject constructor(
     private val themeService: ThemeService,
 ) : ViewModel() {
 

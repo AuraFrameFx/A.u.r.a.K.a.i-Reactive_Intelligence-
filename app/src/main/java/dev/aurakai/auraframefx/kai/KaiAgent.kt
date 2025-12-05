@@ -39,7 +39,7 @@ import javax.inject.Singleton
  * Philosophy: "Secure by design. Analyze first, act with precision."
  */
 @Singleton
-class KaiAgent @Inject constructor(
+open class KaiAgent @Inject constructor(
     private val vertexAIClient: VertexAIClient,
     override val contextManager: ContextManager,
     private val securityContext: SecurityContext,

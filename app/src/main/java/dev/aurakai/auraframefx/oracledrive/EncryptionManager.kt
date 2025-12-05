@@ -8,7 +8,7 @@ import javax.inject.Inject
 /**
  * Implementation of CryptographyManager for Oracle Drive
  */
-class EncryptionManager @Inject constructor() : CryptographyManager {
+open class EncryptionManager @Inject constructor() : CryptographyManager {
     
     override fun encrypt(data: ByteArray, keyAlias: String): ByteArray {
         // TODO: Implement actual encryption with Android Keystore

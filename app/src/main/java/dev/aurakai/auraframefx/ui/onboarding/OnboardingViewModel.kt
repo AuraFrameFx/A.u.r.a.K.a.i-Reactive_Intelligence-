@@ -21,7 +21,7 @@ import javax.inject.Inject
  * - User preferences persistence
  */
 @HiltViewModel
-class OnboardingViewModel @Inject constructor(
+open class OnboardingViewModel @Inject constructor(
     application: Application,
     private val userPreferencesManager: UserPreferencesManager
 ) : AndroidViewModel(application) {

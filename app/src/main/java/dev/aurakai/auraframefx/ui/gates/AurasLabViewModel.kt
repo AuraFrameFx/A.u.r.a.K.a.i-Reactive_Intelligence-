@@ -17,7 +17,7 @@ import javax.inject.Inject
  * Manages sandbox creation, deletion, and interaction with OracleDriveSandbox system
  */
 @HiltViewModel
-class AurasLabViewModel @Inject constructor(
+open class AurasLabViewModel @Inject constructor(
     private val oracleDriveSandbox: OracleDriveSandbox
 ) : ViewModel() {
 

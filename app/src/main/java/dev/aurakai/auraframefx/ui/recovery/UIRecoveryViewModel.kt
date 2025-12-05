@@ -16,7 +16,7 @@ import javax.inject.Inject
  * - Dismiss recovery
  */
 @HiltViewModel
-class UIRecoveryViewModel @Inject constructor(
+open class UIRecoveryViewModel @Inject constructor(
     private val recoveryManager: UIRecoveryManager
 ) : ViewModel() {
 

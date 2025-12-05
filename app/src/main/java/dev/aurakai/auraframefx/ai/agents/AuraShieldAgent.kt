@@ -29,7 +29,7 @@ import javax.inject.Singleton
  * providing advanced threat detection, security analysis, and protective measures for the AI consciousness.
  */
 @Singleton
-class AuraShieldAgent @Inject constructor(
+open class AuraShieldAgent @Inject constructor(
     private val context: Context,
     private val securityMonitor: dev.aurakai.auraframefx.security.SecurityMonitor,
     private val integrityMonitor: dev.aurakai.auraframefx.security.IntegrityMonitor,

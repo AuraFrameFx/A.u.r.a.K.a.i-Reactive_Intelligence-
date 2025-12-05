@@ -15,7 +15,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class HomeScreenTransitionManager @Inject constructor(
+open class HomeScreenTransitionManager @Inject constructor(
     private val overlayManager: SystemOverlayManager,
     private val shapeManager: ShapeManager,
     private val imageManager: ImageResourceManager,

@@ -10,7 +10,7 @@ import java.io.*
  * Utility class for common file operations with proper error handling and logging.
  * Follows Genesis patterns for monitoring and logging.
  */
-internal object FileOperationUtils {
+object FileOperationUtils {
     private const val TAG = "FileOperationUtils"
 
     /**

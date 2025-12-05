@@ -36,7 +36,7 @@ import javax.inject.Singleton
  */
 
 @Singleton
-class IconCacheManager @Inject constructor(
+open class IconCacheManager @Inject constructor(
     private val context: Context
 ) {
     private val json = Json {

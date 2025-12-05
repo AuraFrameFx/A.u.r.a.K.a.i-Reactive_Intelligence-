@@ -26,7 +26,7 @@ import javax.inject.Singleton
  * It coordinates between Genesis, Aura, and Kai agents, managing their interactions and optimizing system performance.
  */
 @Singleton
-internal class GenKitMasterAgent @Inject constructor(
+open class GenKitMasterAgent @Inject constructor(
     private val context: Context,
     override val contextManager: ContextManager,
     private val genesisAgent: GenesisAgent,

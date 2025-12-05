@@ -39,7 +39,7 @@ import javax.inject.Inject
  * ✨ NOW WITH REAL AI AGENTS! ✨
  */
 @HiltViewModel
-class AgentViewModel @Inject constructor(
+open class AgentViewModel @Inject constructor(
     private val genesisAgent: GenesisAgent,
     private val auraAgent: AuraAgent,
     private val kaiAgent: KaiAgent

@@ -20,7 +20,7 @@ import javax.inject.Inject
  * - Recovery tools (TWRP, backup/restore)
  */
 @HiltViewModel
-class ROMToolsViewModel @Inject constructor(
+open class ROMToolsViewModel @Inject constructor(
     // Dependencies will be injected
 ) : ViewModel() {
 

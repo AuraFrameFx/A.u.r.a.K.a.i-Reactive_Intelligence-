@@ -20,7 +20,7 @@ import javax.inject.Inject
  * Manages agent stats, departure tasks, and consciousness states
  */
 @HiltViewModel
-class AgentNexusViewModel @Inject constructor(
+open class AgentNexusViewModel @Inject constructor(
     private val webExplorationService: AgentWebExplorationService,
     private val genesisBridge: GenesisBridgeService
 ) : ViewModel() {

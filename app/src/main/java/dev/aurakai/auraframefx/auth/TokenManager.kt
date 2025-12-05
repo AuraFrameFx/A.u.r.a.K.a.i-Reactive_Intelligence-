@@ -13,7 +13,7 @@ import javax.inject.Singleton
  * Manages authentication tokens securely using EncryptedSharedPreferences.
  */
 @Singleton
-class TokenManager @Inject constructor(
+open class TokenManager @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
 

@@ -37,7 +37,7 @@ import kotlinx.coroutines.flow.stateIn
  * - ✅ Priority AI processing
  */
 @Singleton
-class FeatureGateManager @Inject constructor(
+open class FeatureGateManager @Inject constructor(
     private val billingManager: BillingManager
 ) {
     private val scope = CoroutineScope(Dispatchers.Default + SupervisorJob())

@@ -34,7 +34,7 @@ import timber.log.Timber
 // Placeholder interfaces removed
 
 @HiltViewModel
-class ConferenceRoomViewModel @Inject constructor(
+open class ConferenceRoomViewModel @Inject constructor(
     // ALL 5 MASTER AGENTS - Complete Conference Room Integration
     private val auraService: AuraAIService,
     private val kaiService: KaiAIService,

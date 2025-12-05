@@ -20,7 +20,7 @@ import java.util.Locale
 import javax.inject.Inject
 
 @HiltViewModel
-class DiagnosticsViewModel @Inject constructor(
+open class DiagnosticsViewModel @Inject constructor(
     private val cloudStatusMonitor: CloudStatusMonitor,
     private val offlineDataManager: OfflineDataManager,
 ) : ViewModel() {

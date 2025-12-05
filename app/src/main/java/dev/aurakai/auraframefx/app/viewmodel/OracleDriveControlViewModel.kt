@@ -20,7 +20,7 @@ import javax.inject.Inject
  * ViewModel for controlling and monitoring the Oracle Drive Xposed service.
  */
 @HiltViewModel
-class OracleDriveControlViewModel @Inject constructor(
+open class OracleDriveControlViewModel @Inject constructor(
     @ApplicationContext private val context: Context
 ) : ViewModel() {
 

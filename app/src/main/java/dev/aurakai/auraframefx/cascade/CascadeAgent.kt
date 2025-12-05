@@ -34,7 +34,7 @@ import javax.inject.Singleton
  * - Persists key events and state snapshots into memory
  */
 @Singleton
-class CascadeAgent @Inject constructor(
+open class CascadeAgent @Inject constructor(
     private val auraAgent: AuraAgent,
     private val kaiAgent: KaiAgent,
     private val memoryManager: MemoryManager,

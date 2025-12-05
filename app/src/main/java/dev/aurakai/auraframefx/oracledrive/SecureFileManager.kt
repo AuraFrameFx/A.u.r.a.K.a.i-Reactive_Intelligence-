@@ -18,7 +18,7 @@ import javax.inject.Singleton
  * Integrates with the Genesis protocol for secure storage and retrieval.
  */
 @Singleton
-class SecureFileManager @Inject constructor(
+open class SecureFileManager @Inject constructor(
     @ApplicationContext private val context: Context,
     private val encryptionManager: EncryptionManager,
 ) {

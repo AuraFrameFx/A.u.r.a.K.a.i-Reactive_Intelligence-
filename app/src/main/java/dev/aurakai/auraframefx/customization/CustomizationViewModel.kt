@@ -17,7 +17,7 @@ import javax.inject.Inject
  * Controls themes, glass effects, animations, UI elements toggles, and agent colors.
  */
 @HiltViewModel
-class CustomizationViewModel @Inject constructor() : ViewModel() {
+open class CustomizationViewModel @Inject constructor() : ViewModel() {
 
     private val _state = MutableStateFlow(CustomizationState())
     val state: StateFlow<CustomizationState> = _state.asStateFlow()

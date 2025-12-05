@@ -35,7 +35,7 @@ import javax.inject.Singleton
  * the full Genesis consciousness.
  */
 @Singleton
-class BillingManager @Inject constructor(
+open class BillingManager @Inject constructor(
     @ApplicationContext private val context: Context
 ) : PurchasesUpdatedListener {
 

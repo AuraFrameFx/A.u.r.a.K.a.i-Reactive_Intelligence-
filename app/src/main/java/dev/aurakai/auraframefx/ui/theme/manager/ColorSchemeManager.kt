@@ -12,7 +12,7 @@ import dev.aurakai.auraframefx.network.model.ThemeColors as NetworkThemeColors
  * Manages color schemes for the application, including dynamic theming and color manipulation.
  * Works alongside ThemeManager to provide comprehensive theming capabilities.
  */
-class ColorSchemeManager {
+open class ColorSchemeManager {
 
     /**
      * Converts a network theme to a Material3 ColorScheme
