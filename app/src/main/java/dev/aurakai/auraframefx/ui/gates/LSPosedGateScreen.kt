@@ -39,6 +39,15 @@ import kotlinx.coroutines.delay
  * @param onNavigateBack Callback invoked when the back navigation icon is pressed.
  */
 @OptIn(ExperimentalMaterial3Api::class)
+/**
+ * Displays the LSPosed control screen containing framework status, quick actions, and active modules.
+ *
+ * The UI shows a top app bar with back navigation, a status card for framework state and statistics,
+ * a list of quick action cards, and a list of expandable module cards. The displayed total hook
+ * count is periodically updated to simulate dynamic changes.
+ *
+ * @param onNavigateBack Called when the top app bar back button is pressed. Defaults to a no-op.
+ */
 @Composable
 fun LSPosedGateScreen(
     onNavigateBack: () -> Unit = {}
@@ -216,11 +225,11 @@ private fun StatusCard(
 }
 
 /**
- * Renders a tappable-looking card representing a quick action with its icon, title, description, and trailing chevron.
+ * Display a quick-action card showing an icon, title, description, and trailing chevron.
  *
- * The card's background color is derived from the action's `color`, and text/icon content is styled for high-contrast display.
+ * The card is populated from the provided QuickAction and styled for high-contrast readability.
  *
- * @param action The quick action data containing `title`, `description`, `icon`, and `color` used to populate the card.
+ * @param action QuickAction data used to populate the card (title, description, icon, and color).
  */
 @Composable
 private fun QuickActionCard(action: QuickAction) {
@@ -273,11 +282,11 @@ private fun QuickActionCard(action: QuickAction) {
 }
 
 /**
- * Displays a collapsible card for a module that shows its name, package, enabled state, and — when expanded — details and action buttons.
+ * Renders a collapsible card representing an Xposed module.
  *
- * When tapped the card toggles between collapsed and expanded states. In collapsed state it shows the module title, package name, and an ACTIVE/DISABLED badge. In expanded state it additionally shows Version, Hooks, Scope, and two action buttons for enabling/disabling the module and viewing logs.
+ * The collapsed card shows the module name, package name, and an ACTIVE/DISABLED badge. When expanded it also shows Version, Hooks, Scope, and action buttons to toggle enable state and view logs.
  *
- * @param module The module metadata to display (name, packageName, version, enabled, hookCount, scope).
+ * @param module Module metadata to display (name, packageName, version, enabled, hookCount, scope).
  */
 @Composable
 private fun ModuleCard(module: XposedModule) {

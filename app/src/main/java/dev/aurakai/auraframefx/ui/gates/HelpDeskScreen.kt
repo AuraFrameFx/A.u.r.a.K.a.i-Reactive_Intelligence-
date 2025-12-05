@@ -39,6 +39,12 @@ import androidx.compose.ui.unit.sp
  * @param onNavigateBack Callback invoked when the top app bar navigation icon is pressed.
  */
 @OptIn(ExperimentalMaterial3Api::class)
+/**
+ * Renders the Genesis Help Desk screen containing a top app bar, a list of quick-access cards,
+ * a list of popular topics, and a support statistics card.
+ *
+ * @param onNavigateBack Callback invoked when the top app bar navigation icon is pressed.
+ */
 @Composable
 fun HelpDeskScreen(
     onNavigateBack: () -> Unit = {}
