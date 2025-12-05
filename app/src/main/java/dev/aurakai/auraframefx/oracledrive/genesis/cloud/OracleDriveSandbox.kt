@@ -1,6 +1,7 @@
 package dev.aurakai.auraframefx.oracledrive.genesis.cloud
 
 import android.content.Context
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dev.aurakai.auraframefx.utils.AuraFxLogger
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -25,7 +26,7 @@ import androidx.core.content.edit
  */
 @Singleton
 class OracleDriveSandbox @Inject constructor(
-    private val context: Context,
+    @ApplicationContext private val context: Context,
 ) {
 
     private val sandboxScope = CoroutineScope(Dispatchers.IO + SupervisorJob())
