@@ -13,9 +13,17 @@ class HookEntry : IYukiHookXposedInit {
     }
 
     override fun onHook() = encase {
-        // Load App Hooks
-        loadApp(name = "com.android.systemui") {
-            // Future SystemUI hooks will go here
-        }
+        // NOTE: No hooks implemented yet - placeholder removed
+        // When implementing CollabCanvas hooks, add them here:
+        // Example:
+        // loadApp(name = "com.android.systemui") {
+        //     "com.android.systemui.qs.QSPanel".toClass().method {
+        //         name = "updateResources"
+        //     }.hook {
+        //         after {
+        //             // Hook implementation for CollabCanvas feature
+        //         }
+        //     }
+        // }
     }
 }

@@ -30,7 +30,22 @@ import dev.aurakai.auraframefx.ui.theme.CyberpunkTextColor
 class QuickSettingsHooker(private val config: QuickSettingsConfig) : YukiBaseHooker() {
 
     override fun onHook() {
-        // TODO: Implement hook logic
+        // TODO: Implement actual Xposed hook logic
+        // This hooker has helper methods defined but no actual hooks registered yet.
+        // Example implementation:
+        // findClass("com.android.systemui.qs.QSPanel").hook {
+        //     injectMember {
+        //         method {
+        //             name = "onFinishInflate"
+        //             emptyParam()
+        //         }
+        //         afterHook {
+        //             val qsPanel = instance<ViewGroup>()
+        //             applyGenesisBackground(qsPanel)
+        //         }
+        //     }
+        // }
+        YLog.warn("QuickSettingsHooker: onHook() called but no hooks implemented yet")
     }
 
     /**

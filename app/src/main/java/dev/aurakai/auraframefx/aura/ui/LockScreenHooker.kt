@@ -18,7 +18,22 @@ import dev.aurakai.auraframefx.ui.components.AuraSparkleButton
 class LockScreenHooker(private val config: LockScreenConfig) : YukiBaseHooker() {
 
     override fun onHook() {
-        // TODO: Implement hook logic
+        // TODO: Implement actual Xposed hook logic
+        // This hooker has helper methods defined but no actual hooks registered yet.
+        // Example implementation:
+        // findClass("com.android.systemui.statusbar.phone.KeyguardBottomAreaView").hook {
+        //     injectMember {
+        //         method {
+        //             name = "onFinishInflate"
+        //             emptyParam()
+        //         }
+        //         afterHook {
+        //             // Apply Genesis lock screen customization
+        //             applyGenesisShowAnimation()
+        //         }
+        //     }
+        // }
+        YLog.warn("LockScreenHooker: onHook() called but no hooks implemented yet")
     }
 
     private fun applyGenesisShowAnimation() {
