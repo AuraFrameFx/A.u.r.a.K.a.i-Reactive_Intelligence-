@@ -13,15 +13,15 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.File
 import java.util.concurrent.TimeUnit
-import javax.inject.Inject
-import javax.inject.Singleton
 
 /**
  * Centralized network client for handling all API communications.
  * Manages OkHttp and Retrofit instances with proper configuration.
+ *
+ * Note: This class is provided by NetworkModule via factory method.
+ * Do not add @Inject or @Singleton annotations here.
  */
-@Singleton
-class NetworkClient @Inject constructor(
+class NetworkClient(
     private val context: Context,
     private val authInterceptor: AuthInterceptor,
     private val connectivityManager: NetworkConnectivityManager
