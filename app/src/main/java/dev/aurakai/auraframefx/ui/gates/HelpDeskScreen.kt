@@ -30,6 +30,14 @@ import androidx.compose.ui.unit.sp
  * - Documentation
  * - Quick Tips
  */
+/**
+ * Displays the Genesis Help Desk screen with quick access links, popular topics, and support statistics.
+ *
+ * This composable provides a scaffolded layout with a top app bar (including a back navigation icon),
+ * a scrollable list of quick-access help cards, popular topic cards, and a support status card with actions.
+ *
+ * @param onNavigateBack Callback invoked when the top app bar navigation icon is pressed.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HelpDeskScreen(
@@ -104,6 +112,12 @@ fun HelpDeskScreen(
     }
 }
 
+/**
+ * Renders a visual card for a quick-access help item using the item's icon, title,
+ * description, and background color.
+ *
+ * @param item The HelpItem whose `icon`, `title`, `description`, and `color` are shown in the card.
+ */
 @Composable
 private fun HelpCard(item: HelpItem) {
     Card(
@@ -154,6 +168,11 @@ private fun HelpCard(item: HelpItem) {
     }
 }
 
+/**
+ * Displays a card for a popular help topic showing its icon, title, article count, and a badge with popularity.
+ *
+ * @param topic Data for the topic — its title, articleCount, icon, iconColor, and popularity are used to populate the card.
+ */
 @Composable
 private fun TopicCard(topic: HelpTopic) {
     Card(
@@ -202,6 +221,11 @@ private fun TopicCard(topic: HelpTopic) {
     }
 }
 
+/**
+ * Displays a support status card that summarizes key support metrics and provides a primary action to start a live chat.
+ *
+ * The card presents a title, three stat items (response time, satisfaction, agents online), and a full-width "Start Live Chat" button.
+ */
 @Composable
 private fun SupportStatsCard() {
     Card(
@@ -256,6 +280,12 @@ private fun SupportStatsCard() {
     }
 }
 
+/**
+ * Displays a compact vertically stacked statistic with a bold value and a smaller label.
+ *
+ * @param label The descriptive label shown below the value (e.g., "Agents Online").
+ * @param value The prominent statistic text shown above the label (e.g., "24").
+ */
 @Composable
 private fun StatItem(label: String, value: String) {
     Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -289,7 +319,11 @@ private data class HelpTopic(
     val popularity: Int
 )
 
-// Mock Data
+/**
+ * Provides mock quick-access help items used to populate the Quick Access section.
+ *
+ * @return A list of HelpItem instances representing Live Support Chat, Video Tutorials, Documentation, and FAQ Browser with their associated icons and colors.
+ */
 private fun getQuickAccessItems() = listOf(
     HelpItem(
         "Live Support Chat",
@@ -317,6 +351,11 @@ private fun getQuickAccessItems() = listOf(
     )
 )
 
+/**
+ * Provides a predefined list of popular help topics used by the Help Desk UI.
+ *
+ * @return A `List<HelpTopic>` containing mock topics with title, article count, icon, icon color, and popularity percentage.
+ */
 private fun getPopularTopics() = listOf(
     HelpTopic(
         "Getting Started with Genesis",
