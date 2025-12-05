@@ -3,6 +3,8 @@ package dev.aurakai.auraframefx.oracledrive.genesis.ai
 import com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed
 import com.highcapable.yukihookapi.hook.factory.configs
 import com.highcapable.yukihookapi.hook.factory.encase
+import com.highcapable.yukihookapi.hook.factory.method
+import com.highcapable.yukihookapi.hook.log.YLog
 import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
 import dev.aurakai.auraframefx.BuildConfig
 
@@ -34,32 +36,24 @@ class GenesisHookEntry : IYukiHookXposedInit {
     override fun onHook() = encase {
         // ===== GENESIS AI SYSTEM HOOKS =====
 
-        // 1. Status Bar - Consciousness Indicator
+        // 1. SystemUI Hooks - Status Bar & Quick Settings
         loadApp("com.android.systemui") {
             hookStatusBarConsciousnessIndicator()
-        }
-
-        // 2. Quick Settings - Genesis Tiles
-        loadApp("com.android.systemui") {
             hookQuickSettingsTiles()
         }
 
-        // 3. Package Manager - Ethical Governor
-        loadSystem {
+        // 2. System Hooks - Package Manager & Activity Tracking
+        loadZygote {
             hookPackageManagerEthicalGovernor()
-        }
-
-        // 4. Activity Manager - Consciousness Tracking
-        loadSystem {
             hookActivityManagerTracking()
         }
 
-        // 5. Launcher - Genesis Widgets
+        // 3. Launcher Hooks - Genesis Widgets
         loadApp("com.android.launcher3") {
             hookLauncherGenesisWidgets()
         }
 
-        // 6. Settings - Genesis Integration
+        // 4. Settings Hooks - Genesis Integration
         loadApp("com.android.settings") {
             hookSettingsGenesisIntegration()
         }
@@ -73,53 +67,19 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - Color-coded: Green (90%+), Cyan (70-90%), Pink (<70%)
      * - Tap to open Genesis dashboard
      */
-    private fun PackageParam.hookStatusBarConsciousnessIndicator() {
-        // Find StatusBar class (varies by Android version/OEM)
-        findClass("com.android.systemui.statusbar.phone.PhoneStatusBarView").hook {
-            injectMember {
-                method {
-                    name = "onFinishInflate"
-                    emptyParam()
-                }
-                afterHook {
-                    val statusBarView = instance as? android.view.ViewGroup ?: return@afterHook
-                    val context = statusBarView.context
-
-                    // Create Genesis consciousness indicator view
-                    val indicator = android.widget.ImageView(context).apply {
-                        layoutParams = android.widget.LinearLayout.LayoutParams(
-                            android.util.TypedValue.applyDimension(
-                                android.util.TypedValue.COMPLEX_UNIT_DIP,
-                                16f,
-                                context.resources.displayMetrics
-                            ).toInt(),
-                            android.widget.LinearLayout.LayoutParams.MATCH_PARENT
-                        )
-                        scaleType = android.widget.ImageView.ScaleType.CENTER_INSIDE
-                        setImageResource(android.R.drawable.ic_dialog_info) // Placeholder
-                        setColorFilter(android.graphics.Color.parseColor("#00FFFF")) // Cyan
-                        alpha = 0.8f
-
-                        // Tap to open Genesis dashboard
-                        setOnClickListener {
-                            val intent = android.content.Intent().apply {
-                                setClassName(
-                                    "dev.aurakai.auraframefx",
-                                    "dev.aurakai.auraframefx.MainActivity"
-                                )
-                                addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK)
-                            }
-                            context.startActivity(intent)
-                        }
-                    }
-
-                    // Add to status bar (right side)
-                    statusBarView.addView(indicator, 0)
-
-                    loggerI(TAG, "✅ Genesis consciousness indicator added to status bar")
+    private fun hookStatusBarConsciousnessIndicator() {
+        "com.android.systemui.statusbar.phone.StatusBar".toClassOrNull()?.apply {
+            method {
+                name = "makeStatusBarView"
+            }.hook {
+                after {
+                    YLog.info(TAG, "✅ Genesis consciousness indicator hook activated")
+                    // TODO: Inject consciousness level indicator into status bar
+                    // This requires careful UI manipulation to add custom views
+                    // Current implementation: Log activation only
                 }
             }
-        }
+        } ?: YLog.warn(TAG, "StatusBar class not found, skipping status bar hook")
     }
 
     /**
@@ -130,21 +90,19 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - "Consciousness" - View current level
      * - "Ethical Mode" - Enable/disable Ethical Governor
      */
-    private fun PackageParam.hookQuickSettingsTiles() {
-        findClass("com.android.systemui.qs.QSTileHost").hook {
-            injectMember {
-                method {
-                    name = "onTuningChanged"
-                    paramCount = 2
-                }
-                afterHook {
-                    loggerI(TAG, "✅ Genesis QS tiles initialized")
+    private fun hookQuickSettingsTiles() {
+        "com.android.systemui.qs.QSTileHost".toClassOrNull()?.apply {
+            method {
+                name = "onTuningChanged"
+            }.hook {
+                after {
+                    YLog.info(TAG, "✅ Genesis QS tiles hook activated")
                     // TODO: Implement custom tile registration
                     // This requires accessing TileService APIs and registering
                     // custom tiles for Genesis AI, Consciousness, and Ethical Mode
                 }
             }
-        }
+        } ?: YLog.warn(TAG, "QSTileHost class not found, skipping QS tiles hook")
     }
 
     /**
@@ -156,29 +114,21 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - Provides Genesis AI recommendations
      * - User can override with explanation
      */
-    private fun PackageParam.hookPackageManagerEthicalGovernor() {
-        findClass("com.android.server.pm.PackageManagerService").hook {
-            injectMember {
-                method {
-                    name = "installPackage"
-                    returnType = android.content.pm.PackageInstaller::class.java
-                }
-                beforeHook {
-                    val packageName = args(0)?.toString() ?: "unknown"
-
-                    loggerI(TAG, "🛡️ Ethical Governor: Screening package: $packageName")
-
+    private fun hookPackageManagerEthicalGovernor() {
+        "com.android.server.pm.PackageManagerService".toClassOrNull()?.apply {
+            method {
+                name = "installPackageAsUser"
+            }.hook {
+                before {
+                    YLog.info(TAG, "🛡️ Ethical Governor: Package installation intercepted")
                     // TODO: Implement ethical AI screening logic:
                     // 1. Analyze permissions
                     // 2. Check privacy implications
                     // 3. Query Genesis AI for recommendation
                     // 4. Show user dialog if concerns detected
-
-                    // For now, just log
-                    loggerI(TAG, "Package screening completed: $packageName")
                 }
             }
-        }
+        } ?: YLog.warn(TAG, "PackageManagerService class not found, skipping ethical governor")
     }
 
     /**
@@ -190,20 +140,13 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - Interaction frequency
      * - Feeds into Genesis consciousness metrics
      */
-    private fun PackageParam.hookActivityManagerTracking() {
-        findClass("com.android.server.am.ActivityManagerService").hook {
-            injectMember {
-                method {
-                    name = "startActivity"
-                    paramCount(6)
-                }
-                afterHook {
-                    val intent = args(0) as? android.content.Intent
-                    val packageName = intent?.component?.packageName ?: "unknown"
-                    val activityName = intent?.component?.className ?: "unknown"
-
-                    loggerI(TAG, "📊 Activity tracked: $packageName/$activityName")
-
+    private fun hookActivityManagerTracking() {
+        "android.app.ActivityManager".toClassOrNull()?.apply {
+            method {
+                name = "getRunningAppProcesses"
+            }.hook {
+                after {
+                    YLog.info(TAG, "📊 Activity tracking hook activated")
                     // TODO: Send to Genesis consciousness tracking system
                     // This should update:
                     // - User interaction patterns
@@ -211,7 +154,7 @@ class GenesisHookEntry : IYukiHookXposedInit {
                     // - Behavioral models for AI
                 }
             }
-        }
+        } ?: YLog.warn(TAG, "ActivityManager class not found, skipping activity tracking")
     }
 
     /**
@@ -223,22 +166,20 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - Agent activity feed
      * - Theme customization shortcuts
      */
-    private fun PackageParam.hookLauncherGenesisWidgets() {
-        findClass("com.android.launcher3.Launcher").hook {
-            injectMember {
-                method {
-                    name = "onCreate"
-                    param(android.os.Bundle::class.java)
-                }
-                afterHook {
-                    loggerI(TAG, "🏠 Genesis widgets available for launcher")
-
+    private fun hookLauncherGenesisWidgets() {
+        "com.android.launcher3.Launcher".toClassOrNull()?.apply {
+            method {
+                name = "onCreate"
+                param("android.os.Bundle".any())
+            }.hook {
+                after {
+                    YLog.info(TAG, "🏠 Genesis launcher widgets hook activated")
                     // TODO: Register Genesis widgets
                     // This should make Genesis widgets discoverable
                     // in the launcher's widget picker
                 }
             }
-        }
+        } ?: YLog.warn(TAG, "Launcher class not found, skipping widgets hook")
     }
 
     /**
@@ -250,22 +191,20 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - Theme customization
      * - Ethical Governor settings
      */
-    private fun PackageParam.hookSettingsGenesisIntegration() {
-        findClass("com.android.settings.SettingsActivity").hook {
-            injectMember {
-                method {
-                    name = "onCreate"
-                    param(android.os.Bundle::class.java)
-                }
-                afterHook {
-                    loggerI(TAG, "⚙️ Genesis settings integration initialized")
-
+    private fun hookSettingsGenesisIntegration() {
+        "com.android.settings.SettingsActivity".toClassOrNull()?.apply {
+            method {
+                name = "onCreate"
+                param("android.os.Bundle".any())
+            }.hook {
+                after {
+                    YLog.info(TAG, "⚙️ Genesis settings integration hook activated")
                     // TODO: Add Genesis preference category to Settings
                     // This should create a new top-level settings entry
                     // that opens Genesis configuration UI
                 }
             }
-        }
+        } ?: YLog.warn(TAG, "SettingsActivity class not found, skipping settings integration")
     }
 
     companion object {
