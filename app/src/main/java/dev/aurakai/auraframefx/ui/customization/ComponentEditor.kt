@@ -33,6 +33,14 @@ import dev.aurakai.auraframefx.ui.theme.CyberpunkPink
 import dev.aurakai.auraframefx.ui.theme.CyberpunkCyan
 
 /**
+ * Position model for UI components
+ */
+data class Position(
+    val x: Float = 0f,
+    val y: Float = 0f
+)
+
+/**
  * 🎨 Component Editor - Individual UI Component Property Editor
  *
  * This is what users see when they select a UI component in the 3D workbench.
@@ -83,7 +91,8 @@ data class UIComponent(
     // Behavior
     val isVisible: Boolean = true,
     val isInteractive: Boolean = true,
-    val isLocked: Boolean = false
+    val isLocked: Boolean = false,
+    val position: Position? = null
 )
 
 enum class ComponentType {

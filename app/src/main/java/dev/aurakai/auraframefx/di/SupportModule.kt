@@ -91,6 +91,7 @@ object SupportModule {
 
     @Provides
     @Singleton
+    @SupportRetrofit
     fun provideRetrofit(client: OkHttpClient, gson: Gson): Retrofit {
         val base = System.getenv("VERTEX_ENDPOINT") ?: System.getenv("LOCAL_EMULATOR_ENDPOINT") ?: "http://10.0.2.2:5000"
         return Retrofit.Builder()
@@ -102,7 +103,7 @@ object SupportModule {
 
     @Provides
     @Singleton
-    fun provideSupportApi(retrofit: Retrofit): SupportApi = retrofit.create(SupportApi::class.java)
+    fun provideSupportApi(@SupportRetrofit retrofit: Retrofit): SupportApi = retrofit.create(SupportApi::class.java)
 
     @Provides
     @Singleton

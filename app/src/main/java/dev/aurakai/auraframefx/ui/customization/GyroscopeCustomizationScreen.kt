@@ -1,6 +1,5 @@
 package dev.aurakai.auraframefx.ui.customization
 
-import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.*
 import androidx.compose.animation.slideInHorizontally
 import androidx.compose.animation.slideOutHorizontally
@@ -11,7 +10,6 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -20,8 +18,6 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.blur
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.geometry.CornerRadius
@@ -37,6 +33,8 @@ import dev.aurakai.auraframefx.ui.theme.CyberpunkCyan
 import dev.aurakai.auraframefx.ui.theme.CyberpunkPink
 import dev.aurakai.auraframefx.ui.theme.CyberpunkPurple
 import dev.aurakai.auraframefx.utils.VoiceState
+import dev.aurakai.auraframefx.utils.GyroscopeManager
+import dev.aurakai.auraframefx.ui.customization.CustomizationViewModel
 import kotlin.math.*
 
 /**
@@ -54,10 +52,10 @@ import kotlin.math.*
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GyroscopeCustomizationScreen(
-    onNavigateBack: () -> Unit = {},
-    viewModel: CustomizationViewModel = hiltViewModel()
+    onNavigateBack: () -> Unit = {}
 ) {
-    val context = LocalContext.current
+    // Provide an explicit type to help the compiler resolve injected ViewModel members unambiguously
+    val viewModel: dev.aurakai.auraframefx.ui.customization.CustomizationViewModel = hiltViewModel()
     val customizationState by viewModel.customizationState.collectAsState()
     val rotationAngles by viewModel.rotationAngles.collectAsState()
     val aiResponse by viewModel.aiResponse.collectAsState()
@@ -149,7 +147,7 @@ fun GyroscopeCustomizationScreen(
                             }
                         )
                     }
-                    
+
                     // Toggle Component List
                     IconButton(onClick = { showComponentList = !showComponentList }) {
                         Icon(
@@ -158,7 +156,7 @@ fun GyroscopeCustomizationScreen(
                             tint = if (showComponentList) CyberpunkPink else Color.White
                         )
                     }
-                    
+
                     // Reset rotation
                     IconButton(onClick = { viewModel.resetRotation() }) {
                         Icon(Icons.Default.RestartAlt, "Reset View", tint = CyberpunkCyan)
@@ -201,9 +199,10 @@ fun GyroscopeCustomizationScreen(
                         .align(Alignment.TopEnd)
                         .padding(16.dp)
                 )
-                
+
                 // Component List Overlay
-                AnimatedVisibility(
+                // Use the fully-qualified AnimatedVisibility to avoid ambiguous scope-receiver resolution
+                androidx.compose.animation.AnimatedVisibility(
                     visible = showComponentList,
                     enter = slideInHorizontally { it },
                     exit = slideOutHorizontally { it },
@@ -216,7 +215,7 @@ fun GyroscopeCustomizationScreen(
                     ComponentListPanel(
                         components = components,
                         selectedId = selectedComponent?.id,
-                        onSelect = { 
+                        onSelect = {
                             viewModel.selectComponent(it)
                             // If we select a component, we might want to hide the list and show the editor?
                             // Or keep list open. Let's keep list open for now.
@@ -272,7 +271,7 @@ fun GyroscopeCustomizationScreen(
                         }
                         else -> {}
                     }
-                    
+
                     // Show AI Prompt Bar
                     AIPromptBar(
                         promptText = promptText,
@@ -298,7 +297,7 @@ fun GyroscopeCustomizationScreen(
  */
 @Composable
 fun Phone3DPreview(
-    rotationAngles: RotationAngles,
+    rotationAngles: GyroscopeManager.RotationAngles,
     customization: CustomizationState,
     components: List<UIComponent>,
     selectedComponentId: String?,
@@ -401,11 +400,11 @@ fun Phone3DPreview(
                 if (!component.isVisible) return@forEach
 
                 val isSelected = component.id == selectedComponentId
-                
+
                 // Calculate position relative to center + tilt
                 val compX = centerX + component.x + tiltX
                 val compY = centerY + component.y + tiltY
-                
+
                 // Apply component rotation
                 rotate(degrees = component.rotation, pivot = Offset(compX + component.width/2, compY + component.height/2)) {
                     // Background
@@ -415,7 +414,7 @@ fun Phone3DPreview(
                         size = Size(component.width * component.scale, component.height * component.scale),
                         cornerRadius = CornerRadius(component.cornerRadius)
                     )
-                    
+
                     // Border
                     if (component.borderWidth > 0f || isSelected) {
                         drawRoundRect(
@@ -470,7 +469,7 @@ fun ComponentListPanel(
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.padding(bottom = 16.dp)
             )
-            
+
             LazyColumn(
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
@@ -556,8 +555,8 @@ fun GyroscopeIndicator(
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(
-                    Icons.Default.RotateRight,
-                    null,
+                    imageVector = Icons.Default.RotateRight,
+                    contentDescription = null,
                     tint = CyberpunkCyan,
                     modifier = Modifier.size(16.dp)
                 )
@@ -703,8 +702,8 @@ fun AIPromptBar(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
                         Icon(
-                            Icons.Default.AutoAwesome,
-                            null,
+                            imageVector = Icons.Default.AutoAwesome,
+                            contentDescription = null,
                             tint = CyberpunkCyan,
                             modifier = Modifier.size(20.dp)
                         )
@@ -762,7 +761,7 @@ fun AIPromptBar(
                             strokeWidth = 2.dp
                         )
                     } else {
-                        Icon(Icons.Default.Send, "Apply")
+                        Icon(imageVector = Icons.Default.Send, contentDescription = "Apply")
                     }
                 }
             }
@@ -789,9 +788,7 @@ fun QuickPromptChip(text: String, onClick: () -> Unit) {
             containerColor = Color(0xFF1A1A1A),
             labelColor = CyberpunkCyan
         ),
-        border = AssistChipDefaults.assistChipBorder(
-            borderColor = CyberpunkCyan.copy(alpha = 0.5f)
-        )
+        border = androidx.compose.foundation.BorderStroke(1.dp, CyberpunkCyan.copy(alpha = 0.5f))
     )
 }
 
@@ -877,4 +874,3 @@ fun VoiceStatusCard(
         }
     }
 }
-

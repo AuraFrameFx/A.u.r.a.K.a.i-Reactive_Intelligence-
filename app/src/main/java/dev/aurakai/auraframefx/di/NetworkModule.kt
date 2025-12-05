@@ -1,8 +1,6 @@
 package dev.aurakai.auraframefx.di
 
 import android.content.Context
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -12,24 +10,22 @@ import dagger.hilt.components.SingletonComponent
 import dev.aurakai.auraframefx.BuildConfig
 import dev.aurakai.auraframefx.network.*
 import dev.aurakai.auraframefx.aura.themes.ThemeApi
+import dev.aurakai.auraframefx.auth.TokenManager
 import dev.aurakai.auraframefx.network.api.UserApi
 import dev.aurakai.auraframefx.network.model.*
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.OracleDriveSandbox
+import dev.aurakai.auraframefx.utils.GyroscopeManager
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import java.util.concurrent.TimeUnit
+import javax.inject.Provider
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
-
-    @Provides
-    @Singleton
-    fun provideMoshi(): Moshi = Moshi.Builder()
-        .add(KotlinJsonAdapterFactory())
-        .build()
 
     @Provides
     @Singleton
@@ -66,25 +62,40 @@ object NetworkModule {
     @Singleton
     @AuraNetwork
     fun provideRetrofit(
-        @AuraNetwork okHttpClient: OkHttpClient,
-        moshi: Moshi
+        @AuraNetwork okHttpClient: OkHttpClient
     ): Retrofit = Retrofit.Builder()
         .baseUrl(BuildConfig.API_BASE_URL)
         .client(okHttpClient)
-        .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .addConverterFactory(MoshiConverterFactory.create())
         .build()
 
     @Provides
     @Singleton
-    fun provideNetworkClient(
-        @ApplicationContext context: Context,
-        authInterceptor: AuthInterceptor,
-        connectivityManager: NetworkConnectivityManager
-    ): NetworkClient = NetworkClient(context, authInterceptor, connectivityManager)
+    @AuthRetrofit
+    fun provideAuthRetrofit(
+        @ApplicationContext context: Context
+    ): Retrofit = Retrofit.Builder()
+        .baseUrl(BuildConfig.API_BASE_URL)
+        .client(OkHttpClient.Builder().build()) // No AuthInterceptor
+        .addConverterFactory(MoshiConverterFactory.create())
+        .build()
 
     @Provides
     @Singleton
-    fun provideAuthApi(@AuraNetwork retrofit: Retrofit): AuthApi = retrofit.create(AuthApi::class.java)
+    fun provideAuthApi(@AuthRetrofit authRetrofit: Retrofit): AuthApi = authRetrofit.create(AuthApi::class.java)
+
+    @Provides
+    @Singleton
+    fun provideGyroscopeManager(
+        @ApplicationContext context: Context
+    ): GyroscopeManager = GyroscopeManager(context)
+
+    @Provides
+    @Singleton
+    fun provideAuthInterceptor(
+        tokenManager: TokenManager,
+        authApiProvider: Provider<AuthApi>
+    ): AuthInterceptor = AuthInterceptor(tokenManager, authApiProvider)
 }
 
 @Module

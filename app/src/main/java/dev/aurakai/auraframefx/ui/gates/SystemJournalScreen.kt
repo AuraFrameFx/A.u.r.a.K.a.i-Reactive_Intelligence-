@@ -31,7 +31,7 @@ import dev.aurakai.auraframefx.ui.onboarding.GenderIdentity
 
 /**
  * 🎮 System Journal - User Profile & Menu
- * 
+ *
  * Pixel art style user profile selection combined with menu options.
  * This is the main user menu card in Gate Navigation.
  */
@@ -42,7 +42,7 @@ fun SystemJournalScreen(
     modifier: Modifier = Modifier
 ) {
     var selectedGender by remember { mutableStateOf<GenderIdentity?>(GenderIdentity.KAI) }
-    
+
     Box(
         modifier = modifier
             .fillMaxSize()
@@ -290,7 +290,7 @@ fun CharacterCard(
                 4 -> context.resources.getIdentifier("gemini_generated_image_kjqxokkjqxokkjqx", "drawable", context.packageName)
                 else -> context.resources.getIdentifier("gemini_generated_image_yceye4yceye4ycey", "drawable", context.packageName)
             }
-            
+
             if (frameResId != 0) {
                 Image(
                     painter = androidx.compose.ui.res.painterResource(id = frameResId),
@@ -316,7 +316,7 @@ fun CharacterCard(
                 4 -> context.resources.getIdentifier("gemini_generated_image_qt4s1fqt4s1fqt4s", "drawable", context.packageName)
                 else -> context.resources.getIdentifier("gemini_generated_image_qt4s1fqt4s1fqt4s", "drawable", context.packageName)
             }
-            
+
             if (frameResId != 0) {
                 Image(
                     painter = androidx.compose.ui.res.painterResource(id = frameResId),
@@ -450,7 +450,7 @@ data class MenuOption(
  */
 private val menuOptions = listOf(
     MenuOption("File Manager", Icons.Default.Folder, Color(0xFFFFD700), "oracle_drive"),
-    MenuOption("Hello", Icons.Default.Waving, Color(0xFF00FFFF), "direct_chat"),
+    MenuOption("Hello", Icons.Default.Face, Color(0xFF00FFFF), "direct_chat"),
     MenuOption("Tools", Icons.Default.Build, Color(0xFFFF00FF), "root_tools_toggles"),
     MenuOption("Laptop", Icons.Default.Computer, Color(0xFF00FFFF), "terminal"),
     MenuOption("Music", Icons.Default.MusicNote, Color(0xFFFF00FF), "theme_engine"),

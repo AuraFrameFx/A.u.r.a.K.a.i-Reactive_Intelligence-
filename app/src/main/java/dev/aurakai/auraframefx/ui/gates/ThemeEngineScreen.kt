@@ -16,20 +16,20 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.input.pointer.PointerInputChange
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import dev.aurakai.auraframefx.ui.components.colorpicker.ColorBlendrPicker
-import dev.aurakai.auraframefx.aura.themes.ThemeEditor
 import dev.aurakai.auraframefx.aura.themes.ThemeColors
-import dev.aurakai.auraframefx.ui.overlays.LocalOverlaySettings
+import dev.aurakai.auraframefx.aura.themes.ThemeEditor
+import dev.aurakai.auraframefx.ui.components.colorpicker.ColorBlendrPicker
 import dev.aurakai.auraframefx.ui.theme.CyberGlow
-import androidx.compose.ui.input.pointer.pointerInput
-import androidx.compose.ui.input.pointer.PointerInputChange
-import androidx.compose.ui.graphics.graphicsLayer
-import androidx.compose.ui.geometry.Offset
+import kotlin.collections.forEachIndexed
+import kotlin.collections.toMutableList
 
 /**
  * Theme Engine Screen
@@ -43,7 +43,9 @@ fun ThemeEngineScreen(
     val scrollState = rememberScrollState()
     // Remove LocalOverlaySettings access that causes crash
     var overlaysEnabled by remember { mutableStateOf(true) }
-    var overlayZOrder by remember { mutableStateOf(0) }
+    // Overlay settings state
+    data class OverlaySettings(var transitionSpeed: Int = 3, var overlayZOrder: List<String> = listOf())
+    var overlaySettings by remember { mutableStateOf(OverlaySettings()) }
     var editMode by remember { mutableStateOf(false) }
     val scaleAnim = remember { Animatable(1f) }
     val wigglePhase = remember { Animatable(0f) }
@@ -222,7 +224,7 @@ fun ThemeEngineScreen(
 
                     Spacer(modifier = Modifier.height(12.dp))
                     Text("Transition Speed", color = CyberGlow.Electric, style = MaterialTheme.typography.titleSmall)
-                    var transitionSpeed by remember { mutableStateOf(overlaySettings.transitionSpeed.toFloat()) }
+                    var transitionSpeed by remember { mutableFloatStateOf(overlaySettings.transitionSpeed.toFloat()) }
                     Slider(
                         value = transitionSpeed,
                         onValueChange = {
@@ -240,7 +242,8 @@ fun ThemeEngineScreen(
 
                     Spacer(modifier = Modifier.height(12.dp))
                     Text("Z‑Order (Top → Bottom)", color = Color.White.copy(alpha = 0.8f))
-                    overlayZOrder.forEachIndexed { index, name ->
+                    var overlayZOrder by remember { mutableStateOf(listOf("StatusBar", "NavBar", "Widget")) }
+                    overlayZOrder.forEachIndexed { index: Int, name: String ->
                         val phase = wigglePhase.value
                         val rotation = if (editMode) (kotlin.math.sin(phase * 2f * Math.PI).toFloat() * 2.0f) else 0f
                         val translateY = if (editMode) (kotlin.math.sin((phase + index * 0.1f) * 2f * Math.PI).toFloat() * 2f) else 0f
@@ -258,16 +261,16 @@ fun ThemeEngineScreen(
                                             onDragEnd = {
                                                 // snap back visuals handled by wiggle
                                             }
-                                        ) { change: PointerInputChange, dragAmount: Offset ->
+                                        ) { _: PointerInputChange, dragAmount: Offset ->
                                             // Calculate target index based on drag direction
                                             val targetIndex = when {
                                                 dragAmount.y < -4f -> (index - 1).coerceAtLeast(0)
-                                                dragAmount.y > 4f -> (index + 1).coerceAtMost(overlayZOrder.lastIndex)
+                                                dragAmount.y > 4f -> (index + 1).coerceAtMost(overlayZOrder.size - 1)
                                                 else -> index
                                             }
                                             if (targetIndex != index) {
-                                                val m = overlayZOrder.toMutableList()
-                                                val item = m.removeAt(index)
+                                                val m: MutableList<String> = overlayZOrder.toMutableList()
+                                                val item: String = m.removeAt(index)
                                                 m.add(targetIndex, item)
                                                 overlayZOrder = m
                                                 overlaySettings.overlayZOrder = m
@@ -282,17 +285,17 @@ fun ThemeEngineScreen(
                             if (!editMode) {
                                 OutlinedButton(onClick = {
                                     if (index > 0) {
-                                        val m = overlayZOrder.toMutableList()
-                                        val tmp = m[index - 1]; m[index - 1] = m[index]; m[index] = tmp
+                                        val m: MutableList<String> = overlayZOrder.toMutableList()
+                                        val tmp: String = m[index - 1]; m[index - 1] = m[index]; m[index] = tmp
                                         overlayZOrder = m
                                         overlaySettings.overlayZOrder = m
                                     }
                                 }) { Text("Up") }
                                 Spacer(modifier = Modifier.width(8.dp))
                                 OutlinedButton(onClick = {
-                                    if (index < overlayZOrder.lastIndex) {
-                                        val m = overlayZOrder.toMutableList()
-                                        val tmp = m[index + 1]; m[index + 1] = m[index]; m[index] = tmp
+                                    if (index < overlayZOrder.size - 1) {
+                                        val m: MutableList<String> = overlayZOrder.toMutableList()
+                                        val tmp: String = m[index + 1]; m[index + 1] = m[index]; m[index] = tmp
                                         overlayZOrder = m
                                         overlaySettings.overlayZOrder = m
                                     }

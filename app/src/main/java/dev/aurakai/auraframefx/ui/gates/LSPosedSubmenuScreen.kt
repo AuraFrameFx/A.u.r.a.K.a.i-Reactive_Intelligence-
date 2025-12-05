@@ -1,15 +1,46 @@
 package dev.aurakai.auraframefx.ui.gates
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.border
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
+import androidx.compose.material.icons.automirrored.filled.CallSplit
+import androidx.compose.material.icons.automirrored.filled.ListAlt
+import androidx.compose.material.icons.filled.Bolt
+import androidx.compose.material.icons.filled.DeleteOutline
+import androidx.compose.material.icons.filled.Extension
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
@@ -53,14 +84,14 @@ fun LSPosedSubmenuScreen(
         SubmenuItem(
             title = "Hook Manager",
             description = "Monitor and manage active method hooks",
-            icon = Icons.Default.CallSplit,
+            icon = Icons.AutoMirrored.Filled.CallSplit,
             route = "hook_manager",
             color = Color(0xFF4ECDC4) // Teal
         ),
         SubmenuItem(
             title = "Logs Viewer",
             description = "View system logs and module activity",
-            icon = Icons.Default.ListAlt,
+            icon = Icons.AutoMirrored.Filled.ListAlt,
             route = "logs_viewer",
             color = Color(0xFFFFD93D) // Yellow
         ),
@@ -305,7 +336,7 @@ private fun XposedQuickActionsPanel() {
                 // View Active Hooks
                 QuickActionButton(
                     title = "View Hooks",
-                    icon = Icons.Default.CallSplit,
+                    icon = Icons.AutoMirrored.Filled.CallSplit,
                     color = Color(0xFF4ECDC4),
                     modifier = Modifier.weight(1f),
                     onClick = {
@@ -360,7 +391,7 @@ private fun XposedQuickActionsPanel() {
     // Active Hooks Dialog
     if (showHooksDialog) {
         AlertDialog(
-            onDismissRequest = { showHooksDialog = false },
+            onDismissRequest = { },
             title = {
                 Text(
                     "Active Hooks",
@@ -390,7 +421,7 @@ private fun XposedQuickActionsPanel() {
                 }
             },
             confirmButton = {
-                TextButton(onClick = { showHooksDialog = false }) {
+                TextButton(onClick = { }) {
                     Text("Close", color = Color.Cyan)
                 }
             },
@@ -591,7 +622,7 @@ private fun LSPosedNotInstalledScreen(
                     containerColor = Color(0xFFFF6B35)
                 )
             ) {
-                Icon(Icons.Default.ArrowBack, null, modifier = Modifier.size(20.dp))
+                Icon(Icons.AutoMirrored.Filled.ArrowBack, null, modifier = Modifier.size(20.dp))
                 Spacer(modifier = Modifier.width(8.dp))
                 Text("Back to Gates", fontWeight = FontWeight.Bold)
             }
@@ -612,7 +643,7 @@ private fun InfoStep(number: String, text: String) {
             modifier = Modifier
                 .size(32.dp)
                 .background(Color(0xFFFF6B35).copy(alpha = 0.2f), RoundedCornerShape(16.dp))
-                .border(2.dp, Color(0xFFFF6B35), RoundedCornerShape(16.dp)),
+                .border(width = 2.dp, color = Color(0xFFFF6B35), shape = RoundedCornerShape(16.dp)),
             contentAlignment = Alignment.Center
         ) {
             Text(
@@ -630,4 +661,3 @@ private fun InfoStep(number: String, text: String) {
         )
     }
 }
-

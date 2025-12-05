@@ -10,6 +10,7 @@ import org.json.JSONObject
 import timber.log.Timber
 import java.net.HttpURLConnection
 import javax.inject.Inject
+import javax.inject.Provider
 import javax.inject.Singleton
 
 /**
@@ -18,7 +19,7 @@ import javax.inject.Singleton
 @Singleton
 class AuthInterceptor @Inject constructor(
     private val tokenManager: TokenManager,
-    private val authApi: AuthApi,
+    private val authApiProvider: Provider<AuthApi>,
 ) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
@@ -45,11 +46,10 @@ class AuthInterceptor @Inject constructor(
         // If unauthorized, try to refresh the token and retry the request
         if (response.code == HttpURLConnection.HTTP_UNAUTHORIZED) {
             response.close()
-
             val newToken = runBlocking {
                 try {
                     tokenManager.refreshToken?.let { refreshToken ->
-                        val refreshResponse = authApi.refreshToken(
+                        val refreshResponse = authApiProvider.get().refreshToken(
                             RefreshTokenRequest(refreshToken = refreshToken)
                         )
 
@@ -77,11 +77,10 @@ class AuthInterceptor @Inject constructor(
                             Timber.e("SESSION_EXPIRED: User authentication session has expired. UI should redirect to login.")
                         }
                     }
-                    null
                 } catch (e: Exception) {
                     Timber.e(e, "Failed to refresh token")
-                    null
                 }
+                null
             }
 
             // Retry the original request with the new token if refresh was successful

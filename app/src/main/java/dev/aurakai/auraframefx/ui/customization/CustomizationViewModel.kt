@@ -42,8 +42,9 @@ class CustomizationViewModel @Inject constructor(
     private val _customizationState = MutableStateFlow(CustomizationState())
     val customizationState: StateFlow<CustomizationState> = _customizationState.asStateFlow()
 
-    private val _rotationAngles = MutableStateFlow(RotationAngles(0f, 0f, 0f))
-    val rotationAngles: StateFlow<RotationAngles> = _rotationAngles.asStateFlow()
+    // Use the RotationAngles type from GyroscopeManager to avoid duplicate definitions
+    private val _rotationAngles = MutableStateFlow(GyroscopeManager.RotationAngles(0f, 0f, 0f))
+    val rotationAngles: StateFlow<GyroscopeManager.RotationAngles> = _rotationAngles.asStateFlow()
 
     private val _aiResponse = MutableStateFlow<String?>(null)
     val aiResponse: StateFlow<String?> = _aiResponse.asStateFlow()
@@ -86,7 +87,7 @@ class CustomizationViewModel @Inject constructor(
      */
     fun resetRotation() {
         gyroscopeManager.reset()
-        _rotationAngles.value = RotationAngles(0f, 0f, 0f)
+        _rotationAngles.value = GyroscopeManager.RotationAngles(0f, 0f, 0f)
         Timber.d("Rotation reset to zero")
     }
 
@@ -271,62 +272,15 @@ class CustomizationViewModel @Inject constructor(
     }
 
     private fun initializeDefaultComponents() {
-        _components.value = listOf(
-            UIComponent(
-                id = "status_bar",
-                name = "Status Bar",
-                type = ComponentType.STATUS_BAR,
-                y = -280f, // Relative to center
-                width = 260f,
-                height = 40f,
-                zIndex = 10,
-                backgroundColor = CyberpunkCyan.copy(alpha = 0.8f),
-                cornerRadius = 30f
-            ),
-            UIComponent(
-                id = "nav_bar",
-                name = "Navigation Bar",
-                type = ComponentType.NAVIGATION_BAR,
-                y = 250f,
-                width = 260f,
-                height = 60f,
-                zIndex = 10,
-                backgroundColor = CyberpunkPink.copy(alpha = 0.6f),
-                cornerRadius = 30f
-            ),
-            UIComponent(
-                id = "clock_widget",
-                name = "Clock Widget",
-                type = ComponentType.WIDGET,
-                y = -150f,
-                width = 200f,
-                height = 100f,
-                zIndex = 5,
-                backgroundColor = Color(0xFF1A1A1A).copy(alpha = 0.8f),
-                borderColor = CyberpunkPurple,
-                borderWidth = 2f,
-                cornerRadius = 20f
-            ),
-            UIComponent(
-                id = "app_grid",
-                name = "App Grid",
-                type = ComponentType.CUSTOM,
-                y = 50f,
-                width = 240f,
-                height = 300f,
-                zIndex = 2,
-                backgroundColor = Color.Transparent,
-                borderColor = Color.White.copy(alpha = 0.1f),
-                borderWidth = 1f,
-                cornerRadius = 10f
-            )
-        )
+        // Use helper to construct the canonical default components list
+        _components.value = getDefaultComponents()
     }
 
     fun selectComponent(componentId: String?) {
         _selectedComponent.value = _components.value.find { it.id == componentId }
     }
 
+    // Updated: accept the proper UIComponent type
     fun updateComponent(updatedComponent: UIComponent) {
         _components.value = _components.value.map {
             if (it.id == updatedComponent.id) updatedComponent else it
@@ -382,49 +336,50 @@ class CustomizationViewModel @Inject constructor(
             try {
                 Timber.d("Processing voice command: $text")
                 val command = voiceCommandProcessor.processCommand(text)
-                
+
                 when (command) {
                     is VoiceCommand.ChangeTheme -> {
                         _aiResponse.value = "Applying ${command.themeName} theme"
                         processAIPrompt(command.themeName)
                     }
-                    
+
                     is VoiceCommand.MoveComponent -> {
                         _aiResponse.value = "Moving ${command.componentName} ${command.direction}"
                         moveComponentByVoice(command.componentName, command.direction, command.amount)
                     }
-                    
+
                     is VoiceCommand.RotateComponent -> {
                         _aiResponse.value = "Rotating ${command.componentName} ${command.degrees}°"
                         rotateComponentByVoice(command.componentName, command.degrees)
                     }
-                    
+
                     is VoiceCommand.ChangeColor -> {
                         _aiResponse.value = "Changing ${command.componentName} color"
                         changeComponentColorByVoice(command.componentName, command.color)
                     }
-                    
+
                     is VoiceCommand.ChangeOpacity -> {
                         _aiResponse.value = "Adjusting ${command.componentName} opacity"
                         changeComponentOpacityByVoice(command.componentName, command.opacity)
                     }
-                    
+
                     is VoiceCommand.ChangeVisibility -> {
                         val action = if (command.visible) "Showing" else "Hiding"
                         _aiResponse.value = "$action ${command.componentName}"
                         changeComponentVisibilityByVoice(command.componentName, command.visible)
                     }
-                    
+
                     is VoiceCommand.ScaleComponent -> {
                         _aiResponse.value = "Scaling ${command.componentName}"
                         scaleComponentByVoice(command.componentName, command.scale)
                     }
-                    
+
                     is VoiceCommand.ResetComponent -> {
                         _aiResponse.value = "Resetting ${command.componentName}"
+                        // pass only the component name
                         resetComponentByVoice(command.componentName)
                     }
-                    
+
                     is VoiceCommand.Invalid -> {
                         _aiResponse.value = "Sorry, ${command.reason}"
                         Timber.w("Invalid voice command: ${command.reason}")
@@ -440,10 +395,10 @@ class CustomizationViewModel @Inject constructor(
     private fun moveComponentByVoice(componentName: String, direction: String, amount: Float) {
         val component = _components.value.find { it.name == componentName } ?: return
         val updated = when (direction) {
-            "up" -> component.copy(position = component.position.copy(y = component.position.y - amount))
-            "down" -> component.copy(position = component.position.copy(y = component.position.y + amount))
-            "left" -> component.copy(position = component.position.copy(x = component.position.x - amount))
-            "right" -> component.copy(position = component.position.copy(x = component.position.x + amount))
+            "up" -> component.copy(y = component.y - amount)
+            "down" -> component.copy(y = component.y + amount)
+            "left" -> component.copy(x = component.x - amount)
+            "right" -> component.copy(x = component.x + amount)
             else -> component
         }
         updateComponent(updated)
@@ -482,6 +437,79 @@ class CustomizationViewModel @Inject constructor(
     }
 }
 
+// Remove stray placeholder helpers and provide getDefaultComponents implementation
+
+private fun getDefaultComponents(): List<UIComponent> = listOf(
+    UIComponent(
+        id = "status_bar",
+        name = "Status Bar",
+        type = ComponentType.STATUS_BAR,
+        x = 0f,
+        y = -280f,
+        width = 260f,
+        height = 40f,
+        rotation = 0f,
+        scale = 1f,
+        zIndex = 10,
+        opacity = 1f,
+        backgroundColor = CyberpunkCyan.copy(alpha = 0.8f),
+        borderColor = Color.Transparent,
+        borderWidth = 0f,
+        cornerRadius = 30f
+    ),
+    UIComponent(
+        id = "nav_bar",
+        name = "Navigation Bar",
+        type = ComponentType.NAVIGATION_BAR,
+        x = 0f,
+        y = 250f,
+        width = 260f,
+        height = 60f,
+        rotation = 0f,
+        scale = 1f,
+        zIndex = 10,
+        opacity = 1f,
+        backgroundColor = CyberpunkPink.copy(alpha = 0.6f),
+        borderColor = Color.Transparent,
+        borderWidth = 0f,
+        cornerRadius = 30f
+    ),
+    UIComponent(
+        id = "clock_widget",
+        name = "Clock Widget",
+        type = ComponentType.WIDGET,
+        x = 0f,
+        y = -150f,
+        width = 200f,
+        height = 100f,
+        rotation = 0f,
+        scale = 1f,
+        zIndex = 5,
+        opacity = 1f,
+        backgroundColor = Color(0xFF1A1A1A).copy(alpha = 0.8f),
+        borderColor = CyberpunkPurple,
+        borderWidth = 2f,
+        cornerRadius = 20f
+    ),
+    UIComponent(
+        id = "app_grid",
+        name = "App Grid",
+        type = ComponentType.CUSTOM,
+        x = 0f,
+        y = 50f,
+        width = 240f,
+        height = 300f,
+        rotation = 0f,
+        scale = 1f,
+        zIndex = 2,
+        opacity = 1f,
+        backgroundColor = Color.Transparent,
+        borderColor = Color.White.copy(alpha = 0.1f),
+        borderWidth = 1f,
+        cornerRadius = 10f
+    )
+)
+
 /**
  * Customization state
  */
@@ -492,13 +520,4 @@ data class CustomizationState(
     val description: String = "Default Cyberpunk Theme",
     val themeName: String = "default",
     val isProcessing: Boolean = false
-)
-
-/**
- * Rotation angles from gyroscope
- */
-data class RotationAngles(
-    val pitch: Float,  // X-axis (forward/backward tilt)
-    val roll: Float,   // Y-axis (left/right tilt)
-    val yaw: Float     // Z-axis (twist)
 )

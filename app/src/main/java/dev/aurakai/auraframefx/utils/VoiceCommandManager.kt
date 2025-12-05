@@ -17,7 +17,7 @@ import javax.inject.Singleton
 
 @Singleton
 class VoiceCommandManager @Inject constructor(
-    @ApplicationContext private valcontext: Context
+    @ApplicationContext private val context: Context
 ) {
 
     private val _voiceState = MutableStateFlow<VoiceState>(VoiceState.Idle)
@@ -139,9 +139,9 @@ class VoiceCommandManager @Inject constructor(
 }
 
 sealed class VoiceState {
-    data object Idle : VoiceState()
-    data object Listening : VoiceState()
-    data object Processing : VoiceState()
+    object Idle : VoiceState()
+    object Listening : VoiceState()
+    object Processing : VoiceState()
     data class PartialResult(val text: String) : VoiceState()
     data class Result(val text: String) : VoiceState()
     data class Error(val message: String) : VoiceState()

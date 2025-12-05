@@ -107,4 +107,10 @@ class CustomizationViewModel @Inject constructor() : ViewModel() {
             _state.value = _state.value.copy(agentColors = _state.value.agentColors + (agentName to hexColor))
         }
     }
+
+    // Compatibility shim: some UI modules expect a selectComponent function on a project-global CustomizationViewModel.
+    // This ViewModel lives in a different package and doesn't manage UI components, so provide a harmless no-op.
+    fun selectComponent(componentId: String?) {
+        // No-op: UI module that calls this will use a different ViewModel implementation in the ui.customization package.
+    }
 }

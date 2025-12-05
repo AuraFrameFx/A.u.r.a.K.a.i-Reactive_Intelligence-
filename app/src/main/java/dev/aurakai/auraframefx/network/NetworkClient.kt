@@ -23,47 +23,14 @@ import javax.inject.Singleton
 @Singleton
 class NetworkClient @Inject constructor(
     private val context: Context,
+    @AuraNetwork private val okHttpClient: OkHttpClient,
+    @AuraNetwork private val retrofit: Retrofit,
     private val authInterceptor: AuthInterceptor,
     private val connectivityManager: NetworkConnectivityManager
 ) {
     private val cacheSize = (10 * 1024 * 1024).toLong() // 10 MB
     private val cacheDir = File(context.cacheDir, "http_cache")
     private val cache = Cache(cacheDir, cacheSize)
-
-    private val moshi = Moshi.Builder()
-        .add(KotlinJsonAdapterFactory())
-        .build()
-
-    private val okHttpClient: OkHttpClient by lazy {
-        val builder = OkHttpClient.Builder()
-            .cache(cache)
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
-            .retryOnConnectionFailure(true)
-            .connectionPool(ConnectionPool(5, 5, TimeUnit.MINUTES))
-            .protocols(listOf(Protocol.HTTP_1_1, Protocol.HTTP_2))
-            .addInterceptor(authInterceptor)
-            .addInterceptor(ConnectivityInterceptor(connectivityManager))
-            .addInterceptor(ErrorHandlingInterceptor())
-
-        if (BuildConfig.DEBUG) {
-            val logging = HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
-            }
-            builder.addInterceptor(logging)
-        }
-
-        builder.build()
-    }
-
-    private val retrofit: Retrofit by lazy {
-        Retrofit.Builder()
-            .baseUrl(BuildConfig.API_BASE_URL)
-            .client(okHttpClient)
-            .addConverterFactory(MoshiConverterFactory.create(moshi))
-            .build()
-    }
 
     /**
      * Creates an API service instance for the specified service interface.

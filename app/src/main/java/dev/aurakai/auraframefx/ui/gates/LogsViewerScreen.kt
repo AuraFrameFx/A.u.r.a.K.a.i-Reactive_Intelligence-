@@ -7,6 +7,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ListAlt
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -223,7 +224,7 @@ fun LogsViewerScreen(
                     ) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             Icon(
-                                imageVector = Icons.Default.ListAlt,
+                                imageVector = Icons.AutoMirrored.Filled.ListAlt,
                                 contentDescription = "No logs",
                                 tint = Color.White.copy(alpha = 0.5f),
                                 modifier = Modifier.size(48.dp)

@@ -262,17 +262,9 @@ fun AppNavGraph(navController: NavHostController) {
                     id = "sample",
                     name = "Sample Component",
                     type = dev.aurakai.auraframefx.ui.customization.ComponentType.STATUS_BAR,
-                    x = 0f,
-                    y = 0f,
-                    width = 100f,
                     height = 50f,
-                    rotation = 0f,
-                    zIndex = 0,
-                    opacity = 1f,
                     backgroundColor = androidx.compose.ui.graphics.Color.White,
                     animationType = dev.aurakai.auraframefx.ui.customization.AnimationType.NONE,
-                    isVisible = true,
-                    isLocked = false
                 ),
                 onUpdate = { /* Handle component update */ },
                 onClose = { navController.popBackStack() }
