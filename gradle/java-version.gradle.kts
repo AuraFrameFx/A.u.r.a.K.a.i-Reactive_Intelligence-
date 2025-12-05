@@ -12,7 +12,7 @@ allprojects {
     plugins.withType<JavaBasePlugin> {
         extensions.configure<JavaPluginExtension> {
             toolchain {
-                // Use Java 24 toolchain consistently
+                // Use Java 25 toolchain consistently
                 val targetVersion = 24
 
                 languageVersion.set(JavaLanguageVersion.of(targetVersion))
