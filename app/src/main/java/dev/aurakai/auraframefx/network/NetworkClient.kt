@@ -1,18 +1,11 @@
 package dev.aurakai.auraframefx.network
 
 import android.content.Context
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
-import dev.aurakai.auraframefx.BuildConfig
+import dev.aurakai.auraframefx.di.AuraNetwork
 import okhttp3.Cache
-import okhttp3.ConnectionPool
 import okhttp3.OkHttpClient
-import okhttp3.Protocol
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import java.io.File
-import java.util.concurrent.TimeUnit
 
 /**
  * Centralized network client for handling all API communications.
