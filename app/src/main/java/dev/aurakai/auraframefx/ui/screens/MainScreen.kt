@@ -2,7 +2,6 @@ package dev.aurakai.auraframefx.ui.screens
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -184,7 +183,7 @@ private fun SystemStatusCard(
                     Text(
                         "⚡ Online",
                         style = MaterialTheme.typography.bodyMedium,
-                        color = Color.Green
+                        color = MaterialTheme.colorScheme.tertiary
                     )
                 }
 
@@ -252,9 +251,8 @@ private fun StatusMetric(
 @Composable
 private fun QuickAccessCard(item: QuickAccessItem) {
     Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable { item.onClick() },
+        onClick = item.onClick,
+        modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface
