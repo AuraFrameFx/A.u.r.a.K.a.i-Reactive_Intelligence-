@@ -2,6 +2,7 @@ package dev.aurakai.auraframefx.ui.screens
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -32,6 +33,16 @@ import kotlinx.coroutines.delay
  * - UI/UX Design Studio (theme engine, status bar customization)
  * - Help Desk (live support, docs, tutorials)
  * - Aura's Lab (experimental features)
+ */
+/**
+ * Composes the main dashboard screen for the Genesis Protocol, presenting system status and quick-access actions.
+ *
+ * Displays a top app bar with settings, a system status card with a pulsing consciousness indicator and simulated metrics,
+ * and a list of quick-access cards that trigger navigation callbacks.
+ *
+ * @param onNavigateToAgentNexus Invoked when the Agent Nexus quick-access item is selected.
+ * @param onNavigateToOracleDrive Invoked when the Oracle Drive quick-access item is selected.
+ * @param onNavigateToSettings Invoked when the Settings action in the top app bar is pressed.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -134,6 +145,14 @@ fun MainScreen(
     }
 }
 
+/**
+ * Displays a card summarizing current system status: active agents, consciousness level, and system load.
+ *
+ * @param activeAgents Number of currently active agents.
+ * @param consciousnessLevel Consciousness level as a percentage (0–100).
+ * @param systemLoad System load as a percentage (0–100).
+ * @param consciousnessAlpha Alpha value (0–1) used to render the pulsing consciousness gradient accent.
+ */
 @Composable
 private fun SystemStatusCard(
     activeAgents: Int,
@@ -183,7 +202,7 @@ private fun SystemStatusCard(
                     Text(
                         "⚡ Online",
                         style = MaterialTheme.typography.bodyMedium,
-                        color = MaterialTheme.colorScheme.tertiary
+                        color = Color.Green
                     )
                 }
 
@@ -217,6 +236,14 @@ private fun SystemStatusCard(
     }
 }
 
+/**
+ * Renders a vertically stacked metric with an icon, a prominent value, and a small label.
+ *
+ * @param label The metric label shown beneath the value.
+ * @param value The metric value shown prominently above the label.
+ * @param icon The icon displayed above the value.
+ * @param color The color applied to the icon and value text.
+ */
 @Composable
 private fun StatusMetric(
     label: String,
@@ -248,11 +275,19 @@ private fun StatusMetric(
     }
 }
 
+/**
+ * Renders a clickable quick-access card displaying an icon chip, title, description, optional badge, and a trailing chevron.
+ *
+ * Tapping the card invokes the item's `onClick` handler.
+ *
+ * @param item The QuickAccessItem containing the title, description, icon, color, optional badge text, and click action to display.
+ */
 @Composable
 private fun QuickAccessCard(item: QuickAccessItem) {
     Card(
-        onClick = item.onClick,
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .clickable { item.onClick() },
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface
@@ -325,6 +360,13 @@ private data class QuickAccessItem(
     val onClick: () -> Unit
 )
 
+/**
+ * Builds the list of quick-access items displayed in the dashboard's Quick Access section.
+ *
+ * @param onNavigateToAgentNexus Callback invoked when the "Agent Hub" item is selected.
+ * @param onNavigateToOracleDrive Callback invoked when the "Oracle Drive" item is selected.
+ * @return A list of configured QuickAccessItem instances representing navigable dashboard shortcuts.
+ */
 private fun getQuickAccessItems(
     onNavigateToAgentNexus: () -> Unit,
     onNavigateToOracleDrive: () -> Unit
