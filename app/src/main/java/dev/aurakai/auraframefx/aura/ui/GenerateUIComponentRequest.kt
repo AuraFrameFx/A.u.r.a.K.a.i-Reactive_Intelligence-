@@ -13,7 +13,7 @@
     "UnusedImport"
 )
 
-package dev.aurakai.auraframefx.api.client.models
+package dev.aurakai.auraframefx.aura.ui
 
 
 import dev.aurakai.auraframefx.api.client.models.GenerateUIComponentRequest.Framework

@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.system.lockscreen
+package dev.aurakai.auraframefx.aura.ui
 
 import android.content.Context
 import android.content.SharedPreferences

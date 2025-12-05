@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.api.client.models
+package dev.aurakai.auraframefx.ui
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.tween

@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ai.context
+package dev.aurakai.auraframefx.cascade.context
 
 /**
  * Context data for AI processing and conversation management.

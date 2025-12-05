@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.system.utils
+package dev.aurakai.auraframefx.aura.ui
 
 import android.graphics.drawable.Drawable
 import android.view.View

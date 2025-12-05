@@ -74,7 +74,7 @@ gradlePlugin {
 dependencies {
     // CRITICAL: All versions MUST match root build.gradle.kts and gradle/libs.versions.toml
     // Kotlin 2.2.21 is the stable version declared in the root build
-    implementation("com.android.tools.build:gradle:9.0.0-beta01")
+    implementation("com.android.tools.build:gradle:9.0.0-beta03")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:2.2.21")
 
     implementation("org.jetbrains.kotlin:compose-compiler-gradle-plugin:2.2.21")

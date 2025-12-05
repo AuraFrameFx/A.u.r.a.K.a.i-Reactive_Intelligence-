@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.oracle.drive.api
+package dev.aurakai.auraframefx.oracledrive.genesis
 
 import javax.inject.Singleton
 

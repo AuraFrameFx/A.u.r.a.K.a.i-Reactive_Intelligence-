@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.kotlin22
+package dev.aurakai.auraframefx.utils
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

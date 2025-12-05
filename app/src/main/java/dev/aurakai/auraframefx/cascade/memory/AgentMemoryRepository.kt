@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.data.repository
+package dev.aurakai.auraframefx.cascade.memory
 
 import dev.aurakai.auraframefx.data.room.AgentMemoryDao
 import dev.aurakai.auraframefx.data.room.AgentMemoryEntity

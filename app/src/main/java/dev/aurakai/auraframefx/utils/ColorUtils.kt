@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.system.utils
+package dev.aurakai.auraframefx.utils
 
 import android.content.Context
 import android.graphics.Color

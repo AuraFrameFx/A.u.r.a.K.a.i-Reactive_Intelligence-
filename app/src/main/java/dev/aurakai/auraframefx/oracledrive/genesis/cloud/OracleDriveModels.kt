@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.oracledrive
+package dev.aurakai.auraframefx.oracledrive.genesis.cloud
 
 /**
  * Data models for Oracle Drive consciousness-driven storage system

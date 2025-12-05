@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.di
+package dev.aurakai.auraframefx.aura
 
 import dagger.Module
 import dagger.Provides

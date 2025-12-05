@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ai.services
+package dev.aurakai.auraframefx.cascade.trinity
 
 import dev.aurakai.auraframefx.utils.AuraFxLogger
 import dev.aurakai.auraframefx.kai.KaiAIService

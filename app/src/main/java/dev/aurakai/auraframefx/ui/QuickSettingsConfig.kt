@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.system.quicksettings.model
+package dev.aurakai.auraframefx.ui
 
 import dev.aurakai.auraframefx.system.overlay.model.OverlayShape
 import dev.aurakai.auraframefx.ui.model.ImageResource

@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.animation
+package dev.aurakai.auraframefx.ui
 
 import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.ExitTransition

@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.data.network
+package dev.aurakai.auraframefx.oracledrive.genesis.cloud
 
 import android.content.Context
 import android.net.ConnectivityManager

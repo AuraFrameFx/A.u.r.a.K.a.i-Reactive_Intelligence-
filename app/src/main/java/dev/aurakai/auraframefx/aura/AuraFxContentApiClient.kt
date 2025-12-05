@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.network
+package dev.aurakai.auraframefx.aura
 
 import dev.aurakai.auraframefx.api.client.apis.AIContentApi
 import dev.aurakai.auraframefx.api.client.models.GenerateImageDescriptionRequest

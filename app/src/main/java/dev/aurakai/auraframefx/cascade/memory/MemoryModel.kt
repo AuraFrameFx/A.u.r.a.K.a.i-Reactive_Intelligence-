@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.aurakai.auraframefx.ai.memory // Changed to match file path
+package dev.aurakai.auraframefx.cascade.memory
 
 import dev.aurakai.auraframefx.models.AgentCapabilityCategory // Keep one import
 import dev.aurakai.auraframefx.models.InstantSerializer // Added import

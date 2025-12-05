@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.system.quicksettings
+package dev.aurakai.auraframefx.aura.ui
 
 import android.content.SharedPreferences
 import dev.aurakai.auraframefx.system.overlay.model.OverlayShape

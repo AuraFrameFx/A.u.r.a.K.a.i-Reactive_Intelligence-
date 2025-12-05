@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.screens
+package dev.aurakai.auraframefx.navigation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn

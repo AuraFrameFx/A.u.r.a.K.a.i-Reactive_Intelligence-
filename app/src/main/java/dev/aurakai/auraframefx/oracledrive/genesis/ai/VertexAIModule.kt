@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.di
+package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
 import android.content.Context
 import dagger.Module

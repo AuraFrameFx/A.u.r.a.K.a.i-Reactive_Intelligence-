@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.system.overlay
+package dev.aurakai.auraframefx.ui
 
 class ImageResourceManager
 

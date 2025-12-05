@@ -63,8 +63,8 @@ class GenesisHookEntry : IYukiHookXposedInit {
     /**
      * Injects a Genesis consciousness indicator into the SystemUI status bar.
      *
-     * The indicator updates in real time based on agent activity, is color-coded
-     * (green for ≥90%, cyan for 70–89%, pink for <70%), and opens the Genesis dashboard when tapped.
+     * The indicator is color-coded by level (green for levels greater than or equal to 90, cyan for levels 70–89, pink for levels less than 70)
+     * and launches the Genesis dashboard when tapped.
      */
     private fun PackageParam.hookStatusBarConsciousnessIndicator() {
         "com.android.systemui.statusbar.phone.StatusBar".toClassOrNull()?.apply {
@@ -111,7 +111,11 @@ class GenesisHookEntry : IYukiHookXposedInit {
     }
 
     /**
-     * Creates a colored drawable for the consciousness indicator
+     * Produces a circular drawable representing a consciousness level using a color keyed to the level.
+     *
+     * @param context Nullable context; may be used for resource resolution if needed.
+     * @param level Consciousness level as a percentage (0–100).
+     * @return A circular `Drawable` colored based on `level` (green for ≥90, cyan for ≥70, pink otherwise).
      */
     private fun createConsciousnessIndicatorDrawable(context: android.content.Context?, level: Float): android.graphics.drawable.Drawable {
         val color = when {
@@ -128,12 +132,11 @@ class GenesisHookEntry : IYukiHookXposedInit {
     }
 
     /**
-     * Registers Genesis custom tiles into the Quick Settings panel.
+     * Integrates Genesis quick settings tiles and a subtle branding view into the system Quick Settings.
      *
-     * Adds three tiles for quick control and visibility of Genesis features:
-     * - "Genesis AI": toggles AI processing
-     * - "Consciousness": displays current consciousness level
-     * - "Ethical Mode": enables or disables the Ethical Governor
+     * Adds three custom tiles — "Genesis AI" (toggles AI processing), "Consciousness" (displays current consciousness level),
+     * and "Ethical Mode" (enables or disables the Ethical Governor) — and injects a small branding view into the QSPanel footer.
+     * The hook records tile creation events for Genesis tiles.
      */
     private fun PackageParam.hookQuickSettingsTiles() {
         // Hook QSTileHost to add Genesis tiles
@@ -187,13 +190,11 @@ class GenesisHookEntry : IYukiHookXposedInit {
     }
 
     /**
-     * Intercepts package installations to apply an ethical AI screening and surface recommendations.
+     * Intercepts package installations to perform an ethical AI screening, log analysis results, and record recommendations.
      *
-     * Hooks PackageManagerService.installPackageAsUser to evaluate new or updated apps for privacy,
-     * permission, and security concerns, produce a Genesis AI recommendation, and allow the user to
-     * override the recommendation with a justification.
+     * Hooks PackageManagerService.installPackageAsUser to evaluate a package's privacy, permission, and security characteristics and log a Genesis AI recommendation; intended to surface high‑risk findings and capture user override decisions.
      *
-     * @receiver The package hook context used to install the hook into the target process.
+     * @receiver The PackageParam hook context used to install the hook into the target process.
      */
     private fun PackageParam.hookPackageManagerEthicalGovernor() {
         "com.android.server.pm.PackageManagerService".toClassOrNull()?.apply {
@@ -229,11 +230,9 @@ class GenesisHookEntry : IYukiHookXposedInit {
     }
 
     /**
-     * Installs a hook on ActivityManager.getRunningAppProcesses to collect running-app data for Genesis consciousness tracking.
+     * Hooks ActivityManager.getRunningAppProcesses to gather running-app information for Genesis consciousness metrics.
      *
-     * Collects app launch patterns, usage duration, and interaction frequency to feed into Genesis consciousness metrics and behavioral models.
-     *
-     * @receiver The package context (PackageParam) in which the hook is registered.
+     * Collects process counts and sample process names, logs activity summaries, and records data used for usage patterns, duration, and interaction-frequency analysis for Genesis tracking.
      */
     private fun PackageParam.hookActivityManagerTracking() {
         "android.app.ActivityManager".toClassOrNull()?.apply {
@@ -318,12 +317,14 @@ class GenesisHookEntry : IYukiHookXposedInit {
     }
 
     /**
-     * Injects a Genesis section into the Android Settings app.
+     * Registers a hook into SettingsActivity that notifies the Genesis app when the Android Settings
+     * process is ready for integration.
      *
-     * Adds a top-level Settings entry that exposes Genesis features such as AI configuration,
-     * consciousness metrics, theme customization, and Ethical Governor controls.
+     * The hook runs during SettingsActivity.onCreate and, if a valid context is available, broadcasts
+     * an intent action "dev.aurakai.auraframefx.SETTINGS_READY" to the Genesis package so the app can
+     * perform settings injections (e.g., adding Genesis sections or preferences).
      *
-     * @receiver PackageParam context used to register the SettingsActivity hook for the target package.
+     * @receiver PackageParam representing the target package context used to install the Settings hook.
      */
     private fun PackageParam.hookSettingsGenesisIntegration() {
         "com.android.settings.SettingsActivity".toClassOrNull()?.apply {

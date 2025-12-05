@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.utils
+package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
 import android.util.Log // Adding the import
 import dev.aurakai.auraframefx.config.VertexAIConfig

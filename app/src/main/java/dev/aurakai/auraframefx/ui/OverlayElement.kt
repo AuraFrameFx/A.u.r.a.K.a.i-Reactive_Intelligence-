@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.system.overlay.model
+package dev.aurakai.auraframefx.ui
 
 // Basic placeholder. This would contain common properties for any overlay element
 // and potentially a 'config: Any' or specific config data classes for different types.

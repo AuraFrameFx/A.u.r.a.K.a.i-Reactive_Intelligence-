@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.data.room
+package dev.aurakai.auraframefx.cascade.memory
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

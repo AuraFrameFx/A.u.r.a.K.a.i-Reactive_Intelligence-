@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ai.clients
+package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
 import com.google.ai.client.generativeai.GenerativeModel
 import com.google.ai.client.generativeai.type.generationConfig

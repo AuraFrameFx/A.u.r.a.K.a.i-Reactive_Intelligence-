@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.oracle.drive.utils
+package dev.aurakai.auraframefx.oracledrive
 
 import dev.aurakai.auraframefx.utils.AuraFxLogger
 import kotlinx.coroutines.CoroutineDispatcher

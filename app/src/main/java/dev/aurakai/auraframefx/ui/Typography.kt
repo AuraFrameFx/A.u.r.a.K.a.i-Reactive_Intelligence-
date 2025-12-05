@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.theme
+package dev.aurakai.auraframefx.ui
 
 // Import TextStyles if defining custom ones, e.g.:
 // import androidx.compose.ui.text.TextStyle

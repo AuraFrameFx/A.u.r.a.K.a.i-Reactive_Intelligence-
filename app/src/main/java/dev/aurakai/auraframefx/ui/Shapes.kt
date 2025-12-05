@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.theme
+package dev.aurakai.auraframefx.ui
 
 import android.graphics.PointF
 import androidx.compose.foundation.shape.RoundedCornerShape

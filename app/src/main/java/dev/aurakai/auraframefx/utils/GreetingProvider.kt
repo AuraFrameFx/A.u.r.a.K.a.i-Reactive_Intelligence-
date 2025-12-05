@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.settings
+package dev.aurakai.auraframefx.utils
 
 import javax.inject.Inject
 import javax.inject.Singleton

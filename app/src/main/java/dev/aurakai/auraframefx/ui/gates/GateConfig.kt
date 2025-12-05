@@ -118,7 +118,7 @@ object GateConfigs {
     // Region: Kai (Security & Protection)
     // =================================
 
-    // Sentinel's Fortress - Security Hub
+    // Sentinel's Fortress - Security Hub (includes Firewall features)
     val sentinelsFortress = GateConfig(
         moduleId = "sentinels-fortress",
         title = "Sentinel's Fortress",
@@ -127,24 +127,9 @@ object GateConfigs {
         glowColor = UNIFIED_GLOW_COLOR,
         secondaryGlowColor = UNIFIED_SECONDARY_GLOW,
         pixelArtUrl = "sentinelfinalgate",
-        description = "Kai's security command center. Monitor and manage all security protocols from a single interface.",
+        description = "Kai's security command center with firewall, threat monitoring, and all security protocols.",
         backgroundColor = Color.Black,
         route = "sentinels_fortress"
-    )
-
-    // Firewall - Network Protection
-    val firewall = GateConfig(
-        moduleId = "firewall",
-        title = "Firewall",
-        titleStyle = UNIFIED_TITLE_STYLE,
-        borderColor = UNIFIED_BORDER_COLOR,
-        glowColor = UNIFIED_GLOW_COLOR,
-        secondaryGlowColor = UNIFIED_SECONDARY_GLOW,
-        pixelArtUrl = "gate_sentinelsfortress_final", // Reusing Sentinel image for now as it's related
-        description = "Configure network security, monitor connections, and block potential threats.",
-        backgroundColor = Color.Black,
-        route = "firewall",
-        comingSoon = true
     )
 
     // Region: Aura (UI/UX & Creativity)

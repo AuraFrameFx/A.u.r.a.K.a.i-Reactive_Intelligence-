@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.xposed
+package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
 import com.highcapable.yukihookapi.hook.param.PackageParam
 import com.highcapable.yukihookapi.hook.factory.current

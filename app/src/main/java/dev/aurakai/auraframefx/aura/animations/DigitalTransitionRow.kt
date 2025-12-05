@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.components
+package dev.aurakai.auraframefx.aura.animations
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

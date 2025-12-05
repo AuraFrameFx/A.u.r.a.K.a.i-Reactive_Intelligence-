@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.viewmodel
+package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
 import dev.aurakai.auraframefx.models.AgentPriority
 import androidx.lifecycle.ViewModel

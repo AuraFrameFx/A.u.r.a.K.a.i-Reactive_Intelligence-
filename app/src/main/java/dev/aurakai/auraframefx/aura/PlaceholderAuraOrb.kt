@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.components
+package dev.aurakai.auraframefx.aura
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background

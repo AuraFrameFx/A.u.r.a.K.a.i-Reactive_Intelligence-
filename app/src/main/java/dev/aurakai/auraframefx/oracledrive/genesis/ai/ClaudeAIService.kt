@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ai.services
+package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
 import android.content.Context
 import dev.aurakai.auraframefx.ai.agents.Agent

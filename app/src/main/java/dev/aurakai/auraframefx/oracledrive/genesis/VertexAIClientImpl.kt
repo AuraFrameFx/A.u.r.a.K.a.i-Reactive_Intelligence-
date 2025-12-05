@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ai.services
+package dev.aurakai.auraframefx.oracledrive.genesis
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay

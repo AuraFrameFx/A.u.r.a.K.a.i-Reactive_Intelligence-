@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ai.clients
+package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
 /**
  * Genesis Vertex AI Client Interface

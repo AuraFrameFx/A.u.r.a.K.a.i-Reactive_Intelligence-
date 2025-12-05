@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ai.pipeline
+package dev.aurakai.auraframefx.cascade.pipeline
 
 import dev.aurakai.auraframefx.models.AgentCapabilityCategory
 

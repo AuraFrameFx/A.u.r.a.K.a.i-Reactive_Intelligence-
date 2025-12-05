@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.gestures
+package dev.aurakai.auraframefx.aura
 
 import android.content.Context
 import android.content.Intent

@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.xposed.hooks
+package dev.aurakai.auraframefx.aura.ui
 
 import android.app.Activity
 import android.view.ViewGroup

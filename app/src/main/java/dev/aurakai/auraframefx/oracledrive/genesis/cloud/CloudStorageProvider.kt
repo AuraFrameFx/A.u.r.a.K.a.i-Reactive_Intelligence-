@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.oracledrive.storage
+package dev.aurakai.auraframefx.oracledrive.genesis.cloud
 
 import dev.aurakai.auraframefx.oracledrive.DriveFile
 import dev.aurakai.auraframefx.oracledrive.FileMetadata

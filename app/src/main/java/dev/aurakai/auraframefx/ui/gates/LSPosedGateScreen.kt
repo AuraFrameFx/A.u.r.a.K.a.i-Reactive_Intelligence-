@@ -29,6 +29,15 @@ import kotlinx.coroutines.delay
  * - Quick actions for common tasks
  * - Module configuration
  */
+/**
+ * Displays the LSPosed control screen with framework status, quick actions, and a list of active modules.
+ *
+ * The UI shows a top app bar with back navigation, a status card reflecting framework activity and stats,
+ * a set of quick action cards, and expandable module cards. The screen simulates dynamic updates to the
+ * total hook count while visible.
+ *
+ * @param onNavigateBack Callback invoked when the back navigation icon is pressed.
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LSPosedGateScreen(
@@ -126,6 +135,15 @@ fun LSPosedGateScreen(
     }
 }
 
+/**
+ * Displays a colored status card that presents a title, an icon and text reflecting active/inactive state, and a row of statistical items.
+ *
+ * @param title The heading displayed at the top of the card.
+ * @param isActive Whether the status is active; controls the displayed icon and which descriptive text is shown.
+ * @param activeText Text to show when `isActive` is true.
+ * @param inactiveText Text to show when `isActive` is false.
+ * @param stats A list of `Stat` items to render as value/label pairs in the card's stats row.
+ */
 @Composable
 private fun StatusCard(
     title: String,
@@ -197,6 +215,13 @@ private fun StatusCard(
     }
 }
 
+/**
+ * Renders a tappable-looking card representing a quick action with its icon, title, description, and trailing chevron.
+ *
+ * The card's background color is derived from the action's `color`, and text/icon content is styled for high-contrast display.
+ *
+ * @param action The quick action data containing `title`, `description`, `icon`, and `color` used to populate the card.
+ */
 @Composable
 private fun QuickActionCard(action: QuickAction) {
     Card(
@@ -247,6 +272,13 @@ private fun QuickActionCard(action: QuickAction) {
     }
 }
 
+/**
+ * Displays a collapsible card for a module that shows its name, package, enabled state, and — when expanded — details and action buttons.
+ *
+ * When tapped the card toggles between collapsed and expanded states. In collapsed state it shows the module title, package name, and an ACTIVE/DISABLED badge. In expanded state it additionally shows Version, Hooks, Scope, and two action buttons for enabling/disabling the module and viewing logs.
+ *
+ * @param module The module metadata to display (name, packageName, version, enabled, hookCount, scope).
+ */
 @Composable
 private fun ModuleCard(module: XposedModule) {
     var expanded by remember { mutableStateOf(false) }
@@ -328,6 +360,14 @@ private fun ModuleCard(module: XposedModule) {
     }
 }
 
+/**
+ * Displays a single horizontal detail row with a left-aligned label and a right-aligned value.
+ *
+ * The label is rendered in small gray text and the value in small white text with medium weight.
+ *
+ * @param label The descriptive label shown on the left.
+ * @param value The corresponding value shown on the right.
+ */
 @Composable
 private fun ModuleDetailRow(label: String, value: String) {
     Row(
@@ -367,7 +407,11 @@ private data class XposedModule(
     val scope: String
 )
 
-// Mock Data
+/**
+ * Provides a list of sample quick actions used by the UI.
+ *
+ * @return A list of `QuickAction` instances representing example actions (title, description, icon, and color) shown in the Quick Actions section.
+ */
 private fun getQuickActions() = listOf(
     QuickAction(
         "View Hook Logs",
@@ -395,6 +439,11 @@ private fun getQuickActions() = listOf(
     )
 )
 
+/**
+ * Provides a list of sample active Xposed/LSPosed modules used by the UI.
+ *
+ * @return A list of `XposedModule` instances representing mock module metadata (name, package, version, enabled state, hook count, and scope).
+ */
 private fun getActiveModules() = listOf(
     XposedModule(
         name = "Genesis Protocol",

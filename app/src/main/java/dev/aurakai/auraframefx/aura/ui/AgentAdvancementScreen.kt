@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.aura.ui.agents
+package dev.aurakai.auraframefx.aura.ui
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode

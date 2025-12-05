@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.system.overlay // Ensure this package is correct
+package dev.aurakai.auraframefx.system.overlay
 
 import kotlinx.serialization.Serializable
 
