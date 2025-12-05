@@ -22,7 +22,7 @@ configurations.all {
     exclude(group = "androidx.core")
 }
 
-// Configure Java toolchain to JVM 24 (matches Kotlin target)
+// Configure Java toolchain to JVM 25 (matches Kotlin target)
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(25))
