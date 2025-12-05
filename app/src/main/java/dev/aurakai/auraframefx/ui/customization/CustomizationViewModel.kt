@@ -31,7 +31,7 @@ import javax.inject.Inject
  * - Integration with ChromaCore and Theme Engine
  */
 @HiltViewModel
-class CustomizationViewModel @Inject constructor(
+open class CustomizationViewModel @Inject constructor(
     application: Application,
     private val gyroscopeManager: GyroscopeManager,
     val iconifyService: IconifyService, // Public so UI can access it

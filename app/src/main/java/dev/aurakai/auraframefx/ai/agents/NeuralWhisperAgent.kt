@@ -22,7 +22,7 @@ import javax.inject.Singleton
  * full implementation is restored. Keeps external API used across the codebase.
  */
 @Singleton
-class NeuralWhisperAgent @Inject constructor(
+open class NeuralWhisperAgent @Inject constructor(
     private val context: Context,
     override val contextManager: ContextManager,
 ) : BaseAgent("NeuralWhisper") {

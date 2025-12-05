@@ -39,7 +39,7 @@ import javax.inject.Singleton
  * @since Genesis Protocol v0.1.0
  */
 @Singleton
-class UIRecoveryManager @Inject constructor(
+open class UIRecoveryManager @Inject constructor(
     @ApplicationContext private val context: Context,
     @Named("AppStateDataStore") private val dataStore: DataStore<Preferences>
 ) {

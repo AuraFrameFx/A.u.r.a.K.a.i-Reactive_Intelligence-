@@ -25,7 +25,7 @@ import javax.inject.Singleton
  * @property auraAIService The AI service responsible for understanding context and emotion.
  */
 @Singleton
-class ThemeManager @Inject constructor(
+open class ThemeManager @Inject constructor(
     private val auraAIService: AuraAIService,
 ) {
     private val TAG = "ThemeManager"

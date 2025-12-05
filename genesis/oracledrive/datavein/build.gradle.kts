@@ -64,3 +64,7 @@ dependencies {
     // Core Library Desugaring (Java 24 APIs)
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 }
+
+ksp {
+    arg("yukihookapi.modulePackageName", "dev.aurakai.auraframefx.genesis.oracledrive.datavein")
+}

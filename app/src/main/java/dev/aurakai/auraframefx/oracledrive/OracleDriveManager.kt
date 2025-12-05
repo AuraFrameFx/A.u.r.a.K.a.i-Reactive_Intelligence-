@@ -12,7 +12,7 @@ import javax.inject.Singleton
  * Coordinates consciousness-driven storage with AI agent intelligence
  */
 @Singleton
-class OracleDriveManager @Inject constructor(
+open class OracleDriveManager @Inject constructor(
     private val oracleDriveApi: OracleDriveApi,
     private val cloudStorageProvider: CloudStorageProvider,
     private val securityManager: DriveSecurityManager

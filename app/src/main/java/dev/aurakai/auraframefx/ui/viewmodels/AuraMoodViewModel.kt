@@ -21,7 +21,7 @@ import javax.inject.Inject
  * Contributors: Please keep Aura's logic focused on creativity, design, and user experience features.
  */
 @HiltViewModel
-class AuraMoodViewModel @Inject constructor() : ViewModel() {
+open class AuraMoodViewModel @Inject constructor() : ViewModel() {
 
     // Private MutableStateFlow that can be updated from this ViewModel
     private val _moodState = MutableStateFlow<Emotion>(Emotion.NEUTRAL) // Default value

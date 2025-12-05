@@ -14,7 +14,7 @@ import javax.inject.Inject
  * Exposes subscription state and handles billing operations
  */
 @HiltViewModel
-class SubscriptionViewModel @Inject constructor(
+open class SubscriptionViewModel @Inject constructor(
     private val billingManager: BillingManager
 ) : ViewModel() {
 

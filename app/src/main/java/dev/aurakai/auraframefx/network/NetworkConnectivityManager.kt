@@ -16,7 +16,7 @@ import javax.inject.Singleton
  * Manages network connectivity state and provides real-time updates.
  */
 @Singleton
-class NetworkConnectivityManager @Inject constructor(
+open class NetworkConnectivityManager @Inject constructor(
     private val context: Context
 ) {
     private val _isConnected = MutableStateFlow(false)

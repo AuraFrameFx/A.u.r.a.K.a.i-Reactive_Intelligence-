@@ -84,6 +84,10 @@ dependencies {
     coreLibraryDesugaring(libs.desugar.jdk.libs)
 }
 
+ksp {
+    arg("yukihookapi.modulePackageName", "dev.aurakai.auraframefx.genesis.oracledrive.rootmanagement")
+}
+
 // Force a single annotations artifact to avoid duplicate-class errors
 configurations.all {
     // Skip androidTest configurations to avoid issues with local JARs

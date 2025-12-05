@@ -10,7 +10,7 @@ import javax.inject.Singleton
  * Central state manager for the AuraFrameFX application
  */
 @Singleton
-class AppStateManager @Inject constructor() {
+open class AppStateManager @Inject constructor() {
 
     private val _appState = MutableStateFlow(AppState())
     val appState: StateFlow<AppState> = _appState.asStateFlow()

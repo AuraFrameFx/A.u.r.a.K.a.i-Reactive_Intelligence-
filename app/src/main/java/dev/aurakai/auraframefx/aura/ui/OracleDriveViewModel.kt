@@ -17,7 +17,7 @@ import java.time.format.FormatStyle
 import javax.inject.Inject
 
 @HiltViewModel
-class OracleDriveViewModel @Inject constructor(
+open class OracleDriveViewModel @Inject constructor(
     private val oracleDriveService: OracleDriveService,
 ) : ViewModel() {
 

@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class TrinityViewModel @Inject constructor(
+open class TrinityViewModel @Inject constructor(
     private val repository: TrinityRepository
 ) : ViewModel() {
 

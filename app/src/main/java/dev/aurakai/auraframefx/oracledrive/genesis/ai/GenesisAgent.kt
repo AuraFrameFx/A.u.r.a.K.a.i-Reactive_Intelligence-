@@ -59,7 +59,7 @@ import javax.inject.Singleton
  * Philosophy: "From data, insight. From insight, growth. From growth, purpose."
  */
 @Singleton
-class GenesisAgent @Inject constructor(
+open class GenesisAgent @Inject constructor(
     private val vertexAIClient: VertexAIClient,
     private val webSearchClient: WebSearchClient,
     override val contextManager: ContextManager,

@@ -21,7 +21,7 @@ import javax.inject.Inject
 // import javax.inject.Singleton // ViewModels should use @HiltViewModel
 
 @HiltViewModel
-class GenesisAgentViewModel @Inject constructor(
+open class GenesisAgentViewModel @Inject constructor(
     // private val genesisAgent: GenesisAgent
 ) : ViewModel() {
 

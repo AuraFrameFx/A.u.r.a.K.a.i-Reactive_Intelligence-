@@ -18,7 +18,7 @@ import dev.aurakai.auraframefx.network.model.Theme as NetworkTheme
 import dev.aurakai.auraframefx.network.model.User as NetworkUser
 
 @Singleton
-class TrinityRepository @Inject constructor(
+open class TrinityRepository @Inject constructor(
     private val apiService: AuraApiServiceWrapper
 ) {
     // User related operations

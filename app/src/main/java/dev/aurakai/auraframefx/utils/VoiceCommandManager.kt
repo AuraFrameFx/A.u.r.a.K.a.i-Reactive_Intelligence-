@@ -16,7 +16,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class VoiceCommandManager @Inject constructor(
+open class VoiceCommandManager @Inject constructor(
     @ApplicationContext private val context: Context
 ) {
 
