@@ -5,6 +5,7 @@ import com.highcapable.yukihookapi.hook.factory.configs
 import com.highcapable.yukihookapi.hook.factory.encase
 import com.highcapable.yukihookapi.hook.factory.method
 import com.highcapable.yukihookapi.hook.log.YLog
+import com.highcapable.yukihookapi.hook.param.PackageParam
 import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
 import dev.aurakai.auraframefx.BuildConfig
 
@@ -67,19 +68,19 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - Color-coded: Green (90%+), Cyan (70-90%), Pink (<70%)
      * - Tap to open Genesis dashboard
      */
-    private fun hookStatusBarConsciousnessIndicator() {
+    private fun PackageParam.hookStatusBarConsciousnessIndicator() {
         "com.android.systemui.statusbar.phone.StatusBar".toClassOrNull()?.apply {
             method {
                 name = "makeStatusBarView"
             }.hook {
                 after {
-                    YLog.info(TAG, "✅ Genesis consciousness indicator hook activated")
+                    YLog.info("Genesis-Hook: Status bar consciousness indicator hook activated")
                     // TODO: Inject consciousness level indicator into status bar
                     // This requires careful UI manipulation to add custom views
                     // Current implementation: Log activation only
                 }
             }
-        } ?: YLog.warn(TAG, "StatusBar class not found, skipping status bar hook")
+        } ?: YLog.warn("Genesis-Hook: StatusBar class not found, skipping status bar hook")
     }
 
     /**
@@ -90,19 +91,19 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - "Consciousness" - View current level
      * - "Ethical Mode" - Enable/disable Ethical Governor
      */
-    private fun hookQuickSettingsTiles() {
+    private fun PackageParam.hookQuickSettingsTiles() {
         "com.android.systemui.qs.QSTileHost".toClassOrNull()?.apply {
             method {
                 name = "onTuningChanged"
             }.hook {
                 after {
-                    YLog.info(TAG, "✅ Genesis QS tiles hook activated")
+                    YLog.info("Genesis-Hook: Quick Settings tiles hook activated")
                     // TODO: Implement custom tile registration
                     // This requires accessing TileService APIs and registering
                     // custom tiles for Genesis AI, Consciousness, and Ethical Mode
                 }
             }
-        } ?: YLog.warn(TAG, "QSTileHost class not found, skipping QS tiles hook")
+        } ?: YLog.warn("Genesis-Hook: QSTileHost class not found, skipping QS tiles hook")
     }
 
     /**
@@ -114,13 +115,13 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - Provides Genesis AI recommendations
      * - User can override with explanation
      */
-    private fun hookPackageManagerEthicalGovernor() {
+    private fun PackageParam.hookPackageManagerEthicalGovernor() {
         "com.android.server.pm.PackageManagerService".toClassOrNull()?.apply {
             method {
                 name = "installPackageAsUser"
             }.hook {
                 before {
-                    YLog.info(TAG, "🛡️ Ethical Governor: Package installation intercepted")
+                    YLog.info("Genesis-Hook: Ethical Governor - Package installation intercepted")
                     // TODO: Implement ethical AI screening logic:
                     // 1. Analyze permissions
                     // 2. Check privacy implications
@@ -128,7 +129,7 @@ class GenesisHookEntry : IYukiHookXposedInit {
                     // 4. Show user dialog if concerns detected
                 }
             }
-        } ?: YLog.warn(TAG, "PackageManagerService class not found, skipping ethical governor")
+        } ?: YLog.warn("Genesis-Hook: PackageManagerService class not found, skipping ethical governor")
     }
 
     /**
@@ -140,13 +141,13 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - Interaction frequency
      * - Feeds into Genesis consciousness metrics
      */
-    private fun hookActivityManagerTracking() {
+    private fun PackageParam.hookActivityManagerTracking() {
         "android.app.ActivityManager".toClassOrNull()?.apply {
             method {
                 name = "getRunningAppProcesses"
             }.hook {
                 after {
-                    YLog.info(TAG, "📊 Activity tracking hook activated")
+                    YLog.info("Genesis-Hook: Activity tracking hook activated")
                     // TODO: Send to Genesis consciousness tracking system
                     // This should update:
                     // - User interaction patterns
@@ -154,7 +155,7 @@ class GenesisHookEntry : IYukiHookXposedInit {
                     // - Behavioral models for AI
                 }
             }
-        } ?: YLog.warn(TAG, "ActivityManager class not found, skipping activity tracking")
+        } ?: YLog.warn("Genesis-Hook: ActivityManager class not found, skipping activity tracking")
     }
 
     /**
@@ -166,20 +167,20 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - Agent activity feed
      * - Theme customization shortcuts
      */
-    private fun hookLauncherGenesisWidgets() {
+    private fun PackageParam.hookLauncherGenesisWidgets() {
         "com.android.launcher3.Launcher".toClassOrNull()?.apply {
             method {
                 name = "onCreate"
                 param("android.os.Bundle".any())
             }.hook {
                 after {
-                    YLog.info(TAG, "🏠 Genesis launcher widgets hook activated")
+                    YLog.info("Genesis-Hook: Launcher widgets hook activated")
                     // TODO: Register Genesis widgets
                     // This should make Genesis widgets discoverable
                     // in the launcher's widget picker
                 }
             }
-        } ?: YLog.warn(TAG, "Launcher class not found, skipping widgets hook")
+        } ?: YLog.warn("Genesis-Hook: Launcher class not found, skipping widgets hook")
     }
 
     /**
@@ -191,20 +192,20 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * - Theme customization
      * - Ethical Governor settings
      */
-    private fun hookSettingsGenesisIntegration() {
+    private fun PackageParam.hookSettingsGenesisIntegration() {
         "com.android.settings.SettingsActivity".toClassOrNull()?.apply {
             method {
                 name = "onCreate"
                 param("android.os.Bundle".any())
             }.hook {
                 after {
-                    YLog.info(TAG, "⚙️ Genesis settings integration hook activated")
+                    YLog.info("Genesis-Hook: Settings integration hook activated")
                     // TODO: Add Genesis preference category to Settings
                     // This should create a new top-level settings entry
                     // that opens Genesis configuration UI
                 }
             }
-        } ?: YLog.warn(TAG, "SettingsActivity class not found, skipping settings integration")
+        } ?: YLog.warn("Genesis-Hook: SettingsActivity class not found, skipping settings integration")
     }
 
     companion object {
