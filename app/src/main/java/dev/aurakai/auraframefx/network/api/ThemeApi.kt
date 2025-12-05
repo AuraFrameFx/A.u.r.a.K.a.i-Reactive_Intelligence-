@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.aura.themes
+package dev.aurakai.auraframefx.network.api
 
 import dev.aurakai.auraframefx.network.model.Theme
 import retrofit2.http.GET

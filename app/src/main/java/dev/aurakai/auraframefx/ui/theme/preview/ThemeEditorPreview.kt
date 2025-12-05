@@ -12,9 +12,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.core.graphics.toColorInt
-import dev.aurakai.auraframefx.aura.themes.ThemeColors
-import dev.aurakai.auraframefx.aura.themes.ThemeEditor
-import dev.aurakai.auraframefx.ui.theme.AuraFrameFXTheme
+import dev.aurakai.auraframefx.ui.theme.picker.ThemeColors
+import dev.aurakai.auraframefx.ui.theme.picker.ThemeEditor
+import dev.aurakai.auraframefx.ui.theme.model.AuraAppTheme as AuraFrameFXTheme
 
 @Preview(showBackground = true)
 @Composable
@@ -45,18 +45,4 @@ fun ThemeEditorPreview() {
     }
 }
 
-/**
- * Helper function to convert Android color int to Compose Color
- */
-@Composable
-fun Int.toColor(): Color {
-    return Color(this)
-}
 
-/**
- * Helper function to convert hex string to Compose Color
- */
-@Composable
-fun String.toColor(): Color {
-    return Color(this.toColorInt())
-}

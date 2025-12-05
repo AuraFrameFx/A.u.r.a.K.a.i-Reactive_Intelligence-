@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 import dev.aurakai.auraframefx.customization.CustomizationViewModel
 import dev.aurakai.auraframefx.ui.AuraMoodViewModel
 import dev.aurakai.auraframefx.ui.theme.GlassmorphicTheme
-import dev.aurakai.auraframefx.ui.theme.ThemeManager
+import dev.aurakai.auraframefx.ui.theme.manager.CustomizationThemeManager
 
 context(viewModel: AuraMoodViewModel, customizationViewModel: CustomizationViewModel) @JvmOverloads
 @Suppress("unused")
@@ -29,7 +29,7 @@ fun AurakaiEcoSysScreen(
     // Start customization collection once
     LaunchedEffect(Unit) { customizationViewModel.start(context) }
 
-    val auraTheme = ThemeManager.auraThemeState(context).value
+    val auraTheme = CustomizationThemeManager.auraThemeState(context).value
     val currentMood by viewModel.moodState.collectAsState()
 
     GlassmorphicTheme(dark = auraTheme.dark) {

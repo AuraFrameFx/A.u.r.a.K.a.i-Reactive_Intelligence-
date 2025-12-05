@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
-import dev.aurakai.auraframefx.aura.themes.AuraTheme
+import dev.aurakai.auraframefx.ui.theme.model.AuraTheme
 import kotlinx.coroutines.delay
 import kotlin.math.*
 

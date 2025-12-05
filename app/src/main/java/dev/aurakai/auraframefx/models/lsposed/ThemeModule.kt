@@ -4,7 +4,7 @@ import android.content.res.XModuleResources
 import de.robv.android.xposed.IXposedHookInitPackageResources
 import de.robv.android.xposed.IXposedHookZygoteInit
 import de.robv.android.xposed.callbacks.XC_InitPackageResources
-import dev.aurakai.auraframefx.lsposed.ThemeManager
+import dev.aurakai.auraframefx.ui.theme.manager.SystemThemeManager
 
 class ThemeModule : IXposedHookZygoteInit, IXposedHookInitPackageResources {
 
@@ -28,7 +28,7 @@ class ThemeModule : IXposedHookZygoteInit, IXposedHookInitPackageResources {
                 pparam.packageName,
                 "color",
                 "colorPrimary",
-                ThemeManager.primaryColor
+                SystemThemeManager.primaryColor
             )
 
             // Add more resource replacements as needed
@@ -47,14 +47,14 @@ class ThemeModule : IXposedHookZygoteInit, IXposedHookInitPackageResources {
             colorAttrs.forEach { attr ->
                 try {
                     val colorValue = when (attr) {
-                        "colorPrimary" -> ThemeManager.primaryColor
-                        "colorPrimaryDark" -> ThemeManager.primaryDarkColor
-                        "colorAccent" -> ThemeManager.accentColor
-                        "colorPrimaryVariant" -> ThemeManager.primaryVariantColor
-                        "colorSecondary" -> ThemeManager.secondaryColor
-                        "colorSecondaryVariant" -> ThemeManager.secondaryVariantColor
-                        "android:colorBackground" -> ThemeManager.backgroundColor
-                        "android:colorForeground" -> ThemeManager.foregroundColor
+                        "colorPrimary" -> SystemThemeManager.primaryColor
+                        "colorPrimaryDark" -> SystemThemeManager.primaryDarkColor
+                        "colorAccent" -> SystemThemeManager.accentColor
+                        "colorPrimaryVariant" -> SystemThemeManager.primaryVariantColor
+                        "colorSecondary" -> SystemThemeManager.secondaryColor
+                        "colorSecondaryVariant" -> SystemThemeManager.secondaryVariantColor
+                        "android:colorBackground" -> SystemThemeManager.backgroundColor
+                        "android:colorForeground" -> SystemThemeManager.foregroundColor
                         else -> 0
                     }
                     pparam.res.setReplacement(

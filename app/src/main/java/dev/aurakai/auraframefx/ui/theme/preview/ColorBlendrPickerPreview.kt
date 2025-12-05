@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.components.colorpicker
+package dev.aurakai.auraframefx.ui.theme.preview
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
@@ -11,6 +11,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import dev.aurakai.auraframefx.ui.theme.AuraFrameFXTheme
+import dev.aurakai.auraframefx.ui.theme.picker.ColorBlendrPicker
 
 @Preview(showBackground = true)
 @Composable

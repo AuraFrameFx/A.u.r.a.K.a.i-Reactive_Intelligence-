@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.components.colorpicker
+package dev.aurakai.auraframefx.ui.theme.picker
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

@@ -3,7 +3,7 @@ package dev.aurakai.auraframefx.network.model
 import dev.aurakai.auraframefx.models.AgentRequest
 import dev.aurakai.auraframefx.models.AgentResponse
 import dev.aurakai.auraframefx.network.AIAgentApi
-import dev.aurakai.auraframefx.aura.themes.ThemeApi
+import dev.aurakai.auraframefx.network.api.ThemeApi
 import dev.aurakai.auraframefx.network.api.UserApi
 import javax.inject.Inject
 import javax.inject.Singleton

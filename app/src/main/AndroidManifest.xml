@@ -11,6 +11,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" /> <!-- Specific data sync foreground service permission -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
 
     <!-- Optional Permissions - Declare runtime permissions for Android 6.0+ -->
     <uses-permission android:name="android.permission.CAMERA" />
@@ -91,13 +92,13 @@
             </intent-filter>
         </activity>
 
-        <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
 
     <!-- Services -->
         <service
             android:name="dev.aurakai.auraframefx.services.GenesisAccessibilityService"
-            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE"
-            android:exported="true">
+            android:exported="true"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
             <intent-filter>
                 <action android:name="android.accessibilityservice.AccessibilityService" />
             </intent-filter>
