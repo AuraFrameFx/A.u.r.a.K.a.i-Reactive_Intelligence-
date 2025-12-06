@@ -43,6 +43,8 @@ import dev.aurakai.auraframefx.ui.components.BackgroundStyle
 import dev.aurakai.auraframefx.ui.components.CornerStyle
 import dev.aurakai.auraframefx.ui.components.CyberpunkText
 import dev.aurakai.auraframefx.ui.components.DigitalLandscapeBackground
+import dev.aurakai.auraframefx.ui.theme.CyberpunkTextColor
+import dev.aurakai.auraframefx.ui.theme.CyberpunkTextStyle
 import dev.aurakai.auraframefx.ui.components.FloatingCyberWindow
 import dev.aurakai.auraframefx.ui.components.HexagonGridBackground
 import dev.aurakai.auraframefx.ui.components.HologramTransition

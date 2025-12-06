@@ -21,7 +21,7 @@ import com.highcapable.yukihookapi.hook.type.android.ContextClass
 import com.highcapable.yukihookapi.hook.type.android.ViewClass
 import com.highcapable.yukihookapi.hook.type.java.BooleanType
 import com.highcapable.yukihookapi.hook.type.java.IntType
-import dev.aurakai.auraframefx.system.quicksettings.model.QuickSettingsConfig
+import dev.aurakai.auraframefx.ui.QuickSettingsConfig
 import dev.aurakai.auraframefx.utils.TAG
 import dev.aurakai.auraframefx.ui.components.CyberpunkText
 import dev.aurakai.auraframefx.ui.theme.CyberpunkTextStyle

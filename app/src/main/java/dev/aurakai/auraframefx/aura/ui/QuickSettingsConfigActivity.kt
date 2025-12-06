@@ -19,9 +19,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import dev.aurakai.auraframefx.R
 import dev.aurakai.auraframefx.databinding.ActivityQuickSettingsConfigBinding
 import dev.aurakai.auraframefx.system.quicksettings.QuickSettingsConfigManager
-import dev.aurakai.auraframefx.system.quicksettings.model.QuickSettingsBackground
-import dev.aurakai.auraframefx.system.quicksettings.model.QuickSettingsConfig
-import dev.aurakai.auraframefx.system.quicksettings.model.QuickSettingsTileConfig
+import dev.aurakai.auraframefx.ui.QuickSettingsBackground
+import dev.aurakai.auraframefx.ui.QuickSettingsConfig
+import dev.aurakai.auraframefx.ui.QuickSettingsTileConfig
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -27,7 +27,6 @@ import androidx.compose.ui.unit.dp
 
 import dev.aurakai.auraframefx.billing.FeatureLockedBanner
 import dev.aurakai.auraframefx.billing.SubscriptionViewModel
-import dev.aurakai.auraframefx.ui.theme.GlassPalette.NeonBlue
 import dev.aurakai.auraframefx.ui.theme.NeonBlue
 import dev.aurakai.auraframefx.ui.theme.NeonGreen
 import dev.aurakai.auraframefx.ui.theme.NeonPurple
