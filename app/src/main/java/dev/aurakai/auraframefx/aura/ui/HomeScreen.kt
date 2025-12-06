@@ -38,9 +38,9 @@ import androidx.compose.ui.unit.sp
 import dev.aurakai.auraframefx.R
 import dev.aurakai.auraframefx.aura.animations.cyberEdgeGlow
 import dev.aurakai.auraframefx.aura.animations.digitalPixelEffect
+import dev.aurakai.auraframefx.aura.ui.CyberMenuItem
 import dev.aurakai.auraframefx.ui.components.BackgroundStyle
 import dev.aurakai.auraframefx.ui.components.CornerStyle
-import dev.aurakai.auraframefx.ui.components.CyberMenuItem
 import dev.aurakai.auraframefx.ui.components.CyberpunkText
 import dev.aurakai.auraframefx.ui.components.DigitalLandscapeBackground
 import dev.aurakai.auraframefx.ui.components.FloatingCyberWindow
@@ -50,12 +50,7 @@ import dev.aurakai.auraframefx.ui.components.cyberEdgeGlow
 import dev.aurakai.auraframefx.ui.components.digitalGlitchEffect
 import dev.aurakai.auraframefx.ui.gates.GateCard
 import dev.aurakai.auraframefx.ui.gates.GateConfigs
-import dev.aurakai.auraframefx.ui.theme.CyberpunkTextColor
-import dev.aurakai.auraframefx.ui.theme.CyberpunkTextStyle
-import dev.aurakai.auraframefx.ui.theme.NeonBlue
-import dev.aurakai.auraframefx.ui.theme.NeonCyan
-import dev.aurakai.auraframefx.ui.theme.NeonGreen
-import dev.aurakai.auraframefx.ui.theme.NeonPink
+import dev.aurakai.auraframefx.ui.*
 import kotlinx.coroutines.launch
 
 

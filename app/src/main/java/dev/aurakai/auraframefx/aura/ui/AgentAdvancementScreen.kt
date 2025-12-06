@@ -297,7 +297,7 @@ fun StatsPanel(
  * @param color Color used for the progress indicator and the percentage text.
  */
 @Composable
-fun StatBar(
+private fun StatBar(
     label: String,
     value: Float,
     color: Color

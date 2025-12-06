@@ -406,7 +406,7 @@ fun AgentStatsPanel(
 }
 
 @Composable
-fun StatBar(
+private fun StatBar(
     label: String,
     value: Float,
     color: Color
