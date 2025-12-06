@@ -263,7 +263,7 @@ espresso = "3.7.0"
 benchmark = "1.4.1"
 material3 = "1.4.0"
 foundationLayout = "1.10.0"
-foundation = "1.9.5"
+foundation = "1.10.0"
 
 [libraries]
 # ============================================================================
