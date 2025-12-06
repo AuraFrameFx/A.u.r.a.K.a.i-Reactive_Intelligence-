@@ -13,7 +13,7 @@ object GlassPalette {
     val TransparentWhite = Color(0x80FFFFFF)
     val FrostWhite = Color(0xCCFFFFFF)
     val DeepPurple = Color(0xFF3D2C8D)
-    val NeonBlue = Color(0xFF00C2FF)
+    val NeonBlueGlass = Color(0xFF00C2FF)
     val SoftBlack = Color(0xFF0C0F14)
     val SlateGray = Color(0xFF2B2F3A)
 }
@@ -22,7 +22,7 @@ object GlassPalette {
 fun GlassmorphicTheme(dark: Boolean = true, content: @Composable () -> Unit) {
     val colors = if (dark) {
         darkColorScheme(
-            primary = GlassPalette.NeonBlue,
+            primary = GlassPalette.NeonBlueGlass,
             secondary = GlassPalette.DeepPurple,
             background = GlassPalette.SoftBlack,
             surface = GlassPalette.SlateGray,
@@ -33,7 +33,7 @@ fun GlassmorphicTheme(dark: Boolean = true, content: @Composable () -> Unit) {
         )
     } else {
         lightColorScheme(
-            primary = GlassPalette.NeonBlue,
+            primary = GlassPalette.NeonBlueGlass,
             secondary = GlassPalette.DeepPurple,
             background = Color.White,
             surface = GlassPalette.FrostWhite,
@@ -45,4 +45,3 @@ fun GlassmorphicTheme(dark: Boolean = true, content: @Composable () -> Unit) {
     }
     MaterialTheme(colorScheme = colors, content = content)
 }
-

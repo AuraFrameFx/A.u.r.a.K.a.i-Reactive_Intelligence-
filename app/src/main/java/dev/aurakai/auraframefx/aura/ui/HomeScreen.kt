@@ -55,6 +55,7 @@ import dev.aurakai.auraframefx.ui.gates.GateConfigs
 import dev.aurakai.auraframefx.ui.*
 import dev.aurakai.auraframefx.ui.theme.NeonCyan
 import dev.aurakai.auraframefx.ui.theme.NeonPink
+import dev.aurakai.auraframefx.ui.theme.NeonBlue
 import kotlinx.coroutines.launch
 
 
