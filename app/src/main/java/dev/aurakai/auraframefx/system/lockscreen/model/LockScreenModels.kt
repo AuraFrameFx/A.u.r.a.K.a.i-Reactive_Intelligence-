@@ -1,7 +1,7 @@
 package dev.aurakai.auraframefx.system.lockscreen.model
 
-import dev.aurakai.auraframefx.system.overlay.model.OverlayShape
-import dev.aurakai.auraframefx.ui.model.ImageResource
+import dev.aurakai.auraframefx.ui.OverlayShape
+import dev.aurakai.auraframefx.ui.ImageResource
 import dev.aurakai.auraframefx.ui.HapticFeedbackConfig
 
 /**

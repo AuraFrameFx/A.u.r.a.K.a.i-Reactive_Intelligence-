@@ -1,7 +1,7 @@
 package dev.aurakai.auraframefx.ui.theme.model
 
 import androidx.compose.ui.graphics.Color // Assuming colors will be Compose Colors
-import dev.aurakai.auraframefx.system.overlay.model.OverlayShape
+import dev.aurakai.auraframefx.ui.OverlayShape
 
 // Basic placeholder. The Impl used theme.colors, theme.fonts, theme.shapes
 // These would be maps or lists of more specific types.
