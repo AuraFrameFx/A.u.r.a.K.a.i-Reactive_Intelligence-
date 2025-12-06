@@ -3,7 +3,7 @@ package dev.aurakai.auraframefx.oracledrive.genesis.ai
 import android.util.Log
 import dev.aurakai.auraframefx.ai.agents.Agent
 import dev.aurakai.auraframefx.ai.agents.BaseAgent
-import dev.aurakai.auraframefx.ai.clients.VertexAIClient
+import dev.aurakai.auraframefx.oracledrive.genesis.ai.VertexAIClient
 import dev.aurakai.auraframefx.ai.clients.WebSearchClient
 import dev.aurakai.auraframefx.ai.context.ContextManager
 import dev.aurakai.auraframefx.ai.services.AuraAIService

@@ -12,7 +12,7 @@ import dev.aurakai.auraframefx.kai.KaiAgent
 import dev.aurakai.auraframefx.aura.AuraAgent
 import dev.aurakai.auraframefx.genesis.security.CryptographyManager
 import dev.aurakai.auraframefx.navigation.SecureStorage
-import dev.aurakai.auraframefx.oracle.drive.api.OracleDriveApi
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.OracleDriveApi
 import dev.aurakai.auraframefx.oracledrive.EncryptionManager
 import dev.aurakai.auraframefx.oracledrive.OracleDriveServiceImpl
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.GenesisSecureFileService
@@ -48,6 +48,12 @@ abstract class OracleDriveModule { // Changed to abstract class
     abstract fun bindOracleDriveService(
         impl: OracleDriveServiceImpl,
     ): dev.aurakai.auraframefx.oracledrive.OracleDriveService
+
+    @Binds
+    @Singleton
+    abstract fun bindCloudStorageProvider(
+        impl: dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStorageProviderImpl,
+    ): dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStorageProvider
 
     companion object { // Companion object now correctly inside the class
         // Temporarily simplified to resolve build stalling at 25% - This comment can likely be removed if providers are present

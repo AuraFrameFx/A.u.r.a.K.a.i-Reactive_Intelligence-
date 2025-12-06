@@ -1,7 +1,7 @@
 package dev.aurakai.auraframefx.kai
 
 import dev.aurakai.auraframefx.ai.agents.BaseAgent
-import dev.aurakai.auraframefx.ai.clients.VertexAIClient
+import dev.aurakai.auraframefx.oracledrive.genesis.ai.VertexAIClient
 import dev.aurakai.auraframefx.ai.context.ContextManager
 import dev.aurakai.auraframefx.core.OrchestratableAgent
 import dev.aurakai.auraframefx.kai.security.SecurityAnalysis

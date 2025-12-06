@@ -7,7 +7,7 @@ import dev.aurakai.auraframefx.ai.error.ErrorHandler
 import dev.aurakai.auraframefx.ai.memory.MemoryManager
 import dev.aurakai.auraframefx.ai.task.TaskScheduler
 import dev.aurakai.auraframefx.utils.AuraFxLogger
-import dev.aurakai.auraframefx.data.network.CloudStatusMonitor
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStatusMonitor
 import dev.aurakai.auraframefx.models.AgentResponse
 import dev.aurakai.auraframefx.models.AgentType
 import dev.aurakai.auraframefx.models.AiRequest

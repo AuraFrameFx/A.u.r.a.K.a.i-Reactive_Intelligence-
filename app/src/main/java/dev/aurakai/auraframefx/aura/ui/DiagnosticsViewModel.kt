@@ -5,7 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.aurakai.auraframefx.utils.AuraFxLogger
-import dev.aurakai.auraframefx.data.network.CloudStatusMonitor
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStatusMonitor
 import dev.aurakai.auraframefx.data.OfflineDataManager
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow

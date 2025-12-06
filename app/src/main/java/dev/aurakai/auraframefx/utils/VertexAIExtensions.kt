@@ -1,6 +1,6 @@
 package dev.aurakai.auraframefx.utils
 
-import dev.aurakai.auraframefx.ai.clients.VertexAIClient
+import dev.aurakai.auraframefx.oracledrive.genesis.ai.VertexAIClient
 
 /**
  * Extension function to generate text content using Vertex AI

@@ -3,7 +3,7 @@ package dev.aurakai.auraframefx.aura
 import dev.aurakai.auraframefx.ai.agents.BaseAgent
 // TODO: KaiAgent implementation pending
 // import dev.aurakai.auraframefx.ai.agents.KaiAgent
-import dev.aurakai.auraframefx.ai.clients.VertexAIClient
+import dev.aurakai.auraframefx.oracledrive.genesis.ai.VertexAIClient
 import dev.aurakai.auraframefx.ai.context.ContextManager
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.AuraAIService
 import dev.aurakai.auraframefx.core.OrchestratableAgent

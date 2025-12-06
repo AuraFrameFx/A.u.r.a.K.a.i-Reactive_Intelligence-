@@ -6,7 +6,7 @@ import dev.aurakai.auraframefx.ai.memory.MemoryManager
 import dev.aurakai.auraframefx.ai.task.TaskScheduler
 import dev.aurakai.auraframefx.ai.task.execution.TaskExecutionManager
 import dev.aurakai.auraframefx.utils.AuraFxLogger
-import dev.aurakai.auraframefx.data.network.CloudStatusMonitor
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStatusMonitor
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.AuraAIService
 import dev.aurakai.auraframefx.models.ThemePreferences
 import dev.aurakai.auraframefx.models.ThemeConfiguration
