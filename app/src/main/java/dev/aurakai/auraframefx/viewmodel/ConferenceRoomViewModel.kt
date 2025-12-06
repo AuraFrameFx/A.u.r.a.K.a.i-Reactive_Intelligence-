@@ -4,8 +4,8 @@ package dev.aurakai.auraframefx.viewmodel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.aurakai.auraframefx.ai.services.AuraAIService
-import dev.aurakai.auraframefx.ai.services.ClaudeAIService
+import dev.aurakai.auraframefx.oracledrive.genesis.ai.AuraAIService
+import dev.aurakai.auraframefx.oracledrive.genesis.ai.ClaudeAIService
 import dev.aurakai.auraframefx.cascade.CascadeAIService
 import dev.aurakai.auraframefx.kai.KaiAIService
 import dev.aurakai.auraframefx.models.AgentCapabilityCategory

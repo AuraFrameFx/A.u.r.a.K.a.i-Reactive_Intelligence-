@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -34,15 +35,6 @@ import kotlinx.coroutines.delay
  * - Color scheme experiments
  * - Typography samples
  * - Material3 component showcase
- */
-/**
- * Composable that displays a sandbox playground with four tabs showcasing Components, Animations,
- * Colors, and Typography.
- *
- * The screen provides a top app bar with a back navigation action and a TabRow for switching
- * between the sample pages; selecting a tab renders the corresponding content composable.
- *
- * @param onBack Callback invoked when the user activates the back navigation button.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -109,12 +101,6 @@ fun SandboxUIScreen(onBack: () -> Unit) {
     }
 }
 
-/**
- * Renders the "Components" tab displaying live examples of common Material3 UI elements.
- *
- * Shows a titled header and separate sections demonstrating Buttons, Cards, Chips,
- * and Progress indicators with sample styling and layouts for previewing component appearance.
- */
 @Composable
 private fun ComponentsTab() {
     LazyColumn(
@@ -218,12 +204,6 @@ private fun ComponentsTab() {
     }
 }
 
-/**
- * Displays an animation playground with three demo sections.
- *
- * Shows an infinite color-transition panel, a tappable box that animates its size with a spring,
- * and a pulsing card example to demonstrate continuous scaling animation.
- */
 @Composable
 private fun AnimationsTab() {
     val infiniteTransition = rememberInfiniteTransition(label = "sandbox")
@@ -315,13 +295,6 @@ private fun AnimationsTab() {
     }
 }
 
-/**
- * Displays a card that continuously pulses to create a subtle attention-grabbing effect.
- *
- * The card animates its scale between 1.0 and 1.05 on a repeating 500ms cadence and uses the
- * theme's `secondaryContainer` as its background. The card's content shows the label "Pulsing Card"
- * using the `titleMedium` typography with bold weight.
- */
 @Composable
 private fun PulsingCard() {
     var scale by remember { mutableFloatStateOf(1f) }
@@ -366,12 +339,6 @@ private fun PulsingCard() {
     }
 }
 
-/**
- * Displays a scrollable list of the current Material3 color scheme with a header
- * and a swatch row for each color token.
- *
- * The list is rendered as a vertically spaced LazyColumn sized to fill available space.
- */
 @Composable
 private fun ColorsTab() {
     val colorScheme = MaterialTheme.colorScheme
@@ -397,13 +364,6 @@ private fun ColorsTab() {
     }
 }
 
-/**
- * Displays a scrollable list of text samples that demonstrate each style in the current
- * MaterialTheme.typography.
- *
- * Shows labeled examples for Display, Headline, Title, Body, and Label variants so designers
- * and developers can preview the app's typography scale.
- */
 @Composable
 private fun TypographyTab() {
     val typography = MaterialTheme.typography
@@ -440,12 +400,6 @@ private fun TypographyTab() {
     }
 }
 
-/**
- * Renders a full-width vertical section with a styled title header and the provided content below it.
- *
- * @param title The header text displayed above the section content.
- * @param content A composable lambda that provides the content rendered beneath the title.
- */
 @Composable
 private fun ComponentSection(
     title: String,
@@ -466,10 +420,10 @@ private fun ComponentSection(
 }
 
 /**
- * Displays a horizontal row showing a named color swatch with a short textual preview of the color value.
+ * Displays a horizontal color swatch with a label and its ARGB hex value.
  *
- * @param name The label shown next to the swatch.
- * @param color The color displayed in the swatch and represented in the preview text.
+ * @param name The display label for the swatch.
+ * @param color The color to present; its ARGB hex string is shown below the label.
  */
 @Composable
 private fun ColorSwatch(name: String, color: Color) {
@@ -493,7 +447,7 @@ private fun ColorSwatch(name: String, color: Color) {
                 fontWeight = FontWeight.Medium
             )
             Text(
-                color.toString().take(20) + "...",
+                "#%08X".format(color.toArgb()),
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
             )
@@ -503,12 +457,6 @@ private fun ColorSwatch(name: String, color: Color) {
 
 private data class ColorSample(val name: String, val color: Color)
 
-/**
- * Produces a list of ColorSample entries for common Material color roles from the provided ColorScheme.
- *
- * @param scheme The ColorScheme to extract color roles from.
- * @return A list of ColorSample mapping each named color role (e.g., "Primary", "On Primary", "Background") to its corresponding Color.
- */
 private fun getColorSamples(scheme: ColorScheme) = listOf(
     ColorSample("Primary", scheme.primary),
     ColorSample("On Primary", scheme.onPrimary),
