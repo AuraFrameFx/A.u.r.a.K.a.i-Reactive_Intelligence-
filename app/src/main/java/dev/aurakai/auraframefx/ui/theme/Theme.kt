@@ -46,6 +46,14 @@ val NeonCyan = Color(0xFF00E5FF)          // Electric cyan
 val NeonCyanBright = Color(0xFF80F6FF)    // Pale cyan
 val NeonCyanDark = Color(0xFF00B8D4)      // Deep cyan
 
+// Add NeonBlue alias used across the codebase
+val NeonBlue = Color(0xFF00FFFF)          // Bright cyan/blue highlight
+
+// Cyberpunk color aliases for compatibility
+val CyberpunkPink = NeonPink              // Alias for NeonPink
+val CyberpunkCyan = NeonCyan              // Alias for NeonCyan
+val CyberpunkPurple = NeonPurple          // Alias for NeonPurple
+
 // Glassmorphic backgrounds with transparency
 val GlassDark = Color(0x1A1A1A1A)         // 10% opacity black glass
 val GlassDarkMedium = Color(0x33000000)   // 20% opacity black glass

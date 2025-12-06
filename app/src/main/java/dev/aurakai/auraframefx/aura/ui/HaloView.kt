@@ -148,22 +148,8 @@ fun HaloView(
     val taskHistory by taskHistoryFlow.collectAsState(initial = emptyList())
 
     // Agent status - using rememberSaveable to survive configuration changes
-    val agentStatus = rememberSaveable(saver = mapSaver(
-        save = { map ->
-            map.entries.associate { (key, value) -> key.name to value }
-        },
-        restore = { savedMap ->
-            val map = mutableStateMapOf<AgentType, String>()
-            savedMap.forEach { (key, value) ->
-                try {
-                    map[AgentType.valueOf(key)] = value as String
-                } catch (_: IllegalArgumentException) {
-                    // Ignore invalid enum names
-                }
-            }
-            map
-        }
-    )) { mutableStateMapOf() }
+    // Use a simple remembered snapshot map with explicit typing to avoid type-inference issues
+    val agentStatus = remember { mutableStateMapOf<AgentType, String>() }
 
     // Initialize agent statuses to "idle" on first composition
     LaunchedEffect(agentTypes) {
@@ -537,24 +523,25 @@ fun HaloView(
                     state = lazyListState,
                     verticalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
-                    items(items = taskHistory) { task ->
-                        Surface(
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .animateItem(),
-                            shape = RoundedCornerShape(8.dp),
-                            color = MaterialTheme.colorScheme.surface,
-                            shadowElevation = 1.dp
-                        ) {
-                            Text(
-                                text = task,
-                                modifier = Modifier.padding(12.dp),
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onSurface
-                            )
-                        }
-                    }
-                }
+                    // Specify the generic type explicitly to help the compiler infer T
+                    items<String>(items = taskHistory) { task ->
+                         Surface(
+                             modifier = Modifier
+                                 .fillMaxWidth()
+                                 .animateItem(),
+                             shape = RoundedCornerShape(8.dp),
+                             color = MaterialTheme.colorScheme.surface,
+                             shadowElevation = 1.dp
+                         ) {
+                             Text(
+                                 text = task,
+                                 modifier = Modifier.padding(12.dp),
+                                 style = MaterialTheme.typography.bodyMedium,
+                                 color = MaterialTheme.colorScheme.onSurface
+                             )
+                         }
+                     }
+                 }
             }
         }
 
