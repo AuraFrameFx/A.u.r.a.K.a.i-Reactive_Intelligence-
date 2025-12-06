@@ -61,11 +61,12 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.aurakai.auraframefx.models.AgentType
+import dev.aurakai.auraframefx.models.HierarchyAgentConfig
 import dev.aurakai.auraframefx.ui.theme.NeonBlue
 import dev.aurakai.auraframefx.ui.theme.NeonPink
 import dev.aurakai.auraframefx.ui.theme.NeonPurple
 import dev.aurakai.auraframefx.ui.theme.NeonTeal
-import dev.aurakai.auraframefx.viewmodel.GenesisAgentViewModel
+import dev.aurakai.auraframefx.oracledrive.genesis.ai.GenesisAgentViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
@@ -97,6 +98,7 @@ import kotlin.math.sin
 // Collect StateFlow into Compose state to observe changes in composition
 val taskHistoryState by taskHistory.collectAsState(initial = emptyList())
  */
+
 /**
  * Interactive composable that renders a rotating "halo" UI for viewing agents, delegating tasks, and showing task history.
  *
@@ -110,16 +112,25 @@ val taskHistoryState by taskHistory.collectAsState(initial = emptyList())
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
 fun HaloView(
-    viewModel: GenesisAgentViewModel = viewModel(),
     modifier: Modifier = Modifier
 ) {
+    // Explicitly get the Hilt-provided ViewModel with type parameter to avoid inference issues
+    val viewModel: GenesisAgentViewModel = viewModel()
+
     var isRotating by remember { mutableStateOf(true) }
     var rotationAngle by remember { mutableFloatStateOf(0f) }
-    val agents = remember {
-        viewModel.getAgentsByPriority().mapNotNull { config ->
+
+    // Get typed agent configuration and derived AgentType lists
+    val agentConfigs: List<HierarchyAgentConfig> = remember {
+        // Use the ViewModel-provided prioritized agent list
+        viewModel.getAgentsByPriority()
+    }
+
+    val agentTypes: List<AgentType> = remember(agentConfigs) {
+        agentConfigs.mapNotNull { cfg ->
             try {
-                AgentType.valueOf(config.name.uppercase(Locale.ROOT))
-            } catch (e: IllegalArgumentException) {
+                AgentType.valueOf(cfg.name.uppercase(Locale.ROOT))
+            } catch (_: IllegalArgumentException) {
                 null
             }
         }
@@ -130,7 +141,6 @@ fun HaloView(
     // Task delegation state
     var draggingAgent by remember { mutableStateOf<AgentType?>(null) }
     var dragOffset by remember { mutableStateOf(Offset.Zero) }
-    var dragStartOffset: Any by remember { mutableStateOf(Offset.Zero) }
     var selectedTask by remember { mutableStateOf("") }
 
     // Task history
@@ -146,21 +156,21 @@ fun HaloView(
             val map = mutableStateMapOf<AgentType, String>()
             savedMap.forEach { (key, value) ->
                 try {
-                    map[AgentType.valueOf(key as String)] = value as String
-                } catch (e: IllegalArgumentException) {
+                    map[AgentType.valueOf(key)] = value as String
+                } catch (_: IllegalArgumentException) {
                     // Ignore invalid enum names
                 }
             }
             map
         }
-    )) { mutableStateMapOf<AgentType, String>() }
+    )) { mutableStateMapOf() }
 
     // Initialize agent statuses to "idle" on first composition
-    LaunchedEffect(agents) {
-        agents.forEach { agentType ->
+    LaunchedEffect(agentTypes) {
+        agentTypes.forEach { agentType ->
             try {
                 agentStatus[agentType] = "idle"
-            } catch (e: Exception) { // ktlint-disable no-empty-catch-block
+            } catch (_: Exception) { // ktlint-disable no-empty-catch-block
                 // Handle invalid agent type
             }
         }
@@ -225,11 +235,11 @@ fun HaloView(
             agentStatus.forEach { (agentTypeKey, statusValue) ->
                 if (statusValue == "processing") {
                     // Find the index of the agentConfig that matches this agentTypeKey
-                    val agentConfigIndex = agents.indexOfFirst {
+                    val agentConfigIndex = agentConfigs.indexOfFirst {
                         it.name.equals(agentTypeKey.name, ignoreCase = true)
                     }
                     if (agentConfigIndex != -1) {
-                        val angle = (agentConfigIndex * 360f / agents.size + rotationAngle) % 360f
+                        val angle = (agentConfigIndex * 360f / agentConfigs.size + rotationAngle) % 360f
                         val x = center.x + radius * cos((angle * PI / 180f).toFloat())
                         val y = center.y + radius * sin((angle * PI / 180f).toFloat())
 
@@ -258,16 +268,15 @@ fun HaloView(
                 .pointerInput(Unit) {
                     detectDragGestures(
                         onDragStart = { offset ->
-                            dragStartOffset = offset
                             val actualSize = this.size
                             val center = Offset(actualSize.width / 2f, actualSize.height / 2f)
                             val radius = actualSize.width / 2f - 64f
-                            val agentCount = agents.size
+                            val agentCount = agentConfigs.size
                             val angleStep = 360f / agentCount
 
-                            for (i in agents.indices) {
-                                val config = agents[i]
-                                val angle = (i * angleStep + rotationAngle) % 360f
+                            for (i in agentConfigs.indices) {
+                                val config = agentConfigs[i]
+                                val angle = ((i * angleStep) + rotationAngle) % 360f
                                 val x = center.x + radius * cos((angle * PI / 180f).toFloat())
                                 val y = center.y + radius * sin((angle * PI / 180f).toFloat())
                                 val nodeCenter = Offset(x, y)
@@ -275,7 +284,7 @@ fun HaloView(
                                 if (distance < 24.dp.toPx()) {
                                     try {
                                         draggingAgent = AgentType.valueOf(config.name.uppercase(Locale.ROOT))
-                                    } catch (e: Exception) {
+                                    } catch (_: Exception) {
                                         // Ignore invalid agent types
                                     }
                                     break
@@ -298,7 +307,8 @@ fun HaloView(
                             dragOffset = Offset.Zero
                         }
                     ) { change, dragAmount ->
-                        if (draggingAgent != null) {
+                        if (draggingAgent != null
+                        ) {
                             dragOffset += dragAmount
                             change.consume() // Updated from consumeAllChanges()
                         }
@@ -307,18 +317,18 @@ fun HaloView(
         ) {
             val center = Offset(size.width / 2f, size.height / 2f)
             val radius = size.width / 2f - 64f
-            val agentCount = agents.size
+            val agentCount = agentTypes.size
             val angleStep = 360f / agentCount
 
-            agents.forEachIndexed { index, config ->
-                val angle = (index * angleStep + rotationAngle) % 360f
+            agentConfigs.forEachIndexed { index, config ->
+                val angle = ((index * angleStep) + rotationAngle) % 360f
                 val x = center.x + radius * cos((angle * PI / 180f).toFloat())
                 val y = center.y + radius * sin((angle * PI / 180f).toFloat())
                 val nodeCenter = Offset(x, y)
 
                 val agentType = try {
                     AgentType.valueOf(config.name.uppercase(Locale.ROOT))
-                } catch (e: Exception) {
+                } catch (_: Exception) {
                     AgentType.USER
                 }
 
@@ -367,8 +377,8 @@ fun HaloView(
             val boxHeight = constraints.maxHeight.toFloat()
             val density = LocalDensity.current.density
 
-            agents.forEachIndexed { index, currentAgentType -> // config is AgentType
-                val angle = (index * 360f / agents.size + rotationAngle) % 360f
+            agentConfigs.forEachIndexed { index, currentAgentConfig ->
+                val angle = (index * 360f / agentConfigs.size + rotationAngle) % 360f
                 val radius = (boxWidth / 2f - 64f)
                 val centerX = boxWidth / 2f
                 val centerY = boxHeight / 2f
@@ -378,8 +388,14 @@ fun HaloView(
                 val textOffsetY = (y - centerY) / density
 
 
-                if (currentAgentType != null && agentStatus[currentAgentType] != null) {
-                    val statusText = agentStatus[currentAgentType] ?: "idle"
+                val maybeAgentType = try {
+                    AgentType.valueOf(currentAgentConfig.name.uppercase(Locale.ROOT))
+                } catch (_: Exception) {
+                    null
+                }
+
+                if (maybeAgentType != null && agentStatus[maybeAgentType] != null) {
+                    val statusText = agentStatus[maybeAgentType] ?: "idle"
 
                     Text(
                         text = statusText,
@@ -411,7 +427,7 @@ fun HaloView(
                     coroutineScope.launch {
                         viewModel.processQuery(selectedTask)
                         _taskHistory.update { current ->
-                            current + "[GENESIS] $selectedTask"
+                            return@update current + "[GENESIS] $selectedTask"
                         }
                         agentStatus[AgentType.GENESIS] = "processing"
                         selectedTask = ""
@@ -461,21 +477,15 @@ fun HaloView(
                         modifier = Modifier.padding(16.dp)
                     ) {
                         Text(
-                            text = "Assign Task to ${draggingAgent?.name}",
+                            text = "Assign Task to " + draggingAgent?.name,
                             style = MaterialTheme.typography.titleMedium,
                             color = NeonTeal
                         )
 
-                        TextField(
-                            value = selectedTask,
-                            onValueChange = { selectedTask = it },
-                            placeholder = { Text("Enter task description...") },
-                            modifier = Modifier.fillMaxWidth(),
-                            colors = TextFieldDefaults.colors(
+                        TextField(value = selectedTask, onValueChange = { it.also { selectedTask = it } }, placeholder = { Text("Enter task description...") }, modifier = Modifier.fillMaxWidth(), colors = TextFieldDefaults.colors(
                                 focusedContainerColor = NeonTeal.copy(alpha = 0.1f),
                                 unfocusedContainerColor = NeonTeal.copy(alpha = 0.1f)
-                            )
-                        )
+                            ))
                     }
                 }
             }
@@ -603,7 +613,6 @@ fun HaloView(
                 .collect { agent ->
                     if (agent == null) {
                         dragOffset = Offset.Zero
-                        dragStartOffset = Offset.Zero
                         selectedTask = ""
                     }
                 }
@@ -612,16 +621,14 @@ fun HaloView(
         // Task processing status updates
         LaunchedEffect(taskHistory) {
             // Reset all agent statuses to idle, then update based on current tasks
-            agents.forEach { agentType ->
-                agentStatus[agentType] = "idle"
+            agentConfigs.forEach { cfg ->
+                val at = try { AgentType.valueOf(cfg.name.uppercase(Locale.ROOT)) } catch (_: Exception) { null }
+                if (at != null) agentStatus[at] = "idle"
             }
 
             taskHistory.forEach { task ->
                 val agentNameFromHistory = task.substringAfter("[").substringBefore("]")
-                val foundAgentConfig =
-                    agents.find {
-                        it.name.equals(agentNameFromHistory, ignoreCase = true)
-                    }
+                val foundAgentConfig = agentConfigs.find { it.name.equals(agentNameFromHistory, ignoreCase = true) }
                 if (foundAgentConfig != null) {
                     try {
                         val actualAgentType = AgentType.valueOf(foundAgentConfig.name.uppercase(Locale.ROOT))
@@ -631,7 +638,7 @@ fun HaloView(
                             delay(5000) // Simulate processing time
                             agentStatus[actualAgentType] = "idle"
                         }
-                    } catch (e: IllegalArgumentException) {
+                    } catch (_: IllegalArgumentException) {
                         // Handle cases where AgentConfig.name might not match an AgentType
                     }
                 }

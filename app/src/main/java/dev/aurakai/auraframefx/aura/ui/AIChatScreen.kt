@@ -1,14 +1,11 @@
 package dev.aurakai.auraframefx.aura.ui
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.widthIn
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
@@ -18,25 +15,26 @@ import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import dev.aurakai.auraframefx.ui.theme.AppDimensions
-import dev.aurakai.auraframefx.ui.theme.AppStrings
+import dev.aurakai.auraframefx.ui.AppDimensions
+import dev.aurakai.auraframefx.ui.AppStrings
 import dev.aurakai.auraframefx.ui.theme.AuraFrameFXTheme
-import dev.aurakai.auraframefx.ui.theme.ChatBubbleIncomingShape
-import dev.aurakai.auraframefx.ui.theme.ChatBubbleOutgoingShape
-import dev.aurakai.auraframefx.ui.theme.FloatingActionButtonShape
-import dev.aurakai.auraframefx.ui.theme.InputFieldShape
+import dev.aurakai.auraframefx.ui.ChatBubbleIncomingShape
+import dev.aurakai.auraframefx.ui.ChatBubbleOutgoingShape
+import dev.aurakai.auraframefx.ui.FloatingActionButtonShape
+import dev.aurakai.auraframefx.ui.InputFieldShape
 
 /**
  * Data class representing a chat message
@@ -62,7 +60,7 @@ fun AIChatScreen(
 ) {
     // State handling with rememberSaveable to persist through configuration changes
     var messageText by rememberSaveable { mutableStateOf("") }
-    var chatMessages by rememberSaveable {
+    var chatMessages by remember {
         mutableStateOf(
             listOf(
                 ChatMessage("Hello! How can I help you today?", false),
@@ -76,16 +74,11 @@ fun AIChatScreen(
     }
 
     Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(AppDimensions.spacing_medium)
+        modifier = Modifier.padding(AppDimensions.spacing_medium)
     ) {
         // Messages area with proper list handling
         LazyColumn(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-                .padding(bottom = AppDimensions.spacing_medium),
+            modifier = Modifier.weight(1f).padding(bottom = AppDimensions.spacing_medium),
             verticalArrangement = Arrangement.spacedBy(AppDimensions.spacing_small)
         ) {
             items(chatMessages) { message ->
@@ -153,35 +146,30 @@ fun AIChatScreen(
  */
 @Composable
 fun ChatMessageItem(message: ChatMessage) {
-    val alignment = if (message.isFromUser) Alignment.CenterEnd else Alignment.CenterStart
-    val background = if (message.isFromUser)
-        MaterialTheme.colorScheme.primaryContainer
-    else
-        MaterialTheme.colorScheme.surfaceVariant
+    val isUser = message.isFromUser
+    val bubbleColor = if (isUser) MaterialTheme.colorScheme.primaryContainer else MaterialTheme.colorScheme.surfaceVariant
+    val textColor = if (isUser) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onSurfaceVariant
+    val bubbleShape = if (isUser) ChatBubbleOutgoingShape else ChatBubbleIncomingShape
 
-    val textColor = if (message.isFromUser)
-        MaterialTheme.colorScheme.onPrimaryContainer
-    else
-        MaterialTheme.colorScheme.onSurfaceVariant
-
-    val bubbleShape = if (message.isFromUser)
-        ChatBubbleOutgoingShape
-    else
-        ChatBubbleIncomingShape
-
-    Box(modifier = Modifier.fillMaxWidth()) {
-        Column(
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = AppDimensions.spacing_medium),
+        horizontalArrangement = if (isUser) Arrangement.End else Arrangement.Start
+    ) {
+        Surface(
+            shape = bubbleShape,
+            color = bubbleColor,
+            tonalElevation = 1.dp,
             modifier = Modifier
-                .align(alignment)
-                .widthIn(max = 280.dp) // Maximum width for message bubbles
-                .clip(bubbleShape)
-                .background(background)
-                .padding(AppDimensions.spacing_medium),
+                .defaultMinSize(minWidth = 64.dp)
+                .padding(vertical = AppDimensions.spacing_small)
         ) {
             Text(
                 text = message.content,
                 color = textColor,
-                style = MaterialTheme.typography.bodyMedium
+                style = MaterialTheme.typography.bodyMedium,
+                modifier = Modifier.padding(AppDimensions.spacing_medium)
             )
         }
     }

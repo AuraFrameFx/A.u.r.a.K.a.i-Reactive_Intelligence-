@@ -1,6 +1,5 @@
 package dev.aurakai.auraframefx.aura.animations
 
-import dev.aurakai.auraframefx.system.quicksettings.YukiHookModulePrefs
 import dev.aurakai.auraframefx.services.YukiHookServiceManager
 import dev.aurakai.auraframefx.system.common.ImageResourceManager
 import dev.aurakai.auraframefx.system.ui.ShapeManager
@@ -10,12 +9,11 @@ import kotlinx.coroutines.flow.StateFlow
 import org.json.JSONException
 import org.json.JSONObject
 import timber.log.Timber
-import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
 // TODO: Fix YukiHookModulePrefs dependency injection then re-enable @Inject
-open class HomeScreenTransitionManager constructor(
+open class HomeScreenTransitionManager(
     private val overlayManager: SystemOverlayManager,
     private val shapeManager: ShapeManager,
     private val imageManager: ImageResourceManager,
@@ -23,7 +21,7 @@ open class HomeScreenTransitionManager constructor(
 ) {
    // Stub for YukiHookModulePrefs until DI is fixed
     private val prefs = dev.aurakai.auraframefx.services.YukiHookModulePrefs()
-    
+
     private val currentConfigState =
         MutableStateFlow(HomeScreenTransitionConfig()) // Initialize with default
     val currentConfig: StateFlow<HomeScreenTransitionConfig?> =
@@ -106,7 +104,7 @@ open class HomeScreenTransitionManager constructor(
             val typeString = jsonObject.optString("type", "GLOBE_ROTATE")
             val transitionType = try {
                 HomeScreenTransitionType.valueOf(typeString)
-            } catch (e: IllegalArgumentException) {
+            } catch (_: IllegalArgumentException) {
                 Timber.w("HomeScreenTransitionManager: Unknown transition type: $typeString, using default")
                 HomeScreenTransitionType.GLOBE_ROTATE
             }
