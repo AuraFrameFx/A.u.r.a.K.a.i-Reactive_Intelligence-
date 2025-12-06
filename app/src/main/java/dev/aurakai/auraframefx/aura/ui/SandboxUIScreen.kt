@@ -9,16 +9,15 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import kotlinx.coroutines.delay
@@ -62,7 +61,7 @@ fun SandboxUIScreen(onBack: () -> Unit) {
                 },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
-                        Icon(Icons.Default.ArrowBack, "Back")
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back")
                     }
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
@@ -77,7 +76,7 @@ fun SandboxUIScreen(onBack: () -> Unit) {
                 .padding(paddingValues)
         ) {
             // Tab Row
-            TabRow(
+            PrimaryTabRow(
                 selectedTabIndex = selectedTab,
                 containerColor = MaterialTheme.colorScheme.surface,
                 contentColor = MaterialTheme.colorScheme.primary
@@ -211,8 +210,9 @@ private fun AnimationsTab() {
     val animatedColor by infiniteTransition.animateColor(
         initialValue = Color.Magenta,
         targetValue = Color.Cyan,
-        animationSpec = androidx.compose.animation.core.infiniteRepeatable(
-            tween(3000, easing = LinearEasing), RepeatMode.Reverse
+        animationSpec = infiniteRepeatable(
+            animation = tween(durationMillis = 3000, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
         ),
         label = "color"
     )
@@ -318,7 +318,7 @@ private fun PulsingCard() {
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(animatedScale.dp * 8),
+                .padding((animatedScale * 8).dp),
             colors = CardDefaults.cardColors(
                 containerColor = MaterialTheme.colorScheme.secondaryContainer
             )

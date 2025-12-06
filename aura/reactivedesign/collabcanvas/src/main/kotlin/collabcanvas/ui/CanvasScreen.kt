@@ -16,16 +16,8 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.automirrored.filled.Redo
-import androidx.compose.material.icons.automirrored.filled.Undo
-import androidx.compose.material.icons.filled.Brush
-import androidx.compose.material.icons.filled.Circle
-import androidx.compose.material.icons.filled.Clear
-import androidx.compose.material.icons.filled.Highlight
-import androidx.compose.material.icons.filled.Palette
-import androidx.compose.material.icons.filled.Rectangle
-import androidx.compose.material.icons.filled.Straighten
+import androidx.compose.material.icons.filled.*
+import androidx.compose.material.icons.automirrored.filled.*
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -270,7 +262,8 @@ fun CanvasScreen(
             title = { Text("Collaborative Canvas") },
             navigationIcon = {
                 IconButton(onClick = onBack) {
-                    Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back")
+                    // Use AutoMirrored ArrowBack to respect RTL and avoid deprecated Icons.Filled.ArrowBack
+                    Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
                 }
             },
             actions = {

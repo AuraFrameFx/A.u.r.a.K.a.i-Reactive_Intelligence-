@@ -62,11 +62,11 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import dev.aurakai.auraframefx.models.AgentType
 import dev.aurakai.auraframefx.models.HierarchyAgentConfig
+import dev.aurakai.auraframefx.oracledrive.genesis.ai.GenesisAgentViewModel
 import dev.aurakai.auraframefx.ui.theme.NeonBlue
 import dev.aurakai.auraframefx.ui.theme.NeonPink
 import dev.aurakai.auraframefx.ui.theme.NeonPurple
 import dev.aurakai.auraframefx.ui.theme.NeonTeal
-import dev.aurakai.auraframefx.oracledrive.genesis.ai.GenesisAgentViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
@@ -143,9 +143,9 @@ fun HaloView(
     var dragOffset by remember { mutableStateOf(Offset.Zero) }
     var selectedTask by remember { mutableStateOf("") }
 
-    // Task history
-    val _taskHistory = remember { MutableStateFlow(emptyList<String>()) }
-    val taskHistory by _taskHistory.collectAsState()
+    // Task history - use an explicitly typed MutableStateFlow and collect it into Compose state
+    val taskHistoryFlow: MutableStateFlow<List<String>> = remember { MutableStateFlow(emptyList()) }
+    val taskHistory by taskHistoryFlow.collectAsState(initial = emptyList())
 
     // Agent status - using rememberSaveable to survive configuration changes
     val agentStatus = rememberSaveable(saver = mapSaver(
@@ -295,7 +295,7 @@ fun HaloView(
                             if (draggingAgent != null && selectedTask.isNotBlank()) {
                                 coroutineScope.launch {
                                     viewModel.processQuery(selectedTask)
-                                    _taskHistory.update { current ->
+                                    taskHistoryFlow.update { current ->
                                         // draggingAgent is AgentType, its .name is the enum constant name
                                         current + "[${draggingAgent?.name?.uppercase(Locale.ROOT)}] $selectedTask"
                                     }
@@ -426,7 +426,7 @@ fun HaloView(
                 if (selectedTask.isNotBlank()) {
                     coroutineScope.launch {
                         viewModel.processQuery(selectedTask)
-                        _taskHistory.update { current ->
+                        taskHistoryFlow.update { current ->
                             return@update current + "[GENESIS] $selectedTask"
                         }
                         agentStatus[AgentType.GENESIS] = "processing"
@@ -520,7 +520,7 @@ fun HaloView(
                     )
 
                     IconButton(
-                        onClick = { _taskHistory.value = emptyList() },
+                        onClick = { taskHistoryFlow.value = emptyList() },
                         modifier = Modifier.size(24.dp)
                     ) {
                         Icon(
@@ -537,7 +537,7 @@ fun HaloView(
                     state = lazyListState,
                     verticalArrangement = Arrangement.spacedBy(4.dp)
                 ) {
-                    items(taskHistory) { task ->
+                    items(items = taskHistory) { task ->
                         Surface(
                             modifier = Modifier
                                 .fillMaxWidth()
@@ -588,7 +588,7 @@ fun HaloView(
 
             IconButton(
                 onClick = {
-                    _taskHistory.update { emptyList() }
+                    taskHistoryFlow.update { emptyList() }
                 }
             ) {
                 Icon(
