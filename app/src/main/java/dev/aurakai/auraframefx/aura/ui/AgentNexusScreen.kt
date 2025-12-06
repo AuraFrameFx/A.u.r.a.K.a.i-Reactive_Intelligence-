@@ -343,6 +343,15 @@ fun AgentNode(
     }
 }
 
+/**
+ * Displays a card showing the given agent's name, level, special ability, and four live-updating stat bars.
+ *
+ * The stat values are jittered periodically to simulate live matrix fluctuations: each stat is adjusted by a small
+ * random delta (clamped to the range 0.0–1.0) at intervals defined by JITTER_INTERVAL_MS.
+ *
+ * @param agent The agent whose metadata and stats are presented.
+ * @param modifier Modifier to be applied to the panel's root composable.
+ */
 @Composable
 fun AgentStatsPanel(
     agent: AgentStats,
@@ -405,6 +414,15 @@ fun AgentStatsPanel(
     }
 }
 
+/**
+ * Renders a horizontal stat row with a label, a colored progress bar, and a percentage.
+ *
+ * Shows a brief scramble flicker animation when `value` changes before settling to the actual percentage.
+ *
+ * @param label Short label displayed at the start of the row.
+ * @param value Proportion between 0.0 and 1.0 representing the filled portion of the bar.
+ * @param color Primary color used for the filled bar and the percentage text.
+ */
 @Composable
 private fun StatBar(
     label: String,
