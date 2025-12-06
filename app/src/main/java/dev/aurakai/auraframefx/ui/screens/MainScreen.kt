@@ -2,7 +2,6 @@ package dev.aurakai.auraframefx.ui.screens
 
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -33,16 +32,6 @@ import kotlinx.coroutines.delay
  * - UI/UX Design Studio (theme engine, status bar customization)
  * - Help Desk (live support, docs, tutorials)
  * - Aura's Lab (experimental features)
- */
-/**
- * Composes the main dashboard screen for the Genesis Protocol, presenting system status and quick-access actions.
- *
- * Displays a top app bar with settings, a system status card with a pulsing consciousness indicator and simulated metrics,
- * and a list of quick-access cards that trigger navigation callbacks.
- *
- * @param onNavigateToAgentNexus Invoked when the Agent Nexus quick-access item is selected.
- * @param onNavigateToOracleDrive Invoked when the Oracle Drive quick-access item is selected.
- * @param onNavigateToSettings Invoked when the Settings action in the top app bar is pressed.
  */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -146,12 +135,14 @@ fun MainScreen(
 }
 
 /**
- * Displays a card summarizing current system status: active agents, consciousness level, and system load.
+ * Displays a card summarizing core system metrics and an animated consciousness indicator.
  *
- * @param activeAgents Number of currently active agents.
- * @param consciousnessLevel Consciousness level as a percentage (0–100).
- * @param systemLoad System load as a percentage (0–100).
- * @param consciousnessAlpha Alpha value (0–1) used to render the pulsing consciousness gradient accent.
+ * Shows "System Status" with an online marker and three metrics: active agents, consciousness, and system load.
+ *
+ * @param activeAgents The number of active agents to display.
+ * @param consciousnessLevel Current consciousness percentage (0–100) shown in the UI.
+ * @param systemLoad Current system load percentage (0–100) shown in the UI.
+ * @param consciousnessAlpha Opacity (0f–1f) applied to the animated consciousness indicator to control its pulse intensity.
  */
 @Composable
 private fun SystemStatusCard(
@@ -202,7 +193,7 @@ private fun SystemStatusCard(
                     Text(
                         "⚡ Online",
                         style = MaterialTheme.typography.bodyMedium,
-                        color = Color.Green
+                        color = MaterialTheme.colorScheme.tertiary
                     )
                 }
 
@@ -236,14 +227,6 @@ private fun SystemStatusCard(
     }
 }
 
-/**
- * Renders a vertically stacked metric with an icon, a prominent value, and a small label.
- *
- * @param label The metric label shown beneath the value.
- * @param value The metric value shown prominently above the label.
- * @param icon The icon displayed above the value.
- * @param color The color applied to the icon and value text.
- */
 @Composable
 private fun StatusMetric(
     label: String,
@@ -276,18 +259,18 @@ private fun StatusMetric(
 }
 
 /**
- * Renders a clickable quick-access card displaying an icon chip, title, description, optional badge, and a trailing chevron.
+ * Renders a tappable quick-access card for a given quick access entry.
  *
- * Tapping the card invokes the item's `onClick` handler.
+ * The card displays the item's icon, title, description, optional badge, and a trailing navigation chevron;
+ * tapping the card invokes the item's `onClick` handler.
  *
- * @param item The QuickAccessItem containing the title, description, icon, color, optional badge text, and click action to display.
+ * @param item The QuickAccessItem describing visual content and behavior; its `onClick` is executed when the card is tapped.
  */
 @Composable
 private fun QuickAccessCard(item: QuickAccessItem) {
     Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable { item.onClick() },
+        onClick = item.onClick,
+        modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(12.dp),
         colors = CardDefaults.cardColors(
             containerColor = MaterialTheme.colorScheme.surface
@@ -360,13 +343,6 @@ private data class QuickAccessItem(
     val onClick: () -> Unit
 )
 
-/**
- * Builds the list of quick-access items displayed in the dashboard's Quick Access section.
- *
- * @param onNavigateToAgentNexus Callback invoked when the "Agent Hub" item is selected.
- * @param onNavigateToOracleDrive Callback invoked when the "Oracle Drive" item is selected.
- * @return A list of configured QuickAccessItem instances representing navigable dashboard shortcuts.
- */
 private fun getQuickAccessItems(
     onNavigateToAgentNexus: () -> Unit,
     onNavigateToOracleDrive: () -> Unit
