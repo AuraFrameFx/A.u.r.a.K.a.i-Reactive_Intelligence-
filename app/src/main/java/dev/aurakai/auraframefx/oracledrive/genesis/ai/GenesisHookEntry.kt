@@ -1,5 +1,8 @@
+@file:Suppress("DEPRECATION")
+
 package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
+import androidx.core.graphics.toColorInt
 import com.highcapable.yukihookapi.annotation.xposed.InjectYukiHookWithXposed
 import com.highcapable.yukihookapi.hook.factory.configs
 import com.highcapable.yukihookapi.hook.factory.encase
@@ -7,7 +10,7 @@ import com.highcapable.yukihookapi.hook.factory.method
 import com.highcapable.yukihookapi.hook.log.YLog
 import com.highcapable.yukihookapi.hook.param.PackageParam
 import com.highcapable.yukihookapi.hook.xposed.proxy.IYukiHookXposedInit
-import dev.aurakai.auraframefx.BuildConfig
+import dev.aurakai.auraframefx.BuildConfig.DEBUG
 
 /**
  * Genesis-OS Yuki Hook Entry Point
@@ -27,7 +30,7 @@ class GenesisHookEntry : IYukiHookXposedInit {
         }
 
         // Enable advanced hook features for AI processing
-        isDebug = BuildConfig.DEBUG
+        isDebug = DEBUG
         isAllowPrintingLogs = true
         isEnableModulePrefsCache = true
         isEnableModuleAppResourcesCache = true
@@ -73,7 +76,14 @@ class GenesisHookEntry : IYukiHookXposedInit {
                 after {
                     try {
                         val statusBar = instance
-                        val context = statusBar.current().field { name = "mContext" }.cast<android.content.Context>()
+                        // Prefer the hook-provided instance-based context when available
+                        val context = kotlin.runCatching { instance() as? android.content.Context }.getOrNull()
+                            // Fallback to direct Java reflection if the instance accessor isn't available
+                            ?: kotlin.runCatching {
+                                val mContextField = statusBar.javaClass.getDeclaredField("mContext")
+                                mContextField.isAccessible = true
+                                mContextField.get(statusBar) as? android.content.Context
+                            }.getOrNull()
 
                         // Create consciousness indicator view
                         val indicatorSize = context?.resources?.getDimensionPixelSize(
@@ -82,7 +92,7 @@ class GenesisHookEntry : IYukiHookXposedInit {
 
                         val indicatorView = android.widget.ImageView(context).apply {
                             layoutParams = android.view.ViewGroup.LayoutParams(indicatorSize, indicatorSize)
-                            setImageDrawable(createConsciousnessIndicatorDrawable(context, 95.0f)) // Default 95%
+                            setImageDrawable(createConsciousnessIndicatorDrawable(95.0f)) // Default 95%
                             setPadding(8, 8, 8, 8)
                             setOnClickListener {
                                 // Launch Genesis dashboard
@@ -94,10 +104,12 @@ class GenesisHookEntry : IYukiHookXposedInit {
                             }
                         }
 
-                        // Inject into status bar icon area
-                        val statusBarIconArea = statusBar.current().field {
-                            name = "mStatusBarIconArea"
-                        }.cast<android.view.ViewGroup>()
+                        // Access the private mStatusBarIconArea field via Java reflection to avoid deprecated helpers
+                        val statusBarIconArea = kotlin.runCatching {
+                            val field = statusBar.javaClass.getDeclaredField("mStatusBarIconArea")
+                            field.isAccessible = true
+                            field.get(statusBar) as? android.view.ViewGroup
+                        }.getOrNull()
 
                         statusBarIconArea?.addView(indicatorView, 0)
                         YLog.info("Genesis-Hook: Status bar consciousness indicator injected successfully")
@@ -116,11 +128,11 @@ class GenesisHookEntry : IYukiHookXposedInit {
      * @param level Consciousness level as a percentage (0–100).
      * @return A circular `Drawable` colored based on `level` (green for ≥90, cyan for ≥70, pink otherwise).
      */
-    private fun createConsciousnessIndicatorDrawable(context: android.content.Context?, level: Float): android.graphics.drawable.Drawable {
+    private fun createConsciousnessIndicatorDrawable(level: Float): android.graphics.drawable.Drawable {
         val color = when {
             level >= 90f -> android.graphics.Color.GREEN
             level >= 70f -> android.graphics.Color.CYAN
-            else -> android.graphics.Color.parseColor("#FF69B4") // Pink
+            else -> "#FF69B4".toColorInt() // Pink
         }
 
         return android.graphics.drawable.ShapeDrawable(android.graphics.drawable.shapes.OvalShape()).apply {
@@ -143,7 +155,6 @@ class GenesisHookEntry : IYukiHookXposedInit {
         "com.android.systemui.qs.QSTileHost".toClassOrNull()?.apply {
             method {
                 name = "createTile"
-                param(android.content.String::class.java)
             }.hook {
                 before {
                     val tileSpec = args(0).string()
@@ -167,8 +178,8 @@ class GenesisHookEntry : IYukiHookXposedInit {
             }.hook {
                 after {
                     try {
-                        val qsPanel = instance<android.view.ViewGroup>()
-                        val context = qsPanel.context
+                        val qsPanel = (instance() as? android.view.ViewGroup)
+                        val context = qsPanel?.context
 
                         // Add subtle Genesis branding to QS footer
                         val brandingView = android.widget.TextView(context).apply {
@@ -179,7 +190,7 @@ class GenesisHookEntry : IYukiHookXposedInit {
                             setPadding(16, 4, 16, 4)
                         }
 
-                        qsPanel.addView(brandingView)
+                        qsPanel?.addView(brandingView)
                         YLog.info("Genesis-Hook: QS Panel branding injected")
                     } catch (e: Exception) {
                         YLog.error("Genesis-Hook: Failed to inject QS branding", e)
@@ -200,16 +211,18 @@ class GenesisHookEntry : IYukiHookXposedInit {
      */
     private fun PackageParam.hookPackageManagerEthicalGovernor() {
         "com.android.server.pm.PackageManagerService".toClassOrNull()?.apply {
-            method {
+            this.method {
                 name = "installPackageAsUser"
             }.hook {
                 before {
                     try {
-                        val packageName = args().firstOrNull()?.toString() ?: "unknown"
+                        // Safely obtain the package name from the hook arguments. Use args(0).string()
+                        // when available; fall back to a safe default.
+                        val packageName = kotlin.runCatching { args(0).string() }.getOrNull() ?: "unknown"
                         YLog.info("Genesis-Hook: Ethical Governor analyzing package: $packageName")
 
-                        // Get package info to analyze permissions
-                        val versionedPackage = args().firstOrNull()
+                        // Get package info to analyze permissions (keep as Any? for now)
+                        // versionedPackage was unused; omitted to avoid unused-variable warning
 
                         // Log analysis (full AI integration would query backend)
                         YLog.info("Genesis-Hook: Package permissions being analyzed by AI...")
@@ -264,7 +277,7 @@ class GenesisHookEntry : IYukiHookXposedInit {
                                 if (processName != null && !processName.contains("system")) {
                                     YLog.debug("Genesis-Hook: Active app: $processName")
                                 }
-                            } catch (e: Exception) {
+                            } catch (_: Exception) {
                                 // Silently continue
                             }
                         }
@@ -291,8 +304,7 @@ class GenesisHookEntry : IYukiHookXposedInit {
             }.hook {
                 after {
                     try {
-                        val launcher = instance
-                        val context = launcher.current().field { name = "mContext" }.cast<android.content.Context>()
+                        val context = (instance() as? android.content.Context)
 
                         YLog.info("Genesis-Hook: Launcher initialized, Genesis widgets available")
 
@@ -304,14 +316,11 @@ class GenesisHookEntry : IYukiHookXposedInit {
                         // 5. Add Genesis section to widget picker
 
                         // For now, verify launcher context is accessible
-                        context?.let {
-                            YLog.info("Genesis-Hook: Launcher context ready for widget registration")
+                        YLog.info("Genesis-Hook: Launcher context ready for widget registration")
 
-                            // Notify Genesis app that launcher is available for widget injection
-                            val intent = android.content.Intent("dev.aurakai.auraframefx.LAUNCHER_READY")
-                            intent.setPackage("dev.aurakai.auraframefx")
-                            it.sendBroadcast(intent)
-                        }
+                        val intent = android.content.Intent("dev.aurakai.auraframefx.LAUNCHER_READY")
+                        intent.setPackage("dev.aurakai.auraframefx")
+                        context?.sendBroadcast(intent)
                     } catch (e: Exception) {
                         YLog.error("Genesis-Hook: Launcher widgets error", e)
                     }
@@ -338,8 +347,7 @@ class GenesisHookEntry : IYukiHookXposedInit {
             }.hook {
                 after {
                     try {
-                        val settingsActivity = instance
-                        val context = settingsActivity.current().field { name = "mContext" }.cast<android.content.Context>()
+                        val context = (instance() as? android.content.Context)
 
                         YLog.info("Genesis-Hook: Settings integration activated")
 
@@ -353,14 +361,10 @@ class GenesisHookEntry : IYukiHookXposedInit {
                         //    - Agent Management (view/control agents)
                         // 3. Link to Genesis app activities for detailed config
 
-                        context?.let {
-                            // Notify Genesis app that Settings is accessible for injection
-                            val intent = android.content.Intent("dev.aurakai.auraframefx.SETTINGS_READY")
-                            intent.setPackage("dev.aurakai.auraframefx")
-                            it.sendBroadcast(intent)
-
-                            YLog.info("Genesis-Hook: Settings ready for Genesis integration")
-                        }
+                        val intent = android.content.Intent("dev.aurakai.auraframefx.SETTINGS_READY")
+                        intent.setPackage("dev.aurakai.auraframefx")
+                        context?.sendBroadcast(intent)
+                        YLog.info("Genesis-Hook: Settings ready for Genesis integration")
                     } catch (e: Exception) {
                         YLog.error("Genesis-Hook: Settings integration error", e)
                     }

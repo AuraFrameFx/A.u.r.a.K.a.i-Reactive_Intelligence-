@@ -170,6 +170,7 @@ dependencies {
     implementation(libs.moshi.kotlin)
     implementation(libs.androidx.compose.foundation.layout)
     implementation(libs.androidx.compose.foundation)
+    implementation(libs.androidx.compose.animation)
     ksp(libs.moshi.kotlin.codegen)
 
     // Logging

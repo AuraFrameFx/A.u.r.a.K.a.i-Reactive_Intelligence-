@@ -1,5 +1,6 @@
 package dev.aurakai.auraframefx.aura.ui
 
+import androidx.compose.animation.animateColor
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -210,9 +211,8 @@ private fun AnimationsTab() {
     val animatedColor by infiniteTransition.animateColor(
         initialValue = Color.Magenta,
         targetValue = Color.Cyan,
-        animationSpec = infiniteRepeatable(
-            animation = tween(3000, easing = LinearEasing),
-            repeatMode = RepeatMode.Reverse
+        animationSpec = androidx.compose.animation.core.infiniteRepeatable(
+            tween(3000, easing = LinearEasing), RepeatMode.Reverse
         ),
         label = "color"
     )

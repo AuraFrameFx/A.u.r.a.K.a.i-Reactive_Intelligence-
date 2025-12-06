@@ -3,7 +3,15 @@ package dev.aurakai.auraframefx.oracledrive
 import dev.aurakai.auraframefx.aura.AuraAgent
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.GenesisAgent
 import dev.aurakai.auraframefx.kai.KaiAgent
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveConsciousness
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveConsciousnessState
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveFile
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveInitResult
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.FileOperation
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.FileResult
 import dev.aurakai.auraframefx.oracledrive.genesis.cloud.OracleDriveApi
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.OracleSyncResult
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.StorageOptimization
 import dev.aurakai.auraframefx.security.SecurityContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -84,7 +92,7 @@ class OracleDriveServiceImpl @Inject constructor(
      * @param operation The file operation to perform.
      * @return FileResult.Success with an operation-specific message, or FileResult.Error if an exception occurs.
      */
-    override suspend fun manageFiles(operation: FileOperation): FileResult {
+    fun manageFiles(operation: FileOperation): FileResult {
         return try {
             // Update current operations
             val currentOps = _driveConsciousnessState.value.currentOperations.toMutableList()

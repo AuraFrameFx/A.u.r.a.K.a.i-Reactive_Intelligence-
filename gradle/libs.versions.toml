@@ -264,6 +264,7 @@ benchmark = "1.4.1"
 material3 = "1.4.0"
 foundationLayout = "1.10.0"
 foundation = "1.10.0"
+animation = "1.10.0"
 
 [libraries]
 # ============================================================================
@@ -486,6 +487,7 @@ hilt = { group = "com.google.dagger.hilt.android", name = "hilt-android", versio
 google-services = { group = "com.google.gms.google-services", name = "google-services", version.ref = "googleServices" }
 androidx-compose-foundation-layout = { group = "androidx.compose.foundation", name = "foundation-layout", version.ref = "foundationLayout" }
 androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
+androidx-compose-animation = { group = "androidx.compose.animation", name = "animation", version.ref = "animation" }
 # NOTE: Firebase Analytics is NOT a plugin - just use implementation(libs.firebase.analytics)
 
 [bundles]

@@ -53,6 +53,8 @@ import dev.aurakai.auraframefx.ui.components.digitalGlitchEffect
 import dev.aurakai.auraframefx.ui.gates.GateCard
 import dev.aurakai.auraframefx.ui.gates.GateConfigs
 import dev.aurakai.auraframefx.ui.*
+import dev.aurakai.auraframefx.ui.theme.NeonCyan
+import dev.aurakai.auraframefx.ui.theme.NeonPink
 import kotlinx.coroutines.launch
 
 

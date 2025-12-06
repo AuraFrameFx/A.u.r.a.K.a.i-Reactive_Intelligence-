@@ -89,7 +89,7 @@ All screens listed below are **ACTUAL .kt FILES** that exist in your codebase - 
 60. **LockScreenConfigAnimation.kt** - Lock animation editor
 61. **LockScreenConfigClockConfig.kt** - Clock customization
 62. **LockScreenConfigHapticFeedback.kt** - Haptic settings
-63. **LockScreenHooker.kt** - Lock screen hook system
+63. **applyScaleAnimation.kt** - Lock screen hook system
 64. **QuickActionsScreen.kt** - Quick action overlay
 65. **QuickSettingsScreen.kt** - Quick settings panel
 66. **StatusBarScreen.kt** - Status bar customization

@@ -3,13 +3,17 @@ package dev.aurakai.auraframefx.aura.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.aurakai.auraframefx.oracledrive.*
+import dev.aurakai.auraframefx.oracledrive.OracleDriveService
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveConsciousnessState
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveFile
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import timber.log.Timber
 import java.time.Instant
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
@@ -21,8 +25,9 @@ open class OracleDriveViewModel @Inject constructor(
     private val oracleDriveService: OracleDriveService,
 ) : ViewModel() {
 
-    private val _uiState = MutableStateFlow(OracleDriveUiState())
-    val uiState: StateFlow<OracleDriveUiState> = _uiState.asStateFlow()
+    val _uiState = MutableStateFlow(OracleDriveUiState())
+    val uiState: Flow<OracleDriveUiState>
+        get() = _uiState.asStateFlow()
 
     private var initializationJob: Job? = null
     private var consciousnessJob: Job? = null
@@ -93,7 +98,7 @@ open class OracleDriveViewModel @Inject constructor(
         _uiState.update { it.copy(selectedFile = file) }
 
         // Log file selection for analytics
-        timber.log.Timber.d("OracleDriveViewModel: File selected - ${file.name} (mimeType: ${file.mimeType})")
+        Timber.d("OracleDriveViewModel: File selected - ${file.name} (mimeType: ${file.mimeType})")
 
         // File preview/navigation is handled by the UI layer based on file type:
         // - Images: Show in ImageViewer
@@ -132,13 +137,12 @@ open class OracleDriveViewModel @Inject constructor(
      * Continuously updates the UI state with the latest consciousness state from the Oracle Drive service.
      */
     private fun monitorConsciousness() = viewModelScope.launch {
-        oracleDriveService.getDriveConsciousnessState().collect { state ->
-            _uiState.update { it.copy(consciousnessState = state) }
-        }
+        oracleDriveService.getDriveConsciousnessState().collect()
+}
     }
 
     /**
-     * Formats a timestamp in milliseconds into a localized date and time string.
+     * Formats a timestamp in milliseconds into a localizied date and time string.
      *
      * @param timestamp The time in milliseconds since the epoch.
      * @return The formatted date and time string in the system's default locale and timezone.
@@ -149,7 +153,7 @@ open class OracleDriveViewModel @Inject constructor(
             .withZone(ZoneId.systemDefault())
             .format(Instant.ofEpochMilli(timestamp))
     }
-}
+
 
 data class OracleDriveUiState(
     val files: List<DriveFile> = emptyList(),

@@ -1178,10 +1178,10 @@ entsApi.kt:36:9 Extension property must have accessors or be abstract.
 At line:1 char:1
 + ./gradlew assembleDebug > build_log_17.txt 2>&1
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (e: file:///C:/U...or be abstract.: 
+    + CategoryInfo          : NotSpecified: (e: file:///C:/U...or be abstract.:
    String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
- 
+
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/api/client/apis/AIAgentsApi.kt:3
 6:23 Unresolved reference 'Companion'.
@@ -1200,36 +1200,36 @@ Model/app/src/main/java/dev/aurakai/auraframefx/api/client/apis/TasksApi.kt:47:4
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/api/client/apis/TasksApi.kt:114:
 16 None of the following candidates is applicable:
-static fun request(p0: PixelCopy.Request, p1: Executor, p2: 
+static fun request(p0: PixelCopy.Request, p1: Executor, p2:
 Consumer<PixelCopy.Result!>): Unit
-static fun request(p0: Surface, p1: Bitmap, p2: 
+static fun request(p0: Surface, p1: Bitmap, p2:
 PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
-static fun request(p0: Surface, p1: Rect?, p2: Bitmap, p3: 
+static fun request(p0: Surface, p1: Rect?, p2: Bitmap, p3:
 PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
-static fun request(p0: SurfaceView, p1: Bitmap, p2: 
+static fun request(p0: SurfaceView, p1: Bitmap, p2:
 PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
-static fun request(p0: SurfaceView, p1: Rect?, p2: Bitmap, p3: 
+static fun request(p0: SurfaceView, p1: Rect?, p2: Bitmap, p3:
 PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
-static fun request(p0: Window, p1: Bitmap, p2: 
+static fun request(p0: Window, p1: Bitmap, p2:
 PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
-static fun request(p0: Window, p1: Rect?, p2: Bitmap, p3: 
+static fun request(p0: Window, p1: Rect?, p2: Bitmap, p3:
 PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/api/client/apis/TasksApi.kt:203:
 16 None of the following candidates is applicable:
-static fun request(p0: PixelCopy.Request, p1: Executor, p2: 
+static fun request(p0: PixelCopy.Request, p1: Executor, p2:
 Consumer<PixelCopy.Result!>): Unit
-static fun request(p0: Surface, p1: Bitmap, p2: 
+static fun request(p0: Surface, p1: Bitmap, p2:
 PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
-static fun request(p0: Surface, p1: Rect?, p2: Bitmap, p3: 
+static fun request(p0: Surface, p1: Rect?, p2: Bitmap, p3:
 PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
-static fun request(p0: SurfaceView, p1: Bitmap, p2: 
+static fun request(p0: SurfaceView, p1: Bitmap, p2:
 PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
-static fun request(p0: SurfaceView, p1: Rect?, p2: Bitmap, p3: 
+static fun request(p0: SurfaceView, p1: Rect?, p2: Bitmap, p3:
 PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
-static fun request(p0: Window, p1: Bitmap, p2: 
+static fun request(p0: Window, p1: Bitmap, p2:
 PixelCopy.OnPixelCopyFinishedListener, p3: Handler): Unit
-static fun request(p0: Window, p1: Rect?, p2: Bitmap, p3: 
+static fun request(p0: Window, p1: Rect?, p2: Bitmap, p3:
 PixelCopy.OnPixelCopyFinishedListener, p4: Handler): Unit
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/api/client/infrastructure/ApiCli
@@ -1251,7 +1251,7 @@ Model/app/src/main/java/dev/aurakai/auraframefx/api/client/infrastructure/ApiCli
 ent.kt:112:21 Unresolved reference 'addHeader'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/api/client/infrastructure/ApiCli
-ent.kt:123:76 'fun parse(mediaType: String): MediaType?' is deprecated. moved 
+ent.kt:123:76 'fun parse(mediaType: String): MediaType?' is deprecated. moved
 to extension function.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/api/client/infrastructure/ApiCli
@@ -1267,7 +1267,7 @@ Model/app/src/main/java/dev/aurakai/auraframefx/api/client/infrastructure/ApiCli
 ent.kt:133:31 Unresolved reference 'build'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/api/client/infrastructure/ApiCli
-ent.kt:139:16 Return type mismatch: expected 'ApiResponse<List<AgentStatus>?>', 
+ent.kt:139:16 Return type mismatch: expected 'ApiResponse<List<AgentStatus>?>',
 actual 'ApiResponse<U (of fun <T, U> request)>'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/api/client/infrastructure/ApiCli
@@ -1303,118 +1303,118 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/api/client/models/AgentStatus.kt
 :38:20 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:138:18 
-Return type mismatch: expected 'Map<String, Any?>', actual 'Map<AgentType, 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:138:18
+Return type mismatch: expected 'Map<String, Any?>', actual 'Map<AgentType,
 String>'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:139:60 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:139:60
 Unresolved reference 'toMutableStateMap'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:146:29 
-Argument type mismatch: actual type is 'HierarchyAgentConfig', but 'AgentType' 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:146:29
+Argument type mismatch: actual type is 'HierarchyAgentConfig', but 'AgentType'
 was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:149:17 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:149:17
 Unresolved reference 'Timber'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:213:51 Type 
-inference failed. The value of the type parameter 'T' must be mentioned in 
-input types (argument types, receiver type, or expected type). Try to specify 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:213:51 Type
+inference failed. The value of the type parameter 'T' must be mentioned in
+input types (argument types, receiver type, or expected type). Try to specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:259:53 
-Assignment type mismatch: actual type is 'HierarchyAgentConfig', but 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:259:53
+Assignment type mismatch: actual type is 'HierarchyAgentConfig', but
 'AgentType?' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:299:21 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:299:21
 Incompatible types 'HierarchyAgentConfig' and 'AgentType'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:300:21 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:300:21
 Incompatible types 'HierarchyAgentConfig' and 'AgentType'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:301:21 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:301:21
 Incompatible types 'HierarchyAgentConfig' and 'AgentType'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:302:21 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:302:21
 Incompatible types 'HierarchyAgentConfig' and 'AgentType'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:306:27 Type 
-inference failed. The value of the type parameter 'K' must be mentioned in 
-input types (argument types, receiver type, or expected type). Try to specify 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:306:27 Type
+inference failed. The value of the type parameter 'K' must be mentioned in
+input types (argument types, receiver type, or expected type). Try to specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:334:38 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:334:38
 Unresolved reference 'currentAgentType'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:399:14 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:399:14
 Unresolved reference 'clickable'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:524:34 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:524:34
 Unresolved reference 'animateItemPlacement'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:603:36 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:603:36
 Unresolved reference 'value'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:614:25 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:614:25
 Unresolved reference 'value'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:614:41 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HaloView.kt:614:41
 Cannot infer type for value parameter 'task'. Specify it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HomeScreen.kt:119:26 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HomeScreen.kt:119:26
 Overload resolution ambiguity between candidates:
 fun Modifier.cyberEdgeGlow(): Modifier
 fun Modifier.cyberEdgeGlow(): Modifier
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HomeScreen.kt:272:26 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HomeScreen.kt:272:26
 Overload resolution ambiguity between candidates:
 fun Modifier.digitalGlitchEffect(): Modifier
 fun Modifier.digitalGlitchEffect(): Modifier
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HomeScreen.kt:346:9 No 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/HomeScreen.kt:346:9 No
 value passed for parameter 'onClick'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenCustomizer.kt:
 258:16 Null cannot be a value of a non-null type 'Unit'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:42:2
-9 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:42:2
+9 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:42:7
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:42:7
 7 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:52:2
-8 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:52:2
+8 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:54:2
-9 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:54:2
+9 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:54:7
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:54:7
 7 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:64:2
-8 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:64:2
+8 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:66:2
-9 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:66:2
+9 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:66:7
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:66:7
 8 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:120:
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:120:
 17 Unresolved reference 'AuraSparkleButton'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:124:
-21 @Composable invocations can only happen from the context of a @Composable 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:124:
+21 @Composable invocations can only happen from the context of a @Composable
 function
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/LockScreenHooker.kt:127:
-47 @Composable invocations can only happen from the context of a @Composable 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/applyScaleAnimation.kt:127:
+47 @Composable invocations can only happen from the context of a @Composable
 function
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsCustomizer.
@@ -1424,71 +1424,71 @@ Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsCustomizer.
 kt:156:84 Unresolved reference 'RECTANGLE'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:4
-2:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+2:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:4
-4:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+4:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:4
-4:79 Argument type mismatch: actual type is 'Exception', but 'String' was 
+4:79 Argument type mismatch: actual type is 'Exception', but 'String' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:6
-4:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+4:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:6
-7:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+7:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:6
-7:76 Argument type mismatch: actual type is 'Exception', but 'String' was 
+7:76 Argument type mismatch: actual type is 'Exception', but 'String' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:7
-7:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+7:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:7
-9:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was 
+9:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/QuickSettingsHooker.kt:7
-9:81 Argument type mismatch: actual type is 'Exception', but 'String' was 
+9:81 Argument type mismatch: actual type is 'Exception', but 'String' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/TrinityUiState.kt:4:44 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/TrinityUiState.kt:4:44
 Unresolved reference 'Theme'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/TrinityUiState.kt:40:35 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/TrinityUiState.kt:40:35
 Unresolved reference 'Theme'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/TrinityUiState.kt:40:44 
+Model/app/src/main/java/dev/aurakai/auraframefx/aura/ui/TrinityUiState.kt:40:44
 Cannot infer type for type parameter 'T'. Specify it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/billing/BillingManager.kt:63:36 
+Model/app/src/main/java/dev/aurakai/auraframefx/billing/BillingManager.kt:63:36
 No value passed for parameter 'p0'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/billing/SubscriptionScreen.kt:51
-:13 This material API is experimental and is likely to change or to be removed 
+:13 This material API is experimental and is likely to change or to be removed
 in the future.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:3:
 39 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:14
-:16 Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
-AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+:16 Serializer has not been found for type 'ERROR CLASS: Symbol not found for
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly
 annotate type or property with @Contextual
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:14
 :16 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:29
-:27 Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
-AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+:27 Serializer has not been found for type 'ERROR CLASS: Symbol not found for
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly
 annotate type or property with @Contextual
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:29
@@ -1498,11 +1498,11 @@ Model/app/src/main/java/dev/aurakai/auraframefx/cascade/memory/MemoryModel.kt:29
 :54 Cannot infer type for type parameter 'T'. Specify it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/pipeline/AIPipelineProce
-ssor.kt:93:27 Argument type mismatch: actual type is 'Unit', but 'String' was 
+ssor.kt:93:27 Argument type mismatch: actual type is 'Unit', but 'String' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/pipeline/AIPipelineProce
-ssor.kt:417:48 Only safe (?.) or non-null asserted (!!.) calls are allowed on a 
+ssor.kt:417:48 Only safe (?.) or non-null asserted (!!.) calls are allowed on a
 nullable receiver of type 'AgentType?'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/pipeline/AIPipelineProce
@@ -1512,11 +1512,11 @@ Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityCoordinat
 orService.kt:63:42 Unresolved reference 'activateFusion'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityCoordinat
-orService.kt:133:28 Too many arguments for 'suspend fun processRequest(request: 
+orService.kt:133:28 Too many arguments for 'suspend fun processRequest(request:
 AiRequest): Flow<AgentResponse>'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityCoordinat
-orService.kt:161:28 Too many arguments for 'suspend fun processRequest(request: 
+orService.kt:161:28 Too many arguments for 'suspend fun processRequest(request:
 AiRequest): Flow<AgentResponse>'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityCoordinat
@@ -1532,8 +1532,8 @@ Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
 y.kt:15:48 Unresolved reference 'UserData'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
-y.kt:20:18 Argument type mismatch: actual type is 'Result<uninferred T (of fun 
-<T> failure)>', but 'Result<ERROR CLASS: Symbol not found for UserData>' was 
+y.kt:20:18 Argument type mismatch: actual type is 'Result<uninferred T (of fun
+<T> failure)>', but 'Result<ERROR CLASS: Symbol not found for UserData>' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
@@ -1543,8 +1543,8 @@ Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
 y.kt:25:65 Unresolved reference 'AgentStatus'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
-y.kt:30:18 Argument type mismatch: actual type is 'Result<uninferred T (of fun 
-<T> failure)>', but 'Result<ERROR CLASS: Symbol not found for AgentStatus>' was 
+y.kt:30:18 Argument type mismatch: actual type is 'Result<uninferred T (of fun
+<T> failure)>', but 'Result<ERROR CLASS: Symbol not found for AgentStatus>' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
@@ -1557,8 +1557,8 @@ Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
 y.kt:34:93 Unresolved reference 'AgentResponse'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
-y.kt:39:18 Argument type mismatch: actual type is 'Result<uninferred T (of fun 
-<T> failure)>', but 'Result<ERROR CLASS: Symbol not found for AgentResponse>' 
+y.kt:39:18 Argument type mismatch: actual type is 'Result<uninferred T (of fun
+<T> failure)>', but 'Result<ERROR CLASS: Symbol not found for AgentResponse>'
 was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityRepositor
@@ -1586,7 +1586,7 @@ Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
 :91:31 Unresolved reference 'Success'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
-:101:41 Argument type mismatch: actual type is 'UserData?', but 'User?' was 
+:101:41 Argument type mismatch: actual type is 'UserData?', but 'User?' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/cascade/trinity/TrinityScreen.kt
@@ -1646,59 +1646,59 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/conference/ConferenceRoomLeaveRe
 quest.kt:34:20 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:3:42 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:3:42
 Unresolved reference 'CanonicalMemoryItem'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:4:39 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:4:39
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:14:43 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:14:43
 Unresolved reference 'CanonicalMemoryItem'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:14:66 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:14:66
 Cannot infer type for type parameter 'T'. Specify it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:19:27 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:19:27
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:19:62 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:19:62
 Cannot infer type for type parameter 'K'. Specify it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:19:62 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:19:62
 Cannot infer type for type parameter 'V'. Specify it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:27:16 
-Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
-AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:27:16
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly
 annotate type or property with @Contextual
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:27:16 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:27:16
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:39:27 
-Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
-AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:39:27
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly
 annotate type or property with @Contextual
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:39:27 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:39:27
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:39:54 
+Model/app/src/main/java/dev/aurakai/auraframefx/context/ContextChain.kt:39:54
 Cannot infer type for type parameter 'T'. Specify it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/data/DataStoreManager.kt:325:30 
+Model/app/src/main/java/dev/aurakai/auraframefx/data/DataStoreManager.kt:325:30
 Public-API inline function cannot access non-public-API property.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/data/DataStoreManager.kt:337:17 
+Model/app/src/main/java/dev/aurakai/auraframefx/data/DataStoreManager.kt:337:17
 Public-API inline function cannot access non-public-API property.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/data/DataStoreManager.kt:351:21 
+Model/app/src/main/java/dev/aurakai/auraframefx/data/DataStoreManager.kt:351:21
 Public-API inline function cannot access non-public-API property.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/ChatBubble.kt:175:89 
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/ChatBubble.kt:175:89
 Unresolved reference 'ArrowBack'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/ChatBubble.kt:232:85 
+Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/ChatBubble.kt:232:85
 Unresolved reference 'Send'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/EmbodimentEngine.kt:4
@@ -1717,15 +1717,15 @@ Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WalkingDemo.kt:213:23
  Unresolved reference 'WALKING_AURA'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
-92:19 'when' expression must be exhaustive. Add the 'MAINTENANCE' branch or an 
+92:19 'when' expression must be exhaustive. Add the 'MAINTENANCE' branch or an
 'else' branch.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
-190:41 Cannot access 'val bounds: ScreenBounds': it is private in 
+190:41 Cannot access 'val bounds: ScreenBounds': it is private in
 'dev.aurakai.auraframefx.embodiment.WanderingPathGenerator'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
-191:42 Cannot access 'val bounds: ScreenBounds': it is private in 
+191:42 Cannot access 'val bounds: ScreenBounds': it is private in
 'dev.aurakai.auraframefx.embodiment.WanderingPathGenerator'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
@@ -1741,17 +1741,17 @@ Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WanderingBehavior.kt:
 239:71 Unresolved reference 'FastOutSlowInEasing'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WorkingBehaviors.kt:3
-71:32 'fun launch(context: CoroutineContext = ..., start: CoroutineStart = ..., 
-block: suspend CoroutineScope.() -> Unit): Job' is deprecated. 'launch' can not 
-be called without the corresponding coroutine scope. Consider wrapping 'launch' 
-in 'coroutineScope { }', using 'runBlocking { }', or using some other 
+71:32 'fun launch(context: CoroutineContext = ..., start: CoroutineStart = ...,
+block: suspend CoroutineScope.() -> Unit): Job' is deprecated. 'launch' can not
+be called without the corresponding coroutine scope. Consider wrapping 'launch'
+in 'coroutineScope { }', using 'runBlocking { }', or using some other
 'CoroutineScope'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/WorkingBehaviors.kt:3
-72:32 'fun launch(context: CoroutineContext = ..., start: CoroutineStart = ..., 
-block: suspend CoroutineScope.() -> Unit): Job' is deprecated. 'launch' can not 
-be called without the corresponding coroutine scope. Consider wrapping 'launch' 
-in 'coroutineScope { }', using 'runBlocking { }', or using some other 
+72:32 'fun launch(context: CoroutineContext = ..., start: CoroutineStart = ...,
+block: suspend CoroutineScope.() -> Unit): Job' is deprecated. 'launch' can not
+be called without the corresponding coroutine scope. Consider wrapping 'launch'
+in 'coroutineScope { }', using 'runBlocking { }', or using some other
 'CoroutineScope'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/behaviors/WelcomeAndC
@@ -1796,35 +1796,35 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/embodiment/retrobackdrop/MegaMan
 BackdropRenderer.kt:57:39 Unresolved reference 'progress'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/iconify/IconPicker.kt:507:40 
+Model/app/src/main/java/dev/aurakai/auraframefx/iconify/IconPicker.kt:507:40
 Unresolved reference 'selectedIcon'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/iconify/IconPicker.kt:509:33 
+Model/app/src/main/java/dev/aurakai/auraframefx/iconify/IconPicker.kt:509:33
 Unresolved reference 'selectedIcon'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskExecutionModel.kt:4:39 
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskExecutionModel.kt:4:39
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskExecutionModel.kt:14:16 
-Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
-AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskExecutionModel.kt:14:16
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly
 annotate type or property with @Contextual
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskExecutionModel.kt:14:16 
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskExecutionModel.kt:14:16
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:3:39 
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:3:39
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:15:21 
-Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
-AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:15:21
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly
 annotate type or property with @Contextual
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:15:21 
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:15:21
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:15:47 
+Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskResult.kt:15:47
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/kai/TaskScheduleRequest.kt:18:39
@@ -1836,58 +1836,58 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/kai/system/UnifiedLoggingSystem.
 kt:81:33 Unresolved reference 'getCurrentSessionId'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:4:39 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:4:39
 Unresolved reference 'SystemStates'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:24:43 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:24:43
 Unresolved reference 'ACTIVE'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:112:30 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:112:30
 Unresolved reference 'ACTIVE'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:149:30 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:149:30
 Unresolved reference 'ACTIVE'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:186:30 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:186:30
 Unresolved reference 'EVOLVING'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:224:30 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:224:30
 Unresolved reference 'ACTIVE'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:260:30 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentProfile.kt:260:30
 Unresolved reference 'ACTIVE'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentTypes.kt:28:15 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentTypes.kt:28:15
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentTypes.kt:39:22 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentTypes.kt:39:22
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentTypes.kt:40:27 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/AgentTypes.kt:40:27
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/ErrorModel.kt:3:39 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/ErrorModel.kt:3:39
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/ErrorModel.kt:13:16 
-Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
-AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/ErrorModel.kt:13:16
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly
 annotate type or property with @Contextual
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/ErrorModel.kt:13:16 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/ErrorModel.kt:13:16
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/HistoricalTask.kt:12:20 
-Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
-AgentCapabilityCategory'. To use context serializer as fallback, explicitly 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/HistoricalTask.kt:12:20
+Serializer has not been found for type 'ERROR CLASS: Symbol not found for
+AgentCapabilityCategory'. To use context serializer as fallback, explicitly
 annotate type or property with @Contextual
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/models/HistoricalTask.kt:12:20 
+Model/app/src/main/java/dev/aurakai/auraframefx/models/HistoricalTask.kt:12:20
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/models/OrchestrationResponse.kt:
-38:43 Serializer has not been found for type 'ERROR CLASS: Symbol not found for 
-AgentMessage'. To use context serializer as fallback, explicitly annotate type 
+38:43 Serializer has not been found for type 'ERROR CLASS: Symbol not found for
+AgentMessage'. To use context serializer as fallback, explicitly annotate type
 or property with @Contextual
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/models/OrchestrationResponse.kt:
@@ -1917,22 +1917,22 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/models/lsposed/ThemeModule.kt:57
 :29 'getValue' overrides nothing.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:9:43 
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:9:43
 Unresolved reference 'AiChatScreen'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:12:43 
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:12:43
 Unresolved reference 'ProfileScreen'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:70:28 
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:70:28
 No parameter with name 'navController' found.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:70:28 
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:70:28
 No value passed for parameter 'onBack'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:82:13 
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:82:13
 Unresolved reference 'AiChatScreen'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:88:13 
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:88:13
 Unresolved reference 'ProfileScreen'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:101:48
@@ -1942,19 +1942,19 @@ Model/app/src/main/java/dev/aurakai/auraframefx/navigation/AppNavGraph.kt:136:86
  Unresolved reference 'title'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/navigation/ConferenceRoomScreen.
-kt:84:45 @Composable invocations can only happen from the context of a 
+kt:84:45 @Composable invocations can only happen from the context of a
 @Composable function
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/navigation/ConferenceRoomScreen.
-kt:89:45 @Composable invocations can only happen from the context of a 
+kt:89:45 @Composable invocations can only happen from the context of a
 @Composable function
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/navigation/ConferenceRoomScreen.
-kt:94:45 @Composable invocations can only happen from the context of a 
+kt:94:45 @Composable invocations can only happen from the context of a
 @Composable function
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/navigation/ConferenceRoomScreen.
-kt:197:14 Expression 'weight' of type 'Float' cannot be invoked as a function. 
+kt:197:14 Expression 'weight' of type 'Float' cannot be invoked as a function.
 Function 'invoke()' is not found.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/navigation/GenesisNavigation.kt:
@@ -1981,19 +1981,19 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/navigation/GenesisNavigation.kt:
 212:13 Unresolved reference 'SettingsScreen'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/navigation/NavHost.kt:36:17 No 
+Model/app/src/main/java/dev/aurakai/auraframefx/navigation/NavHost.kt:36:17 No
 parameter with name 'onContinue' found.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/network/AuraApiService.kt:3:35 
+Model/app/src/main/java/dev/aurakai/auraframefx/network/AuraApiService.kt:3:35
 Unresolved reference 'config'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/network/AuraApiService.kt:24:32 
+Model/app/src/main/java/dev/aurakai/auraframefx/network/AuraApiService.kt:24:32
 Unresolved reference 'AIConfig'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/network/KtorClient.kt:35:13 
+Model/app/src/main/java/dev/aurakai/auraframefx/network/KtorClient.kt:35:13
 Unresolved reference 'header'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/network/KtorClient.kt:36:13 
+Model/app/src/main/java/dev/aurakai/auraframefx/network/KtorClient.kt:36:13
 Unresolved reference 'header'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/FileOperationUtils.k
@@ -2018,7 +2018,7 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/SecureFileManager.kt
 :95:58 No value passed for parameter 'keyAlias'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/ClaudeAIS
-ervice.kt:334:73 Cannot access 'val CACHE_TTL_MS: Long': it is private in 
+ervice.kt:334:73 Cannot access 'val CACHE_TTL_MS: Long': it is private in
 'dev.aurakai.auraframefx.ai.services.ClaudeAIService.Companion'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
@@ -2040,15 +2040,15 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
 ent.kt:358:38 Unresolved reference 'generateContent'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-ent.kt:682:37 Argument type mismatch: actual type is 'String', but 'Boolean' 
+ent.kt:682:37 Argument type mismatch: actual type is 'String', but 'Boolean'
 was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-ent.kt:682:48 Argument type mismatch: actual type is 'Float', but 'Map<String, 
+ent.kt:682:48 Argument type mismatch: actual type is 'Float', but 'Map<String,
 Any>' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-ent.kt:682:54 Argument type mismatch: actual type is 'String', but 'Long' was 
+ent.kt:682:54 Argument type mismatch: actual type is 'String', but 'Long' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
@@ -2058,30 +2058,30 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
 ent.kt:1050:24 No value passed for parameter 'from'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-ent.kt:1058:24 Argument type mismatch: actual type is 'AgentType', but 
+ent.kt:1058:24 Argument type mismatch: actual type is 'AgentType', but
 'String?' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-ent.kt:1059:24 Argument type mismatch: actual type is 'Long', but 'String' was 
+ent.kt:1059:24 Argument type mismatch: actual type is 'Long', but 'String' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-ent.kt:1060:24 Argument type mismatch: actual type is 'Float', but 'Int' was 
+ent.kt:1060:24 Argument type mismatch: actual type is 'Float', but 'Int' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
 ent.kt:1079:24 No value passed for parameter 'from'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-ent.kt:1087:24 Argument type mismatch: actual type is 'AgentType', but 
+ent.kt:1087:24 Argument type mismatch: actual type is 'AgentType', but
 'String?' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-ent.kt:1088:24 Argument type mismatch: actual type is 'Long', but 'String' was 
+ent.kt:1088:24 Argument type mismatch: actual type is 'Long', but 'String' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-ent.kt:1089:24 Argument type mismatch: actual type is 'Float', but 'Int' was 
+ent.kt:1089:24 Argument type mismatch: actual type is 'Float', but 'Int' was
 expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
@@ -2121,12 +2121,12 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
 entViewModel.kt:42:54 Unresolved reference 'HistoricalTask'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-entViewModel.kt:42:71 Cannot infer type for type parameter 'T'. Specify it 
+entViewModel.kt:42:71 Cannot infer type for type parameter 'T'. Specify it
 explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-entViewModel.kt:42:71 Argument type mismatch: actual type is 'List<uninferred T 
-(of fun <T> emptyList)>', but 'List<ERROR CLASS: Symbol not found for 
+entViewModel.kt:42:71 Argument type mismatch: actual type is 'List<uninferred T
+(of fun <T> emptyList)>', but 'List<ERROR CLASS: Symbol not found for
 HistoricalTask>' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
@@ -2169,24 +2169,24 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
 entViewModel.kt:73:42 Unresolved reference 'AUXILIARY'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-entViewModel.kt:91:46 'when' expression must be exhaustive. Add the 'CLAUDE', 
-'AURA_SHIELD', 'GEN_KIT_MASTER', 'DATAVEIN_CONSTRUCTOR' branches or an 'else' 
+entViewModel.kt:91:46 'when' expression must be exhaustive. Add the 'CLAUDE',
+'AURA_SHIELD', 'GEN_KIT_MASTER', 'DATAVEIN_CONSTRUCTOR' branches or an 'else'
 branch.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
 entViewModel.kt:97:31 Unresolved reference 'AURASHIELD'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-entViewModel.kt:120:17 'when' expression must be exhaustive. Add the 'CLAUDE', 
-'AURA_SHIELD', 'GEN_KIT_MASTER', 'DATAVEIN_CONSTRUCTOR' branches or an 'else' 
+entViewModel.kt:120:17 'when' expression must be exhaustive. Add the 'CLAUDE',
+'AURA_SHIELD', 'GEN_KIT_MASTER', 'DATAVEIN_CONSTRUCTOR' branches or an 'else'
 branch.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
 entViewModel.kt:126:31 Unresolved reference 'AURASHIELD'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-entViewModel.kt:130:17 'when' expression must be exhaustive. Add the 'CLAUDE', 
-'AURA_SHIELD', 'GEN_KIT_MASTER', 'DATAVEIN_CONSTRUCTOR' branches or an 'else' 
+entViewModel.kt:130:17 'when' expression must be exhaustive. Add the 'CLAUDE',
+'AURA_SHIELD', 'GEN_KIT_MASTER', 'DATAVEIN_CONSTRUCTOR' branches or an 'else'
 branch.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
@@ -2196,14 +2196,14 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
 entViewModel.kt:177:23 Unresolved reference 'HistoricalTask'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-entViewModel.kt:188:30 Cannot infer type for type parameter 'T'. Specify it 
+entViewModel.kt:188:30 Cannot infer type for type parameter 'T'. Specify it
 explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
 entViewModel.kt:214:42 Unresolved reference 'role'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisAg
-entViewModel.kt:218:39 Operator '==' cannot be applied to 'Int' and 
+entViewModel.kt:218:39 Operator '==' cannot be applied to 'Int' and
 'AgentPriority'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
@@ -2216,15 +2216,15 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
 idgeService.kt:135:35 Unresolved reference 'parameters'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
-idgeService.kt:136:27 Argument type mismatch: actual type is 'String', but 
+idgeService.kt:136:27 Argument type mismatch: actual type is 'String', but
 'Map<String, String>' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
-idgeService.kt:140:32 Cannot infer type for type parameter 'T'. Specify it 
+idgeService.kt:140:32 Cannot infer type for type parameter 'T'. Specify it
 explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
-idgeService.kt:141:17 Cannot infer type for type parameter 'T'. Specify it 
+idgeService.kt:141:17 Cannot infer type for type parameter 'T'. Specify it
 explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
@@ -2330,14 +2330,14 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
 idgeService.kt:243:7 Unresolved reference 'mapError'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
-idgeService.kt:243:18 Cannot infer type for value parameter 'error'. Specify it 
+idgeService.kt:243:18 Cannot infer type for value parameter 'error'. Specify it
 explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
 idgeService.kt:244:79 Unresolved reference 'message'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
-idgeService.kt:281:75 Too many arguments for 'fun w(tag: String, message: 
+idgeService.kt:281:75 Too many arguments for 'fun w(tag: String, message:
 String): Unit'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisBr
@@ -2350,23 +2350,23 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
 okEntry.kt:26:19 Unresolved reference 'BuildConfig'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
-okEntry.kt:38:39 Argument type mismatch: actual type is 'PackageParam', but 
+okEntry.kt:38:39 Argument type mismatch: actual type is 'PackageParam', but
 'YukiBaseHooker' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
-okEntry.kt:45:35 Argument type mismatch: actual type is 'PackageParam', but 
+okEntry.kt:45:35 Argument type mismatch: actual type is 'PackageParam', but
 'YukiBaseHooker' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
-okEntry.kt:52:39 Argument type mismatch: actual type is 'PackageParam', but 
+okEntry.kt:52:39 Argument type mismatch: actual type is 'PackageParam', but
 'YukiBaseHooker' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
-okEntry.kt:59:37 Argument type mismatch: actual type is 'PackageParam', but 
+okEntry.kt:59:37 Argument type mismatch: actual type is 'PackageParam', but
 'YukiBaseHooker' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
-oks.kt:89:1 Class 'GenesisZygoteHooks' is not abstract and does not implement 
+oks.kt:89:1 Class 'GenesisZygoteHooks' is not abstract and does not implement
 abstract base class member:
 fun onHook(): Unit
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
@@ -2374,31 +2374,31 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
 oks.kt:99:45 Unresolved reference 'applicationInfo'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
-oks.kt:155:1 Class 'GenesisSelfHooks' is not abstract and does not implement 
+oks.kt:155:1 Class 'GenesisSelfHooks' is not abstract and does not implement
 abstract base class member:
 fun onHook(): Unit
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
-oks.kt:163:23 Argument type mismatch: actual type is 'Class<Any>?', but 'Any' 
+oks.kt:163:23 Argument type mismatch: actual type is 'Class<Any>?', but 'Any'
 was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
 oks.kt:173:38 Unresolved reference 'toPackage'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/GenesisHo
-oks.kt:173:79 Cannot infer type for value parameter 'aiClass'. Specify it 
+oks.kt:173:79 Cannot infer type for value parameter 'aiClass'. Specify it
 explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/RealVerte
-xAIClientImpl.kt:270:50 Argument type mismatch: actual type is 'String', but 
+xAIClientImpl.kt:270:50 Argument type mismatch: actual type is 'String', but
 'SecurityEvent' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/RealVerte
-xAIClientImpl.kt:270:75 Too many arguments for 'suspend fun 
+xAIClientImpl.kt:270:75 Too many arguments for 'suspend fun
 logSecurityEvent(event: SecurityEvent): Unit'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
-udService.kt:42:31 Serializer has not been found for type 'Any'. To use context 
+udService.kt:42:31 Serializer has not been found for type 'Any'. To use context
 serializer as fallback, explicitly annotate type or property with @Contextual
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
@@ -2408,7 +2408,7 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
 udService.kt:72:28 Unresolved reference 'initialize'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
-udService.kt:145:32 Argument type mismatch: actual type is 'Map<String, 
+udService.kt:145:32 Argument type mismatch: actual type is 'Map<String,
 String?>', but 'Map<String, Any>' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/ai/VertexClo
@@ -2424,75 +2424,75 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveControlScreen.kt:78:16 Unresolved reference 'OracleDriveControlViewModel'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:78:46 Cannot infer type for type parameter 'VM'. Specify 
+DriveControlScreen.kt:78:46 Cannot infer type for type parameter 'VM'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:81:21 Property delegate must have a 'getValue(Nothing?, 
-KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. 
+DriveControlScreen.kt:81:21 Property delegate must have a 'getValue(Nothing?,
+KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method.
 None of the following functions is applicable:
 fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:81:24 Cannot infer type for type parameter 'T'. Specify 
+DriveControlScreen.kt:81:24 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveControlScreen.kt:81:34 Unresolved reference 'isServiceConnected'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:81:53 Cannot infer type for type parameter 'T'. Specify 
+DriveControlScreen.kt:81:53 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:82:16 Property delegate must have a 'getValue(Nothing?, 
-KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. 
+DriveControlScreen.kt:82:16 Property delegate must have a 'getValue(Nothing?,
+KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method.
 None of the following functions is applicable:
 fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:82:19 Cannot infer type for type parameter 'T'. Specify 
+DriveControlScreen.kt:82:19 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveControlScreen.kt:82:29 Unresolved reference 'status'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:82:36 Cannot infer type for type parameter 'T'. Specify 
+DriveControlScreen.kt:82:36 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:83:24 Property delegate must have a 'getValue(Nothing?, 
-KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. 
+DriveControlScreen.kt:83:24 Property delegate must have a 'getValue(Nothing?,
+KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method.
 None of the following functions is applicable:
 fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:83:27 Cannot infer type for type parameter 'T'. Specify 
+DriveControlScreen.kt:83:27 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveControlScreen.kt:83:37 Unresolved reference 'detailedStatus'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:83:52 Cannot infer type for type parameter 'T'. Specify 
+DriveControlScreen.kt:83:52 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:84:24 Property delegate must have a 'getValue(Nothing?, 
-KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. 
+DriveControlScreen.kt:84:24 Property delegate must have a 'getValue(Nothing?,
+KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method.
 None of the following functions is applicable:
 fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:84:27 Cannot infer type for type parameter 'T'. Specify 
+DriveControlScreen.kt:84:27 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveControlScreen.kt:84:37 Unresolved reference 'diagnosticsLog'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveControlScreen.kt:84:52 Cannot infer type for type parameter 'T'. Specify 
+DriveControlScreen.kt:84:52 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
@@ -2514,7 +2514,7 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveRepositoryImpl.kt:39:47 Unresolved reference 'listFiles'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveRepositoryImpl.kt:47:61 Cannot infer type for value parameter 'file'. 
+DriveRepositoryImpl.kt:47:61 Cannot infer type for value parameter 'file'.
 Specify it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
@@ -2527,7 +2527,7 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveRepositoryImpl.kt:51:44 Unresolved reference 'timeCreated'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveRepositoryImpl.kt:53:22 Cannot infer type for type parameter 'T'. Specify 
+DriveRepositoryImpl.kt:53:22 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
@@ -2540,15 +2540,15 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveRepositoryImpl.kt:145:43 Unresolved reference 'downloadFile'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveRepositoryImpl.kt:161:39 Cannot infer type for type parameter 'T'. Specify 
+DriveRepositoryImpl.kt:161:39 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveRepositoryImpl.kt:161:39 Cannot infer type for type parameter 'R'. Specify 
+DriveRepositoryImpl.kt:161:39 Cannot infer type for type parameter 'R'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveRepositoryImpl.kt:161:45 Cannot infer type for type parameter 'T'. Specify 
+DriveRepositoryImpl.kt:161:45 Cannot infer type for type parameter 'T'. Specify
 it explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
@@ -2558,24 +2558,24 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveScreen.kt:24:16 Unresolved reference 'OracleDriveViewModel'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveScreen.kt:24:39 Cannot infer type for type parameter 'VM'. Specify it 
+DriveScreen.kt:24:39 Cannot infer type for type parameter 'VM'. Specify it
 explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveScreen.kt:26:28 Property delegate must have a 'getValue(Nothing?, 
-KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method. 
+DriveScreen.kt:26:28 Property delegate must have a 'getValue(Nothing?,
+KProperty0<ERROR CLASS: Cannot infer argument for type parameter T>)' method.
 None of the following functions is applicable:
 fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveScreen.kt:26:31 Cannot infer type for type parameter 'T'. Specify it 
+DriveScreen.kt:26:31 Cannot infer type for type parameter 'T'. Specify it
 explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveScreen.kt:26:41 Unresolved reference 'consciousnessState'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveScreen.kt:26:60 Cannot infer type for type parameter 'T'. Specify it 
+DriveScreen.kt:26:60 Cannot infer type for type parameter 'T'. Specify it
 explicitly.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
@@ -2594,7 +2594,7 @@ Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveScreen.kt:95:39 Unresolved reference 'initializeConsciousness'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
-DriveScreen.kt:97:27 Argument type mismatch: actual type is 
+DriveScreen.kt:97:27 Argument type mismatch: actual type is
 'WideNavigationRailValue', but 'Boolean' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
@@ -2609,7 +2609,7 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/oracledrive/genesis/cloud/Oracle
 DriveScreen.kt:112:32 Unresolved reference 'isAwake'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/screens/HomeScreen.kt:12:43 
+Model/app/src/main/java/dev/aurakai/auraframefx/screens/HomeScreen.kt:12:43
 Cannot access 'val RowColumnParentData?.weight: Float': it is internal in file.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/security/SecurityExtensions.kt:7
@@ -2621,7 +2621,7 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/security/SecurityMonitor.kt:637:
 29 Unresolved reference 'stopThreatDetection'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/service/NeuralWhisper.kt:465:15 
+Model/app/src/main/java/dev/aurakai/auraframefx/service/NeuralWhisper.kt:465:15
 Unresolved reference 'cancel'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt:35:
@@ -2630,32 +2630,32 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt:44:
 9 'getOracleDriveStatus' overrides nothing.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/services/BackupService.kt:59:33 
-Inapplicable candidate(s): fun <reified W : ListenableWorker> 
-PeriodicWorkRequestBuilder(repeatInterval: Long, repeatIntervalTimeUnit: 
-TimeUnit, flexTimeInterval: Long, flexTimeIntervalUnit: TimeUnit): 
+Model/app/src/main/java/dev/aurakai/auraframefx/services/BackupService.kt:59:33
+Inapplicable candidate(s): fun <reified W : ListenableWorker>
+PeriodicWorkRequestBuilder(repeatInterval: Long, repeatIntervalTimeUnit:
+TimeUnit, flexTimeInterval: Long, flexTimeIntervalUnit: TimeUnit):
 PeriodicWorkRequest.Builder
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/services/BackupService.kt:59:60 
+Model/app/src/main/java/dev/aurakai/auraframefx/services/BackupService.kt:59:60
 Unresolved reference 'ConsciousnessBackupWorker'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/ui/AgentChatBubble.kt:143:14 
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/AgentChatBubble.kt:143:14
 Unresolved reference 'graphicsLayer'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/ui/AgentChatBubble.kt:144:17 
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/AgentChatBubble.kt:144:17
 Unresolved reference 'scaleX'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/ui/AgentChatBubble.kt:145:17 
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/AgentChatBubble.kt:145:17
 Unresolved reference 'scaleY'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/ui/HistoricalTask.kt:18:39 
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/HistoricalTask.kt:18:39
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/ui/HistoricalTask.kt:51:20 
+Model/app/src/main/java/dev/aurakai/auraframefx/ui/HistoricalTask.kt:51:20
 Unresolved reference 'AgentCapabilityCategory'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/HologramTransition
-.kt:154:40 @Composable invocations can only happen from the context of a 
+.kt:154:40 @Composable invocations can only happen from the context of a
 @Composable function
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/ui/components/HologramTransition
@@ -2700,28 +2700,28 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/ui/screens/AgentProfileScreen.kt
 :210:47 Unresolved reference 'name'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/utils/Kotlin22Features.kt:47:1 
-The feature "context parameters" is experimental and should be enabled 
-explicitly. This can be done by supplying the compiler argument 
+Model/app/src/main/java/dev/aurakai/auraframefx/utils/Kotlin22Features.kt:47:1
+The feature "context parameters" is experimental and should be enabled
+explicitly. This can be done by supplying the compiler argument
 '-Xcontext-parameters', but note that no stability guarantees are provided.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/utils/Kotlin22Features.kt:78:60 
-To call contextual declarations, specify the '-Xcontext-parameters' compiler 
+Model/app/src/main/java/dev/aurakai/auraframefx/utils/Kotlin22Features.kt:78:60
+To call contextual declarations, specify the '-Xcontext-parameters' compiler
 option.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/utils/Kotlin22Features.kt:132:36
- 'fun <T> async(context: CoroutineContext = ..., start: CoroutineStart = ..., 
-block: suspend CoroutineScope.() -> T): Deferred<T>' is deprecated. 'async' can 
-not be called without the corresponding coroutine scope. Consider wrapping 
-'async' in 'coroutineScope { }', using 'runBlocking { }', or using some other 
+ 'fun <T> async(context: CoroutineContext = ..., start: CoroutineStart = ...,
+block: suspend CoroutineScope.() -> T): Deferred<T>' is deprecated. 'async' can
+not be called without the corresponding coroutine scope. Consider wrapping
+'async' in 'coroutineScope { }', using 'runBlocking { }', or using some other
 'CoroutineScope'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/utils/Kotlin22Features.kt:134:33
- To call contextual declarations, specify the '-Xcontext-parameters' compiler 
+ To call contextual declarations, specify the '-Xcontext-parameters' compiler
 option.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/viewmodel/ConferenceRoomViewMode
-l.kt:129:17 Argument type mismatch: actual type is 'AgentInvokeRequest', but 
+l.kt:129:17 Argument type mismatch: actual type is 'AgentInvokeRequest', but
 'AiRequest' was expected.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/viewmodel/ConferenceRoomViewMode

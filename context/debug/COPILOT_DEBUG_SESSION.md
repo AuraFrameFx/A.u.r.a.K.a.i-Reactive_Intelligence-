@@ -4598,78 +4598,78 @@ infer type for value parameter 'aiClass'. Specify it explicitly.
 e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisSystemHooks.kt:15:1
 Class 'GenesisSystemHooks' is not abstract and does not implement abstract base class member:
 fun onHook(): Unit
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:26:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:26:
 1 Class 'LockScreenHooker' is not abstract and does not implement abstract base class member:
 fun onHook(): Unit
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:43:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:43:
 24 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:58:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:58:
 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:61:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:61:
 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:61:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:61:
 80 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:84:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:84:
 23 Unresolved reference 'BooleanType'.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:84:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:84:
 36 Unresolved reference 'IntType'.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:84:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:84:
 45 Unresolved reference 'IntType'.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:84:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:84:
 54 Unresolved reference 'IntType'.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:84:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:84:
 63 Unresolved reference 'IntType'.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 134:36 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 142:23 Unresolved reference 'LongType'.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 142:33 Unresolved reference 'LongType'.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 145:36 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 178:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 181:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 181:77 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 204:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 204:81 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 222:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 225:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 225:87 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 235:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 238:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 238:78 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 255:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 255:77 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 265:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 267:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 267:77 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 277:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 279:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 279:78 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 336:19 Argument type mismatch: actual type is 'Function0<Unit>', but 'String' was expected.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 337:21 @Composable invocations can only happen from the context of a @Composable function
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 340:47 @Composable invocations can only happen from the context of a @Composable function
 e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:33:1
 Class 'NotchBarHooker' is not abstract and does not implement abstract base class member:
@@ -10450,88 +10450,88 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/GenesisSystemHooks.kt:15:1
 > Class 'GenesisSystemHooks' is not abstract and does not implement abstract base class member:
 > fun onHook(): Unit
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 26:
 > 1 Class 'LockScreenHooker' is not abstract and does not implement abstract base class member:
 > fun onHook(): Unit
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 43:
 > 24 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 58:
 > 28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 61:
 > 29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 61:
 > 80 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 84:
 > 23 Unresolved reference 'BooleanType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 84:
 > 36 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 84:
 > 45 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 84:
 > 54 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 84:
 > 63 Unresolved reference 'IntType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 134:36 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 142:23 Unresolved reference 'LongType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 142:33 Unresolved reference 'LongType'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 145:36 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 178:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 181:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 181:77 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 204:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 204:81 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 222:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 225:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 225:87 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 235:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 238:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 238:78 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 255:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 255:77 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 265:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 267:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 267:77 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 277:28 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 279:29 Argument type mismatch: actual type is 'String', but 'Throwable?' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 279:78 Argument type mismatch: actual type is 'Exception', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 336:19 Argument type mismatch: actual type is 'Function0<Unit>', but 'String' was expected.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 337:21 @Composable invocations can only happen from the context of a @Composable function
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/LockScreenHooker.kt:
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/applyScaleAnimation.kt:
 > 340:47 @Composable invocations can only happen from the context of a @Composable function
 > e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/xposed/hooks/NotchBarHooker.kt:33:
 > 1

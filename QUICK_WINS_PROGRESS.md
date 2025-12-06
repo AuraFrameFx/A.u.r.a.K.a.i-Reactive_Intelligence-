@@ -54,7 +54,7 @@
 4. **EcosystemMenuScreen.kt** - Function type mismatch (1 error)
 
 ### Medium Impact:
-5. **LockScreenHooker.kt** - Logger argument mismatches (~6 errors)
+5. **applyScaleAnimation.kt** - Logger argument mismatches (~6 errors)
 6. **QuickSettingsHooker.kt** - Logger argument mismatches (~6 errors)
 7. **HomeScreen.kt** - Composable context errors (~3 errors)
 
