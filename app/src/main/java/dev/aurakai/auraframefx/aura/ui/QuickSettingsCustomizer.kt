@@ -2,9 +2,9 @@ package dev.aurakai.auraframefx.aura.ui
 
 import android.content.SharedPreferences
 import dev.aurakai.auraframefx.ui.OverlayShape
-import dev.aurakai.auraframefx.system.quicksettings.model.QuickSettingsAnimation
-import dev.aurakai.auraframefx.system.quicksettings.model.QuickSettingsConfig
-import dev.aurakai.auraframefx.system.quicksettings.model.QuickSettingsTileConfig
+import dev.aurakai.auraframefx.ui.QuickSettingsAnimation
+import dev.aurakai.auraframefx.ui.QuickSettingsConfig
+import dev.aurakai.auraframefx.ui.QuickSettingsTileConfig
 import dev.aurakai.auraframefx.ui.ImageResource
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
