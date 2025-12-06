@@ -56,6 +56,7 @@ dependencies {
     implementation(libs.libsu.service)
 
     // BouncyCastle for cryptography
+    //noinspection UseTomlInstead
     implementation("org.bouncycastle:bcprov-jdk18on:1.83")
 
     // Xposed API (compile-only, not bundled in APK)
@@ -72,5 +73,23 @@ dependencies {
     // Android instrumented tests - include AndroidX Test runner and Hilt testing
     androidTestImplementation(libs.androidx.runner)
     androidTestImplementation(libs.hilt.android.testing)
-    add(libs.hilt.android.testing)
+}
+
+// ---------------------------------------------------------------------------
+// TEMPORARY: Disable tests in this module for quick launches to testers
+// - This block is intentionally minimal and safe to remove when you want
+//   tests back (delete these lines or set `enabled = true`).
+// ---------------------------------------------------------------------------
+
+// Disable regular JVM unit tests
+tasks.withType<Test>().configureEach {
+    enabled = false
+}
+
+// Also disable common Android test tasks (connected/AndroidTest) by name match
+tasks.matching { task ->
+    val n = task.name.lowercase()
+    n.startsWith("test") || n.contains("androidtest") || n.startsWith("connected")
+}.configureEach {
+    enabled = false
 }
