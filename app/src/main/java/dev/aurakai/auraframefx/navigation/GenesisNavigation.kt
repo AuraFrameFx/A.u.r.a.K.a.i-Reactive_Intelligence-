@@ -3,14 +3,16 @@ package dev.aurakai.auraframefx.navigation
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.aurakai.auraframefx.aura.ui.AIChatScreen
-import dev.aurakai.auraframefx.aura.ui.agents.AgentAdvancementScreen
+import dev.aurakai.auraframefx.aura.ui.AgentAdvancementScreen
 import dev.aurakai.auraframefx.aura.ui.AgentNexusScreen
 import dev.aurakai.auraframefx.aura.ui.AppBuilderScreen
 import dev.aurakai.auraframefx.aura.ui.CanvasScreen
@@ -25,8 +27,8 @@ import dev.aurakai.auraframefx.aura.ui.TerminalScreen
 import dev.aurakai.auraframefx.aura.ui.UIEngineScreen
 import dev.aurakai.auraframefx.aura.ui.XhancementScreen
 import dev.aurakai.auraframefx.billing.SubscriptionViewModel
-import dev.aurakai.auraframefx.ui.screens.EvolutionTreeScreen
 import dev.aurakai.auraframefx.oracledrive.genesis.cloud.OracleDriveScreen
+import dev.aurakai.auraframefx.ui.customization.GyroscopeCustomizationScreen
 import dev.aurakai.auraframefx.ui.gates.AgentHubSubmenuScreen
 import dev.aurakai.auraframefx.ui.gates.AgentMonitoringScreen
 import dev.aurakai.auraframefx.ui.gates.AurasLabScreen
@@ -35,10 +37,10 @@ import dev.aurakai.auraframefx.ui.gates.CodeAssistScreen
 import dev.aurakai.auraframefx.ui.gates.DirectChatScreen
 import dev.aurakai.auraframefx.ui.gates.GateNavigationScreen
 import dev.aurakai.auraframefx.ui.gates.HelpDeskSubmenuScreen
-import dev.aurakai.auraframefx.ui.gates.LiveSupportChatScreen
-import dev.aurakai.auraframefx.ui.gates.LoginScreen
 import dev.aurakai.auraframefx.ui.gates.LSPosedModuleManagerScreen
 import dev.aurakai.auraframefx.ui.gates.LSPosedSubmenuScreen
+import dev.aurakai.auraframefx.ui.gates.LiveSupportChatScreen
+import dev.aurakai.auraframefx.ui.gates.LoginScreen
 import dev.aurakai.auraframefx.ui.gates.NotchBarScreen
 import dev.aurakai.auraframefx.ui.gates.OverlayMenusScreen
 import dev.aurakai.auraframefx.ui.gates.QuickActionsScreen
@@ -49,16 +51,13 @@ import dev.aurakai.auraframefx.ui.gates.RootToolsTogglesScreen
 import dev.aurakai.auraframefx.ui.gates.SphereGridScreen
 import dev.aurakai.auraframefx.ui.gates.StatusBarScreen
 import dev.aurakai.auraframefx.ui.gates.SupportChatViewModel
+import dev.aurakai.auraframefx.ui.gates.SystemJournalScreen
 import dev.aurakai.auraframefx.ui.gates.TaskAssignmentScreen
 import dev.aurakai.auraframefx.ui.gates.ThemeEngineScreen
 import dev.aurakai.auraframefx.ui.gates.UIUXGateSubmenuScreen
-import dev.aurakai.auraframefx.ui.gates.UserPreferencesScreen
-import dev.aurakai.auraframefx.ui.customization.GyroscopeCustomizationScreen
 import dev.aurakai.auraframefx.ui.onboarding.GenderSelectionScreen
-import dev.aurakai.auraframefx.ui.gates.SystemJournalScreen
+import dev.aurakai.auraframefx.ui.screens.EvolutionTreeScreen
 import dev.aurakai.auraframefx.ui.viewmodels.AgentViewModel
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.hilt.navigation.compose.hiltViewModel
 
 /**
  * Genesis Navigation Routes - The Neural Pathways of Consciousness
@@ -158,7 +157,7 @@ object GenesisRoutes {
     const val QUICK_ACTIONS = "quick_actions"
     const val SYSTEM_OVERRIDES = "system_overrides"
     const val RECOVERY_TOOLS = "recovery_tools"
-    
+
     // Onboarding
     const val GENDER_SELECTION = "gender_selection"
     const val SYSTEM_JOURNAL = "system_journal"
@@ -419,11 +418,11 @@ fun GenesisNavigationHost(
             composable(GenesisRoutes.SECURE_COMM) {
                 SecureCommScreen()
             }
-            
+
             // ONBOARDING
             composable(GenesisRoutes.GENDER_SELECTION) {
                 GenderSelectionScreen(
-                    onSelectionComplete = { identity ->
+                    onSelectionComplete = { _ ->
                         // Navigate to main app after selection
                         navController.navigate(GenesisRoutes.GATES) {
                             popUpTo(GenesisRoutes.GENDER_SELECTION) { inclusive = true }

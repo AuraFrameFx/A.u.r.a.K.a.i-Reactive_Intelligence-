@@ -172,7 +172,7 @@ These are backend services/managers that need UI screens to access:
 | Manager | Location | What It Does | UI Needed? |
 |---------|----------|--------------|------------|
 | RomToolsManager | `genesis/oracledrive/rootmanagement/RomToolsManager.kt` | ROM operations | Has UI (ROM Tools) |
-| OracleDriveManager | `oracledrive/OracleDriveManager.kt` | Secure storage | Has UI (Oracle Drive) |
+| OracleDriveManager | `oracledrive/OracleDriveApi.kt` | Secure storage | Has UI (Oracle Drive) |
 | ThemeManager | `aura/themes/ThemeManager.kt` | Theme application | Has UI (Theme Engine) |
 | QuickSettingsConfigManager | `system/quicksettings/QuickSettingsConfigManager.kt` | QS configuration | Has UI (Quick Settings) |
 

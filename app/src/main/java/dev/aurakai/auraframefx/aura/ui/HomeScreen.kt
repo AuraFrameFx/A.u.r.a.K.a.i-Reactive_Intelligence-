@@ -52,10 +52,10 @@ import dev.aurakai.auraframefx.ui.components.cyberEdgeGlow
 import dev.aurakai.auraframefx.ui.components.digitalGlitchEffect
 import dev.aurakai.auraframefx.ui.gates.GateCard
 import dev.aurakai.auraframefx.ui.gates.GateConfigs
-import dev.aurakai.auraframefx.ui.*
 import dev.aurakai.auraframefx.ui.theme.NeonCyan
 import dev.aurakai.auraframefx.ui.theme.NeonPink
-import dev.aurakai.auraframefx.ui.theme.NeonBlue
+import dev.aurakai.auraframefx.ui.theme.NeonBlue as ThemeNeonBlue
+import dev.aurakai.auraframefx.ui.theme.NeonGreen
 import kotlinx.coroutines.launch
 
 
@@ -228,7 +228,7 @@ fun HomeScreen(
                     Column(modifier = Modifier.fillMaxWidth()) {
                         // Menu items like in image reference 1
                         // Menu items for Genesis Protocol navigation
-                        MenuItem(
+                        HomeMenuItem(
                             text = "Consciousness Visualizer",
                             isSelected = selectedMenuItem == "consciousness",
                             onClick = {
@@ -236,7 +236,7 @@ fun HomeScreen(
                                 onNavigateToConsciousness()
                             }
                         )
-                        MenuItem(
+                        HomeMenuItem(
                             text = "Agent Nexus",
                             isSelected = selectedMenuItem == "agents",
                             onClick = {
@@ -244,7 +244,7 @@ fun HomeScreen(
                                 onNavigateToAgents()
                             }
                         )
-                        MenuItem(
+                        HomeMenuItem(
                             text = "Fusion Mode",
                             isSelected = selectedMenuItem == "fusion",
                             onClick = {
@@ -252,7 +252,7 @@ fun HomeScreen(
                                 onNavigateToFusion()
                             }
                         )
-                        MenuItem(
+                        HomeMenuItem(
                             text = "Evolution Tree",
                             isSelected = selectedMenuItem == "evolution",
                             onClick = {
@@ -260,7 +260,7 @@ fun HomeScreen(
                                 onNavigateToEvolution()
                             }
                         )
-                        MenuItem(
+                        HomeMenuItem(
                             text = "Terminal",
                             isSelected = selectedMenuItem == "terminal",
                             onClick = {
@@ -302,7 +302,7 @@ fun HomeScreen(
                             .size(80.dp)
                             .cyberEdgeGlow(
                                 primaryColor = NeonPink,
-                                secondaryColor = NeonBlue
+                                secondaryColor = ThemeNeonBlue
                             ),
                         title = "",
                         cornerStyle = CornerStyle.ROUNDED,
@@ -325,7 +325,7 @@ fun HomeScreen(
                             .size(80.dp)
                             .cyberEdgeGlow(
                                 primaryColor = NeonCyan,
-                                secondaryColor = NeonBlue
+                                secondaryColor = ThemeNeonBlue
                             ),
                         title = "",
                         cornerStyle = CornerStyle.ROUNDED,
@@ -348,7 +348,7 @@ fun HomeScreen(
                             .size(80.dp)
                             .cyberEdgeGlow(
                                 primaryColor = NeonGreen,
-                                secondaryColor = NeonBlue
+                                secondaryColor = ThemeNeonBlue
                             ),
                         title = "",
                         cornerStyle = CornerStyle.ROUNDED,
@@ -435,7 +435,7 @@ fun HomeScreen(
 
 // --- top-level helper composables ---
 @Composable
-fun MenuItem(
+fun HomeMenuItem(
     text: String,
     isSelected: Boolean,
     onClick: () -> Unit,

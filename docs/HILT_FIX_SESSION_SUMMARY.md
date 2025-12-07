@@ -45,7 +45,7 @@ These classes have `@Inject` constructors with dependencies that Hilt can't reso
 
 ### 3. `OracleDriveManager`
 - **Missing:** `OracleDriveApi`, `CloudStorageProvider`
-- **File:** `app/src/main/java/dev/aurakai/auraframefx/oracledrive/OracleDriveManager.kt:16`
+- **File:** `app/src/main/java/dev/aurakai/auraframefx/oracledrive/OracleDriveApi.kt:16`
 - **Fix Needed:** Create implementations or `@Binds` for these interfaces
 
 ### 4. `ConferenceRoomViewModel`

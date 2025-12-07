@@ -3,78 +3,63 @@
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
+import dev.aurakai.auraframefx.ui.QuickSettingsConfig
+import dev.aurakai.auraframefx.ui.QuickSettingsTileConfig
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import timber.log.Timber
 import java.io.File
 
-private val Unit.QuickSettingsConfigManager: Unit
-    get() {
-        TODO()
-    }
-private val QuickSettingsConfigManager.Companion.defaultConfig: QuickSettingsConfig
-    get() {
-        TODO()
-    }
-
-data class QuickSettingsTileConfig(
-    val id: String
-)
-enum class QuickSettingsConfig(val tiles: List<QuickSettingsTileConfig>) {
-    DEFAULT(emptyList());
-
-    fun finalize(tiles: MutableList<QuickSettingsTileConfig>) {
-        TODO("Not yet implemented")
-    }
-}
-
 /**
  * Manages Quick Settings configuration including loading, saving, and applying user preferences.
+ * Uses the UI data classes defined in `dev.aurakai.auraframefx.ui` as the canonical data model.
  */
-class QuickSettingsConfigManager(context: Context) {
+class QuickSettingsConfigManager private constructor(context: Context) {
     private val tag = "QuickSettingsConfigManager"
     private val gson = Gson()
     private val configFile = File(context.filesDir, "quick_settings_config.json")
 
-    // Default configuration
-    private val defaultConfig: Unit by lazy { dev.aurakai.auraframefx.system.QuickSettingsConfigManager }
+    // Default configuration uses the companion DEFAULT from the UI model
+    private val defaultConfig: QuickSettingsConfig = QuickSettingsConfig.DEFAULT
 
     // Cache for the current configuration
-    private var currentConfig: Unit = defaultConfig
+    private var currentConfig: QuickSettingsConfig = defaultConfig
 
     /**
      * Loads the Quick Settings configuration from storage.
      * If no saved configuration exists, returns the default configuration.
      */
     suspend fun loadConfig(): QuickSettingsConfig = withContext(Dispatchers.IO) {
-        return@withContext try {
+        try {
             if (!configFile.exists()) {
                 Timber.tag(tag).d("No saved config found, using default")
-                return@withContext defaultConfig
+                currentConfig = defaultConfig
+                return@withContext currentConfig
             }
 
             val json = configFile.readText()
             if (json.isBlank()) {
                 Timber.tag(tag).d("Empty config file, using default")
-                return@withContext QuickSettingsConfigManager.defaultConfig
+                currentConfig = defaultConfig
+                return@withContext currentConfig
             }
 
-            // Parse the JSON into our config object
             val type = object : TypeToken<QuickSettingsConfig>() {}.type
-            gson.fromJson<QuickSettingsConfig>(json, type) ?: defaultConfig
+            val parsed: QuickSettingsConfig? = gson.fromJson(json, type)
+            currentConfig = parsed ?: defaultConfig
+            return@withContext currentConfig
         } catch (e: Exception) {
-            Timber.tag(tag).e(e, "Error loading config")
-            defaultConfig
-        }.also {
-            currentConfig = it
-        } as QuickSettingsConfig
+            Timber.tag(tag).e(e, "Error loading config, using default")
+            currentConfig = defaultConfig
+            return@withContext currentConfig
+        }
     }
 
     /**
      * Saves the Quick Settings configuration to storage.
      */
     suspend fun saveConfig(config: QuickSettingsConfig): Boolean = withContext(Dispatchers.IO) {
-        return@withContext try {
+        try {
             val json = gson.toJson(config)
             configFile.writeText(json)
             currentConfig = config
@@ -86,57 +71,36 @@ class QuickSettingsConfigManager(context: Context) {
     }
 
     /**
-     * Updates a specific tile's configuration.
+     * Updates a specific tile's configuration, returning true on success.
      */
     suspend fun updateTileConfig(
         tileId: String,
-        update: (QuickSettingsTileConfig) -> QuickSettingsTileConfig,
-    ): Boolean {
-        return try {
-            val currentTiles = currentConfig.tiles.toMutableList()
-            val index = currentTiles.indexOfFirst { it.id == tileId }
+        update: (QuickSettingsTileConfig) -> QuickSettingsTileConfig
+    ): Boolean = withContext(Dispatchers.IO) {
+        try {
+            val tiles = currentConfig.tiles.toMutableList()
+            val index = tiles.indexOfFirst { it.id == tileId }
+            if (index == -1) return@withContext false
 
-            if (index != -1) {
-                val updatedTile: QuickSettingsTileConfig = update(currentTiles[index])
-                currentTiles[index] = updatedTile
-
-                val updatedConfig: Unit = currentConfig.finalize(tiles = currentTiles)
-                saveConfig(updatedConfig)
-            } else {
-                false
-            }
+            val updated = update(tiles[index])
+            tiles[index] = updated
+            val newConfig = currentConfig.copy(tiles = tiles)
+            saveConfig(newConfig)
         } catch (e: Exception) {
             Timber.tag(tag).e(e, "Error updating tile config")
             false
         }
     }
 
-    private fun saveConfig(updatedConfig: Any): Boolean {
-        TODO("Not yet implemented")
-    }
+    /** Resets the configuration to default values. */
+    suspend fun resetToDefault(): Boolean = saveConfig(defaultConfig)
 
-    private fun update(p1: MatchGroup?) {}
-
-    /**
-     * Resets the configuration to default values.
-     */
-    suspend fun resetToDefault(): Boolean {
-        return saveConfig(defaultConfig)
-    }
-
-    /**
-     * Gets the current configuration.
-     */
+    /** Gets the current configuration. */
     fun getCurrentConfig(): QuickSettingsConfig = currentConfig
 
-    /**
-     * Applies the current configuration to the Quick Settings panel.
-     * This should be called after the Quick Settings panel is inflated.
-     */
+    /** Applies the current configuration to the Quick Settings panel (platform-specific, stubbed). */
     fun applyConfig(panel: Any) {
-        // This method will be called by the Xposed hook to apply the configuration
-        // to the actual Quick Settings panel
-        // Implementation will depend on the specific hooks and view hierarchy
+        // Platform-specific application code goes here (e.g., Xposed hooks)
     }
 
     companion object {
@@ -152,13 +116,3 @@ class QuickSettingsConfigManager(context: Context) {
         }
     }
 }
-
-private fun MutableList<QuickSettingsTileConfig>.set(index: Int, it: QuickSettingsTileConfig) {
-    TODO("Not yet implemented")
-}
-
-private fun Any.toMutableList(): MutableList<QuickSettingsTileConfig> {
-    TODO("Not yet implemented")
-}
-
-DEFAULT;

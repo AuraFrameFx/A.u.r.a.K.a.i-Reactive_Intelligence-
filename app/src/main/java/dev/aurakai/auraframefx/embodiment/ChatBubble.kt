@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.Send
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
@@ -36,7 +37,7 @@ fun IdleChatBubble(
     onBubbleClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    var dotCount by remember { mutableStateOf(1) }
+    var dotCount by remember { mutableIntStateOf(1) }
 
     // Animate dots: . -> .. -> ... -> . -> ..
     LaunchedEffect(Unit) {

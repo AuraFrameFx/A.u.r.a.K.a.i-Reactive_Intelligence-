@@ -178,7 +178,7 @@ Files to modify:
 - `AuraAIServiceImpl.kt`
 - `ClaudeAIService.kt`
 - `OracleDriveIntegration.kt`
-- `OracleDriveManager.kt`
+- `OracleDriveApi.kt`
 - `OracleDriveServiceImpl.kt`
 - `TrinityCoordinatorService.kt`
 - `HiltTestActivity.kt` (test file)

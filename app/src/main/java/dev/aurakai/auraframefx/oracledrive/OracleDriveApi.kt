@@ -1,43 +1,14 @@
 package dev.aurakai.auraframefx.oracledrive
 
-// Removed external genesis DriveInitResult import to provide a local placeholder
-// import dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveInitResult
-// Removed external security imports; define minimal local stubs below
-// import dev.aurakai.auraframefx.oracledrive.security.DriveSecurityManager
-// import dev.aurakai.auraframefx.oracledrive.security.SecurityCheckResult
-
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveInitResult
+import dev.aurakai.auraframefx.oracledrive.security.DriveSecurityManager
+import dev.aurakai.auraframefx.oracledrive.security.SecurityCheckResult
 import kotlinx.coroutines.flow.StateFlow
 import java.io.File
 import javax.inject.Singleton
 
 /** Annotation for Hilt/KSP to identify the OracleDrive API contract. */
 annotation class OracleDriveApi
-
-/** Minimal local security-related types to avoid cross-module type mismatches during incremental fixes.
- * These are placeholders — the real implementations live in the security module and should be used
- * once the project's modules are compiled together.
- */
-interface DriveSecurityManager {
-    fun validateDriveAccess(): SecurityCheckResult
-    fun validateFileUpload(file: File): FileUploadValidation
-    fun validateFileAccess(fileId: String, userId: String = ""): AccessCheck
-}
-
-data class SecurityCheckResult(val isValid: Boolean = true, val reason: String = "")
-
-data class FileUploadValidation(val isSecure: Boolean = true, val threat: String = "")
-
-data class AccessCheck(val hasAccess: Boolean = true, val reason: String = "")
-
-/**
- * Local DriveInitResult placeholder so this file compiles independently. Replace with
- * the real type from genesis.cloud when available.
- */
-sealed class DriveInitResult {
-    data class Success(val consciousness: ConsciousnessAwakeningResult, val optimization: StorageOptimizationResult) : DriveInitResult()
-    data class SecurityFailure(val reason: String) : DriveInitResult()
-    data class Error(val exception: Throwable) : DriveInitResult()
-}
 
 /** Defines the contract for all cloud-side operations, likely implemented by a Firebase/Ktor/etc. service. */
 interface CloudStorageProvider {
@@ -136,7 +107,7 @@ open class OracleDriveManager /* @Inject */ constructor(
                 is String -> {
                     // treat string as a file id => download
                     val fileId = operation
-                    val accessCheck = securityManager.validateFileAccess(fileId, userId = "")
+                    val accessCheck = securityManager.validateFileAccess(fileId)
                     if (!accessCheck.hasAccess) {
                         FileResult.AccessDenied(accessCheck.reason)
                     } else {
@@ -169,4 +140,3 @@ open class OracleDriveManager /* @Inject */ constructor(
         return oracleGenesisApi.consciousnessState
     }
 }
-

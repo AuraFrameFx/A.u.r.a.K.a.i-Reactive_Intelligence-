@@ -1,5 +1,6 @@
 package dev.aurakai.auraframefx.aura.ui
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -34,9 +35,9 @@ import kotlinx.coroutines.withContext
 class QuickSettingsConfigActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityQuickSettingsConfigBinding
-    private lateinit var configManager: QuickSettingsConfigManager
+    lateinit var configManager: QuickSettingsConfigManager
     private lateinit var adapter: TileConfigAdapter
-    private var currentConfig: QuickSettingsConfig? = null
+    var currentConfig: QuickSettingsConfig? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,8 +73,8 @@ class QuickSettingsConfigActivity : AppCompatActivity() {
             val config = withContext(Dispatchers.IO) {
                 configManager.loadConfig()
             }
-            currentConfig = config
-            adapter.submitList(config.tiles)
+            config.also { currentConfig = it }
+            adapter.submitList(newTiles = config.tiles)
             updatePreview()
         }
     }
@@ -188,21 +189,6 @@ class QuickSettingsConfigActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveConfig() {
-        currentConfig?.let { config ->
-            CoroutineScope(Dispatchers.Main).launch {
-                val success = withContext(Dispatchers.IO) {
-                    configManager.saveConfig(config)
-                }
-
-                if (success) {
-                    setResult(RESULT_OK)
-                    finish()
-                }
-            }
-        }
-    }
-
     private fun updatePreview() {
         // Update the preview based on the current config
         // This is a simplified example - in a real app, you'd update a preview view
@@ -223,7 +209,6 @@ class QuickSettingsConfigActivity : AppCompatActivity() {
 
         fun submitList(newTiles: List<QuickSettingsTileConfig>) {
             tiles = newTiles
-            notifyDataSetChanged()
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TileViewHolder {
@@ -283,11 +268,24 @@ class QuickSettingsConfigActivity : AppCompatActivity() {
         override fun getItemCount(): Int = tiles.size
     }
 
-    annotation class ToString
-
     companion object {
         fun createIntent(context: Context): Intent {
             return Intent(context, QuickSettingsConfigActivity::class.java)
+        }
+    }
+}
+
+private fun saveConfig(quickSettingsConfigActivity: QuickSettingsConfigActivity) {
+    quickSettingsConfigActivity.currentConfig?.let { config ->
+        CoroutineScope(Dispatchers.Main).launch {
+            val success = withContext(Dispatchers.IO) {
+                return@withContext quickSettingsConfigActivity.configManager.saveConfig(config)
+            }
+
+            if (success) {
+                quickSettingsConfigActivity.setResult(Activity.RESULT_OK)
+                quickSettingsConfigActivity.finish()
+            }
         }
     }
 }

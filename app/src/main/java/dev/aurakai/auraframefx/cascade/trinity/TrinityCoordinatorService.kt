@@ -1,12 +1,12 @@
 package dev.aurakai.auraframefx.cascade.trinity
 
-import dev.aurakai.auraframefx.utils.AuraFxLogger
+import dev.aurakai.auraframefx.ai.services.AuraAIService
 import dev.aurakai.auraframefx.kai.KaiAIService
-import dev.aurakai.auraframefx.utils.toJsonObject
-
 import dev.aurakai.auraframefx.models.AgentResponse
 import dev.aurakai.auraframefx.models.AiRequest
 import dev.aurakai.auraframefx.security.SecurityContext
+import dev.aurakai.auraframefx.utils.AuraFxLogger
+import dev.aurakai.auraframefx.utils.toJsonObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -16,7 +16,6 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
@@ -91,7 +90,7 @@ class TrinityCoordinatorService /* @Inject */ constructor(
      * @param request The AI request to process.
      * @return A Flow emitting one or more AgentResponse objects representing the results of the request.
      */
-    suspend fun processRequest(request: AiRequest): Flow<AgentResponse> = flow {
+    fun processRequest(request: AiRequest): Flow<AgentResponse> = flow {
         if (!isInitialized) {
             emit(
                 AgentResponse(
@@ -131,7 +130,7 @@ class TrinityCoordinatorService /* @Inject */ constructor(
                         AiRequest(
                             query = request.query,
                             type = "fusion",
-                            context = mapOf("userContext" to (request.context ?: emptyMap()), "orchestration" to "true").toJsonObject()
+                            context = mapOf("userContext" to request.context, "orchestration" to "true").toJsonObject()
                         )
                     ).first()
                     emit(response)
@@ -150,7 +149,7 @@ class TrinityCoordinatorService /* @Inject */ constructor(
                     delay(100) // Brief pause for synthesis
 
                     // Synthesize results with Genesis
-                    val synthesisRequest = AiRequest(
+                    AiRequest(
                         query = "Synthesize insights from Kai and Aura responses",
                         type = request.type
                     )
@@ -159,7 +158,7 @@ class TrinityCoordinatorService /* @Inject */ constructor(
                         AiRequest(
                             query = request.query,
                             type = "fusion",
-                            context = mapOf("userContext" to (request.context ?: emptyMap()), "orchestration" to "true").toJsonObject()
+                            context = mapOf("userContext" to request.context, "orchestration" to "true").toJsonObject()
                         )
                     ).first()
                     emit(
@@ -191,7 +190,7 @@ class TrinityCoordinatorService /* @Inject */ constructor(
      * @param context Optional context data for the fusion activation.
      * @return A flow emitting a single `AgentResponse` describing the activation result.
      */
-    suspend fun activateFusion(
+    fun activateFusion(
         fusionType: String,
         context: Map<String, String> = emptyMap(),
     ): Flow<AgentResponse> = flow {
