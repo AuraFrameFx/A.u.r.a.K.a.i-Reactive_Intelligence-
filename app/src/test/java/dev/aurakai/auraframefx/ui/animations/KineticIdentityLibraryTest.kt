@@ -12,7 +12,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
 import androidx.compose.ui.unit.dp
-import dev.aurakai.auraframefx.theme.AuraTheme
+import dev.aurakai.auraframefx.ui.theme.model.AuraThemeData
 import dev.aurakai.auraframefx.ui.animations.KineticIdentityLibrary.EmotionalState
 import dev.aurakai.auraframefx.ui.animations.KineticIdentityLibrary.FlowDirection
 import dev.aurakai.auraframefx.ui.animations.KineticIdentityLibrary.Particle
@@ -45,13 +45,13 @@ class KineticIdentityLibraryTest {
     @get:Rule
     val composeTestRule = createComposeRule()
 
-    private lateinit var mockTheme: AuraTheme
+    private lateinit var mockTheme: AuraThemeData
 
     @BeforeEach
     fun setup() {
-        mockTheme = mockk<AuraTheme>(relaxed = true) {
+        mockTheme = mockk<AuraThemeData>(relaxed = true) {
             every { accentColor } returns Color.Blue
-            every { animationStyle } returns AuraTheme.AnimationStyle.FLOWING
+            every { animationStyle } returns AuraThemeData.AnimationStyle.FLOWING
         }
     }
 
@@ -704,7 +704,7 @@ class KineticIdentityLibraryTest {
 
     @Test
     fun particleFlow_handlesThemeChanges() {
-        var animationStyle by mutableStateOf(AuraTheme.AnimationStyle.FLOWING)
+        var animationStyle by mutableStateOf(AuraThemeData.AnimationStyle.FLOWING)
 
         every { mockTheme.animationStyle } returns animationStyle
 
@@ -718,7 +718,7 @@ class KineticIdentityLibraryTest {
         composeTestRule.onNodeWithTag("particle_theme_changes").assertExists()
 
         // Change animation style
-        animationStyle = AuraTheme.AnimationStyle.ENERGETIC
+        animationStyle = AuraThemeData.AnimationStyle.ENERGETIC
         every { mockTheme.animationStyle } returns animationStyle
 
         composeTestRule.waitForIdle()
@@ -930,9 +930,9 @@ class KineticIdentityLibraryTest {
 
     @Test
     fun animations_handleNullAccentColor() {
-        val themeWithNullColor = mockk<AuraTheme>(relaxed = true) {
+        val themeWithNullColor = mockk<AuraThemeData>(relaxed = true) {
             every { accentColor } returns Color.Unspecified
-            every { animationStyle } returns AuraTheme.AnimationStyle.FLOWING
+            every { animationStyle } returns AuraThemeData.AnimationStyle.FLOWING
         }
 
         composeTestRule.setContent {
@@ -949,8 +949,8 @@ class KineticIdentityLibraryTest {
 
     @Test
     fun particleFlow_handlesAllAnimationStyles() {
-        AuraTheme.AnimationStyle.values().forEachIndexed { index, style ->
-            val themeWithStyle = mockk<AuraTheme>(relaxed = true) {
+        AuraThemeData.AnimationStyle.values().forEachIndexed { index, style ->
+            val themeWithStyle = mockk<AuraThemeData>(relaxed = true) {
                 every { accentColor } returns Color.Blue
                 every { animationStyle } returns style
             }
