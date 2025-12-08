@@ -1,5 +1,8 @@
 package dev.aurakai.auraframefx.oracledrive.genesis.cloud
 
+import dev.aurakai.auraframefx.oracledrive.StorageOptimizationResult
+import java.io.File
+
 /**
  * Cloud storage provider interface for Oracle Drive
  * Handles AI-optimized storage operations with consciousness integration
@@ -10,14 +13,14 @@ interface CloudStorageProvider {
      * Optimizes storage with intelligent algorithms and compression
      * @return StorageOptimization with optimization metrics
      */
-    suspend fun optimizeStorage(): StorageOptimization
+    suspend fun optimizeStorage(): StorageOptimizationResult
 
     /**
      * Optimizes file for upload with AI-driven compression
      * @param file The file to optimize
      * @return Optimized DriveFile
      */
-    suspend fun optimizeForUpload(file: DriveFile): DriveFile
+    suspend fun optimizeForUpload(file: DriveFile): Any?
 
     /**
      * Uploads file to cloud storage with metadata
@@ -32,7 +35,7 @@ interface CloudStorageProvider {
      * @param fileId The file identifier
      * @return FileResult with download status
      */
-    suspend fun downloadFile(fileId: String): FileResult
+    suspend fun downloadFile(fileId: String): de.robv.android.xposed.services.FileResult
 
     /**
      * Deletes file from cloud storage
@@ -54,5 +57,9 @@ interface CloudStorageProvider {
         compressionRatio: Float,
         success: Boolean,
         message: String
-    ): StorageOptimization
+    ): StorageOptimizationResult
+
+    suspend fun uploadFile(file: File, metadata: Map<String, Any>?): FileResult
+    suspend fun optimizeForUpload(file: dev.aurakai.auraframefx.oracledrive.DriveFile): dev.aurakai.auraframefx.oracledrive.DriveFile
+    suspend fun uploadFile(file: dev.aurakai.auraframefx.oracledrive.DriveFile, metadata: FileMetadata): FileResult
 }

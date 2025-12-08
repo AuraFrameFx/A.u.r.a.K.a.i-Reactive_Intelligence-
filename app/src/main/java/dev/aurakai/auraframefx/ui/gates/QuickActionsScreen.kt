@@ -1,5 +1,6 @@
 package dev.aurakai.auraframefx.ui.gates
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -15,7 +16,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
@@ -154,7 +157,7 @@ fun QuickActionsScreen() {
                 colors = CardDefaults.cardColors(
                     containerColor = Color.Black.copy(alpha = 0.6f)
                 ),
-                border = androidx.compose.foundation.BorderStroke(1.dp, Color(0xFF6C5CE7))
+                border = BorderStroke(1.dp, Color(0xFF6C5CE7))
             ) {
                 Row(
                     modifier = Modifier
@@ -214,7 +217,7 @@ fun QuickActionsScreen() {
                                     style = MaterialTheme.typography.labelSmall,
                                     color = Color(0xFF6C5CE7),
                                     modifier = Modifier.padding(8.dp),
-                                    textAlign = androidx.compose.ui.text.style.TextAlign.Center
+                                    textAlign = TextAlign.Center
                                 )
                             }
                         }
@@ -230,10 +233,25 @@ fun QuickActionsScreen() {
 
         categories.forEach { (category, categoryActions) ->
             Text(
-                text = category,
-                style = MaterialTheme.typography.titleLarge,
+                category,
+                modifier = Modifier.padding(vertical = 16.dp),
                 color = Color.White,
-                modifier = Modifier.padding(vertical = 16.dp)
+                autoSize = TODO(),
+                fontSize = TODO(),
+                fontStyle = TODO(),
+                fontWeight = TODO(),
+                fontFamily = TODO(),
+                letterSpacing = TODO(),
+                textDecoration = TODO(),
+                textAlign = TODO(),
+                lineHeight = TODO(),
+                overflow = TODO(),
+                softWrap = TODO(),
+                maxLines = TODO(),
+                minLines = TODO(),
+                inlineContent = TODO(),
+                onTextLayout = TODO(),
+                style = MaterialTheme.typography.titleLarge
             )
 
             LazyVerticalGrid(
@@ -322,6 +340,30 @@ fun QuickActionsScreen() {
     }
 }
 
+private fun ColumnScope.Text(
+    text: String,
+    modifier: Modifier,
+    color: Color,
+    autoSize: Nothing,
+    fontSize: Nothing,
+    fontStyle: Nothing,
+    fontWeight: Nothing,
+    fontFamily: Nothing,
+    letterSpacing: Nothing,
+    textDecoration: Nothing,
+    textAlign: Nothing,
+    lineHeight: Nothing,
+    overflow: Nothing,
+    softWrap: Nothing,
+    maxLines: Nothing,
+    minLines: Nothing,
+    inlineContent: Nothing,
+    onTextLayout: Nothing,
+    style: TextStyle
+) {
+    TODO("Not yet implemented")
+}
+
 /**
  * Action card component
  */
@@ -341,7 +383,7 @@ private fun ActionCard(
             else
                 Color.Black.copy(alpha = 0.6f)
         ),
-        border = androidx.compose.foundation.BorderStroke(
+        border = BorderStroke(
             1.dp,
             if (isExecuting) action.color else action.color.copy(alpha = 0.5f)
         )
@@ -376,7 +418,7 @@ private fun ActionCard(
                 text = action.title,
                 style = MaterialTheme.typography.bodySmall,
                 color = Color.White,
-                textAlign = androidx.compose.ui.text.style.TextAlign.Center,
+                textAlign = TextAlign.Center,
                 maxLines = 2,
                 lineHeight = 14.sp
             )

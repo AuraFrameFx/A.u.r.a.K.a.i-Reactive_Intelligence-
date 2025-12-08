@@ -17,10 +17,13 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import timber.log.Timber
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -86,17 +89,13 @@ class NeuralWhisper @Inject constructor(
             return false
         }
 
-        return try {
-            // Check RECORD_AUDIO permission
-            if (ContextCompat.checkSelfPermission(
-                    context,
-                    Manifest.permission.RECORD_AUDIO
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
-                Timber.w("NeuralWhisper: RECORD_AUDIO permission not granted")
-                return false
-            }
+        // Permission check
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            Timber.w("NeuralWhisper: RECORD_AUDIO permission not granted")
+            return false
+        }
 
+        return try {
             // Initialize AudioRecord for raw audio capture
             audioRecord = AudioRecord(
                 MediaRecorder.AudioSource.MIC,
@@ -106,7 +105,10 @@ class NeuralWhisper @Inject constructor(
                 bufferSize
             )
 
-            // Start audio capture in background thread
+            // Mark recording flag before starting thread to avoid race
+            isRecording = true
+
+            // Start audio capture
             audioRecord?.startRecording()
 
             // Start recording thread
@@ -116,10 +118,6 @@ class NeuralWhisper @Inject constructor(
                     try {
                         val readBytes = audioRecord?.read(audioBuffer, 0, bufferSize) ?: 0
                         if (readBytes > 0) {
-                            // Audio data captured - in production, this would be:
-                            // - Sent to transcription service
-                            // - Processed for voice activity detection
-                            // - Stored for offline processing
                             Timber.v("NeuralWhisper: Captured $readBytes bytes of audio")
                         }
                     } catch (e: Exception) {
@@ -130,15 +128,14 @@ class NeuralWhisper @Inject constructor(
             }
             recordingThread?.start()
 
-            isRecording = true
-
             // Update conversation state
-            _conversationState.value = ConversationState.Listening(isActive = true)
+            _conversationState.update { ConversationState.Listening(isActive = true) }
 
             Timber.i("NeuralWhisper: Recording started")
             true
         } catch (e: Exception) {
             Timber.e(e, "NeuralWhisper: Failed to start recording")
+            isRecording = false
             false
         }
     }
@@ -161,7 +158,7 @@ class NeuralWhisper @Inject constructor(
         }
 
         return try {
-            // Stop MediaRecorder/AudioRecord
+            // Stop recording flag first
             isRecording = false
 
             // Wait for recording thread to finish
@@ -170,23 +167,16 @@ class NeuralWhisper @Inject constructor(
 
             // Stop and release AudioRecord
             audioRecord?.apply {
-                stop()
-                release()
+                try { stop() } catch (_: Exception) { /* ignore */ }
+                try { release() } catch (_: Exception) { /* ignore */ }
             }
             audioRecord = null
 
-            // Process final audio buffer
             Timber.d("NeuralWhisper: Processing final audio buffer")
-            // In production: flush any pending audio data to transcription service
-
-            // Flush transcription pipeline
-            Timber.d("NeuralWhisper: Flushing transcription pipeline")
-            // In production: send remaining audio chunks, await final transcripts
 
             isTranscribing = false
 
-            // Update conversation state
-            _conversationState.value = ConversationState.Idle()
+            _conversationState.update { ConversationState.Idle() }
 
             Timber.i("NeuralWhisper: Recording stopped")
             "Recording stopped successfully"
@@ -208,92 +198,127 @@ class NeuralWhisper @Inject constructor(
             return
         }
 
+        // Permission check
+        if (ContextCompat.checkSelfPermission(context, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            Timber.w("NeuralWhisper: RECORD_AUDIO permission not granted for transcription")
+            return
+        }
+
         isTranscribing = true
+
         scope.launch {
             try {
-                // Initialize Android SpeechRecognizer
-                speechRecognizer = SpeechRecognizer.createSpeechRecognizer(context)
+                withContext(Dispatchers.Main) {
+                    // Create or recreate recognizer on Main thread
+                    try {
+                        speechRecognizer?.destroy()
+                    } catch (ignored: Exception) {}
+                    speechRecognizer = SpeechRecognizer.createSpeechRecognizer(context)
 
-                // Set recognition listener
-                speechRecognizer?.setRecognitionListener(object : RecognitionListener {
-                    override fun onReadyForSpeech(params: Bundle?) {
-                        Timber.d("NeuralWhisper: Ready for speech")
-                    }
-
-                    override fun onBeginningOfSpeech() {
-                        Timber.d("NeuralWhisper: Speech detected")
-                    }
-
-                    override fun onRmsChanged(rmsdB: Float) {
-                        // Voice activity level - can be used for UI feedback
-                    }
-
-                    override fun onBufferReceived(buffer: ByteArray?) {
-                        // Raw audio buffer received
-                    }
-
-                    override fun onEndOfSpeech() {
-                        Timber.d("NeuralWhisper: End of speech")
-                    }
-
-                    override fun onError(error: Int) {
-                        val errorMessage = when (error) {
-                            SpeechRecognizer.ERROR_AUDIO -> "Audio recording error"
-                            SpeechRecognizer.ERROR_CLIENT -> "Client error"
-                            SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "Insufficient permissions"
-                            SpeechRecognizer.ERROR_NETWORK -> "Network error"
-                            SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> "Network timeout"
-                            SpeechRecognizer.ERROR_NO_MATCH -> "No recognition result"
-                            SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> "Recognition service busy"
-                            SpeechRecognizer.ERROR_SERVER -> "Server error"
-                            SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "No speech input"
-                            else -> "Unknown error: $error"
+                    speechRecognizer?.setRecognitionListener(object : RecognitionListener {
+                        override fun onReadyForSpeech(params: Bundle?) {
+                            Timber.d("NeuralWhisper: Ready for speech")
                         }
-                        Timber.e("NeuralWhisper: Recognition error - $errorMessage")
-                    }
 
-                    override fun onResults(results: Bundle?) {
-                        // Stream results to conversationState
-                        val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-                        val confidences = results?.getFloatArray(SpeechRecognizer.CONFIDENCE_SCORES)
-
-                        matches?.firstOrNull()?.let { transcript ->
-                            val confidence = confidences?.firstOrNull() ?: 0.0f
-
-                            Timber.i("NeuralWhisper: Transcribed: '$transcript' (confidence: $confidence)")
-
-                            // Update conversation state with new transcript
-                            _conversationState.value = ConversationState.Responding(responseText = transcript)
+                        override fun onBeginningOfSpeech() {
+                            Timber.d("NeuralWhisper: Speech detected")
                         }
-                    }
 
-                    override fun onPartialResults(partialResults: Bundle?) {
-                        // Partial results for real-time feedback
-                        val matches = partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
-                        matches?.firstOrNull()?.let { partial ->
-                            Timber.d("NeuralWhisper: Partial: '$partial'")
-                            _conversationState.value = ConversationState.Processing(partialTranscript = partial)
+                        override fun onRmsChanged(rmsdB: Float) { }
+                        override fun onBufferReceived(buffer: ByteArray?) { }
+
+                        override fun onEndOfSpeech() {
+                            Timber.d("NeuralWhisper: End of speech")
                         }
+
+                        override fun onError(error: Int) {
+                            val errorMessage = when (error) {
+                                SpeechRecognizer.ERROR_AUDIO -> "Audio recording error"
+                                SpeechRecognizer.ERROR_CLIENT -> "Client error"
+                                SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "Insufficient permissions"
+                                SpeechRecognizer.ERROR_NETWORK -> "Network error"
+                                SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> "Network timeout"
+                                SpeechRecognizer.ERROR_NO_MATCH -> "No recognition result"
+                                SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> "Recognition service busy"
+                                SpeechRecognizer.ERROR_SERVER -> "Server error"
+                                SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "No speech input"
+                                else -> "Unknown error: $error"
+                            }
+                            Timber.w("NeuralWhisper: Recognition error - $errorMessage")
+
+                            // On timeout or busy, attempt restart with backoff
+                            if (isTranscribing && (error == SpeechRecognizer.ERROR_SPEECH_TIMEOUT || error == SpeechRecognizer.ERROR_RECOGNIZER_BUSY)) {
+                                scope.launch {
+                                    delay(250)
+                                    restartListeningSafe()
+                                }
+                            }
+                        }
+
+                        override fun onResults(results: Bundle?) {
+                            val matches = results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+                            val confidences = results?.getFloatArray(SpeechRecognizer.CONFIDENCE_SCORES)
+
+                            matches?.firstOrNull()?.let { transcript ->
+                                val confidence = confidences?.firstOrNull() ?: 0.0f
+                                Timber.i("NeuralWhisper: Transcribed: '$transcript' (confidence: $confidence)")
+
+                                _conversationState.update { ConversationState.Responding(responseText = transcript) }
+                            }
+
+                            // Continue listening for continuous mode
+                            if (isTranscribing) {
+                                scope.launch {
+                                    delay(50)
+                                    restartListeningSafe()
+                                }
+                            }
+                        }
+
+                        override fun onPartialResults(partialResults: Bundle?) {
+                            val matches = partialResults?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+                            matches?.firstOrNull()?.let { partial ->
+                                Timber.d("NeuralWhisper: Partial: '$partial'")
+                                _conversationState.update { ConversationState.Processing(partialTranscript = partial) }
+                            }
+                        }
+
+                        override fun onEvent(eventType: Int, params: Bundle?) { }
+                    })
+
+                    // Prepare intent
+                    val recognizerIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
+                        putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+                        putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
+                        putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3)
                     }
 
-                    override fun onEvent(eventType: Int, params: Bundle?) {
-                        // Custom events
+                    // Start listening
+                    try {
+                        speechRecognizer?.startListening(recognizerIntent)
+                        Timber.i("NeuralWhisper: Transcription started - Listening for voice")
+                    } catch (e: Exception) {
+                        Timber.e(e, "NeuralWhisper: Failed to start listening")
+                        isTranscribing = false
                     }
-                })
-
-                // Start listening for voice input
-                val recognizerIntent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH).apply {
-                    putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
-                    putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, true)
-                    putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 3)
                 }
-
-                speechRecognizer?.startListening(recognizerIntent)
-
-                Timber.i("NeuralWhisper: Transcription started")
             } catch (e: Exception) {
                 Timber.e(e, "NeuralWhisper: Transcription failed")
                 isTranscribing = false
+            }
+        }
+    }
+
+    private fun restartListeningSafe() {
+        scope.launch {
+            withContext(Dispatchers.Main) {
+                try {
+                    speechRecognizer?.cancel()
+                    speechRecognizer?.startListening(Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH))
+                    Timber.d("NeuralWhisper: restarted listening safely")
+                } catch (e: Exception) {
+                    Timber.e(e, "NeuralWhisper: restart failed")
+                }
             }
         }
     }
@@ -310,13 +335,15 @@ class NeuralWhisper @Inject constructor(
         }
 
         try {
-            // Stop SpeechRecognizer
-            speechRecognizer?.stopListening()
-            speechRecognizer?.cancel()
-
-            // Release resources
-            speechRecognizer?.destroy()
-            speechRecognizer = null
+            // Ensure operations on Main
+            scope.launch {
+                withContext(Dispatchers.Main) {
+                    try { speechRecognizer?.stopListening() } catch (_: Exception) {}
+                    try { speechRecognizer?.cancel() } catch (_: Exception) {}
+                    try { speechRecognizer?.destroy() } catch (_: Exception) {}
+                    speechRecognizer = null
+                }
+            }
 
             isTranscribing = false
             Timber.i("NeuralWhisper: Transcription stopped and resources released")
@@ -448,7 +475,7 @@ class NeuralWhisper @Inject constructor(
      *
      * @return `true` if the service is initialized and ready to process audio.
      */
-    fun ping(): Boolean = true
+    fun ping(): Boolean = (speechRecognizer != null) || (audioRecord != null)
 
     /**
      * Releases all resources held by the NeuralWhisper service.
@@ -457,14 +484,9 @@ class NeuralWhisper @Inject constructor(
      * resource leaks.
      */
     fun shutdown() {
-        if (isRecording) {
-            stopRecording()
-        }
-        if (isTranscribing) {
-            stopTranscription()
-        }
+        if (isRecording) stopRecording()
+        if (isTranscribing) stopTranscription()
         scope.cancel()
         Timber.i("NeuralWhisper: Service shutdown complete")
     }
 }
-

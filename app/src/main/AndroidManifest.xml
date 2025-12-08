@@ -127,6 +127,7 @@
             android:exported="false"
             android:foregroundServiceType="dataSync" />
         <service android:name="dev.aurakai.auraframefx.services.AmbientMusicService" />
+        <service android:name="dev.aurakai.auraframefx.ipc.AuraDriveService" />
 
         <!-- Receivers -->
         <receiver

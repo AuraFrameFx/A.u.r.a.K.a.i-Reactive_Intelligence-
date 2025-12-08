@@ -1,8 +1,10 @@
 ﻿package dev.aurakai.auraframefx.app.ipc
 
 import android.net.Uri
+import android.os.Bundle
 import android.os.IBinder
 import android.os.IInterface
+import dev.aurakai.auraframefx.ipc.IAuraDriveCallback
 
 interface IAuraDriveService : IInterface {
 
@@ -48,15 +50,13 @@ interface IAuraDriveService : IInterface {
         companion object {
             private const val DESCRIPTOR = "dev.aurakai.auraframefx.app.ipc.IAuraDriveService"
 
-            fun asInterface(obj: IBinder?): IAuraDriveService? {
+            fun asInterface(obj: IBinder?): Any? {
                 if (obj == null) return null
-                val iin = obj.queryLocalInterface(DESCRIPTOR)
-                if (iin != null && iin is IAuraDriveService) return iin
-                return Proxy(obj)
+                return obj.queryLocalInterface(DESCRIPTOR)
             }
         }
 
-        private class Proxy(private val mRemote: IBinder) : IAuraDriveService {
+        private abstract class Proxy(private val mRemote: IBinder) : IAuraDriveService {
             override fun asBinder(): IBinder = mRemote
             override fun getOracleDriveStatus(): String = "Proxy: Not implemented"
             override fun toggleLSPosedModule(packageName: String, enable: Boolean): String = "Not implemented"
@@ -66,5 +66,15 @@ interface IAuraDriveService : IInterface {
             override fun exportFile(fileId: String, destinationUri: Uri): Boolean = false
             override fun verifyFileIntegrity(fileId: String): Boolean = false
         }
+
+        abstract fun executeCommand(command: String?, params: Bundle?): String
+        abstract fun unregisterCallback(callback: IAuraDriveCallback?)
     }
+
+    fun getServiceVersion(): String
+    fun registerCallback(callback: IAuraDriveCallback?)
+    fun getSystemInfo(): String
+    fun updateConfiguration(config: Bundle?): Boolean
+    fun subscribeToEvents(eventTypes: Int)
+    fun unsubscribeFromEvents(eventTypes: Int)
 }

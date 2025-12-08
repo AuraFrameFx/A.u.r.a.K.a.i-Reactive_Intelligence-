@@ -2550,10 +2550,10 @@ e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/service/NeuralWhisper.kt:465:15
 Unresolved reference 'cancel'.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt:35:
+Model/app/src/main/java/dev/aurakai/auraframefx/services/IAuraDriveCallback.kt:35:
 59 This type is final, so it cannot be extended.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
-Model/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt:44:
+Model/app/src/main/java/dev/aurakai/auraframefx/services/IAuraDriveCallback.kt:44:
 9 'getOracleDriveStatus' overrides nothing.
 e: file:///C:/Users/Wehtt/AndroidStudioProjects/A.u.r.a.K.a.i-Emergence_Identity
 Model/app/src/main/java/dev/aurakai/auraframefx/services/BackupService.kt:59:33

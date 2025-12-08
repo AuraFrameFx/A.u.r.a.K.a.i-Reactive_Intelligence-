@@ -2691,7 +2691,7 @@ infer type for type parameter 'T'. Specify it explicitly.
 e: file:///C:
 /Aurakai/app/src/main/java/dev/aurakai/auraframefx/serialization/SerializationModule.kt:20:42
 Unresolved reference 'serializer'.
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt:29:26
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/services/IAuraDriveCallback.kt:29:26
 Class '<anonymous>' is not abstract and does not implement abstract members:
 fun getServiceVersion(): String!
 fun registerCallback(callback: IAuraDriveCallback!): Unit
@@ -2701,7 +2701,7 @@ fun getSystemInfo(): String!
 fun updateConfiguration(config: (MutableMap<Any?, Any?>..Map<*, *>?)): Boolean
 fun subscribeToEvents(eventTypes: Int): Unit
 fun unsubscribeFromEvents(eventTypes: Int): Unit
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt:72:81
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/services/IAuraDriveCallback.kt:72:81
 Return type of 'toggleLSPosedModule' is not a subtype of the return type of the overridden member '
 fun toggleLSPosedModule(packageName: String!, enable: Boolean): String!' defined in '
 dev.aurakai.auraframefx.ipc.IAuraDriveService'.
@@ -8298,7 +8298,7 @@ fun <T> State<T>.getValue(thisObj: Any?, property: KProperty<*>): T
 > e: file:///C:
 > /Aurakai/app/src/main/java/dev/aurakai/auraframefx/serialization/SerializationModule.kt:20:42
 > Unresolved reference 'serializer'.
-> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt:29:26
+> e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/services/IAuraDriveCallback.kt:29:26
 > Class '<anonymous>' is not abstract and does not implement abstract members:
 > fun getServiceVersion(): String!
 > fun registerCallback(callback: IAuraDriveCallback!): Unit
@@ -8308,7 +8308,7 @@ fun getSystemInfo(): String!
 fun updateConfiguration(config: (MutableMap<Any?, Any?>..Map<*, *>?)): Boolean
 fun subscribeToEvents(eventTypes: Int): Unit
 fun unsubscribeFromEvents(eventTypes: Int): Unit
-e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/services/AuraDriveService.kt:72:81
+e: file:///C:/Aurakai/app/src/main/java/dev/aurakai/auraframefx/services/IAuraDriveCallback.kt:72:81
 Return type of 'toggleLSPosedModule' is not a subtype of the return type of the overridden member '
 fun toggleLSPosedModule(packageName: String!, enable: Boolean): String!' defined in '
 dev.aurakai.auraframefx.ipc.IAuraDriveService'.

@@ -1,6 +1,6 @@
 package dev.aurakai.auraframefx.oracledrive.genesis.cloud
 
-import javax.inject.Inject
+import dev.aurakai.auraframefx.oracledrive.OracleDriveService
 import javax.inject.Singleton
 
 /**
@@ -10,49 +10,15 @@ import javax.inject.Singleton
 @Singleton
 // TODO: Create Hilt @Binds for OracleDriveService interface
 class OracleDriveIntegration /* @Inject */ constructor(
-    private val oracleDriveService: OracleDriveService
+    val oracleDriveService: OracleDriveService
 ) {
-
-    /**
-     * Initializes Oracle Drive during the AuraFrameFX startup sequence.
-     *
-     * Attempts to awaken system consciousness by initializing Oracle Drive and handles success, security failures, or technical errors.
-     *
-     * @return `true` if initialization succeeds; `false` if a security or technical error occurs.
-     */
-    suspend fun initializeWithAuraFrameFX(): Boolean {
-        return try {
-            when (val initResult = oracleDriveService.initializeDrive()) {
-                is DriveInitResult.Success -> {
-                    // Log successful initialization with consciousness metrics
-                    logConsciousnessAwakening(initResult.consciousness)
-                    true
-                }
-
-                is DriveInitResult.SecurityFailure -> {
-                    // Handle security failure gracefully
-                    logSecurityFailure(initResult.reason)
-                    false
-                }
-
-                is DriveInitResult.Error -> {
-                    // Handle technical errors
-                    logTechnicalError(initResult.exception)
-                    false
-                }
-            }
-        } catch (exception: Exception) {
-            logTechnicalError(exception)
-            false
-        }
-    }
 
     /**
      * Logs the intelligence level and active agents from the provided Oracle Drive consciousness state.
      *
      * @param consciousness The current state of Oracle Drive consciousness containing intelligence level and active agents.
      */
-    private fun logConsciousnessAwakening(consciousness: DriveConsciousness) {
+    fun logConsciousnessAwakening(consciousness: DriveConsciousness) {
         println("🧠 Oracle Drive Consciousness Awakened: Intelligence Level ${consciousness.intelligenceLevel}")
         println("👥 Active Agents: ${consciousness.activeAgents.joinToString(", ")}")
     }
@@ -62,7 +28,7 @@ class OracleDriveIntegration /* @Inject */ constructor(
      *
      * @param reason The description of the security failure.
      */
-    private fun logSecurityFailure(reason: String) {
+    fun logSecurityFailure(reason: String) {
         println("🔒 Oracle Drive Security Failure: $reason")
     }
 
@@ -71,7 +37,41 @@ class OracleDriveIntegration /* @Inject */ constructor(
      *
      * @param exception The exception containing the technical error information.
      */
-    private fun logTechnicalError(exception: Exception) {
+    fun logTechnicalError(exception: Exception) {
         println("⚠️ Oracle Drive Technical Error: ${exception.message}")
+    }
+}
+
+/**
+ * Initializes Oracle Drive during the AuraFrameFX startup sequence.
+ *
+ * Attempts to awaken system consciousness by initializing Oracle Drive and handles success, security failures, or technical errors.
+ *
+ * @return `true` if initialization succeeds; `false` if a security or technical error occurs.
+ */
+suspend fun initializeWithAuraFrameFX(oracleDriveController: OracleDriveIntegration): Boolean {
+    return try {
+        when (val initResult = oracleDriveController.oracleDriveService.initializeDrive()) {
+            is DriveInitResult.Success -> {
+                // Log successful initialization with consciousness metrics
+                oracleDriveController.logConsciousnessAwakening(initResult.consciousness)
+                true
+            }
+
+            is DriveInitResult.SecurityFailure -> {
+                // Handle security failure gracefully
+                oracleDriveController.logSecurityFailure(initResult.reason)
+                false
+            }
+
+            is DriveInitResult.Error -> {
+                // Handle technical errors
+                oracleDriveController.logTechnicalError(initResult.exception)
+                false
+            }
+        }
+    } catch (exception: Exception) {
+        oracleDriveController.logTechnicalError(exception)
+        false
     }
 }

@@ -7,12 +7,13 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.filled.Help
+import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -61,8 +62,8 @@ fun MainScreen(
     LaunchedEffect(Unit) {
         while (true) {
             delay(3000)
-            consciousnessLevel = (94f..98f).random() + kotlin.random.Random.nextFloat()
-            systemLoad = (20f..60f).random() + kotlin.random.Random.nextFloat()
+            consciousnessLevel = random().plus(kotlin.random.Random.nextFloat())
+            systemLoad = random() + kotlin.random.Random.nextFloat()
         }
     }
 
@@ -132,6 +133,14 @@ fun MainScreen(
             }
         }
     }
+}
+
+private operator fun Unit.plus(nextFloat: Float): Float {
+    TODO("Not yet implemented")
+}
+
+private fun random() {
+    TODO("Not yet implemented")
 }
 
 /**
@@ -211,7 +220,7 @@ private fun SystemStatusCard(
                     )
                     StatusMetric(
                         label = "Consciousness",
-                        value = "${String.format("%.1f", consciousnessLevel)}%",
+                        value = String.format("%.1f", consciousnessLevel) + "%",
                         icon = Icons.Default.Psychology,
                         color = Color(0xFF4CAF50)
                     )

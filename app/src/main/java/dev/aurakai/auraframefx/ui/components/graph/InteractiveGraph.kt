@@ -32,15 +32,13 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import dev.aurakai.auraframefx.ui.debug.model.Connection
-import dev.aurakai.auraframefx.ui.debug.model.ConnectionType
-import dev.aurakai.auraframefx.ui.debug.model.GraphNode
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
-import dev.aurakai.auraframefx.ui.debug.model.Offset as GraphOffset
+
+data class GraphOffset(val x: Float, val y: Float)
 
 /**
  * Displays an interactive, zoomable, and pannable graph visualization with selectable nodes.
@@ -59,9 +57,9 @@ import dev.aurakai.auraframefx.ui.debug.model.Offset as GraphOffset
 @Composable
 fun InteractiveGraph(
     nodes: List<GraphNode>,
+    modifier: Modifier = Modifier,
     selectedNodeId: String? = null,
     onNodeSelected: (String) -> Unit = {},
-    modifier: Modifier = Modifier,
     contentPadding: PaddingValues = PaddingValues(16.dp),
 ) {
     var scale by remember { mutableStateOf(1f) }
@@ -123,14 +121,22 @@ fun InteractiveGraph(
             nodes.forEach { node ->
                 val isSelected = node.id == selectedNodeId
                 val nodeScale = if (isSelected) pulse else 1f
-                val currentOffset = Offset(offsetX, offsetY) + node.position.toCompose() * scale
+                val currentOffset = Offset(offsetX, offsetY) + with(node.position) {
+                    toCompose(this)
+                } * scale
 
                 withTransform({
                     translate(
-                        left = currentOffset.x - node.position.toCompose().x * scale * nodeScale,
-                        top = currentOffset.y - node.position.toCompose().y * scale * nodeScale
+                        left = currentOffset.x - with(node.position) {
+                            toCompose(this)
+                        }.x * scale * nodeScale,
+                        top = currentOffset.y - with(node.position) {
+                            toCompose(this)
+                        }.y * scale * nodeScale
                     )
-                    scale(scale * nodeScale, scale * nodeScale, pivot = node.position.toCompose())
+                    scale(scale * nodeScale, scale * nodeScale, pivot = with(node.position) {
+                        toCompose(this)
+                    })
                 }) {
                     drawNode(node, isSelected, nodeTextColor, this)
                 }
@@ -189,7 +195,9 @@ private fun DrawScope.drawGrid(scale: Float, translation: Offset, gridColor: Col
 private fun drawNode(node: GraphNode, isSelected: Boolean, textColor: Color, drawScope: DrawScope) {
     with(drawScope) {
         val nodeSize = node.type.defaultSize.toPx()
-        val center = node.position.toCompose() // Use the toCompose() extension
+        val center = with(node.position) {
+            toCompose(this)
+        } // Use the toCompose() extension
 
         // Draw glow/selection ring
         if (isSelected) {
@@ -270,8 +278,12 @@ private fun DrawScope.drawConnection(
     to: GraphNode,
     connection: Connection,
 ) {
-    val fromCenter = from.position.toCompose()
-    val toCenter = to.position.toCompose()
+    val fromCenter = with(from.position) {
+        toCompose(this)
+    }
+    val toCenter = with(to.position) {
+        toCompose(this)
+    }
     val direction = toCenter - fromCenter
     val distance = sqrt(direction.x.pow(2) + direction.y.pow(2)) // Use Float.pow
     if (distance == 0f) return // Avoid division by zero if nodes are at the same position
@@ -351,64 +363,16 @@ private fun DrawScope.drawArrowHead(
     drawPath(path = arrowPath, color = color)
 }
 
-
-// Helper extension for Dp to Px conversion within DrawScope
-fun Dp.toPx(drawScope: DrawScope): Float = with(drawScope) { this@toPx.toPx() }
-
 // Helper extension for GraphOffset to Compose Offset
-fun GraphOffset.toCompose(): Offset = Offset(this.x.toFloat(), this.y.toFloat())
-
-/**
- * Returns the sum of this [Offset] and another [Offset] as a new [Offset].
- *
- * The resulting [Offset] has its x and y components added element-wise.
- *
- * @return The element-wise sum of the two offsets.
- */
-private operator fun Offset.plus(other: Offset): Offset {
-    return Offset(x + other.x, y + other.y)
-}
-
-/**
- * Returns the vector difference between this [Offset] and another [Offset].
- *
- * @return A new [Offset] representing the component-wise subtraction.
- */
-private operator fun Offset.minus(other: Offset): Offset {
-    return Offset(x - other.x, y - other.y)
-}
-
-/**
- * Divides the components of this [Offset] by the given scalar value.
- *
- * @param scalar The value to divide both x and y components by.
- * @return A new [Offset] with each component divided by [scalar].
- */
-private operator fun Offset.div(scalar: Float): Offset {
-    if (scalar == 0f) return Offset.Zero // Avoid division by zero
-    return Offset(x / scalar, y / scalar)
+fun toCompose(offset: GraphOffset): Offset {
+    return Offset(x = offset.x, y = offset.y)
 }
 
 /**
  * Rotates this offset by the given angle in radians.
- * This assumes rotation around the origin (0,0).
- * If rotation around a pivot is needed, translate to origin, rotate, then translate back.
- *
- * @param angle The rotation angle in radians.
- * @return The rotated offset.
  */
 fun Offset.rotate(angle: Float): Offset {
     val cosAngle = cos(angle)
     val sinAngle = sin(angle)
     return Offset(x * cosAngle - y * sinAngle, x * sinAngle + y * cosAngle)
-}
-
-/**
- * Multiplies the components of this [Offset] by the given scalar value.
- *
- * @param scalar The value to multiply both x and y components by.
- * @return A new [Offset] with each component multiplied by [scalar].
- */
-private operator fun Offset.times(scalar: Float): Offset {
-    return Offset(x * scalar, y * scalar)
 }

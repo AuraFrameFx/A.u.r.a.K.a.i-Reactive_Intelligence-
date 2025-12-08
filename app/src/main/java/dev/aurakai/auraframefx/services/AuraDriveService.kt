@@ -3,13 +3,15 @@ package dev.aurakai.auraframefx.services
  import android.app.Service
 import android.content.Intent
 import android.net.Uri
-import android.os.IBinder
+ import android.os.Bundle
+ import android.os.IBinder
 import android.os.Process
 import android.util.Log
 import com.google.firebase.crashlytics.FirebaseCrashlytics
 import dagger.hilt.android.AndroidEntryPoint
 import dev.aurakai.auraframefx.app.ipc.IAuraDriveService
-import dev.aurakai.auraframefx.oracledrive.SecureFileManager
+ import dev.aurakai.auraframefx.ipc.IAuraDriveCallback
+ import dev.aurakai.auraframefx.oracledrive.SecureFileManager
 import timber.log.Timber
 import java.io.File
 import javax.inject.Inject
@@ -27,7 +29,7 @@ class AuraDriveService : Service() {
         private const val TAG = "AuraDriveService"
     }
 
-    private val RGSF_MEMORY_PATH = "/data/rgfs/memory_matrix"
+    private val rgsfMemoryPath = "/data/rgfs/memory_matrix"
 
     @Inject
     lateinit var secureFileManager: SecureFileManager
@@ -81,6 +83,38 @@ class AuraDriveService : Service() {
             // Implement R.G.S.F. checksum and redundancy checks
             return true
         }
+
+        override fun getServiceVersion(): String {
+            TODO("Not yet implemented")
+        }
+
+        override fun registerCallback(callback: IAuraDriveCallback?) {
+            TODO("Not yet implemented")
+        }
+
+        override fun getSystemInfo(): String {
+            TODO("Not yet implemented")
+        }
+
+        override fun updateConfiguration(config: Bundle?): Boolean {
+            TODO("Not yet implemented")
+        }
+
+        override fun subscribeToEvents(eventTypes: Int) {
+            TODO("Not yet implemented")
+        }
+
+        override fun unsubscribeFromEvents(eventTypes: Int) {
+            TODO("Not yet implemented")
+        }
+
+        override fun executeCommand(command: String?, params: Bundle?): String {
+            TODO("Not yet implemented")
+        }
+
+        override fun unregisterCallback(callback: IAuraDriveCallback?) {
+            TODO("Not yet implemented")
+        }
     }
 
     override fun onBind(intent: Intent): IBinder {
@@ -96,14 +130,13 @@ class AuraDriveService : Service() {
 
     private fun initializeRGSF() {
         Log.d(TAG, "Initializing R.G.S.F. memory matrix...")
-        val rgsfDir = File(RGSF_MEMORY_PATH)
+        val rgsfDir = File(rgsfMemoryPath)
         if (!rgsfDir.exists()) {
             rgsfDir.mkdirs()
         }
         // Further R.G.S.F. initialization logic here
     }
 }
-
 
 
 // Extension function for Timber with custom tag

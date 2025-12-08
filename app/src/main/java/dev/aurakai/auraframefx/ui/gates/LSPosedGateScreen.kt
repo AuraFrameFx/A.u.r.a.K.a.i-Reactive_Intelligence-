@@ -2,15 +2,48 @@ package dev.aurakai.auraframefx.ui.gates
 
 import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.*
-import androidx.compose.material3.*
-import androidx.compose.runtime.*
+import androidx.compose.material.icons.filled.Apps
+import androidx.compose.material.icons.filled.CheckCircle
+import androidx.compose.material.icons.filled.ChevronRight
+import androidx.compose.material.icons.filled.Description
+import androidx.compose.material.icons.filled.Error
+import androidx.compose.material.icons.filled.Refresh
+import androidx.compose.material.icons.filled.Store
+import androidx.compose.material3.Badge
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Divider
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -289,7 +322,7 @@ private fun QuickActionCard(action: QuickAction) {
  * @param module Module metadata to display (name, packageName, version, enabled, hookCount, scope).
  */
 @Composable
-private fun ModuleCard(module: XposedModule) {
+private fun ModuleCard(module: LSPosedGateScreen) {
     var expanded by remember { mutableStateOf(false) }
 
     Card(
@@ -300,7 +333,7 @@ private fun ModuleCard(module: XposedModule) {
             containerColor = Color(0xFF1A1F3A)
         ),
         shape = RoundedCornerShape(8.dp),
-        onClick = { expanded = !expanded }
+        onClick = { !expanded }
     ) {
         Column(modifier = Modifier.padding(16.dp)) {
             Row(
@@ -400,14 +433,17 @@ private fun ModuleDetailRow(label: String, value: String) {
 // Data Classes
 private data class Stat(val label: String, val value: String)
 
-private data class QuickAction(
+data class QuickAction(
     val title: String,
     val description: String,
     val icon: ImageVector,
-    val color: Color
-)
+    val color: Color,
+    val string: String
+) {
+    val category: Any
+}
 
-private data class XposedModule(
+private data class LSPosedGateScreen(
     val name: String,
     val packageName: String,
     val version: String,
@@ -426,25 +462,29 @@ private fun getQuickActions() = listOf(
         "View Hook Logs",
         "Real-time monitoring of all active hooks",
         Icons.Default.Description,
-        Color(0xFF1976D2)
+        Color(0xFF1976D2),
+        "Battery"
     ),
     QuickAction(
         "Manage Scope",
         "Configure which apps are hooked",
         Icons.Default.Apps,
-        Color(0xFF7B1FA2)
+        Color(0xFF7B1FA2),
+        "Battery"
     ),
     QuickAction(
         "Reboot System",
         "Soft reboot to apply changes",
         Icons.Default.Refresh,
-        Color(0xFFD32F2F)
+        Color(0xFFD32F2F),
+        "Battery"
     ),
     QuickAction(
         "Module Repository",
         "Browse and install Xposed modules",
         Icons.Default.Store,
-        Color(0xFF388E3C)
+        Color(0xFF388E3C),
+        "Battery"
     )
 )
 
@@ -454,7 +494,7 @@ private fun getQuickActions() = listOf(
  * @return A list of `XposedModule` instances representing mock module metadata (name, package, version, enabled state, hook count, and scope).
  */
 private fun getActiveModules() = listOf(
-    XposedModule(
+    LSPosedGateScreen(
         name = "Genesis Protocol",
         packageName = "dev.aurakai.auraframefx",
         version = "0.1.0",
@@ -462,7 +502,7 @@ private fun getActiveModules() = listOf(
         hookCount = 147,
         scope = "SystemUI, Settings, Launcher"
     ),
-    XposedModule(
+    LSPosedGateScreen(
         name = "GravityBox",
         packageName = "com.ceco.gravitybox",
         version = "13.0.0",
@@ -470,7 +510,7 @@ private fun getActiveModules() = listOf(
         hookCount = 89,
         scope = "System Framework"
     ),
-    XposedModule(
+    LSPosedGateScreen(
         name = "MinMinGuard",
         packageName = "tw.fatminmin.xposed.minminguard",
         version = "7.0.1",

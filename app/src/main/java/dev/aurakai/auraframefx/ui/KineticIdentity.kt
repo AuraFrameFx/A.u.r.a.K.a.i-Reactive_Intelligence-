@@ -29,7 +29,7 @@ import androidx.compose.animation.slideOutVertically
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.graphics.TransformOrigin
 import androidx.compose.ui.unit.IntOffset
-import dev.aurakai.auraframefx.ui.animation.KineticIdentity.MICRO_DURATION
+import dev.aurakai.auraframefx.ui.KineticIdentity.MICRO_DURATION
 
 /**
  * KineticIdentity ⚡
@@ -109,21 +109,22 @@ object KineticIdentity {
     // ========== ENTER TRANSITIONS ==========
 
     /** Digital materialization - particles coalescing into form */
-    val MaterializeEnter: EnterTransition =
-        fadeIn(DaringEnter as FiniteAnimationSpec<Float>) +
+    /** Digital materialization - particles coalescing into form */
+    val MaterializeEnter: Any
+        get() = fadeIn(DaringEnter as FiniteAnimationSpec<Float>) +
                 scaleIn(
-                    animationSpec = DaringEnter as FiniteAnimationSpec<Float>,
+                    animationSpec = DaringEnter,
                     initialScale = 0.3f,
                     transformOrigin = TransformOrigin.Center
                 )
 
     /** Glitch-typography entrance from the void */
-    val GlitchEnter: EnterTransition =
-        fadeIn(tween(MICRO_DURATION)) +
+    val GlitchEnter: EnterTransition by lazy {
+        return@lazy fadeIn(tween(MICRO_DURATION)) +
                 slideInHorizontally(
                     animationSpec = GlitchyFocus as FiniteAnimationSpec<IntOffset>,
-                    initialOffsetX = { -it / 4 }
-                )
+                    initialOffsetX = { -it / 4 })
+    }
 
     /** Confident slide from right - for navigation */
     val SlideFromRight: EnterTransition =
@@ -144,7 +145,7 @@ object KineticIdentity {
         scaleIn(
             animationSpec = DramaticSlow as FiniteAnimationSpec<Float>,
             initialScale = 0.1f
-        ) + fadeIn(DramaticSlow as FiniteAnimationSpec<Float>)
+        ) + fadeIn(DramaticSlow)
 
     // ========== EXIT TRANSITIONS ==========
 
@@ -152,7 +153,7 @@ object KineticIdentity {
     val DeconstructExit: ExitTransition =
         fadeOut(SubtleExit as FiniteAnimationSpec<Float>) +
                 scaleOut(
-                    animationSpec = SubtleExit as FiniteAnimationSpec<Float>,
+                    animationSpec = SubtleExit,
                     targetScale = 0.8f,
                     transformOrigin = TransformOrigin.Center
                 )
@@ -184,7 +185,7 @@ object KineticIdentity {
         scaleOut(
             animationSpec = DramaticSlow as FiniteAnimationSpec<Float>,
             targetScale = 2f
-        ) + fadeOut(DramaticSlow as FiniteAnimationSpec<Float>)
+        ) + fadeOut(DramaticSlow)
 
     // ========== COMBINED TRANSITION SETS ==========
 

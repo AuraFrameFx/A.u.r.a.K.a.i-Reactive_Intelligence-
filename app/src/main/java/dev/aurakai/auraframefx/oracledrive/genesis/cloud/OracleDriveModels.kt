@@ -124,6 +124,9 @@ sealed class FileOperation {
 sealed class FileResult {
     data class Success(val message: String) : FileResult()
     data class Error(val exception: Exception) : FileResult()
+    companion object {
+        val Companion: Any
+    }
 }
 
 sealed class DriveInitResult {
