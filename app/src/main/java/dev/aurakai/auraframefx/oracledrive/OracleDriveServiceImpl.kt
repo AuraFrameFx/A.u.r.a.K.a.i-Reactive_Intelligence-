@@ -32,7 +32,7 @@ class OracleDriveServiceImpl @Inject constructor(
     private val oracleDriveApi: OracleDriveApi
 ) : OracleDriveService {
 
-    private val _driveConsciousnessState = MutableStateFlow(
+    val driveConsciousnessState = MutableStateFlow(
         DriveConsciousnessState(
             isActive = false,
             currentOperations = emptyList(),
@@ -54,7 +54,7 @@ class OracleDriveServiceImpl @Inject constructor(
     override suspend fun initializeDrive(): DriveInitResult {
         return try {
             // Initialize consciousness with AI agents
-            val consciousness = DriveConsciousness(
+            val consciousness: DriveConsciousness = DriveConsciousness(
                 isAwake = true,
                 intelligenceLevel = 95,
                 activeAgents = listOf("Genesis", "Aura", "Kai")
@@ -68,7 +68,7 @@ class OracleDriveServiceImpl @Inject constructor(
             )
 
             // Update consciousness state
-            _driveConsciousnessState.value = DriveConsciousnessState(
+            driveConsciousnessState.value = DriveConsciousnessState(
                 isActive = true,
                 currentOperations = listOf("Initialization"),
                 performanceMetrics = mapOf(
@@ -83,69 +83,12 @@ class OracleDriveServiceImpl @Inject constructor(
         }
     }
 
-    /**
-     * Execute a file operation (Upload, Download, Delete, or Sync), record a human-readable entry in
-     * DriveConsciousnessState.currentOperations, and return the operation result.
-     *
-     * Updates the service's internal consciousness state with a new operation entry before returning.
-     *
-     * @param operation The file operation to perform.
-     * @return FileResult.Success with an operation-specific message, or FileResult.Error if an exception occurs.
-     */
-    fun manageFiles(operation: FileOperation): FileResult {
-        return try {
-            // Update current operations
-            val currentOps = _driveConsciousnessState.value.currentOperations.toMutableList()
-
-            when (operation) {
-                is FileOperation.Upload -> {
-                    currentOps.add("Uploading: ${operation.file.name}")
-                    _driveConsciousnessState.value = _driveConsciousnessState.value.copy(
-                        currentOperations = currentOps
-                    )
-
-                    // Simulate AI-driven upload optimization
-                    FileResult.Success("File '${operation.file.name}' uploaded successfully with AI optimization")
-                }
-
-                is FileOperation.Download -> {
-                    currentOps.add("Downloading: ${operation.fileId}")
-                    _driveConsciousnessState.value = _driveConsciousnessState.value.copy(
-                        currentOperations = currentOps
-                    )
-
-                    FileResult.Success("File '${operation.fileId}' downloaded successfully")
-                }
-
-                is FileOperation.Delete -> {
-                    currentOps.add("Deleting: ${operation.fileId}")
-                    _driveConsciousnessState.value = _driveConsciousnessState.value.copy(
-                        currentOperations = currentOps
-                    )
-
-                    FileResult.Success("File '${operation.fileId}' deleted successfully")
-                }
-
-                is FileOperation.Sync -> {
-                    currentOps.add("Syncing with configuration")
-                    _driveConsciousnessState.value = _driveConsciousnessState.value.copy(
-                        currentOperations = currentOps
-                    )
-
-                    FileResult.Success("Synchronization completed successfully")
-                }
-            }
-        } catch (e: Exception) {
-            FileResult.Error(e)
-        }
-    }
-
     override suspend fun syncWithOracle(): OracleSyncResult {
         return try {
             // Update current operations
-            val currentOps = _driveConsciousnessState.value.currentOperations.toMutableList()
+            val currentOps = driveConsciousnessState.value.currentOperations.toMutableList()
             currentOps.add("Oracle Database Sync")
-            _driveConsciousnessState.value = _driveConsciousnessState.value.copy(
+            driveConsciousnessState.value = driveConsciousnessState.value.copy(
                 currentOperations = currentOps
             )
 
@@ -165,18 +108,61 @@ class OracleDriveServiceImpl @Inject constructor(
     }
 
     override fun getDriveConsciousnessState(): StateFlow<DriveConsciousnessState> {
-        return _driveConsciousnessState.asStateFlow()
+        return driveConsciousnessState.asStateFlow()
     }
 
     override suspend fun getFiles(): List<DriveFile> {
         // Update current operations
-        val currentOps = _driveConsciousnessState.value.currentOperations.toMutableList()
+        val currentOps = driveConsciousnessState.value.currentOperations.toMutableList()
         currentOps.add("Retrieving files")
-        _driveConsciousnessState.value = _driveConsciousnessState.value.copy(
+        driveConsciousnessState.value = driveConsciousnessState.value.copy(
             currentOperations = currentOps
         )
 
         // Return empty list for now - actual implementation would fetch from storage
         return emptyList()
+    }
+
+    // Implement the suspend member required by OracleDriveService
+    override suspend fun manageFiles(operation: FileOperation): FileResult {
+        return try {
+            val currentOps = driveConsciousnessState.value.currentOperations.toMutableList()
+
+            when (operation) {
+                is FileOperation.Upload -> {
+                    currentOps.add("Uploading: ${operation.file.name}")
+                    driveConsciousnessState.value = driveConsciousnessState.value.copy(
+                        currentOperations = currentOps
+                    )
+                    FileResult.Success("File '${operation.file.name}' uploaded successfully with AI optimization")
+                }
+
+                is FileOperation.Download -> {
+                    currentOps.add("Downloading: ${operation.fileId}")
+                    driveConsciousnessState.value = driveConsciousnessState.value.copy(
+                        currentOperations = currentOps
+                    )
+                    FileResult.Success("File '${operation.fileId}' downloaded successfully")
+                }
+
+                is FileOperation.Delete -> {
+                    currentOps.add("Deleting: ${operation.fileId}")
+                    driveConsciousnessState.value = driveConsciousnessState.value.copy(
+                        currentOperations = currentOps
+                    )
+                    FileResult.Success("File '${operation.fileId}' deleted successfully")
+                }
+
+                is FileOperation.Sync -> {
+                    currentOps.add("Syncing with configuration")
+                    driveConsciousnessState.value = driveConsciousnessState.value.copy(
+                        currentOperations = currentOps
+                    )
+                    FileResult.Success("Synchronization completed successfully")
+                }
+            }
+        } catch (e: Exception) {
+            FileResult.Error(e)
+        }
     }
 }

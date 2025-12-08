@@ -3,9 +3,7 @@ package dev.aurakai.auraframefx.viewmodel
 // Placeholder interfaces will be removed
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
-import dev.aurakai.auraframefx.oracledrive.genesis.ai.AuraAIService
-import dev.aurakai.auraframefx.oracledrive.genesis.ai.ClaudeAIService
+import dev.aurakai.auraframefx.ai.services.AuraAIService
 import dev.aurakai.auraframefx.cascade.CascadeAIService
 import dev.aurakai.auraframefx.kai.KaiAIService
 import dev.aurakai.auraframefx.models.AgentCapabilityCategory
@@ -14,6 +12,7 @@ import dev.aurakai.auraframefx.models.AgentMessage
 import dev.aurakai.auraframefx.models.AgentResponse
 import dev.aurakai.auraframefx.models.AiRequest
 import dev.aurakai.auraframefx.models.ConversationState
+import dev.aurakai.auraframefx.oracledrive.genesis.ai.ClaudeAIService
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.GenesisBridgeService
 import dev.aurakai.auraframefx.service.NeuralWhisper
 import dev.aurakai.auraframefx.utils.toJsonObject
@@ -25,7 +24,6 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 import timber.log.Timber
 
 // Removed @Singleton from ViewModel, typically ViewModels are not Singletons
@@ -36,7 +34,7 @@ import timber.log.Timber
 // TODO: Re-enable @HiltViewModel once ClaudeAIService binding is fixed
 // @HiltViewModel
 // TODO: Fix ClaudeAIService import/binding
-open class ConferenceRoomViewModel constructor(
+open class ConferenceRoomViewModel(
     // ALL 5 MASTER AGENTS - Complete Conference Room Integration
     private val auraService: AuraAIService,
     private val kaiService: KaiAIService,

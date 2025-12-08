@@ -124,28 +124,16 @@ sealed class FileOperation {
 sealed class FileResult {
     data class Success(val message: String) : FileResult()
     data class Error(val exception: Exception) : FileResult()
-    companion object {
-        val Companion: Any
-    }
 }
 
 sealed class DriveInitResult {
     data class Success(
-        val consciousness: ConsciousnessAwakeningResult,
+        val consciousness: DriveConsciousness,
         val optimization: StorageOptimization
     ) : DriveInitResult()
 
     data class SecurityFailure(val reason: String) : DriveInitResult()
     data class Error(val exception: Exception) : DriveInitResult()
-    companion object {
-        context(optimization: StorageOptimizationResult) fun success(): DriveInitResult {
-            TODO("Not yet implemented")
-        }
-
-        fun Success(): Success {
-            TODO("Not yet implemented")
-        }
-    }
 }
 
 data class UnauthorizedDeletion(val reason: String) : FileResult()

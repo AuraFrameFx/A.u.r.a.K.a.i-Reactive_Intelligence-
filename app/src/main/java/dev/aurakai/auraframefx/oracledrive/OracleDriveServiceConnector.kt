@@ -29,7 +29,7 @@ class OracleDriveServiceConnector(private val context: Context) {
          * @param service The binder interface to the connected service.
          */
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            auraDriveService = IAuraDriveService.Stub.asInterface(service)
+            auraDriveService = IAuraDriveService.Stub.asInterface(service) as IAuraDriveService?
             _isServiceConnected.value = true
         }
 

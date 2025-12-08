@@ -31,84 +31,84 @@ import kotlinx.coroutines.launch
 @Composable
 fun QuickActionsScreen() {
     val actions = listOf(
-        QuickAction(
+        ScreenQuickAction(
             "Reboot System",
             "Soft reboot device",
             Icons.Default.RestartAlt,
             Color(0xFFFF6B35),
             "Reboot"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Clear Module Cache",
             "Clear cached module data",
             Icons.Default.CleaningServices,
             Color(0xFF4ECDC4),
             "Cache"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Force Stop SystemUI",
             "Restart system interface",
             Icons.Default.Stop,
             Color(0xFFDC143C),
             "System"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Backup Modules",
             "Save current module configuration",
             Icons.Default.Backup,
             Color(0xFFFFD93D),
             "Backup"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Restore Modules",
             "Load saved module configuration",
             Icons.Default.Restore,
             Color(0xFF9370DB),
             "Restore"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Check Updates",
             "Check for module updates",
             Icons.Default.Update,
             Color(0xFF32CD32),
             "Update"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Safe Mode",
             "Boot with all modules disabled",
             Icons.Default.Security,
             Color(0xFFFF69B4),
             "Safe"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Performance Mode",
             "Optimize for performance",
             Icons.Default.Speed,
             Color(0xFF00CED1),
             "Performance"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Battery Mode",
             "Optimize for battery life",
             Icons.Default.BatteryFull,
             Color(0xFF98FB98),
             "Battery"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Developer Options",
             "Advanced debugging tools",
             Icons.Default.DeveloperMode,
             Color(0xFFFF6347),
             "Developer"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Logcat Capture",
             "Start system log capture",
             Icons.Default.BugReport,
             Color(0xFFDEB887),
             "Logs"
         ),
-        QuickAction(
+        ScreenQuickAction(
             "Module Tester",
             "Test module compatibility",
             Icons.Default.Science,
@@ -232,27 +232,27 @@ fun QuickActionsScreen() {
         val categories = actions.groupBy { it.category }
 
         categories.forEach { (category, categoryActions) ->
-            Text(
-                category,
-                modifier = Modifier.padding(vertical = 16.dp),
-                color = Color.White,
-                autoSize = TODO(),
-                fontSize = TODO(),
-                fontStyle = TODO(),
-                fontWeight = TODO(),
-                fontFamily = TODO(),
-                letterSpacing = TODO(),
-                textDecoration = TODO(),
-                textAlign = TODO(),
-                lineHeight = TODO(),
-                overflow = TODO(),
-                softWrap = TODO(),
-                maxLines = TODO(),
-                minLines = TODO(),
-                inlineContent = TODO(),
-                onTextLayout = TODO(),
-                style = MaterialTheme.typography.titleLarge
-            )
+            with(TODO()) {
+                category.text(
+                    modifier = Modifier.padding(vertical = 16.dp),
+                    color = Color.White,
+                    autoSize = TODO(),
+                    fontStyle = TODO(),
+                    fontWeight = TODO(),
+                    fontFamily = TODO(),
+                    letterSpacing = TODO(),
+                    textDecoration = TODO(),
+                    textAlign = TODO(),
+                    lineHeight = TODO(),
+                    overflow = TODO(),
+                    softWrap = TODO(),
+                    maxLines = TODO(),
+                    minLines = TODO(),
+                    inlineContent = TODO(),
+                    onTextLayout = TODO(),
+                    style = MaterialTheme.typography.titleLarge
+                )
+            }
 
             LazyVerticalGrid(
                 columns = GridCells.Fixed(3),
@@ -340,12 +340,10 @@ fun QuickActionsScreen() {
     }
 }
 
-private fun ColumnScope.Text(
-    text: String,
+context(fontSize: Nothing) private fun String.text(
     modifier: Modifier,
     color: Color,
     autoSize: Nothing,
-    fontSize: Nothing,
     fontStyle: Nothing,
     fontWeight: Nothing,
     fontFamily: Nothing,
@@ -369,7 +367,7 @@ private fun ColumnScope.Text(
  */
 @Composable
 private fun ActionCard(
-    action: QuickAction,
+    action: ScreenQuickAction,
     isExecuting: Boolean,
     onExecute: () -> Unit
 ) {
@@ -429,7 +427,7 @@ private fun ActionCard(
 /**
  * Data class for quick actions
  */
-data class QuickAction(
+data class ScreenQuickAction(
     val title: String,
     val description: String,
     val icon: ImageVector,

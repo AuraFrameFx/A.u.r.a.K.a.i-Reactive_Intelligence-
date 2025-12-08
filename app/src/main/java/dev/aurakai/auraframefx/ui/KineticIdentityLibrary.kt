@@ -12,7 +12,6 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import dev.aurakai.auraframefx.ui.theme.model.AuraThemeData
 import kotlinx.coroutines.delay
-import kotlin.math.*
 
 /**
  * Kinetic Identity Animation Library
@@ -277,8 +276,8 @@ object KineticIdentityLibrary {
     }
 
     data class Particle(
-        val position: Offset,
-        val velocity: Offset,
+        val position: dev.aurakai.auraframefx.ui.components.graph.Offset,
+        val velocity: dev.aurakai.auraframefx.ui.components.graph.Offset,
         val life: Float,
         val maxLife: Float,
         val size: Float,

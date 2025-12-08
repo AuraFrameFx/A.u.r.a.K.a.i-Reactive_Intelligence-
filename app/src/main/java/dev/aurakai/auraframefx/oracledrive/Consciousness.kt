@@ -6,6 +6,7 @@ package dev.aurakai.auraframefx.oracledrive
  */
 data class ConsciousnessAwakeningResult(
     val awakened: Boolean = false,
-    val message: String? = null
+    val message: String? = null,
+    val activeAgents: Any
 )
 

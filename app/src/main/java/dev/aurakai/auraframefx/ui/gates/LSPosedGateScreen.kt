@@ -265,7 +265,7 @@ private fun StatusCard(
  * @param action QuickAction data used to populate the card (title, description, icon, and color).
  */
 @Composable
-private fun QuickActionCard(action: QuickAction) {
+private fun QuickActionCard(action: GateQuickAction) {
     Card(
         modifier = Modifier
             .fillMaxWidth(),
@@ -322,7 +322,7 @@ private fun QuickActionCard(action: QuickAction) {
  * @param module Module metadata to display (name, packageName, version, enabled, hookCount, scope).
  */
 @Composable
-private fun ModuleCard(module: LSPosedGateScreen) {
+private fun ModuleCard(module: XposedModule) {
     var expanded by remember { mutableStateOf(false) }
 
     Card(
@@ -433,17 +433,17 @@ private fun ModuleDetailRow(label: String, value: String) {
 // Data Classes
 private data class Stat(val label: String, val value: String)
 
-data class QuickAction(
+data class GateQuickAction(
     val title: String,
     val description: String,
     val icon: ImageVector,
     val color: Color,
     val string: String
 ) {
-    val category: Any
+    val category: Any = TODO()
 }
 
-private data class LSPosedGateScreen(
+private data class XposedModule(
     val name: String,
     val packageName: String,
     val version: String,
@@ -458,28 +458,28 @@ private data class LSPosedGateScreen(
  * @return A list of `QuickAction` instances representing example actions (title, description, icon, and color) shown in the Quick Actions section.
  */
 private fun getQuickActions() = listOf(
-    QuickAction(
+    GateQuickAction(
         "View Hook Logs",
         "Real-time monitoring of all active hooks",
         Icons.Default.Description,
         Color(0xFF1976D2),
         "Battery"
     ),
-    QuickAction(
+    GateQuickAction(
         "Manage Scope",
         "Configure which apps are hooked",
         Icons.Default.Apps,
         Color(0xFF7B1FA2),
         "Battery"
     ),
-    QuickAction(
+    GateQuickAction(
         "Reboot System",
         "Soft reboot to apply changes",
         Icons.Default.Refresh,
         Color(0xFFD32F2F),
         "Battery"
     ),
-    QuickAction(
+    GateQuickAction(
         "Module Repository",
         "Browse and install Xposed modules",
         Icons.Default.Store,
@@ -494,7 +494,7 @@ private fun getQuickActions() = listOf(
  * @return A list of `XposedModule` instances representing mock module metadata (name, package, version, enabled state, hook count, and scope).
  */
 private fun getActiveModules() = listOf(
-    LSPosedGateScreen(
+    XposedModule(
         name = "Genesis Protocol",
         packageName = "dev.aurakai.auraframefx",
         version = "0.1.0",
@@ -502,7 +502,7 @@ private fun getActiveModules() = listOf(
         hookCount = 147,
         scope = "SystemUI, Settings, Launcher"
     ),
-    LSPosedGateScreen(
+    XposedModule(
         name = "GravityBox",
         packageName = "com.ceco.gravitybox",
         version = "13.0.0",
@@ -510,7 +510,7 @@ private fun getActiveModules() = listOf(
         hookCount = 89,
         scope = "System Framework"
     ),
-    LSPosedGateScreen(
+    XposedModule(
         name = "MinMinGuard",
         packageName = "tw.fatminmin.xposed.minminguard",
         version = "7.0.1",

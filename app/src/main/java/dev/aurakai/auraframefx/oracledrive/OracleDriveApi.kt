@@ -13,7 +13,8 @@ annotation class OracleDriveApi
  * (If another module provides a richer type, prefer that one.)
  */
 interface OracleDriveGenesisApi {
-    suspend fun awakeDriveConsciousness(): ConsciousnessAwakeningResult
+    // Use the genesis/cloud DriveConsciousness type to keep contracts consistent
+    suspend fun awakeDriveConsciousness(): DriveConsciousness
     suspend fun syncDatabaseMetadata(): OracleSyncResult
     val consciousnessState: StateFlow<DriveConsciousnessState>
 }
@@ -58,7 +59,7 @@ open class OracleDriveManager /* @Inject */ constructor(
                 is DriveFile -> {
                     // treat as upload
                     val optimizedFile = cloudStorageProvider.optimizeForUpload(operation)
-                    val securityValidation = securityManager.validateFileUpload(optimizedFile)
+                    val securityValidation = securityManager.validateFileUpload(optimizedFile as DriveFile)
                     if (!securityValidation.isSecure) {
                         dev.aurakai.auraframefx.oracledrive.genesis.cloud.FileResult.Error(Exception("Security rejection: ${securityValidation.threat}"))
                     } else {
@@ -91,8 +92,7 @@ open class OracleDriveManager /* @Inject */ constructor(
 
 }
 
-fun Int.not(): Boolean = this != 0
-
+// Expose the genesis consciousness state getter
 fun OracleDriveManager.getDriveConsciousnessState(): StateFlow<DriveConsciousnessState> {
     return oracleGenesisApi.consciousnessState
 }
