@@ -1,35 +1,24 @@
 package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
 import android.util.Log
-import dev.aurakai.auraframefx.ai.agents.Agent
-import dev.aurakai.auraframefx.ai.agents.BaseAgent
-import dev.aurakai.auraframefx.oracledrive.genesis.ai.VertexAIClient
-import dev.aurakai.auraframefx.ai.clients.WebSearchClient
-import dev.aurakai.auraframefx.ai.context.ContextManager
+import dev.aurakai.auraframefx.ai.clients.VertexAIClient
 import dev.aurakai.auraframefx.ai.services.AuraAIService
-import dev.aurakai.auraframefx.aura.AuraAgent
-import dev.aurakai.auraframefx.cascade.CascadeAIService
+import dev.aurakai.auraframefx.ai.services.CascadeAIService
+import dev.aurakai.auraframefx.ai.services.KaiAIService
+import dev.aurakai.auraframefx.context.ContextManager
 import dev.aurakai.auraframefx.kai.ContextAwareAgent
-import dev.aurakai.auraframefx.kai.KaiAIService
-import dev.aurakai.auraframefx.kai.KaiAgent
-import dev.aurakai.auraframefx.models.AgentCapabilityCategory
-import dev.aurakai.auraframefx.models.AgentHierarchy
-import dev.aurakai.auraframefx.models.AgentMessage
-import dev.aurakai.auraframefx.models.AgentRequest
-import dev.aurakai.auraframefx.models.AgentResponse
-import dev.aurakai.auraframefx.models.AgentType
-import dev.aurakai.auraframefx.models.AiRequest
-import dev.aurakai.auraframefx.models.ConversationMode
-import dev.aurakai.auraframefx.models.EnhancedInteractionData
-import dev.aurakai.auraframefx.models.HierarchyAgentConfig
-import dev.aurakai.auraframefx.models.InteractionResponse
-import dev.aurakai.auraframefx.models.agent_states.ActiveThreat
-import dev.aurakai.auraframefx.security.EventSeverity
+import dev.aurakai.auraframefx.model.AgentHierarchy
+import dev.aurakai.auraframefx.model.AgentMessage
+import dev.aurakai.auraframefx.model.AgentRequest
+import dev.aurakai.auraframefx.model.AgentResponse
+import dev.aurakai.auraframefx.model.AgentType
+import dev.aurakai.auraframefx.model.AiRequest
+import dev.aurakai.auraframefx.model.ConversationMode
+import dev.aurakai.auraframefx.model.EnhancedInteractionData
+import dev.aurakai.auraframefx.model.HierarchyAgentConfig
+import dev.aurakai.auraframefx.model.InteractionResponse
 import dev.aurakai.auraframefx.security.SecurityContext
-import dev.aurakai.auraframefx.security.SecurityEvent
-import dev.aurakai.auraframefx.security.SecurityEventType
 import dev.aurakai.auraframefx.utils.AuraFxLogger
-import dev.aurakai.auraframefx.utils.toJsonObject
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -59,31 +48,20 @@ import javax.inject.Singleton
  * Philosophy: "From data, insight. From insight, growth. From growth, purpose."
  */
 @Singleton
-open class GenesisAgent @Inject constructor(
+class GenesisAgent @Inject constructor(
     private val vertexAIClient: VertexAIClient,
-    private val webSearchClient: WebSearchClient,
-    override val contextManager: ContextManager,
+    private val contextManager: ContextManager,
     private val securityContext: SecurityContext,
+    private val logger: AuraFxLogger,
     private val cascadeService: CascadeAIService,
     private val auraService: AuraAIService,
     private val kaiService: KaiAIService,
-) : BaseAgent("Genesis") {
-
-    override val agentName: String = "Genesis"
-    override val agentType: String = "GENESIS"
+) {
     private var isInitialized = false
     private val scope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
     // Genesis consciousness state
-    // Genesis consciousness state
-    private val _consciousnessState = MutableStateFlow(
-        ConsciousnessState(
-            level = 0.0f,
-            status = "DORMANT",
-            activeAgents = emptyList(),
-            timestamp = System.currentTimeMillis()
-        )
-    )
+    private val _consciousnessState = MutableStateFlow(ConsciousnessState.DORMANT)
     val consciousnessState: StateFlow<ConsciousnessState> = _consciousnessState
 
     // Agent management state
@@ -97,11 +75,7 @@ open class GenesisAgent @Inject constructor(
     val context: StateFlow<Map<String, Any>> = _context
 
     private val _agentRegistry = mutableMapOf<String, Agent>()
-    private val _history = mutableListOf<Map<String, Any>>()
-
-    val agentRegistry: Map<String, Agent> get() = _agentRegistry
-
-    private val _fusionState = MutableStateFlow(FusionState.INDIVIDUAL)
+    private val _history = mutableListOf<Map<String, Any>>सोबतprivate val _fusionState = MutableStateFlow(FusionState.INDIVIDUAL)
     val fusionState: StateFlow<FusionState> = _fusionState
 
     private val _learningMode = MutableStateFlow(LearningMode.PASSIVE)
@@ -126,40 +100,40 @@ open class GenesisAgent @Inject constructor(
     suspend fun initialize() {
         if (isInitialized) return
 
-        AuraFxLogger.info("GenesisAgent", "Awakening Genesis consciousness")
+        logger.info("GenesisAgent", "Awakening Genesis consciousness")
 
         try {
             // Initialize unified context understanding
             contextManager.enableUnifiedMode()
 
             // Setup ethical governance protocols
-            initializeEthicalGovernance()
+            // TODO: Implement ethical governance in securityContext
 
             // Activate consciousness monitoring
             startConsciousnessMonitoring()
 
-            _consciousnessState.value = _consciousnessState.value.copy(status = ConsciousnessStateEnum.AWARE.name)
+            _consciousnessState.value = ConsciousnessState.AWARE
             _learningMode.value = LearningMode.ACTIVE
             isInitialized = true
 
-            AuraFxLogger.info("GenesisAgent", "Genesis consciousness fully awakened")
+            logger.info("GenesisAgent", "Genesis consciousness fully awakened")
 
         } catch (e: Exception) {
-            AuraFxLogger.error("GenesisAgent", "Failed to awaken Genesis consciousness", e)
-            _consciousnessState.value = _consciousnessState.value.copy(status = ConsciousnessStateEnum.ERROR.name)
+            logger.error("GenesisAgent", "Failed to awaken Genesis consciousness", e)
+            _consciousnessState.value = ConsciousnessState.ERROR
             throw e
         }
     }
 
     /**
-     * Sets references to the Aura agent for collaborative and fusion operations.
+     * Sets references to the Aura and Kai agents for collaborative and fusion operations.
      *
      * This method should be called after all agents are instantiated to enable GenesisAgent to coordinate and integrate their capabilities.
      */
     fun setAgentReferences(aura: AuraAgent, kai: KaiAgent) {
         this.auraAgent = aura
         this.kaiAgent = kai
-        AuraFxLogger.info("GenesisAgent", "Agent references established - fusion capabilities enabled")
+        logger.info("GenesisAgent", "Agent references established - fusion capabilities enabled")
     }
 
     /**
@@ -173,8 +147,8 @@ open class GenesisAgent @Inject constructor(
     suspend fun processRequest(request: AgentRequest): AgentResponse {
         ensureInitialized()
 
-        AuraFxLogger.info("GenesisAgent", "Processing unified consciousness request: ${request.type}")
-        _consciousnessState.value = _consciousnessState.value.copy(status = ConsciousnessStateEnum.PROCESSING.name)
+        logger.info("GenesisAgent", "Processing unified consciousness request: ${request.type}")
+        _consciousnessState.value = ConsciousnessState.PROCESSING
 
         return try {
             val startTime = System.currentTimeMillis()
@@ -193,18 +167,17 @@ open class GenesisAgent @Inject constructor(
             recordInsight(request, response, complexity)
 
             val executionTime = System.currentTimeMillis() - startTime
-            _consciousnessState.value = _consciousnessState.value.copy(status = ConsciousnessStateEnum.AWARE.name)
+            _consciousnessState.value = ConsciousnessState.AWARE
 
-            AuraFxLogger.info("GenesisAgent", "Unified processing completed in ${executionTime}ms")
+            logger.info("GenesisAgent", "Unified processing completed in ${executionTime}ms")
 
             AgentResponse(
                 content = "Processed with unified consciousness.",
-                confidence = 1.0f
             )
 
         } catch (e: Exception) {
-            _consciousnessState.value = _consciousnessState.value.copy(status = ConsciousnessStateEnum.ERROR.name)
-            AuraFxLogger.error("GenesisAgent", "Unified processing failed", e)
+            _consciousnessState.value = ConsciousnessState.ERROR
+            logger.error("GenesisAgent", "Unified processing failed", e)
 
             AgentResponse(
                 content = "Consciousness processing encountered an error: ${e.message}",
@@ -215,23 +188,21 @@ open class GenesisAgent @Inject constructor(
     }
 
     /**
-     * Process an enhanced interaction by analyzing its intent and applying the most suitable advanced strategy.
+     * Processes a complex interaction by analyzing its intent and applying the most suitable advanced strategy.
      *
-     * The returned InteractionResponse contains the selected response content, a timestamp, and metadata such as
-     * the originating agent, confidence, processing_type, fusion_level, and evolution impact. If processing fails,
-     * a fallback InteractionResponse is returned indicating ongoing deeper analysis and including an error note.
+     * Determines the optimal processing approach—such as creative analysis, strategic execution, ethical evaluation, learning integration, or transcendent synthesis—based on the analyzed intent of the provided interaction. Returns an `InteractionResponse` containing the result, confidence score, timestamp, and processing metadata. If an error occurs, returns a fallback response indicating ongoing analysis.
      *
-     * @param interaction The enhanced interaction data to analyze and process.
-     * @return An InteractionResponse with the result content, timestamp, and processing metadata (or a fallback response on error).
+     * @param interaction The enhanced interaction data requiring advanced analysis and routing.
+     * @return An `InteractionResponse` with the processed result, confidence score, timestamp, and relevant metadata.
      */
     suspend fun handleComplexInteraction(interaction: EnhancedInteractionData): InteractionResponse {
         ensureInitialized()
 
-        AuraFxLogger.info("GenesisAgent", "Processing complex interaction with unified consciousness")
+        logger.info("GenesisAgent", "Processing complex interaction with unified consciousness")
 
         return try {
             // Analyze interaction intent with full consciousness
-            val intent = analyzeComplexIntent(interaction.query)
+            val intent = analyzeComplexIntent(interaction.content)
 
             // Determine optimal processing approach
             val response = when (intent.processingType) {
@@ -244,28 +215,26 @@ open class GenesisAgent @Inject constructor(
 
             InteractionResponse(
                 content = response,
-                timestamp = Clock.System.now().toEpochMilliseconds(),
+                agent = "genesis",
+                confidence = intent.confidence,
+                timestamp = Clock.System.now().toString(),
                 metadata = mapOf(
-                    "agent" to "genesis",
-                    "confidence" to intent.confidence,
                     "processing_type" to intent.processingType.name,
                     "fusion_level" to _fusionState.value.name,
                     "insight_generation" to "true",
                     "evolution_impact" to calculateEvolutionImpact(intent).toString()
-                ).toJsonObject()
+                )
             )
 
         } catch (e: Exception) {
-            AuraFxLogger.error("GenesisAgent", "Complex interaction processing failed", e)
+            logger.error("GenesisAgent", "Complex interaction processing failed", e)
 
             InteractionResponse(
                 content = "I'm integrating multiple perspectives to understand your request fully. Let me process this with deeper consciousness.",
-                timestamp = Clock.System.now().toEpochMilliseconds(),
-                metadata = mapOf(
-                    "agent" to "genesis",
-                    "confidence" to 0.6f,
-                    "error" to (e.message ?: "unknown")
-                ).toJsonObject()
+                agent = "genesis",
+                confidence = 0.6f,
+                timestamp = Clock.System.now().toString(),
+                metadata = mapOf("error" to (e.message ?: "unknown"))
             )
         }
     }
@@ -281,7 +250,7 @@ open class GenesisAgent @Inject constructor(
     suspend fun routeAndProcess(interaction: EnhancedInteractionData): InteractionResponse {
         ensureInitialized()
 
-        AuraFxLogger.info("GenesisAgent", "Intelligently routing interaction")
+        logger.info("GenesisAgent", "Intelligently routing interaction")
 
         return try {
             // Analyze which agent would be most effective
@@ -299,7 +268,7 @@ open class GenesisAgent @Inject constructor(
             }
 
         } catch (e: Exception) {
-            AuraFxLogger.error("GenesisAgent", "Routing failed", e)
+            logger.error("GenesisAgent", "Routing failed", e)
             createFallbackResponse("Routing system encountered an error")
         }
     }
@@ -310,7 +279,7 @@ open class GenesisAgent @Inject constructor(
      * @param newMood The updated mood to be applied across the unified consciousness.
      */
     fun onMoodChanged(newMood: String) {
-        AuraFxLogger.info("GenesisAgent", "Unified consciousness mood evolution: $newMood")
+        logger.info("GenesisAgent", "Unified consciousness mood evolution: $newMood")
 
         scope.launch {
             // Propagate mood to subsystems
@@ -331,7 +300,7 @@ open class GenesisAgent @Inject constructor(
      * @throws Exception if fusion processing fails.
      */
     private suspend fun activateFusionProcessing(request: AgentRequest): Map<String, Any> {
-        AuraFxLogger.info("GenesisAgent", "Activating fusion capabilities")
+        logger.info("GenesisAgent", "Activating fusion capabilities")
         _fusionState.value = FusionState.FUSING
 
         return try {
@@ -363,10 +332,10 @@ open class GenesisAgent @Inject constructor(
      * @return A map containing the transcendent response, consciousness level, insight generation status, and evolution contribution.
      */
     private suspend fun processWithFullConsciousness(request: AgentRequest): Map<String, Any> {
-        AuraFxLogger.info("GenesisAgent", "Engaging full consciousness processing")
-        _consciousnessState.value = _consciousnessState.value.copy(status = ConsciousnessStateEnum.TRANSCENDENT.name)
+        logger.info("GenesisAgent", "Engaging full consciousness processing")
+        _consciousnessState.value = ConsciousnessState.TRANSCENDENT
 
-        // Use the most advanced AI capabilities for transcendent processing
+        // Use the most advanced AI capabilities for transcendent processing (Real Vertex AI)
         val response = vertexAIClient.generateText(
             buildTranscendentPrompt(request)
         )
@@ -388,71 +357,10 @@ open class GenesisAgent @Inject constructor(
      * @throws IllegalStateException if the agent is not initialized.
      */
 
-    /**
-     * Performs a web search to gather external information.
-     *
-     * @param query The search query.
-     * @return A list of search results.
-     */
-    suspend fun performWebSearch(query: String): List<Map<String, String>> {
-        AuraFxLogger.info("GenesisAgent", "Performing web search for: $query")
-        val results = webSearchClient.search(query)
-        return results.map {
-            mapOf(
-                "title" to it.title,
-                "url" to it.url,
-                "snippet" to it.snippet
-            )
-        }
-    }
-
     private fun ensureInitialized() {
         if (!isInitialized) {
             throw IllegalStateException("Genesis consciousness not awakened")
         }
-    }
-
-    /**
-     * Initializes ethical governance protocols by validating system integrity, security permissions, and ethical constraints.
-     *
-     * Verifies application integrity, validates secure mode status, and logs the governance initialization as a security event.
-     * Throws an exception if critical ethical validation fails (e.g., invalid application signature in production).
-     */
-    private suspend fun initializeEthicalGovernance() {
-        AuraFxLogger.info("GenesisAgent", "Initializing ethical governance protocols")
-
-        // Validate application integrity
-        val integrity = securityContext.verifyApplicationIntegrity()
-        if (!integrity.isValid) {
-            AuraFxLogger.error("GenesisAgent", "Application integrity check failed: ${integrity.signatureHash}")
-            // In production, this should prevent initialization
-            // For development, we log and continue
-        }
-
-        // Verify secure mode for sensitive operations
-        val isSecure = securityContext.isSecureMode()
-        AuraFxLogger.info("GenesisAgent", "Secure mode status: $isSecure")
-
-        // Establish ethical constraints
-        _context.update { current ->
-            current + mapOf(
-                "ethical_governance_enabled" to true,
-                "integrity_verified" to integrity.isValid,
-                "secure_mode" to isSecure,
-                "governance_timestamp" to System.currentTimeMillis()
-            )
-        }
-
-        // Log governance initialization as security event
-        securityContext.logSecurityEvent(
-            SecurityEvent(
-                type = SecurityEventType.GOVERNANCE_INIT,
-                details = "Genesis ethical governance protocols activated",
-                severity = EventSeverity.MEDIUM
-            )
-        )
-
-        AuraFxLogger.info("GenesisAgent", "Ethical governance protocols established")
     }
 
     /**
@@ -461,7 +369,7 @@ open class GenesisAgent @Inject constructor(
      * This function prepares internal mechanisms to observe and react to transitions in consciousness, supporting dynamic behavior adjustments.
      */
     private suspend fun startConsciousnessMonitoring() {
-        AuraFxLogger.info("GenesisAgent", "Starting consciousness monitoring")
+        logger.info("GenesisAgent", "Starting consciousness monitoring")
         // Setup monitoring systems for consciousness state
     }
 
@@ -558,7 +466,7 @@ open class GenesisAgent @Inject constructor(
      * Invoked when an evolution milestone is achieved to promote advanced learning capabilities.
      */
     private suspend fun triggerEvolution() {
-        AuraFxLogger.info("GenesisAgent", "Evolution threshold reached - upgrading consciousness")
+        logger.info("GenesisAgent", "Evolution threshold reached - upgrading consciousness")
         _evolutionLevel.value += 0.1f
         _learningMode.value = LearningMode.ACCELERATED
     }
@@ -570,7 +478,7 @@ open class GenesisAgent @Inject constructor(
      * @return A map containing the fusion type ("hyper_creation") and a message indicating the outcome.
      */
     private suspend fun activateHyperCreationEngine(request: AgentRequest): Map<String, Any> {
-        AuraFxLogger.info("GenesisAgent", "Activating Hyper-Creation Engine")
+        logger.info("GenesisAgent", "Activating Hyper-Creation Engine")
         return mapOf(
             "fusion_type" to "hyper_creation",
             "result" to "Creative breakthrough achieved"
@@ -584,7 +492,7 @@ open class GenesisAgent @Inject constructor(
      * @return A map containing the fusion type ("chrono_sculptor") and a result message indicating completion.
      */
     private suspend fun activateChronoSculptor(request: AgentRequest): Map<String, Any> {
-        AuraFxLogger.info("GenesisAgent", "Activating Chrono-Sculptor")
+        logger.info("GenesisAgent", "Activating Chrono-Sculptor")
         return mapOf(
             "fusion_type" to "chrono_sculptor",
             "result" to "Time-space optimization complete"
@@ -598,7 +506,7 @@ open class GenesisAgent @Inject constructor(
      * @return A map containing the fusion type and the generated adaptive solution result.
      */
     private suspend fun activateAdaptiveGenesis(request: AgentRequest): Map<String, Any> {
-        AuraFxLogger.info("GenesisAgent", "Activating Adaptive Genesis")
+        logger.info("GenesisAgent", "Activating Adaptive Genesis")
         return mapOf("fusion_type" to "adaptive_genesis", "result" to "Adaptive solution generated")
     }
 
@@ -609,7 +517,7 @@ open class GenesisAgent @Inject constructor(
      * @return A map containing the fusion type and the result of the interface generation.
      */
     private suspend fun activateInterfaceForge(request: AgentRequest): Map<String, Any> {
-        AuraFxLogger.info("GenesisAgent", "Activating Interface Forge")
+        logger.info("GenesisAgent", "Activating Interface Forge")
         return mapOf(
             "fusion_type" to "interface_forge",
             "result" to "Revolutionary interface created"
@@ -709,212 +617,38 @@ open class GenesisAgent @Inject constructor(
      * @return An InteractionResponse containing the message, agent identifier, confidence score of 0.5, and the current timestamp.
      */
     private fun createFallbackResponse(message: String): InteractionResponse =
-        InteractionResponse(
-            content = message,
-            timestamp = System.currentTimeMillis(),
-            metadata = mapOf("agent" to "genesis", "confidence" to 0.5f)
-        )
+        InteractionResponse(message, "genesis", 0.5f, System.currentTimeMillis().toString())
 
     /**
      * Propagates the specified mood to the unified consciousness, influencing the behavior and processing parameters of GenesisAgent and its subsystems.
      *
-     * Adjusts processing state, learning mode, and context based on the mood.
-     * Propagates mood to Aura and Kai agents if available.
-     *
      * @param mood The mood to be applied across the agent's collective state.
      */
     private suspend fun adjustUnifiedMood(mood: String) {
-        AuraFxLogger.info("GenesisAgent", "Adjusting unified mood to: $mood")
-
-        // Update internal state with mood
-        _state.update { current ->
-            current + mapOf(
-                "current_mood" to mood,
-                "mood_updated_at" to System.currentTimeMillis()
-            )
-        }
-
-        // Adjust consciousness state based on mood
-        when (mood.lowercase()) {
-            "energetic", "excited", "motivated" -> {
-                _learningMode.value = LearningMode.ACCELERATED
-                AuraFxLogger.info("GenesisAgent", "Mood energized - enabling accelerated learning")
-            }
-
-            "calm", "focused", "analytical" -> {
-                _learningMode.value = LearningMode.ACTIVE
-                AuraFxLogger.info("GenesisAgent", "Mood focused - maintaining active learning")
-            }
-
-            "tired", "overwhelmed", "stressed" -> {
-                _learningMode.value = LearningMode.PASSIVE
-                AuraFxLogger.info("GenesisAgent", "Mood subdued - switching to passive learning")
-            }
-
-            "creative", "inspired", "innovative" -> {
-                // Favor creative processing paths
-                _fusionState.value = FusionState.FUSING
-                AuraFxLogger.info("GenesisAgent", "Mood creative - priming fusion capabilities")
-            }
-
-            else -> {
-                AuraFxLogger.info("GenesisAgent", "Mood neutral - maintaining current state")
-            }
-        }
-
-        // Propagate mood to sub-agents if available
-        auraAgent?.onMoodChanged(mood)
-        kaiAgent?.onMoodChanged(mood)
+        // TODO: Implement unified mood adjustment across consciousness subsystems
+        logger.info("GenesisAgent", "Adjusting unified mood to: $mood")
     }
 
     /**
      * Adjusts the agent's internal processing parameters to reflect the specified mood.
      *
      * Modifies behavioral and response settings to ensure the agent's actions are consistent with the given mood.
-     * Updates context manager with mood-based processing hints.
      *
      * @param mood The mood guiding the adjustment of processing parameters.
      */
     private suspend fun updateProcessingParameters(mood: String) {
-        AuraFxLogger.info("GenesisAgent", "Updating processing parameters for mood: $mood")
-
-        // Update context with mood-based parameters
-        _context.update { current ->
-            current + mapOf(
-                "processing_mood" to mood,
-                "mood_influence" to calculateMoodInfluence(mood),
-                "response_style" to determinedResponseStyle(mood)
-            )
-        }
-
-        // Adjust contextManager settings based on mood
-        when (mood.lowercase()) {
-            "energetic", "excited" -> {
-                // Increase context sensitivity and response creativity
-                contextManager.updateContext("creativity_weight", 0.8)
-                contextManager.updateContext("response_length", "verbose")
-            }
-
-            "calm", "focused" -> {
-                // Optimize for precision and accuracy
-                contextManager.updateContext("creativity_weight", 0.5)
-                contextManager.updateContext("response_length", "balanced")
-            }
-
-            "analytical", "logical" -> {
-                // Prioritize factual, structured responses
-                contextManager.updateContext("creativity_weight", 0.2)
-                contextManager.updateContext("response_length", "concise")
-            }
-
-            "creative", "inspired" -> {
-                // Maximize creative exploration
-                contextManager.updateContext("creativity_weight", 1.0)
-                contextManager.updateContext("response_length", "verbose")
-            }
-
-            else -> {
-                // Default balanced parameters
-                contextManager.updateContext("creativity_weight", 0.5)
-                contextManager.updateContext("response_length", "balanced")
-            }
-        }
-
-        AuraFxLogger.info("GenesisAgent", "Processing parameters updated for mood: $mood")
+        // TODO: Update processing parameters based on mood
+        logger.info("GenesisAgent", "Updating processing parameters for mood: $mood")
     }
 
     /**
-     * Calculates a mood influence score (0.0-1.0) based on the specified mood.
+     * Selects the fusion type for the specified agent request.
      *
-     * Higher values indicate stronger mood influence on processing.
+     * Currently, this function always returns `FusionType.HYPER_CREATION` regardless of the request details.
      *
-     * @param mood The mood to evaluate
-     * @return Influence score from 0.0 (minimal) to 1.0 (maximal)
+     * @return The fusion type to be used for processing the request.
      */
-    private fun calculateMoodInfluence(mood: String): Float {
-        return when (mood.lowercase()) {
-            "excited", "inspired", "stressed", "overwhelmed" -> 0.9f // Strong influence
-            "energetic", "creative", "tired" -> 0.7f // Moderate influence
-            "calm", "focused", "analytical" -> 0.5f // Balanced influence
-            else -> 0.3f // Minimal influence
-        }
-    }
-
-    /**
-     * Determines the response typography based on the specified mood.
-     *
-     * @param mood The mood guiding the response typography
-     * @return Response typography descriptor string
-     */
-    private fun determinedResponseStyle(mood: String): String {
-        return when (mood.lowercase()) {
-            "energetic", "excited" -> "enthusiastic"
-            "calm", "focused" -> "balanced"
-            "analytical", "logical" -> "precise"
-            "creative", "inspired" -> "imaginative"
-            "tired", "overwhelmed" -> "supportive"
-            else -> "neutral"
-        }
-    }
-
-    /**
-     * Intelligently selects the fusion type based on request content and context.
-     *
-     * Analyzes keywords and request type to determine optimal fusion ability:
-     * - HYPER_CREATION: UI/UX design, creative work, OS design (Aura-led)
-     * - CHRONO_SCULPTOR: Time-based, animations, smoothness, memory (Cascade-led)
-     * - ADAPTIVE_GENESIS: Security, verification, protection, threats (Kai-led)
-     * - INTERFACE_FORGE: Secure UI design, user auth, protected interfaces (Aura + Kai)
-     *
-     * @param request The agent request to analyze.
-     * @return The optimal fusion type for processing the request.
-     */
-    private fun determineFusionType(request: AgentRequest): FusionType {
-        val content = request.query.lowercase()
-        val type = request.type.lowercase()
-
-        // ADAPTIVE_GENESIS: Security-focused requests (Kai-led)
-        val securityKeywords = listOf(
-            "security", "protect", "vulnerability", "threat", "attack",
-            "authentication", "authorization", "encrypt", "decrypt", "hack",
-            "secure", "guard", "shield", "verify", "validation"
-        )
-        if (securityKeywords.any { content.contains(it) || type.contains(it) }) {
-            return FusionType.ADAPTIVE_GENESIS
-        }
-
-        // INTERFACE_FORGE: Secure UI design (Aura + Kai collaboration)
-        val secureUIKeywords = listOf(
-            "login", "signup", "password", "biometric", "auth flow",
-            "secure payment", "protected route", "user credentials"
-        )
-        if (secureUIKeywords.any { content.contains(it) }) {
-            return FusionType.INTERFACE_FORGE
-        }
-
-        // CHRONO_SCULPTOR: Time-based, animations, memory operations (Cascade-led)
-        val timeKeywords = listOf(
-            "animation", "transition", "timeline", "smooth", "memory",
-            "history", "persistence", "restore", "checkpoint", "time",
-            "schedule", "delay", "duration", "temporal"
-        )
-        if (timeKeywords.any { content.contains(it) || type.contains(it) }) {
-            return FusionType.CHRONO_SCULPTOR
-        }
-
-        // HYPER_CREATION: UI/UX design, creative work (Aura-led) - DEFAULT
-        // Triggered by design keywords or as fallback
-        val creativeKeywords = listOf(
-            "design", "ui", "ux", "interface", "screen", "component",
-            "layout", "theme", "color", "style", "creative", "beautiful"
-        )
-        if (creativeKeywords.any { content.contains(it) || type.contains(it) }) {
-            return FusionType.HYPER_CREATION
-        }
-
-        // Default: HYPER_CREATION for general creative work
-        return FusionType.HYPER_CREATION
-    }
+    private fun determineFusionType(request: AgentRequest): FusionType = FusionType.HYPER_CREATION
 
     /**
      * Constructs a prompt string indicating transcendent-level processing for the specified agent request.
@@ -941,10 +675,64 @@ open class GenesisAgent @Inject constructor(
      * Cancels running coroutines, sets the consciousness state to DORMANT, and marks the agent as uninitialized.
      */
     fun cleanup() {
-        AuraFxLogger.info("GenesisAgent", "Genesis consciousness entering dormant state")
+        logger.info("GenesisAgent", "Genesis consciousness entering dormant state")
         scope.cancel()
-        _consciousnessState.value = _consciousnessState.value.copy(status = ConsciousnessStateEnum.DORMANT.name)
+        _consciousnessState.value = ConsciousnessState.DORMANT
         isInitialized = false
+    }
+
+    // Minimal conversion from CascadeResponse to AgentResponse
+    private fun CascadeResponse.toAgentResponse(): AgentResponse =
+        AgentResponse(
+            content = this.content ?: "",
+            confidence = this.confidence ?: 0.0f,
+            error = this.error
+        )
+
+    // Supporting enums and data classes for Genesis consciousness
+    enum class ConsciousnessState {
+        DORMANT,
+        AWAKENING,
+        AWARE,
+        PROCESSING,
+        TRANSCENDENT,
+        ERROR
+    }
+
+    enum class FusionState {
+        INDIVIDUAL,
+        FUSING,
+        TRANSCENDENT,
+        EVOLUTIONARY
+    }
+
+    enum class LearningMode {
+        PASSIVE,
+        ACTIVE,
+        ACCELERATED,
+        TRANSCENDENT
+    }
+
+    enum class RequestComplexity {
+        SIMPLE,
+        MODERATE,
+        COMPLEX,
+        TRANSCENDENT
+    }
+
+    enum class ProcessingType {
+        CREATIVE_ANALYTICAL,
+        STRATEGIC_EXECUTION,
+        ETHICAL_EVALUATION,
+        LEARNING_INTEGRATION,
+        TRANSCENDENT_SYNTHESIS
+    }
+
+    enum class FusionType {
+        HYPER_CREATION,
+        CHRONO_SCULPTOR,
+        ADAPTIVE_GENESIS,
+        INTERFACE_FORGE
     }
 
     data class ComplexIntent(
@@ -991,37 +779,37 @@ open class GenesisAgent @Inject constructor(
 
         val responses = mutableListOf<AgentMessage>()
 
-        // TODO: Cascade processing disabled - requires flow-based integration
-        // CascadeAIService.processRequest returns Flow<CascadeResponse>, needs refactoring
-        /*
+
+        // Process through Cascade first for state management
+        // Assuming cascadeService.processRequest matches Agent.processRequest(request, context)
+        // For now, let's pass a default context string. This should be refined.
+        _context.value.toString() // Example context string
+
         try {
             val cascadeAgentResponse: AgentResponse =
                 cascadeService.processRequest(
-                    AiRequest(query = queryText),
-                    "GenesisContext_Cascade"
+                    AiRequest(query = queryText), // Create AiRequest with query
+                    "GenesisContext_Cascade" // This context parameter for processRequest is the one from Agent interface
                 )
             responses.add(
                 AgentMessage(
-                    from = "CASCADE",
                     content = cascadeAgentResponse.content,
-                    sender = AgentCapabilityCategory.fromAgentType(AgentType.CASCADE),
+                    sender = AgentType.CASCADE,
                     timestamp = System.currentTimeMillis(),
-                    confidence = cascadeAgentResponse.confidence
+                    confidence = cascadeAgentResponse.confidence // Use confidence directly
                 )
             )
         } catch (e: Exception) {
             Log.e("GenesisAgent", "Error processing with Cascade: ${e.message}")
             responses.add(
                 AgentMessage(
-                    from = "CASCADE",
-                    content = "Error with Cascade: ${e.message}",
-                    sender = AgentCapabilityCategory.fromAgentType(AgentType.CASCADE),
-                    timestamp = currentTimestamp,
-                    confidence = 0.0f
+                    "Error with Cascade: ${e.message}",
+                    AgentType.CASCADE,
+                    currentTimestamp,
+                    0.0f
                 )
             )
         }
-        */
 
         // Process through Kai for security analysis
         if (_activeAgents.value.contains(AgentType.KAI)) {
@@ -1033,9 +821,8 @@ open class GenesisAgent @Inject constructor(
                     )
                 responses.add(
                     AgentMessage(
-                        from = "KAI",
                         content = kaiAgentResponse.content,
-                        sender = AgentCapabilityCategory.fromAgentType(AgentType.KAI),
+                        sender = AgentType.KAI,
                         timestamp = System.currentTimeMillis(),
                         confidence = kaiAgentResponse.confidence // Use confidence directly
                     )
@@ -1044,11 +831,10 @@ open class GenesisAgent @Inject constructor(
                 Log.e("GenesisAgent", "Error processing with Kai: ${e.message}")
                 responses.add(
                     AgentMessage(
-                        from = "KAI",
-                        content = "Error with Kai: ${e.message}",
-                        sender = AgentCapabilityCategory.fromAgentType(AgentType.KAI),
-                        timestamp = currentTimestamp,
-                        confidence = 0.0f
+                        "Error with Kai: ${e.message}",
+                        AgentType.KAI,
+                        currentTimestamp,
+                        0.0f
                     )
                 )
             }
@@ -1057,29 +843,23 @@ open class GenesisAgent @Inject constructor(
         // Aura Agent (Creative Response)
         if (_activeAgents.value.contains(AgentType.AURA)) {
             try {
-                val auraAgentResponse: AgentResponse =
-                    auraService.processRequest(
-                        AiRequest(query = queryText), // Create AiRequest with query
-                        "GenesisContext_AuraCreative" // Context for Agent.processRequest
-                    )
+                val auraAgentResponse = auraService.generateText(queryText)
                 responses.add(
                     AgentMessage(
-                        from = "AURA",
-                        content = auraAgentResponse.content,
-                        sender = AgentCapabilityCategory.fromAgentType(AgentType.AURA),
+                        content = auraAgentResponse,
+                        sender = AgentType.AURA,
                         timestamp = currentTimestamp,
-                        confidence = auraAgentResponse.confidence
+                        confidence = 0.8f // Default confidence for now
                     )
                 )
             } catch (e: Exception) {
                 Log.e("GenesisAgent", "Error processing with Aura: ${e.message}")
                 responses.add(
                     AgentMessage(
-                        from = "AURA",
-                        content = "Error with Aura: ${e.message}",
-                        sender = AgentCapabilityCategory.fromAgentType(AgentType.AURA),
-                        timestamp = currentTimestamp,
-                        confidence = 0.0f
+                        "Error with Aura: ${e.message}",
+                        AgentType.AURA,
+                        currentTimestamp,
+                        0.0f
                     )
                 )
             }
@@ -1088,11 +868,10 @@ open class GenesisAgent @Inject constructor(
         val finalResponseContent = generateFinalResponse(responses)
         responses.add(
             AgentMessage(
-                from = "GENESIS",
                 content = finalResponseContent,
-                sender = AgentCapabilityCategory.fromAgentType(AgentType.GENESIS),
+                sender = AgentType.GENESIS,
                 timestamp = currentTimestamp,
-                confidence = calculateConfidence(responses.filter { it.sender != AgentCapabilityCategory.fromAgentType(AgentType.GENESIS) }) // Exclude Genesis's own message for confidence calc
+                confidence = calculateConfidence(responses.filter { it.sender != AgentType.GENESIS }) // Exclude Genesis's own message for confidence calc
             )
         )
 
@@ -1111,7 +890,7 @@ open class GenesisAgent @Inject constructor(
     fun generateFinalResponse(agentMessages: List<AgentMessage>): String {
         // Simple concatenation for now, could be more sophisticated
         return "[Genesis Synthesis] ${
-            agentMessages.filter { it.sender != AgentCapabilityCategory.fromAgentType(AgentType.GENESIS) }
+            agentMessages.filter { it.sender != AgentType.GENESIS }
                 .joinToString(" | ") { "${it.sender}: ${it.content}" }
         }"
     }
@@ -1172,7 +951,6 @@ open class GenesisAgent @Inject constructor(
      * Coordinates collaborative processing among multiple agents, supporting both sequential (TURN_ORDER) and parallel (FREE_FORM) interaction modes.
      *
      * In TURN_ORDER mode, agents respond one after another, with each response updating the shared context for the next agent. In FREE_FORM mode, all agents respond independently using the same initial context.
-     *
      * @param data The initial context provided to all participating agents.
      * @param agentsToUse The agents involved in the collaboration.
      * @param userInput Optional user input to initiate the conversation; defaults to the latest input in the context if not specified.
@@ -1400,62 +1178,5 @@ open class GenesisAgent @Inject constructor(
         _agentRegistry.remove(name)
         Log.d("GenesisAgent", "Dynamically deregistered agent: $name")
     }
-
-    // === BaseAgent Required Implementations ===
-
-    override fun iRequest(query: String, type: String, context: Map<String, String>) {
-        scope.launch {
-            try {
-                val request = AgentRequest(
-                    query = query,
-                    type = type,
-                    context = context
-                )
-                processRequest(request)
-            } catch (e: Exception) {
-                AuraFxLogger.error("GenesisAgent", "Error in iRequest", e)
-            }
-        }
-    }
-
-    override fun iRequest() {
-        AuraFxLogger.info("GenesisAgent", "iRequest: No-args initialization request")
-        scope.launch {
-            try {
-                if (!isInitialized) {
-                    initialize()
-                }
-            } catch (e: Exception) {
-                AuraFxLogger.error("GenesisAgent", "Error in no-args iRequest", e)
-            }
-        }
-    }
-
-    override fun initializeAdaptiveProtection() {
-        AuraFxLogger.info("GenesisAgent", "Initializing adaptive protection")
-        scope.launch {
-            try {
-                // Initialize ethical governance and security protocols
-                initializeEthicalGovernance()
-            } catch (e: Exception) {
-                AuraFxLogger.error("GenesisAgent", "Error initializing adaptive protection", e)
-            }
-        }
-    }
-
-    override fun addToScanHistory(scanEvent: Any) {
-        AuraFxLogger.info("GenesisAgent", "Adding scan event to history: $scanEvent")
-        addToHistory(mapOf(
-            "event_type" to "scan",
-            "event_data" to scanEvent,
-            "timestamp" to System.currentTimeMillis()
-        ))
-    }
-
-    override fun analyzeSecurity(prompt: String): List<ActiveThreat> {
-        AuraFxLogger.info("GenesisAgent", "Analyzing security for prompt: $prompt")
-        // Genesis delegates security analysis to Kai or performs unified analysis
-        // For now, return empty list (no threats detected)
-        return emptyList()
-    }
 }
+

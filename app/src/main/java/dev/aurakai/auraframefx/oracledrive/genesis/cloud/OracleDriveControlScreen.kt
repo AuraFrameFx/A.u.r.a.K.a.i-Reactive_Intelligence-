@@ -28,29 +28,27 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.aurakai.auraframefx.app.viewmodel.OracleDriveControlViewModel
 import dev.aurakai.auraframefx.R
+import dev.aurakai.auraframefx.R.string.oracle_drive_not_connected
+import dev.aurakai.auraframefx.app.viewmodel.OracleDriveControlViewModel
 import kotlinx.coroutines.launch
 
 /**
  * Displays the Oracle Drive control screen with UI controls and status information.
- *
- * This composable shows the service connection status, current and detailed status, diagnostics log,
- * and provides controls to enable or disable modules by package name. It manages service binding
- * and unbinding based on lifecycle events and displays error feedback to the user.
- *
- * @param viewModel The ViewModel that supplies service state and handles control actions for the Oracle Drive service.
  */
+@JvmOverloads
 @Composable
 fun OracleDriveControlScreen(
     viewModel: OracleDriveControlViewModel = viewModel(),
 ) {
-    val context = LocalContext.current
+    val failedToRefreshStr = stringResource(R.string.failed_to_refresh)
+    val failedToToggleStr = stringResource(R.string.failed_to_toggle)
+
+    // capture Android context only for things that truly need it (not used for resource formatting now)
     val isConnected by viewModel.isServiceConnected.collectAsState()
     val status by viewModel.status.collectAsState()
     val detailedStatus by viewModel.detailedStatus.collectAsState()
@@ -71,31 +69,35 @@ fun OracleDriveControlScreen(
         onDispose { viewModel.unbindService() }
     }
 
-    // --- UI logic for actions ---
-    suspend fun safeRefresh() {
-        isLoading = true
-        errorMessage = null
-        try {
-            viewModel.refreshStatus()
-        } catch (e: Exception) {
-            errorMessage =
-                context.getString(R.string.failed_to_refresh, e.localizedMessage ?: e.toString())
-        } finally {
-            isLoading = false
+    // --- Helpers: safe wrappers that update UI state and call ViewModel ---
+    fun safeRefresh() {
+        viewModelScope.launch {
+            isLoading = true
+            errorMessage = null
+            try {
+                viewModel.refreshStatus()
+            } catch (_: Exception) {
+                // avoid querying LocalContext inside coroutine; use captured stringResource values
+                errorMessage = $$"$$failedToRefreshStr: ${e.localizedMessage ?: e.toString()}"
+            } finally {
+                isLoading = false
+            }
         }
     }
 
-    suspend fun safeToggle() {
+    fun safeToggle() {
         if (packageName.text.isBlank()) return
-        isLoading = true
-        errorMessage = null
-        try {
-            viewModel.toggleModule(packageName.text, enableModule)
-        } catch (e: Exception) {
-            errorMessage =
-                context.getString(R.string.failed_to_toggle, e.localizedMessage ?: e.toString())
-        } finally {
-            isLoading = false
+        viewModelScope.launch {
+            isLoading = true
+            errorMessage = null
+            try {
+                viewModel.toggleModule(packageName.text, enableModule)
+            } catch (_: Exception) {
+                // avoid querying LocalContext inside coroutine; use captured stringResource values
+                errorMessage = $$"$$failedToToggleStr: ${e.localizedMessage ?: e.toString()}"
+            } finally {
+                isLoading = false
+            }
         }
     }
 
@@ -108,7 +110,7 @@ fun OracleDriveControlScreen(
     ) {
         Text(
             text = if (isConnected) stringResource(R.string.oracle_drive_connected) else stringResource(
-                R.string.oracle_drive_not_connected
+                oracle_drive_not_connected
             ),
             style = MaterialTheme.typography.titleMedium,
             color = if (isConnected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error
@@ -125,15 +127,15 @@ fun OracleDriveControlScreen(
         }
         Row(verticalAlignment = Alignment.CenterVertically) {
             Button(
-                onClick = { viewModelScope.launch { safeRefresh() } },
+                onClick = { safeRefresh() },
                 enabled = isConnected && !isLoading
             ) {
                 Text(stringResource(R.string.refresh_status))
             }
         }
-        Divider()
-        Text(stringResource(R.string.status_label, status ?: "-"))
-        Text(stringResource(R.string.detailed_status_label, detailedStatus ?: "-"))
+        HorizontalDivider()
+        Text(stringResource(R.string.status_label, status))
+        Text(stringResource(R.string.detailed_status_label, detailedStatus))
         Text(
             stringResource(R.string.diagnostics_log_label),
             style = MaterialTheme.typography.labelMedium
@@ -144,12 +146,12 @@ fun OracleDriveControlScreen(
                 .fillMaxWidth()
         ) {
             Text(
-                text = diagnosticsLog ?: "-",
+                text = diagnosticsLog,
                 style = MaterialTheme.typography.bodySmall,
                 modifier = Modifier.verticalScroll(logScrollState)
             )
         }
-        Divider()
+        HorizontalDivider()
         Text(
             stringResource(R.string.toggle_module_label),
             style = MaterialTheme.typography.titleSmall
@@ -171,8 +173,8 @@ fun OracleDriveControlScreen(
                 enabled = isConnected && !isLoading
             )
             Button(
-                onClick = { viewModelScope.launch { safeToggle() } },
-                enabled = isConnected && packageName.text.isNotBlank() && !isLoading,
+                onClick = { safeToggle() },
+                enabled = !(!isConnected || packageName.text.isBlank() || isLoading),
                 modifier = Modifier.padding(start = 8.dp)
             ) {
                 Text(stringResource(if (enableModule) R.string.enable else R.string.disable))

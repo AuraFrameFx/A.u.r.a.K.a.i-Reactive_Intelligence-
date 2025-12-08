@@ -103,7 +103,6 @@ data class VertexAIConfig(
      * Returns a copy of this configuration optimized for production environments.
      *
      * The production configuration enables safety filters, increases retry count and timeout, activates caching, metrics, and logging, and sets the log level to "WARN" for improved reliability and security.
-     *
      * @return A new `VertexAIConfig` instance with production-oriented settings.
      */
     fun forProduction(): VertexAIConfig {

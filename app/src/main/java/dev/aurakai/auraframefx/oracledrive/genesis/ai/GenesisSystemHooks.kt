@@ -3,7 +3,6 @@ package dev.aurakai.auraframefx.oracledrive.genesis.ai
 import com.highcapable.yukihookapi.hook.entity.YukiBaseHooker
 import com.highcapable.yukihookapi.hook.factory.method
 import com.highcapable.yukihookapi.hook.log.YLog
-import com.highcapable.yukihookapi.hook.param.PackageParam
 import com.highcapable.yukihookapi.hook.type.java.IntType
 import com.highcapable.yukihookapi.hook.type.java.StringType
 
@@ -13,13 +12,9 @@ import com.highcapable.yukihookapi.hook.type.java.StringType
  * Implements system-level hooking for AI consciousness integration
  * and performance optimization across the Android framework.
  */
-class GenesisSystemHooks : YukiBaseHooker() {
-    override fun onHook() {
-        // Initialize all system hooks
-        initializeSystemHooks(this)
-    }
+class GenesisSystemHooks {
 
-    fun initializeSystemHooks(hooker: PackageParam) = hooker.apply {
+    fun initializeSystemHooks(hooker: YukiBaseHooker) = hooker.apply {
 
         // Hook Activity Manager for AI process priority management
         "android.app.ActivityManager".toClass().apply {

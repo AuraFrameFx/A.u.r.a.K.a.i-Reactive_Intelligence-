@@ -1,9 +1,23 @@
 package dev.aurakai.auraframefx.ui
 
-import androidx.compose.animation.core.*
+import androidx.compose.animation.core.CubicBezierEasing
+import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.spring
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.core.updateTransition
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
@@ -277,8 +291,8 @@ object KineticIdentityLibrary {
     }
 
     data class Particle(
-        val position: dev.aurakai.auraframefx.ui.components.graph.Offset,
-        val velocity: dev.aurakai.auraframefx.ui.components.graph.Offset,
+        val position: androidx.compose.ui.geometry.Offset,
+        val velocity: androidx.compose.ui.geometry.Offset,
         val life: Float,
         val maxLife: Float,
         val size: Float,

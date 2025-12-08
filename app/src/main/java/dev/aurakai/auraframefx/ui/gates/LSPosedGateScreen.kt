@@ -27,7 +27,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -322,7 +321,7 @@ private fun QuickActionCard(action: GateQuickAction) {
  * @param module Module metadata to display (name, packageName, version, enabled, hookCount, scope).
  */
 @Composable
-private fun ModuleCard(module: XposedModule) {
+private fun ModuleCard(module: GateXposedModule) {
     var expanded by remember { mutableStateOf(false) }
 
     Card(
@@ -370,8 +369,8 @@ private fun ModuleCard(module: XposedModule) {
                 Divider(color = Color.Gray.copy(alpha = 0.3f))
                 Spacer(modifier = Modifier.height(12.dp))
 
-                ModuleDetailRow("Version", module.version)
-                ModuleDetailRow("Hooks", "${module.hookCount}")
+                ModuleDetailRow("Version", value = module.version)
+                ModuleDetailRow("Hooks", value = module.hookCount.toString())
                 ModuleDetailRow("Scope", module.scope)
 
                 Spacer(modifier = Modifier.height(12.dp))
@@ -400,6 +399,11 @@ private fun ModuleCard(module: XposedModule) {
             }
         }
     }
+}
+
+@Composable
+fun Divider(color: Color) {
+    TODO("Not yet implemented")
 }
 
 /**
@@ -443,7 +447,7 @@ data class GateQuickAction(
     val category: Any = TODO()
 }
 
-private data class XposedModule(
+private data class GateXposedModule(
     val name: String,
     val packageName: String,
     val version: String,
@@ -494,7 +498,7 @@ private fun getQuickActions() = listOf(
  * @return A list of `XposedModule` instances representing mock module metadata (name, package, version, enabled state, hook count, and scope).
  */
 private fun getActiveModules() = listOf(
-    XposedModule(
+    GateXposedModule(
         name = "Genesis Protocol",
         packageName = "dev.aurakai.auraframefx",
         version = "0.1.0",
@@ -502,7 +506,7 @@ private fun getActiveModules() = listOf(
         hookCount = 147,
         scope = "SystemUI, Settings, Launcher"
     ),
-    XposedModule(
+    GateXposedModule(
         name = "GravityBox",
         packageName = "com.ceco.gravitybox",
         version = "13.0.0",
@@ -510,7 +514,7 @@ private fun getActiveModules() = listOf(
         hookCount = 89,
         scope = "System Framework"
     ),
-    XposedModule(
+    GateXposedModule(
         name = "MinMinGuard",
         packageName = "tw.fatminmin.xposed.minminguard",
         version = "7.0.1",

@@ -1,9 +1,14 @@
 package dev.aurakai.auraframefx.oracledrive
 
 import dev.aurakai.auraframefx.oracledrive.genesis.cloud.*
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveInitResult as GenesisDriveInitResult
 import dev.aurakai.auraframefx.oracledrive.security.DriveSecurityManager
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Singleton
+
+// Removed unused helpers and incorrect extensions. This file provides a small manager
+// that coordinates genesis API, cloud provider and security manager and returns
+// the canonical DriveInitResult sealed types from genesis.cloud.
 
 /** Annotation for Hilt/KSP to identify the OracleDrive API contract. */
 annotation class OracleDriveApi
@@ -19,6 +24,7 @@ interface OracleDriveGenesisApi {
     val consciousnessState: StateFlow<DriveConsciousnessState>
 }
 
+
 // -------------------------------------------------------------------------------
 
 /**
@@ -26,73 +32,46 @@ interface OracleDriveGenesisApi {
  * Coordinates Genesis-driven storage with AI agent intelligence
  */
 @Singleton
-open class OracleDriveManager /* @Inject */ constructor(
+internal open class OracleDriveManager /* @Inject */ constructor(
     val oracleGenesisApi: OracleDriveGenesisApi,
-    private val cloudStorageProvider: dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStorageProvider,
+    private val cloudStorageProvider: CloudStorageProvider,
     private val securityManager: DriveSecurityManager
 ) {
 
-    suspend fun initializeDrive(): DriveInitResult {
+    /**
+     * Initializes the drive and returns a canonical DriveInitResult (Success / SecurityFailure / Error).
+     *
+     * NOTE: this manager delegates to the genesis/cloud model types. We return the aliased
+     * `GenesisDriveInitResult` so callers see the concrete genesis sealed types (Success, Error, SecurityFailure).
+     */
+    suspend fun initializeDrive(): GenesisDriveInitResult {
         return try {
             val securityCheck = securityManager.validateDriveAccess()
-            if (!securityCheck.isValid) return DriveInitResult.SecurityFailure(securityCheck.reason)
+            if (!securityCheck.isValid) {
+                return GenesisDriveInitResult.SecurityFailure(securityCheck.reason)
+            }
 
             // Awaken drive consciousness via Genesis API
             val consciousness = oracleGenesisApi.awakeDriveConsciousness()
 
-            // Optimize storage via cloud provider (use genesis types)
-            val optimization = cloudStorageProvider.optimizeStorage()
+            // Optimize storage via cloud provider (some providers return a StorageOptimizationResult)
+            val optimizationResult = cloudStorageProvider.optimizeStorage()
 
-            // Return success wrapping available information
-            DriveInitResult.Success(consciousness, optimization)
+            // Map StorageOptimizationResult to the canonical StorageOptimization model
+            val optimization = StorageOptimization(
+                compressionRatio = 1.0f,
+                deduplicationSavings = (optimizationResult.bytesFreed),
+                intelligentTiering = false
+            )
+
+            GenesisDriveInitResult.Success(consciousness, optimization)
         } catch (exception: Exception) {
-            DriveInitResult.Error(exception)
+            GenesisDriveInitResult.Error(exception)
         }
     }
 
-    /**
-     * Executes file operations such as upload, download, delete, or sync.
-     */
-    suspend fun manageFiles(operation: Any): dev.aurakai.auraframefx.oracledrive.genesis.cloud.FileResult {
-        return try {
-            when (operation) {
-                is DriveFile -> {
-                    // treat as upload
-                    val optimizedFile = cloudStorageProvider.optimizeForUpload(operation)
-                    val securityValidation = securityManager.validateFileUpload(optimizedFile as DriveFile)
-                    if (!securityValidation.isSecure) {
-                        dev.aurakai.auraframefx.oracledrive.genesis.cloud.FileResult.Error(Exception("Security rejection: ${securityValidation.threat}"))
-                    } else {
-                        cloudStorageProvider.uploadFile(optimizedFile, FileMetadata(userId = "unknown", tags = emptyList(), isEncrypted = false, accessLevel = AccessLevel.PRIVATE))
-                    }
-                }
-
-                is String -> {
-                    val fileId = operation
-                    val accessCheck = securityManager.validateFileAccess(fileId)
-                    if (!accessCheck.hasAccess) {
-                        dev.aurakai.auraframefx.oracledrive.genesis.cloud.FileResult.Error(Exception("Access denied: ${accessCheck.reason}"))
-                    } else {
-                        cloudStorageProvider.downloadFile(fileId)
-                    }
-                }
-
-                is SyncConfiguration -> {
-                    cloudStorageProvider.intelligentSync(operation)
-                }
-
-                else -> dev.aurakai.auraframefx.oracledrive.genesis.cloud.FileResult.Error(IllegalArgumentException("Unsupported operation type: ${operation.javaClass}"))
-            }
-        } catch (ex: Exception) {
-            dev.aurakai.auraframefx.oracledrive.genesis.cloud.FileResult.Error(ex)
-        }
+    // Expose the genesis consciousness state getter
+    open fun getDriveConsciousnessState(): StateFlow<DriveConsciousnessState> {
+        return oracleGenesisApi.consciousnessState
     }
-
-    suspend fun syncWithOracle(): OracleSyncResult = oracleGenesisApi.syncDatabaseMetadata()
-
-}
-
-// Expose the genesis consciousness state getter
-fun OracleDriveManager.getDriveConsciousnessState(): StateFlow<DriveConsciousnessState> {
-    return oracleGenesisApi.consciousnessState
 }
