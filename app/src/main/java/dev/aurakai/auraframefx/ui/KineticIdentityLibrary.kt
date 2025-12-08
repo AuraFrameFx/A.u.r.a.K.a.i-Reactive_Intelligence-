@@ -10,7 +10,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
-import dev.aurakai.auraframefx.ui.theme.model.AuraTheme
+import dev.aurakai.auraframefx.ui.theme.model.AuraThemeData
 import kotlinx.coroutines.delay
 import kotlin.math.*
 
@@ -115,7 +115,7 @@ object KineticIdentityLibrary {
         modifier: Modifier = Modifier,
         isActive: Boolean = false,
         touchPosition: Offset? = null,
-        theme: AuraTheme,
+        theme: AuraThemeData,
         intensity: Float = 1.0f,
     ) {
         val glowTransition = updateTransition(
@@ -182,7 +182,7 @@ object KineticIdentityLibrary {
     @Composable
     fun ParticleFlow(
         modifier: Modifier = Modifier,
-        theme: AuraTheme,
+        theme: AuraThemeData,
         particleCount: Int = 20,
         flowDirection: FlowDirection = FlowDirection.UPWARD,
         intensity: Float = 1.0f,
@@ -217,7 +217,7 @@ object KineticIdentityLibrary {
     fun KeyboardGlow(
         modifier: Modifier = Modifier,
         isTyping: Boolean = false,
-        theme: AuraTheme,
+        theme: AuraThemeData,
         intensity: Float = 1.0f,
     ) {
         val infiniteTransition = rememberInfiniteTransition(label = "keyboard_glow")
@@ -328,16 +328,16 @@ object KineticIdentityLibrary {
      */
     private fun updateParticle(
         particle: Particle,
-        animationStyle: AuraTheme.AnimationStyle,
+        animationStyle: AuraThemeData.AnimationStyle,
         flowDirection: FlowDirection,
         intensity: Float,
     ): Particle {
         val speedMultiplier = when (animationStyle) {
-            AuraTheme.AnimationStyle.ENERGETIC -> 2.0f
-            AuraTheme.AnimationStyle.CALMING -> 0.5f
-            AuraTheme.AnimationStyle.FLOWING -> 1.0f
-            AuraTheme.AnimationStyle.PULSING -> 1.5f
-            AuraTheme.AnimationStyle.SUBTLE -> 0.3f
+            AuraThemeData.AnimationStyle.ENERGETIC -> 2.0f
+            AuraThemeData.AnimationStyle.CALMING -> 0.5f
+            AuraThemeData.AnimationStyle.FLOWING -> 1.0f
+            AuraThemeData.AnimationStyle.PULSING -> 1.5f
+            AuraThemeData.AnimationStyle.SUBTLE -> 0.3f
         } * intensity
 
         val newVelocity = when (flowDirection) {
