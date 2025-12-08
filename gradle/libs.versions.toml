@@ -227,7 +227,7 @@ junitJupiter = "6.0.1"
 junitVintage = "6.0.1"  # For running JUnit 4 tests with JUnit 5
 
 # MockK - Latest: 1.14.6 (Oct 1, 2025)
-mockk = "1.14.6"
+mockk = "1.14.7"
 
 # AndroidX Test
 androidxTestCore = "1.5.0"
