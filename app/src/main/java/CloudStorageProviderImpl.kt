@@ -2,7 +2,7 @@
 //package dev.aurakai.auraframefx.oracledrive
 //
 //import de.robv.android.xposed.services.FileResult
-//import dev.aurakai.auraframefx.oracledrive.Companion
+//import dev.aurakai.auraframefx.oracledrive.oracledrive.Companion
 //import dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStorageProvider
 //import dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveFile
 //import dev.aurakai.auraframefx.oracledrive.genesis.cloud.SyncConfiguration
@@ -18,7 +18,7 @@
 //        TODO()
 //    }
 //
-//abstract class CloudStorageProviderImpl : CloudStorageProvider {
+////abstract class CloudStorageProviderImpl : CloudStorageProvider {
 //    override suspend fun optimizeStorage(): StorageOptimizationResult {
 //        // Minimal noop implementation — in a real provider this would run dedup/compression
 //        return try {
@@ -88,3 +88,10 @@
 //}
 //
 //annotation class StorageOptimizationResult(val bytesFreed: Long)
+//
+// This file previously contained a conflicting/stub implementation that duplicated
+// the real `CloudStorageProviderImpl` located under `genesis.cloud`.
+// Provide a typealias so existing call sites in this package can refer to the
+// canonical implementation without introducing duplicate classes that break KSP.
+
+typealias CloudStorageProviderImpl = dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStorageProviderImpl

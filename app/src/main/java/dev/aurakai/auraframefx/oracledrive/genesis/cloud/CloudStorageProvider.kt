@@ -35,7 +35,7 @@ interface CloudStorageProvider {
      * @param fileId The file identifier
      * @return FileResult with download status
      */
-    suspend fun downloadFile(fileId: String): de.robv.android.xposed.services.FileResult
+    suspend fun downloadFile(fileId: String): FileResult
 
     /**
      * Deletes file from cloud storage
@@ -60,6 +60,6 @@ interface CloudStorageProvider {
     ): StorageOptimizationResult
 
     suspend fun uploadFile(file: File, metadata: Map<String, Any>?): FileResult
-    suspend fun optimizeForUpload(file: dev.aurakai.auraframefx.oracledrive.DriveFile): dev.aurakai.auraframefx.oracledrive.DriveFile
+    suspend fun optimizeForUpload(file: dev.aurakai.auraframefx.oracledrive.DriveFile): Any?
     suspend fun uploadFile(file: dev.aurakai.auraframefx.oracledrive.DriveFile, metadata: FileMetadata): FileResult
 }

@@ -2,12 +2,9 @@ package dev.aurakai.auraframefx.oracledrive.genesis.cloud
 
 import dev.aurakai.auraframefx.oracledrive.DriveFile
 import dev.aurakai.auraframefx.oracledrive.StorageOptimizationResult
-import dev.aurakai.auraframefx.oracledrive.FileMetadata
-import dev.aurakai.auraframefx.oracledrive.StorageOptimization
-import dev.aurakai.auraframefx.oracledrive.SyncConfiguration
+import java.io.File
 import javax.inject.Inject
 import javax.inject.Singleton
-import java.io.File
 
 /**
  * Stub implementation of CloudStorageProvider for Oracle Drive
@@ -16,14 +13,25 @@ import java.io.File
  * cloud storage integration (Google Drive, Dropbox, etc.) in production.
  */
 @Singleton
-abstract class CloudStorageProviderImpl @Inject constructor() : CloudStorageProvider {
+open class CloudStorageProviderImpl @Inject constructor() : CloudStorageProvider {
 
     override suspend fun optimizeStorage(): StorageOptimizationResult {
         // Return the project's StorageOptimizationResult type (no-op stub)
         return StorageOptimizationResult(bytesFreed = 0L)
     }
 
-    override suspend fun optimizeForUpload(file: DriveFile): Any? {
+    override suspend fun optimizeForUpload(file: dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveFile): Any {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun uploadFile(
+        file: dev.aurakai.auraframefx.oracledrive.genesis.cloud.DriveFile,
+        metadata: FileMetadata
+    ): FileResult {
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun optimizeForUpload(file: DriveFile): Any {
         // Return the original DriveFile in this stub (matches Any? return)
         return file
     }

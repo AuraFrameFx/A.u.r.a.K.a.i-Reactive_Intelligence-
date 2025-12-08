@@ -1,7 +1,6 @@
 package dev.aurakai.auraframefx.oracledrive
 
 import dev.aurakai.auraframefx.oracledrive.genesis.cloud.FileResult
-import dev.aurakai.auraframefx.oracledrive.genesis.cloud.StorageOptimization
 import java.io.File
 
 class CloudStorageProviderImplImplImpl : CloudStorageProviderImplImpl() {
@@ -18,7 +17,8 @@ class CloudStorageProviderImplImplImpl : CloudStorageProviderImplImpl() {
         compressionRatio: Float,
         success: Boolean,
         message: String
-    ): StorageOptimization {
-        TODO("Not yet implemented")
+    ): StorageOptimizationResult {
+        // Provide a simple implementation that returns StorageOptimizationResult to match the base contract
+        return StorageOptimizationResult(bytesFreed = bytesFreed)
     }
 }
