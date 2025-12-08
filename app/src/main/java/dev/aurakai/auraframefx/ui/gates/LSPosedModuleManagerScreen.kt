@@ -53,14 +53,14 @@ import androidx.compose.ui.unit.sp
 @Composable
 internal fun LSPosedModuleManagerScreen() {
     val modules = remember { mutableStateListOf(
-        XposedModule("GravityBox", "Advanced system tweaks and modifications", "2.9.5", true, "System"),
-        XposedModule("XPrivacyLua", "Fine-grained privacy control", "1.30", true, "Privacy"),
-        XposedModule("App Settings", "Per-app settings and modifications", "2.1", false, "System"),
-        XposedModule("YouTube AdAway", "Remove YouTube ads and overlays", "1.2.1", true, "Media"),
-        XposedModule("Greenify", "Aggressive Doze mode for apps", "4.3.1", false, "Performance"),
-        XposedModule("BootManager", "Control app startup behavior", "1.0.2", true, "System"),
-        XposedModule("Amplify", "Battery and performance tweaks", "2.0.1", true, "Performance"),
-        XposedModule("FakeID", "Spoof device identification", "1.1.0", false, "Security")
+        XposedModuleInfo("GravityBox", "Advanced system tweaks and modifications", "2.9.5", true, "System"),
+        XposedModuleInfo("XPrivacyLua", "Fine-grained privacy control", "1.30", true, "Privacy"),
+        XposedModuleInfo("App Settings", "Per-app settings and modifications", "2.1", false, "System"),
+        XposedModuleInfo("YouTube AdAway", "Remove YouTube ads and overlays", "1.2.1", true, "Media"),
+        XposedModuleInfo("Greenify", "Aggressive Doze mode for apps", "4.3.1", false, "Performance"),
+        XposedModuleInfo("BootManager", "Control app startup behavior", "1.0.2", true, "System"),
+        XposedModuleInfo("Amplify", "Battery and performance tweaks", "2.0.1", true, "Performance"),
+        XposedModuleInfo("FakeID", "Spoof device identification", "1.1.0", false, "Security")
     )}
 
     val searchQuery = remember { mutableStateOf("") }
@@ -158,7 +158,7 @@ internal fun LSPosedModuleManagerScreen() {
                     .padding(16.dp),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                val enabledCount = modules.count { return@count it.enabled }
+                val enabledCount = modules.count { it.enabled }
                 val totalCount = modules.size
 
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -315,7 +315,7 @@ internal fun LSPosedModuleManagerScreen() {
  */
 @Composable
 private fun ModuleCard(
-    module: XposedModule,
+    module: XposedModuleInfo,
     onToggle: () -> Unit,
     onConfigure: () -> Unit
 ) {
@@ -450,9 +450,9 @@ private fun ModuleCard(
 }
 
 /**
- * Data class for Xposed modules
+ * Data class for Xposed modules (renamed to avoid collisions with other files)
  */
-data class XposedModule(
+data class XposedModuleInfo(
     val name: String,
     val description: String,
     val version: String,
