@@ -51,7 +51,7 @@ import androidx.compose.ui.unit.sp
  * Install, enable, and configure Xposed modules
  */
 @Composable
-fun LSPosedModuleManagerScreen() {
+internal fun LSPosedModuleManagerScreen() {
     val modules = remember { mutableStateListOf(
         XposedModule("GravityBox", "Advanced system tweaks and modifications", "2.9.5", true, "System"),
         XposedModule("XPrivacyLua", "Fine-grained privacy control", "1.30", true, "Privacy"),
@@ -158,7 +158,7 @@ fun LSPosedModuleManagerScreen() {
                     .padding(16.dp),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ) {
-                val enabledCount = modules.count { it.enabled }
+                val enabledCount = modules.count { return@count it.enabled }
                 val totalCount = modules.size
 
                 Column(horizontalAlignment = Alignment.CenterHorizontally) {

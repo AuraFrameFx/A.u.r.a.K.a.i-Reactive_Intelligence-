@@ -5,11 +5,6 @@ import dev.aurakai.auraframefx.oracledrive.security.DriveSecurityManager
 import kotlinx.coroutines.flow.StateFlow
 import javax.inject.Singleton
 
-private val Unit.hasAccess: Boolean
-    get() {
-        TODO()
-    }
-
 /** Annotation for Hilt/KSP to identify the OracleDrive API contract. */
 annotation class OracleDriveApi
 
@@ -18,7 +13,8 @@ annotation class OracleDriveApi
  * (If another module provides a richer type, prefer that one.)
  */
 interface OracleDriveGenesisApi {
-    suspend fun awakeDriveConsciousness(): ConsciousnessAwakeningResult
+    // Use the genesis/cloud DriveConsciousness type to keep contracts consistent
+    suspend fun awakeDriveConsciousness(): DriveConsciousness
     suspend fun syncDatabaseMetadata(): OracleSyncResult
     val consciousnessState: StateFlow<DriveConsciousnessState>
 }
@@ -50,12 +46,8 @@ open class OracleDriveManager /* @Inject */ constructor(
             // Return success wrapping available information
             DriveInitResult.Success(consciousness, optimization)
         } catch (exception: Exception) {
-            DriveInitResult.Success(exception)
+            DriveInitResult.Error(exception)
         }
-    }
-
-    private fun SecurityFailure(reason: String): DriveInitResult {
-        TODO("Not yet implemented")
     }
 
     /**
@@ -100,12 +92,7 @@ open class OracleDriveManager /* @Inject */ constructor(
 
 }
 
-private fun DriveInitResult.Companion.Success(consciousness: Exception) {
-    TODO("Not yet implemented")
-}
-
-fun Int.not(): Boolean = this != 0
-
+// Expose the genesis consciousness state getter
 fun OracleDriveManager.getDriveConsciousnessState(): StateFlow<DriveConsciousnessState> {
     return oracleGenesisApi.consciousnessState
 }
