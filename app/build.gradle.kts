@@ -171,7 +171,7 @@ dependencies {
     implementation(libs.androidx.compose.foundation.layout)
     implementation(libs.androidx.compose.foundation)
     implementation(libs.androidx.compose.animation)
-    ksp(libs.moshi.kotlin.codegen)
+    // ksp(libs.moshi.kotlin.codegen)
 
     // Logging
     implementation(libs.timber)
@@ -213,7 +213,7 @@ dependencies {
     // Room Database
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
-    ksp(libs.androidx.room.compiler)
+    // ksp(libs.androidx.room.compiler)
 
     // WorkManager
     implementation(libs.androidx.work.runtime.ktx)
@@ -239,7 +239,7 @@ dependencies {
 
     // YukiHook API with KavaRef
     implementation(libs.yukihook.api)
-    ksp(libs.yukihook.ksp)
+    // ksp(libs.yukihook.ksp)
 
     // KavaRef for YukiHook
 
@@ -288,7 +288,7 @@ dependencies {
     // Moshi (JSON - for Retrofit)
     implementation(libs.moshi)
     implementation(libs.moshi.kotlin)
-    ksp(libs.moshi.kotlin.codegen)
+    // ksp(libs.moshi.kotlin.codegen)
 
     // Kotlin DateTime & Coroutines
     implementation(libs.kotlinx.datetime)
@@ -403,10 +403,10 @@ tasks.named("preBuild") {
 }
 
 // Fix YukiHookAPI KSP timing - ensure BuildConfig is generated first
-tasks.matching { it.name.startsWith("ksp") && it.name.contains("Kotlin") }.configureEach {
-    dependsOn("generateDebugBuildConfig")
-    mustRunAfter("generateDebugBuildConfig")
-}
+// tasks.matching { it.name.startsWith("ksp") && it.name.contains("Kotlin") }.configureEach {
+//     dependsOn("generateDebugBuildConfig")
+//     mustRunAfter("generateDebugBuildConfig")
+// }
 
 tasks.register("aegenesisAppStatus") {
     group = "reporting"
@@ -416,9 +416,9 @@ tasks.register("aegenesisAppStatus") {
         val apiSize = if (apiExists) file("src/main/resources/api/openapi.yaml").length() else 0L
         val nativeCode = file("src/main/cpp/CMakeLists.txt").exists()
         println("📱 AEGENESIS APP MODULE STATUS")
-        println($$"Unified API Spec: ${if (apiExists) \"✅ Found\" else \"❌ Missing\"}")
-        println($$"📄 API File Size: ${apiSize / 1024}KB")
-        println($$"🔧 Native Code: ${if (nativeCode) \"✅ Enabled\" else \"❌ Disabled\"}")
+        println("Unified API Spec: ${if (apiExists) "✅ Found" else "❌ Missing"}")
+        println("📄 API File Size: ${apiSize / 1024}KB")
+        println("🔧 Native Code: ${if (nativeCode) "✅ Enabled" else "❌ Disabled"}")
         println("🧠 KSP Mode: Active")
         println("🎯 Target SDK: 36")
         println("📱 Min SDK: 33")

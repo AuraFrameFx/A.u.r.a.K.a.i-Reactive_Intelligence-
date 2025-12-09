@@ -8,6 +8,8 @@ interface VertexAIClient {
     suspend fun generateText(prompt: String): String?
     suspend fun generateText(prompt: String, temperature: Float, maxTokens: Int): String?
     suspend fun analyzeContent(content: String): Map<String, Any>
+    suspend fun initializeCreativeModels()
+    suspend fun analyzeImage(imageData: ByteArray, prompt: String): String
 }
 
 /**
@@ -46,5 +48,14 @@ class DefaultVertexAIClient : VertexAIClient {
             "topics" to listOf("general"),
             "confidence" to 0.85
         )
+    }
+
+    override suspend fun initializeCreativeModels() {
+        // Stub: No-op for mock client
+        println("MockVertexAI: Creative models initialized (stub)")
+    }
+
+    override suspend fun analyzeImage(imageData: ByteArray, prompt: String): String {
+        return "Mock image analysis: Image appears to contain ${imageData.size} bytes of data. $prompt"
     }
 }
