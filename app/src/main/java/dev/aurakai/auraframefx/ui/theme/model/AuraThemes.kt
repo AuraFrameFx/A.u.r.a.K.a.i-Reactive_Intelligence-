@@ -33,8 +33,7 @@ object CyberpunkTheme : AuraTheme {
     override val name = "Cyberpunk"
     override val description = "High-energy neon aesthetics for a futuristic feel"
     override val accentColor = Color(0xFF00FFFF) // Cyan neon
-    override val animationStyle: AuraThemeData.AnimationStyle
-        get() = AuraThemeData.AnimationStyle.ENERGETIC
+    override val animationStyle: ENERGETIC = AnimationStyle.ENERGETIC
 
     override val lightColorScheme = lightColorScheme(
         primary = Color(0xFF00FFFF),
@@ -83,9 +82,7 @@ object SolarFlareTheme : AuraTheme {
     override val name = "Solar Flare"
     override val description = "Warm, energizing colors to brighten your day"
     override val accentColor = Color(0xFFFFB000) // Golden orange
-    override val animationStyle: AuraThemeData.AnimationStyle by lazy { AuraThemeData.AnimationStyle.PULSING }
-
-    annotation class PULSING
+    override val animationStyle = AnimationStyle.PULSING
 
     override val lightColorScheme = lightColorScheme(
         primary = Color(0xFFFFB000),
@@ -134,8 +131,7 @@ object ForestTheme : AuraTheme {
     override val name = "Forest"
     override val description = "Natural, calming colors for peace and focus"
     override val accentColor = Color(0xFF4CAF50) // Forest green
-    override val animationStyle: AuraThemeData.AnimationStyle
-        get() = AuraThemeData.AnimationStyle.FLOWING
+    override val animationStyle = AnimationStyle.FLOWING
 
     override val lightColorScheme = lightColorScheme(
         primary = Color(0xFF4CAF50),
@@ -175,8 +171,6 @@ object ForestTheme : AuraTheme {
         onSurface = Color(0xFFC8E6C9)
     )
 }
-
-enum class FLOWING
 
 /**
  * Returns the appropriate Material3 color scheme for this theme based on the dark mode setting.

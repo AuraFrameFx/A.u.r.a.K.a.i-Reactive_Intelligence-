@@ -25,7 +25,7 @@ dependencies {
     // Compose UI
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.compose.ui)
-    implementation(libs.compose.material3)
+    implementation(libs.androidx.compose.material3)
 
     // Xposed API (compile-only, not bundled in APK)
     compileOnly(files("$projectDir/libs/api-82.jar"))

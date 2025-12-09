@@ -1,5 +1,9 @@
 package dev.aurakai.auraframefx.oracledrive.security
 
-enum class SecurityCheckResult {
-
-}
+data class SecurityCheckResult(
+    val isValid: Boolean = false,
+    val reason: String = "",
+    val isSecure: Boolean = false,
+    val threat: String = "",
+    val hasAccess: Boolean = false
+)

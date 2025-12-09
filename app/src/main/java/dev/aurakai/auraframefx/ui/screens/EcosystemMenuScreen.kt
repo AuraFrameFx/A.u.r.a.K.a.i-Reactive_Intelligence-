@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import dev.aurakai.auraframefx.system.homescreen.HomeScreenTransitionType
-import dev.aurakai.auraframefx.ui.components.DigitalTransitionRow
+import dev.aurakai.auraframefx.aura.animations.DigitalTransitionRow
 import dev.aurakai.auraframefx.ui.components.HologramTransition
 
 /**

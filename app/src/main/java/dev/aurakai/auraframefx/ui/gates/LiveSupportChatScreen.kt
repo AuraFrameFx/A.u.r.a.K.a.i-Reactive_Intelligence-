@@ -35,6 +35,7 @@ import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -113,7 +114,7 @@ fun LiveSupportChatScreen(
             title = { Text(text = "LIVE SUPPORT", color = Color.White) },
             navigationIcon = {
                 IconButton(onClick = { onNavigateBack() }) {
-                    Icon(imageVector = Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back", tint = Color.White)
+                        Icon(Icons.AutoMirrored.Filled.ArrowBack, "Back", tint = Color.White)
                 }
             },
             colors = TopAppBarDefaults.topAppBarColors(containerColor = Color.Black)

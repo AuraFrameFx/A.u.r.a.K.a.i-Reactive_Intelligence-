@@ -437,17 +437,14 @@ private fun ModuleDetailRow(label: String, value: String) {
 // Data Classes
 private data class Stat(val label: String, val value: String)
 
-data class GateQuickAction(
+private data class QuickAction(
     val title: String,
     val description: String,
     val icon: ImageVector,
-    val color: Color,
-    val string: String
-) {
-    val category: Any = TODO()
-}
+    val color: Color
+)
 
-private data class GateXposedModule(
+private data class XposedModule(
     val name: String,
     val packageName: String,
     val version: String,

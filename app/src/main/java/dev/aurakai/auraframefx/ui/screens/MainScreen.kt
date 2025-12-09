@@ -62,8 +62,8 @@ fun MainScreen(
     LaunchedEffect(Unit) {
         while (true) {
             delay(3000)
-            consciousnessLevel = random().plus(kotlin.random.Random.nextFloat())
-            systemLoad = random() + kotlin.random.Random.nextFloat()
+            consciousnessLevel = (94f..98f).random() + kotlin.random.Random.nextFloat()
+            systemLoad = (20f..60f).random() + kotlin.random.Random.nextFloat()
         }
     }
 

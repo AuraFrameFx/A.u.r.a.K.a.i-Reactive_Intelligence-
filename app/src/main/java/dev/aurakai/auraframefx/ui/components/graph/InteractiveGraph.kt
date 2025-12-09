@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.debug.component
+package dev.aurakai.auraframefx.ui.components.graph
 
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
@@ -32,15 +32,15 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import dev.aurakai.auraframefx.ui.debug.model.Connection
-import dev.aurakai.auraframefx.ui.debug.model.ConnectionType
-import dev.aurakai.auraframefx.ui.debug.model.GraphNode
+import dev.aurakai.auraframefx.ui.components.graph.Connection
+import dev.aurakai.auraframefx.ui.components.graph.ConnectionType
+import dev.aurakai.auraframefx.ui.components.graph.GraphNode
 import kotlin.math.PI
 import kotlin.math.cos
 import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
-import dev.aurakai.auraframefx.ui.debug.model.Offset as GraphOffset
+import dev.aurakai.auraframefx.ui.components.graph.Offset
 
 /**
  * Displays an interactive, zoomable, and pannable graph visualization with selectable nodes.
@@ -357,7 +357,7 @@ private fun DrawScope.drawArrowHead(
 fun Dp.toPx(drawScope: DrawScope): Float = with(drawScope) { this@toPx.toPx() }
 
 // Helper extension for GraphOffset to Compose Offset - already defined in Composable
-// fun GraphOffset.toCompose(): Offset = Offset(this.x.toFloat(), this.y.toFloat())
+// fun Offset.toCompose(): Offset = Offset(this.x.toFloat(), this.y.toFloat())
 
 /**
  * Returns the sum of this [Offset] and another [Offset] as a new [Offset].

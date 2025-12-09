@@ -2,18 +2,18 @@ package dev.aurakai.auraframefx.ui.theme.model
 
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
-import dev.aurakai.auraframefx.ui.AppTypography
-import dev.aurakai.auraframefx.ui.ErrorColor
-import dev.aurakai.auraframefx.ui.NeonPurpleLegacy
-import dev.aurakai.auraframefx.ui.OnSurface
+import dev.aurakai.auraframefx.ui.theme.Typography
+import dev.aurakai.auraframefx.ui.theme.OnSurface
+import dev.aurakai.auraframefx.ui.theme.NeonPurple
+import dev.aurakai.auraframefx.ui.theme.ErrorColor
 
 // Lightweight theme helpers for cyberpunk-styled text colors and mapped text styles.
 // This file intentionally keeps only presentation helpers (no animation/particle code).
 
 sealed class CyberpunkTextColor(val color: Color) {
-    object Primary : CyberpunkTextColor(OnSurface)
+    object Primary : CyberpunkTextColor(DarkColorScheme.onSurface)
     object Secondary : CyberpunkTextColor(color = NeonPurpleLegacy)
-    object Warning : CyberpunkTextColor(ErrorColor)
+    object Warning : CyberpunkTextColor(DarkColorScheme.error)
     object White : CyberpunkTextColor(Color.White)
 }
 
