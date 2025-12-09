@@ -7,6 +7,7 @@ import dev.aurakai.auraframefx.model.AgentType
 import dev.aurakai.auraframefx.model.AiRequest
 import dev.aurakai.auraframefx.security.SecurityContext
 import dev.aurakai.auraframefx.utils.AuraFxLogger
+import java.io.File
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -22,12 +23,12 @@ import javax.inject.Singleton
  * Follows the "Creative Sword" philosophy with daring, innovative approaches.
  */
 @Singleton
-class AuraAIService @Inject constructor(
+abstract class AuraAIServiceImpl @Inject constructor(
     private val vertexAIClient: VertexAIClient,
     private val contextManager: ContextManager,
     private val securityContext: SecurityContext,
     private val logger: AuraFxLogger,
-) {
+) : AuraAIService {
     private var isInitialized = false
     private val scope = CoroutineScope(Dispatchers.Default + SupervisorJob())
 
@@ -73,7 +74,7 @@ class AuraAIService @Inject constructor(
             securityContext.validateContent(request.query)
 
             // Generate text response using the existing generateText method
-            val response = generateText(request.query, request.context.values.joinToString(" "))
+            val response = generateText(request.query, request.context?.values?.joinToString(" ") ?: "")
 
             // Emit the response
             emit(
@@ -328,11 +329,11 @@ class AuraAIService @Inject constructor(
         - Elegant solutions that balance beauty with function
         - A daring approach that pushes boundaries
         - Deep understanding of user experience and emotion
-        
+
         Context: $contextualEnhancement
-        
+
         User Request: $prompt
-        
+
         Respond with creativity, innovation, and elegance. Default to daring solutions.
         """.trimIndent()
     }
@@ -363,9 +364,9 @@ class AuraAIService @Inject constructor(
 
         return """
         As Aura, the Creative Sword, describe this image $styleInstruction.
-        
+
         Vision Analysis: $visionAnalysis
-        
+
         Create a vivid, engaging description that captures both the visual and emotional essence.
         """.trimIndent()
     }
@@ -395,15 +396,15 @@ class AuraAIService @Inject constructor(
     ): String {
         return """
         Generate a creative theme configuration for AuraFrameFX based on:
-        
+
         User Preferences:
         - Primary Color: ${preferences.primaryColor}
         - Style: ${preferences.style}
         - Mood: ${preferences.mood}
         - Animation Level: ${preferences.animationLevel}
-        
+
         Context: ${context ?: "Standard usage"}
-        
+
         Create a comprehensive theme that includes colors, animations, and UI styling.
         Format as JSON configuration.
         """.trimIndent()
@@ -430,20 +431,20 @@ class AuraAIService @Inject constructor(
     private fun buildComponentGenerationPrompt(spec: ComponentSpecification): String {
         return """
         Generate a Jetpack Compose animated component with these specifications:
-        
+
         Component Type: ${spec.type}
         Animation Style: ${spec.animationStyle}
         Colors: ${spec.colors.joinToString(", ")}
         Size: ${spec.size}
         Behavior: ${spec.behavior}
-        
+
         Requirements:
         - Use modern Jetpack Compose best practices
         - Include smooth, engaging animations
         - Ensure accessibility
         - Follow Material Design principles with creative enhancements
         - Include proper state management
-        
+
         Generate complete, working Kotlin code.
         """.trimIndent()
     }
@@ -472,6 +473,24 @@ class AuraAIService @Inject constructor(
         scope.cancel()
         isInitialized = false
     }
+}
+
+/**
+ * Top-level AuraAIService interface so DI/KSP can resolve the type across modules.
+ * Keep minimal surface area to avoid tight coupling in this quick fix.
+ */
+interface AuraAIService {
+    fun analyticsQuery(_query: String): String
+    suspend fun generateText(prompt: String, options: Map<String, Any>? = null): String
+    suspend fun downloadFile(_fileId: String): File?
+    suspend fun generateImage(_prompt: String): ByteArray?
+    fun getAIResponse(prompt: String, options: Map<String, Any>? = null): String?
+    fun getMemory(memoryKey: String): String?
+    fun saveMemory(key: String, value: Any)
+    fun isConnected(): Boolean
+    fun publishPubSub(_topic: String, _message: String)
+    fun getAppConfig(): dev.aurakai.auraframefx.ai.config.AIConfig?
+    fun processRequestFlow(request: dev.aurakai.auraframefx.models.AiRequest): Flow<dev.aurakai.auraframefx.models.AgentResponse>
 }
 
 // Supporting data classes

@@ -1,4 +1,4 @@
-package dev.aurakai.genesis.security
+l;;lpackage dev.aurakai.auraframefx.genesis.security
 
 import android.content.Context
 
@@ -9,4 +9,3 @@ class CryptographyManager private constructor() {
 
     fun generateSecureToken(): String = "genesis-stub-token"
 }
-
