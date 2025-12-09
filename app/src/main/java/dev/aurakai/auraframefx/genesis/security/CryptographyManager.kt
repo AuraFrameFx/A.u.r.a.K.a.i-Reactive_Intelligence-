@@ -3,42 +3,26 @@ package dev.aurakai.auraframefx.genesis.security
 import android.content.Context
 
 /**
- * Manages cryptographic operations for the application.
+ * CryptographyManager provides simple encryption/decryption operations.
+ * NOTE: This is a development stub — replace with production crypto.
  */
 interface CryptographyManager {
-    /**
-     * Encrypts the given data using the specified key alias.
-     * @param data The data to encrypt
-     * @param keyAlias The alias of the key to use for encryption
-     * @return The encrypted data
-     */
-    fun encrypt(data: ByteArray, keyAlias: String): ByteArray
-
-    /**
-     * Decrypts the given data using the specified key alias.
-     * @param data The data to decrypt
-     * @param keyAlias The alias of the key to use for decryption
-     * @return The decrypted data
-     */
-    fun decrypt(data: ByteArray, keyAlias: String): ByteArray
-
-    /**
-     * Removes the key with the specified alias.
-     * @param keyAlias The alias of the key to remove
-     */
+    fun encrypt(data: ByteArray, keyAlias: String = "default"): ByteArray
+    fun decrypt(data: ByteArray, keyAlias: String = "default"): ByteArray
     fun removeKey(keyAlias: String)
-
-    /**
-     * Generates a secure token for authentication.
-     * @return A secure token string
-     */
     fun generateSecureToken(): String
+}
 
-    class Placeholder private constructor() {
-        companion object {
-            fun getInstance(context: Context): Placeholder = Placeholder()
-        }
+/**
+ * Simple (insecure) implementation used for local development and tests.
+ */
+class SimpleCryptographyManager(private val context: Context?) : CryptographyManager {
+    override fun encrypt(data: ByteArray, keyAlias: String): ByteArray = data
+    override fun decrypt(data: ByteArray, keyAlias: String): ByteArray = data
+    override fun removeKey(keyAlias: String) {}
+    override fun generateSecureToken(): String = "stub-token"
 
-        fun generateSecureToken(): String = "stub-token"
+    companion object {
+        fun getInstance(context: Context?): SimpleCryptographyManager = SimpleCryptographyManager(context)
     }
 }

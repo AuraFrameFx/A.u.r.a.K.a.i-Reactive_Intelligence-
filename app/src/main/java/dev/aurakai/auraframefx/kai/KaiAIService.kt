@@ -94,3 +94,17 @@ class KaiAIService @Inject constructor(
         return emptyList()
     }
 }
+
+/**
+ * Minimal KaiAIService interface used as a compile-time stub for DI.
+ */
+interface KaiAIService {
+    suspend fun ask(prompt: String): String
+}
+
+/**
+ * Mock implementation returning canned responses for development.
+ */
+class MockKaiAIService : KaiAIService {
+    override suspend fun ask(prompt: String): String = "[kai-mock] $prompt"
+}

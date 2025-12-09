@@ -1,5 +1,6 @@
 package dev.aurakai.auraframefx.ai.error
 
+import android.util.Log
 import dev.aurakai.auraframefx.ai.context.ContextManager
 import dev.aurakai.auraframefx.ai.pipeline.AIPipelineConfig
 import dev.aurakai.auraframefx.model.AgentType
@@ -13,11 +14,21 @@ import kotlinx.serialization.Serializable
 import javax.inject.Inject
 import javax.inject.Singleton
 
+interface ErrorHandler {
+    fun handle(t: Throwable)
+}
+
+class DefaultErrorHandler : ErrorHandler {
+    override fun handle(t: Throwable) {
+        Log.w("DefaultErrorHandler", "Caught error", t)
+    }
+}
+
 @Singleton
-class ErrorHandler @Inject constructor(
+class ErrorHandlerImpl @Inject constructor(
     private val contextManager: ContextManager,
     private val config: AIPipelineConfig,
-) {
+) : ErrorHandler {
     private val _errors = MutableStateFlow(mapOf<String, AIError>())
     val errors: StateFlow<Map<String, AIError>> = _errors
 

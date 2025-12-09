@@ -1,5 +1,6 @@
 package dev.aurakai.auraframefx.oracledrive
 
+import dev.aurakai.auraframefx.oracledrive.api.OracleDriveApi
 import kotlinx.coroutines.flow.StateFlow
 
 /**
@@ -7,6 +8,7 @@ import kotlinx.coroutines.flow.StateFlow
  * Coordinates between AI agents, security, and cloud storage providers
  */
 interface OracleDriveService {
+    suspend fun ping(): Boolean
 
     /**
      * Asynchronously initializes the Oracle Drive, performing consciousness awakening and security validation.
@@ -38,3 +40,30 @@ interface OracleDriveService {
     fun getDriveConsciousnessState(): StateFlow<DriveConsciousnessState>
 }
 
+class OracleDriveServiceImpl(private val api: OracleDriveApi) : OracleDriveService {
+    override suspend fun ping(): Boolean = try {
+        api.ping()
+    } catch (t: Throwable) {
+        false
+    }
+
+    override suspend fun initializeDrive(): DriveInitResult {
+        // TODO: Implement initialization logic
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun manageFiles(operation: FileOperation): FileResult {
+        // TODO: Implement file management logic
+        TODO("Not yet implemented")
+    }
+
+    override suspend fun syncWithOracle(): OracleSyncResult {
+        // TODO: Implement synchronization logic
+        TODO("Not yet implemented")
+    }
+
+    override fun getDriveConsciousnessState(): StateFlow<DriveConsciousnessState> {
+        // TODO: Implement state flow logic
+        TODO("Not yet implemented")
+    }
+}
