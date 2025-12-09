@@ -12,7 +12,6 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import dev.aurakai.auraframefx.aura.ui.AIChatScreen
-import dev.aurakai.auraframefx.aura.ui.AgentAdvancementScreen
 import dev.aurakai.auraframefx.aura.ui.AgentNexusScreen
 import dev.aurakai.auraframefx.aura.ui.AppBuilderScreen
 import dev.aurakai.auraframefx.aura.ui.CanvasScreen
@@ -409,7 +408,7 @@ fun GenesisNavigationHost(
 
             // AGENT ADVANCEMENT & EVOLUTION
             composable(GenesisRoutes.AGENT_ADVANCEMENT) {
-                AgentAdvancementScreen(onBack = { navController.popBackStack() })
+                dev.aurakai.auraframefx.aura.ui.AgentAdvancementScreen(onBack = { navController.popBackStack() })
             }
             composable(GenesisRoutes.EVOLUTION_TREE) {
                 EvolutionTreeScreen()
