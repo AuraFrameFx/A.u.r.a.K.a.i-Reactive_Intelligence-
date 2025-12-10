@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+@JvmOverloads
 @Composable
 fun XposedQuickAccessPanel(onNavigateBack: () -> Unit = {}) {
     Column(modifier = Modifier.padding(16.dp)) {

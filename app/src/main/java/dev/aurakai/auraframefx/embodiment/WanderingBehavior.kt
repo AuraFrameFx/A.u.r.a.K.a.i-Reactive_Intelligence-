@@ -144,7 +144,7 @@ class WanderingAI(
      * Generate enter path
      */
     fun generateEnterPath(targetPosition: DpOffset): MovementPath {
-        val edge = ScreenEdge.values().random()
+        val edge = ScreenEdge.entries.toTypedArray().random()
         lastWanderTime = System.currentTimeMillis()
         return pathGenerator.generateEnterPath(edge, targetPosition)
     }
@@ -217,10 +217,10 @@ class SearchingBehavior(
  * Creates subtle breathing effect when idle
  */
 @Composable
-fun rememberBreathingAnimation(
+internal fun rememberBreathingAnimation(
     pattern: BreathingPattern = BreathingPattern()
 ): State<Float> {
-    var scale by remember { mutableStateOf(pattern.exhaleScale) }
+    var scale by remember { mutableFloatStateOf(pattern.exhaleScale) }
     var inhaling by remember { mutableStateOf(true) }
 
     LaunchedEffect(pattern) {
