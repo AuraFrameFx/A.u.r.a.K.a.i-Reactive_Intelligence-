@@ -51,6 +51,7 @@ dependencies {
     // Compose UI
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.compose.ui)
+    implementation(libs.compose.runtime)
     implementation(libs.compose.material3)
 
     // Root/System Operations

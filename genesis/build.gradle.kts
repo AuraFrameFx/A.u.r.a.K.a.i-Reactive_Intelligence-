@@ -19,11 +19,20 @@ android {
         targetCompatibility = JavaVersion.VERSION_24
     }
 
+    // Enable Compose for this module so the Kotlin plugin wires Compose compiler correctly
+    buildFeatures {
+        compose = true
+    }
+
     // Keep Kotlin JVM target aligned with project (JVM_24)
     // kotlinOptions { jvmTarget = "24" }
 }
 
 dependencies {
+    // Compose runtime so Compose compiler has the runtime on the classpath
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.compose.runtime)
+
     // Core Android dependencies
     implementation(libs.androidx.core.ktx)
 
