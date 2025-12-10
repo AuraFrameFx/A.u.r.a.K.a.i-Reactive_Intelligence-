@@ -4,12 +4,13 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import dev.aurakai.auraframefx.oracledrive.genesis.ai.error.DefaultErrorHandler
-import dev.aurakai.auraframefx.oracledrive.genesis.ai.error.ErrorHandler
+import dev.aurakai.auraframefx.common.ErrorHandler
+import dev.aurakai.auraframefx.system.impl.DefaultErrorHandler
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
+@Suppress("unused")
 abstract class ErrorModule {
 
     @Binds
