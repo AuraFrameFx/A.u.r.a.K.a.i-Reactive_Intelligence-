@@ -21,7 +21,7 @@ import dev.aurakai.auraframefx.ui.animation.digitalPixelEffect // Specific impor
 // import dev.aurakai.auraframefx.ui.animation.digitalScanlineEffect // Was commented out, ensure it's not needed or defined
 
 import dev.aurakai.auraframefx.ui.components.BottomNavigationBar
-import dev.aurakai.auraframefx.ui.navigation.AppNavGraph
+import dev.aurakai.auraframefx.navigation.AppNavGraph
 import dev.aurakai.auraframefx.ui.theme.AuraFrameFXTheme
 
 // Using Jetpack Navigation 3 with built-in animation support

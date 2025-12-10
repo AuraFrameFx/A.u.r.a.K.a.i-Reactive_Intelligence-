@@ -134,7 +134,9 @@ fun AppNavGraph(navController: NavHostController) {
         // ==================== ORACLE DRIVE ====================
 
         composable(route = NavDestination.OracleDrive.route) {
-            OracleDriveSubmenuScreen(navController = navController)
+            // Oracle Drive contains GenesisNavigation (nested NavHost)
+            // This provides access to all Genesis root/system screens
+            GenesisNavigation()
         }
 
         composable(route = NavDestination.SphereGrid.route) {
