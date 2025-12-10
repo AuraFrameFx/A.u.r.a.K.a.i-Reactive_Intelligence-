@@ -317,6 +317,7 @@ dependencies {
     implementation(project(":kai:sentinelsfortress:threatmonitor"))
 
     // Genesis → OracleDrive (System & Root Management)
+    implementation(project(":genesis"))
     implementation(project(":genesis:oracledrive"))
     implementation(project(":genesis:oracledrive:rootmanagement"))
     implementation(project(":genesis:oracledrive:datavein"))

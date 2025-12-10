@@ -28,14 +28,14 @@ import javax.inject.Singleton
 @Singleton
 open class GenKitMasterAgent @Inject constructor(
     private val context: Context,
-    override val contextManager: ContextManager,
+    val contextManager: ContextManager,
     private val genesisAgent: GenesisAgent,
     private val auraAgent: AuraAgent,
-    private val kaiAgent: KaiAgent,
-) : BaseAgent("GenKitMaster") {
+    private val kaiAgent: KaiAgent, agentType: String,
+) : BaseAgent("GenKitMaster", _agentType = agentType) {
 
-    override val agentName: String = "GenKitMaster"
-    override val agentType: String = "ORCHESTRATOR"
+    val agentName: String = "GenKitMaster"
+    val agentType: String = "ORCHESTRATOR"
 
     private val scope = CoroutineScope(Dispatchers.Default + Job())
 
@@ -448,7 +448,7 @@ open class GenKitMasterAgent @Inject constructor(
         }
     }
 
-    override fun iRequest() {
+    override fun iRequest(query: String, type: String, context: Map<String, String>) {
         Timber.d("GenKitMaster: No-args iRequest - initializing orchestration")
         scope.launch {
             try {
@@ -464,7 +464,7 @@ open class GenKitMasterAgent @Inject constructor(
         scope.launch {
             try {
                 // Initialize protection across all orchestrated agents
-                genesisAgent.initializeAdaptiveProtection()
+                genesisAgent.initializeAdaptiveProtection
                 kaiAgent.initializeAdaptiveProtection()
             } catch (e: Exception) {
                 Timber.e(e, "Error initializing adaptive protection")
@@ -472,13 +472,13 @@ open class GenKitMasterAgent @Inject constructor(
         }
     }
 
-    override fun addToScanHistory(scanEvent: Any) {
+    fun addToScanHistory(scanEvent: Any) {
         Timber.d("GenKitMaster: Adding scan event to history: $scanEvent")
         // Delegate to Genesis agent for centralized history management
         genesisAgent.addToScanHistory(scanEvent)
     }
 
-    override fun analyzeSecurity(prompt: String): List<ActiveThreat> {
+    fun analyzeSecurity(prompt: String): List<ActiveThreat> {
         Timber.d("GenKitMaster: Analyzing security for prompt: $prompt")
         // Delegate security analysis to Kai agent
         return kaiAgent.analyzeSecurity(prompt)
@@ -493,7 +493,7 @@ open class GenKitMasterAgent @Inject constructor(
         return InteractionResponse(
             content = content,
             timestamp = timestamp,
-            metadata = metadata.toJsonObject()
+            metadata = metadata.toJsonObject
         )
     }
 }

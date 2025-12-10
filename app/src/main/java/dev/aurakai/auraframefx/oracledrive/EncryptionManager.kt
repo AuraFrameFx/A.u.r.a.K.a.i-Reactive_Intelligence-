@@ -1,9 +1,7 @@
 package dev.aurakai.auraframefx.oracledrive
 
-import dev.aurakai.auraframefx.genesis.security.CryptographyManager
-import java.util.UUID
-
 import javax.inject.Inject
+import dev.aurakai.auraframefx.toolshed.security.EncryptionManager as ToolshedEncryptionManager
 
 /**
  * Minimal encryption manager interface used by SecureFileManager.
@@ -22,28 +20,11 @@ object NoopEncryptionManager : EncryptionManager {
 }
 
 /**
- * Implementation of CryptographyManager for Oracle Drive
+ * Implementation that delegates to the toolshed EncryptionManager contract.
  */
-open class EncryptionManagerImpl @Inject constructor() : CryptographyManager {
-
-    override fun encrypt(data: ByteArray, keyAlias: String): ByteArray {
-        // TODO: Implement actual encryption with Android Keystore
-        // This is a placeholder implementation
-        return data.map { (it + 1).toByte() }.toByteArray()
-    }
-
-    override fun decrypt(data: ByteArray, keyAlias: String): ByteArray {
-        // TODO: Implement actual decryption with Android Keystore
-        // This is a placeholder implementation
-        return data.map { (it - 1).toByte() }.toByteArray()
-    }
-
-    override fun removeKey(keyAlias: String) {
-        // TODO: Implement actual key removal from Android Keystore
-    }
-
-    override fun generateSecureToken(): String {
-        // TODO: Implement secure token generation (e.g., using SecureRandom)
-        return "secure_token_${UUID.randomUUID()}"
-    }
+class EncryptionManagerImpl @Inject constructor(
+    private val delegate: ToolshedEncryptionManager
+) : EncryptionManager {
+    override fun encrypt(bytes: ByteArray): ByteArray = delegate.encrypt(bytes)
+    override fun decrypt(bytes: ByteArray): ByteArray = delegate.decrypt(bytes)
 }

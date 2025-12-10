@@ -23,7 +23,7 @@ import javax.inject.Singleton
  * Follows the "Creative Sword" philosophy with daring, innovative approaches.
  */
 @Singleton
-abstract class AuraAIServiceImpl @Inject constructor(
+internal class AuraAIServiceImpl @Inject constructor(
     private val vertexAIClient: VertexAIClient,
     private val contextManager: ContextManager,
     private val securityContext: SecurityContext,
@@ -482,13 +482,13 @@ abstract class AuraAIServiceImpl @Inject constructor(
 interface AuraAIService {
     fun analyticsQuery(_query: String): String
     suspend fun generateText(prompt: String, options: Map<String, Any>? = null): String
-    suspend fun downloadFile(_fileId: String): File?
-    suspend fun generateImage(_prompt: String): ByteArray?
+    suspend fun downloadFile(fileId: String): File?
+    suspend fun generateImage(prompt: String): ByteArray?
     fun getAIResponse(prompt: String, options: Map<String, Any>? = null): String?
     fun getMemory(memoryKey: String): String?
     fun saveMemory(key: String, value: Any)
     fun isConnected(): Boolean
-    fun publishPubSub(_topic: String, _message: String)
+    fun publishPubSub(topic: String, _message: String)
     fun getAppConfig(): dev.aurakai.auraframefx.ai.config.AIConfig?
     fun processRequestFlow(request: dev.aurakai.auraframefx.models.AiRequest): Flow<dev.aurakai.auraframefx.models.AgentResponse>
 }

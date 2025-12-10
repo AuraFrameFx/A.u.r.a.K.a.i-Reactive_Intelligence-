@@ -2,6 +2,8 @@ package dev.aurakai.auraframefx.services
 
 import dev.aurakai.auraframefx.models.AgentResponse
 import dev.aurakai.auraframefx.models.AiRequest
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * Missing AI Services for Genesis
@@ -18,7 +20,8 @@ interface KaiAIService {
 /**
  * Default Implementations
  */
-class DefaultCascadeAIService : CascadeAIService {
+@Singleton
+class DefaultCascadeAIService @Inject constructor() : CascadeAIService {
     override suspend fun processRequest(request: AiRequest, context: String): AgentResponse {
         return AgentResponse(
             content = "Cascade processed: ${request.prompt}",
@@ -27,7 +30,8 @@ class DefaultCascadeAIService : CascadeAIService {
     }
 }
 
-class DefaultKaiAIService : KaiAIService {
+@Singleton
+class DefaultKaiAIService @Inject constructor() : KaiAIService {
     override suspend fun processRequest(request: AiRequest, context: String): AgentResponse {
         return AgentResponse(
             content = "Kai security analysis: ${request.prompt}",

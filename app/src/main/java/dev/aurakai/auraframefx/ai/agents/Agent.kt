@@ -3,6 +3,7 @@ package dev.aurakai.auraframefx.ai.agents
 import dev.aurakai.auraframefx.model.AgentResponse
 import dev.aurakai.auraframefx.model.AgentType
 import dev.aurakai.auraframefx.model.AiRequest
+import dev.aurakai.auraframefx.models.InteractionResponse
 import kotlinx.coroutines.flow.Flow
 
 /**
@@ -33,4 +34,10 @@ interface Agent {
      * Process a request and return a flow of responses
      */
     fun processRequestFlow(request: AiRequest): Flow<AgentResponse>
+    fun InteractionResponse(
+        content: String,
+        success: Boolean,
+        timestamp: Long,
+        metadata: Map<String, Any>
+    ): InteractionResponse
 }
