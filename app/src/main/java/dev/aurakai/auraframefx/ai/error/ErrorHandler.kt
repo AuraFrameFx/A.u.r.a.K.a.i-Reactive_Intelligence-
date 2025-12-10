@@ -24,6 +24,18 @@ class ErrorHandler @Inject constructor(
     private val _errorStats = MutableStateFlow(ErrorStats())
     val errorStats: StateFlow<ErrorStats> = _errorStats
 
+    /**
+     * Record an error reported by an agent and produce an AIError entry.
+     *
+     * The function creates an AIError from the provided throwable, agent, context, and metadata,
+     * stores it in the handler's error map, updates error statistics, and initiates recovery actions.
+     *
+     * @param error The throwable that occurred.
+     * @param agent The agent that reported or triggered the error.
+     * @param context A textual description of the context in which the error occurred.
+     * @param metadata Additional key/value information; values will be converted to strings when stored.
+     * @return The created `AIError` representing the recorded error.
+     */
     fun handleError(
         error: Throwable,
         agent: AgentType,
@@ -66,6 +78,12 @@ class ErrorHandler @Inject constructor(
         // Recovery implementation stub
     }
 
+    /**
+     * Selects recovery actions appropriate for the given AI error.
+     *
+     * @param error The AIError whose type determines the recommended recovery actions.
+     * @return A list of RecoveryAction items (e.g., retry for processing errors, restart for memory errors, notify for others).
+     */
     private fun getRecoveryActions(error: AIError): List<RecoveryAction> {
         return when (error.type) {
             ErrorType.PROCESSING_ERROR -> listOf(
@@ -80,6 +98,11 @@ class ErrorHandler @Inject constructor(
         }
     }
 
+    /**
+     * Record a new error in the error statistics and update aggregated counters and timestamp.
+     *
+     * @param error The AIError instance to be counted and set as the latest error.
+     */
     private fun updateStats(error: AIError) {
         _errorStats.update { current ->
             current.copy(

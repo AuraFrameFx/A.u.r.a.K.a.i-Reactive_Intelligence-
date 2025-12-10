@@ -25,6 +25,18 @@ object NoopEncryptionManager : EncryptionManager {
 class EncryptionManagerImpl @Inject constructor(
     private val delegate: ToolshedEncryptionManager
 ) : EncryptionManager {
-    override fun encrypt(bytes: ByteArray): ByteArray = delegate.encrypt(bytes)
-    override fun decrypt(bytes: ByteArray): ByteArray = delegate.decrypt(bytes)
+    /**
+ * Encrypts the given byte array.
+ *
+ * @param bytes The data to encrypt.
+ * @return The encrypted bytes.
+ */
+override fun encrypt(bytes: ByteArray): ByteArray = delegate.encrypt(bytes)
+    /**
+ * Decrypts the given encrypted bytes.
+ *
+ * @param bytes The encrypted data to decrypt.
+ * @return The decrypted bytes.
+ */
+override fun decrypt(bytes: ByteArray): ByteArray = delegate.decrypt(bytes)
 }

@@ -48,6 +48,17 @@ import kotlin.math.absoluteValue
  * Main gate navigation screen with horizontal pager and magical teleportation effects
  * Swipe between module gates and double-tap to enter with a magical transition
  */
+/**
+ * Displays the main gate navigation screen: a horizontal pager of gate cards with a glowing active card,
+ * a magical particle background, and an enhanced page indicator showing nearby gates.
+ *
+ * The screen lets users swipe between gates and double-tap an active gate to navigate to its route.
+ * Gates marked as "coming soon" are not navigable. If a gate is protected and the user is not authenticated,
+ * navigation will direct the user to the login flow with a return destination.
+ *
+ * @param navController Controller used to perform navigation actions for gate selection and login flow.
+ * @param modifier Optional modifier for the root container.
+ */
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun GateNavigationScreen(
@@ -174,6 +185,18 @@ fun GateNavigationScreen(
     }
 }
 
+/**
+ * Renders a gate card with active glow, hover/teleportation overlay and a double-tap entry action.
+ *
+ * Displays a radial glow behind the card when `isActive`, shows an intensified overlay while hovering,
+ * and invokes `onDoubleTap` when the card is double-tapped.
+ *
+ * @param config Configuration for the gate (visuals, route, and flags).
+ * @param isActive Whether this card is the currently focused/active page; enables glow and hover overlay.
+ * @param glowIntensity Multiplier for the glow alpha (expected 0.0–1.0) to control glow strength.
+ * @param onDoubleTap Callback invoked when the card is double-tapped (e.g., to navigate or enter the gate).
+ * @param modifier Optional Compose modifier applied to the card container.
+ */
 @Composable
 private fun TeleportingGateCard(
     config: GateConfig,
@@ -262,7 +285,17 @@ private fun MagicalParticleField() {
 }
 
 /**
- * Enhanced page indicator showing gate names and categories
+ * Renders a centered, enhanced page indicator for gate cards that shows nearby gate titles and allows quick navigation.
+ *
+ * Shows up to three gates around the current page; displays leading/trailing ellipses when there are more gates.
+ * The active gate is displayed as a labeled pill and tapping it navigates to the gate's route unless the gate is marked
+ * as coming soon. Inactive gates are shown as dots and tapping a dot animates the pager to that page.
+ *
+ * @param gates List of gate configurations to display in the indicator.
+ * @param currentPage Index of the currently selected page.
+ * @param modifier Modifier applied to the Row containing the indicator.
+ * @param pagerState PagerState used to animate scrolling to a selected page.
+ * @param navController NavController used to navigate into a gate when the active pill is tapped.
  */
 @Composable
 private fun GatePageIndicator(

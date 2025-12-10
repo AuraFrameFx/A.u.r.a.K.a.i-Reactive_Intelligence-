@@ -24,6 +24,14 @@ import androidx.navigation.NavController
  * ROM Tools Submenu Screen
  * Provides access to all ROM-related functionality including live editing, flashing, and recovery tools
  */
+/**
+ * Renders the "ROM TOOLS" submenu screen UI for navigating ROM-related tools.
+ *
+ * The screen displays a header, a caution banner, a list of submenu cards (each navigating to its
+ * configured route when tapped), and a back button that returns to the previous screen.
+ *
+ * @param navController NavController used to navigate to submenu destinations and to pop the back stack.
+ */
 @Composable
 fun ROMToolsSubmenuScreen(navController: NavController) {
     val scrollState = rememberScrollState()

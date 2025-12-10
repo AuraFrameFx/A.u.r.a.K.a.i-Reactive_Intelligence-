@@ -9,6 +9,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * Composable panel exposing quick Xposed hooks and module tools with a Back action.
+ *
+ * Displays a title, a placeholder description, and a Back button that invokes the provided callback.
+ *
+ * @param onNavigateBack Lambda invoked when the Back button is pressed; defaults to a no-op.
+ */
 @JvmOverloads
 @Composable
 fun XposedQuickAccessPanel(onNavigateBack: () -> Unit = {}) {
@@ -20,4 +27,3 @@ fun XposedQuickAccessPanel(onNavigateBack: () -> Unit = {}) {
         }
     }
 }
-
