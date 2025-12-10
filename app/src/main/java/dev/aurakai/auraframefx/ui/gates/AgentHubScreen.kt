@@ -1,29 +1,29 @@
 package dev.aurakai.auraframefx.ui.gates
 
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
+import androidx.navigation.NavHostController
 
+/**
+ * Minimal stub for the Agent Hub main screen.
+ * Replace with real implementation later; this keeps navigation alive.
+ */
 @Composable
-fun AgentHubScreen(navController: NavController) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(text = "Agent Hub", style = MaterialTheme.typography.headlineMedium)
-        Text(text = "Central command center for agents", style = MaterialTheme.typography.bodyLarge)
-
-        Button(onClick = { navController.popBackStack() }, modifier = Modifier.padding(top = 24.dp)) {
+fun AgentHubScreen(navController: NavHostController? = null) {
+    Column(modifier = Modifier.padding(16.dp)) {
+        Text("Agent Hub", style = MaterialTheme.typography.titleLarge)
+        Spacer(modifier = Modifier.height(8.dp))
+        Text("Placeholder Agent Hub - HOME / MISSIONS / INVENTORY / SETTINGS / LOGOUT")
+        Spacer(modifier = Modifier.height(16.dp))
+        Button(onClick = { navController?.popBackStack() }) {
             Text("Back")
         }
     }

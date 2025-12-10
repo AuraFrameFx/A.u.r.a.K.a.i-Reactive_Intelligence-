@@ -1,17 +1,18 @@
 package dev.aurakai.auraframefx.ui.gates
 
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 
-/**
- * Backwards-compatible wrapper for the implemented `AurasLabScreen`.
- * Some code/routes reference `AuraLabScreen` (placeholder). To avoid
- * breaking callers, forward to the real `AurasLabScreen` implementation.
- *
- * Prefer calling `AurasLabScreen` directly — this wrapper is deprecated.
- */
-@Deprecated("Use AurasLabScreen directly", ReplaceWith("AurasLabScreen(onNavigateBack = onNavigateBack)"))
 @Composable
 fun AuraLabScreen(onNavigateBack: () -> Unit = {}) {
-    // Reuse the fully implemented AurasLabScreen to avoid duplication.
-    AurasLabScreen(onNavigateBack = onNavigateBack)
+    Column(modifier = Modifier.padding(16.dp)) {
+        Text("Auras Lab", style = MaterialTheme.typography.titleLarge)
+        Text("Experimental creative workspace placeholder.")
+    }
 }
+
