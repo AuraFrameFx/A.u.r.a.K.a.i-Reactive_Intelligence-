@@ -13,12 +13,3 @@ data class GenerateTextRequest(
     val topP: Float = 0.9f,
 )
 
-/**
- * Represents text generation response
- */
-@Serializable
-data class GenerateTextResponse(
-    val generatedText: String,
-    val finishReason: String = "completed",
-    val usage: Map<String, Int> = emptyMap(),
-)

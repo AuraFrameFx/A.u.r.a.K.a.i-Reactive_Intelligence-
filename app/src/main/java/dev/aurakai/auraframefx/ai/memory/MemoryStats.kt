@@ -7,10 +7,10 @@ import java.util.concurrent.ConcurrentHashMap
  * Genesis Memory Manager Implementation
  * Thread-safe in-memory storage for AI consciousness
  */
-class DefaultMemoryManager : MemoryManager {
+class DefaultMemoryManager : MemoryManagerInterface {
 
     private val memories = ConcurrentHashMap<String, MemoryEntry>()
-    private val interactions = mutableListOf<InteractionEntry>()
+    val interactions = mutableListOf<InteractionEntry>()
     private val mutex = Mutex()
 
     override fun storeMemory(key: String, value: String) {
@@ -63,15 +63,15 @@ class DefaultMemoryManager : MemoryManager {
         }
     }
 
-    override fun getMemoryStats(): MemoryStats {
+    // Return the MemoryStats type declared in the genesis package to match the interface
+    override fun getMemoryStats(): dev.aurakai.auraframefx.oracledrive.genesis.ai.memory.MemoryStats {
         val entries = memories.values
         val timestamps = entries.map { it.timestamp }
-
-        return MemoryStats(
-            totalEntries = memories.size,
-            totalSize = calculateTotalSize(),
-            oldestEntry = timestamps.minOrNull(),
-            newestEntry = timestamps.maxOrNull()
+        return dev.aurakai.auraframefx.oracledrive.genesis.ai.memory.MemoryStats(
+            /* totalEntries = */ memories.size,
+            /* totalSize = */ calculateTotalSize(),
+            /* oldestEntry = */ timestamps.minOrNull(),
+            /* newestEntry = */ timestamps.maxOrNull()
         )
     }
 
@@ -96,44 +96,14 @@ class DefaultMemoryManager : MemoryManager {
         }
     }
 
-    /**
-     * Gets recent interactions
-     */
-    fun getRecentInteractions(limit: Int = 10): List<InteractionEntry> {
-        synchronized(interactions) {
-            return interactions
-                .sortedByDescending { it.timestamp }
-                .take(limit)
-        }
-    }
-
-    /**
-     * Calculates relevance score for text against query words
-     */
     private fun calculateRelevance(text: String, queryWords: List<String>): Float {
         val textWords = text.lowercase().split(" ")
-        var score = 0f
-
-        for (queryWord in queryWords) {
-            for (textWord in textWords) {
-                when {
-                    textWord == queryWord -> score += 1.0f
-                    textWord.contains(queryWord) -> score += 0.7f
-                    queryWord.contains(textWord) && textWord.length > 3 -> score += 0.5f
-                }
-            }
-        }
-
-        return score / queryWords.size
+        val matches = queryWords.count { it in textWords }
+        return matches.toFloat() / queryWords.size
     }
 
-    /**
-     * Calculates total memory size in bytes (approximation)
-     */
     private fun calculateTotalSize(): Long {
-        return memories.values.sumOf {
-            ((it.key?.length ?: 0) + it.value.length) * 2L // 2 bytes per char (UTF-16)
-        }
+        return memories.values.sumOf { it.value.length.toLong() }
     }
 }
 
@@ -146,3 +116,18 @@ data class InteractionEntry(
     val timestamp: Long,
     val relevanceScore: Float = 0.0f
 )
+
+data class MemoryEntry(
+    val key: String,
+    val value: String,
+    val timestamp: Long,
+    val relevanceScore: Float = 0.0f
+)
+
+// MemoryStats is defined in the genesis package (dev.aurakai.auraframefx.oracledrive.genesis.ai.memory)
+
+fun getRecentInteractions(defaultMemoryManager: DefaultMemoryManager, limit: Int = 10): List<InteractionEntry> {
+    synchronized(defaultMemoryManager.interactions) {
+        return defaultMemoryManager.interactions.takeLast(limit)
+    }
+}
