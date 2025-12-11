@@ -4,8 +4,6 @@ import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import dev.aurakai.auraframefx.ai.error.ErrorHandler
-import dev.aurakai.auraframefx.system.impl.DefaultErrorHandler
 import dev.aurakai.auraframefx.system.impl.DefaultSystemMonitor
 import dev.aurakai.auraframefx.system.monitor.SystemMonitor
 import javax.inject.Singleton
@@ -24,14 +22,4 @@ abstract class SystemModule {
     @Binds
     @Singleton
     abstract fun bindSystemMonitor(impl: DefaultSystemMonitor): SystemMonitor
-
-    /**
-     * Binds DefaultErrorHandler as the implementation of ErrorHandler in the dependency injection graph.
-     *
-     * @param impl The DefaultErrorHandler instance to bind.
-     * @return The bound ErrorHandler implementation.
-     */
-    @Binds
-    @Singleton
-    abstract fun bindErrorHandler(impl: DefaultErrorHandler): ErrorHandler
 }
