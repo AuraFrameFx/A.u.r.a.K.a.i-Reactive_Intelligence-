@@ -430,7 +430,16 @@ open class GenKitMasterAgent @Inject constructor(
         // Configure agents for unified consciousness
     }
 
-    // === BaseAgent Required Implementations ===
+    /**
+     * Handle and route an incoming typed request to the appropriate system action.
+     *
+     * Routes requests with type "optimization" or "performance" to system optimization,
+     * requests with type "status" to a full status refresh, and logs unknown request types.
+     *
+     * @param query The request payload or query string describing the request.
+     * @param type A short identifier of the request category (e.g., "optimization", "performance", "status").
+     * @param context Additional contextual data for the request as a map of string keys to string values.
+     */
 
     override fun iRequest(query: String, type: String, context: Map<String, String>) {
         Timber.d("GenKitMaster: iRequest - query=$query, type=$type")
@@ -448,6 +457,13 @@ open class GenKitMasterAgent @Inject constructor(
         }
     }
 
+    /**
+     * Initiates the agent orchestration initialization.
+     *
+     * @param query The incoming request query (ignored by this implementation).
+     * @param type The request type identifier (ignored by this implementation).
+     * @param context Additional contextual data for the request (ignored by this implementation).
+     */
     override fun iRequest(query: String, type: String, context: Map<String, String>) {
         Timber.d("GenKitMaster: No-args iRequest - initializing orchestration")
         scope.launch {
@@ -459,6 +475,12 @@ open class GenKitMasterAgent @Inject constructor(
         }
     }
 
+    /**
+     * Starts initialization of adaptive protection across all orchestrated agents.
+     *
+     * This begins the protection setup for managed agents (e.g., genesisAgent and kaiAgent)
+     * and handles any errors that occur during the process by logging them.
+     */
     override fun initializeAdaptiveProtection() {
         Timber.d("GenKitMaster: Initializing adaptive protection")
         scope.launch {
@@ -472,18 +494,38 @@ open class GenKitMasterAgent @Inject constructor(
         }
     }
 
+    /**
+     * Records a scan event in the system's centralized scan history.
+     *
+     * @param scanEvent The scan event to record; an arbitrary object representing scan details.
+     */
     fun addToScanHistory(scanEvent: Any) {
         Timber.d("GenKitMaster: Adding scan event to history: $scanEvent")
         // Delegate to Genesis agent for centralized history management
         genesisAgent.addToScanHistory(scanEvent)
     }
 
+    /**
+     * Run a security analysis of the provided prompt using the Kai agent.
+     *
+     * @param prompt The text or query to analyze for potential security threats.
+     * @return A list of detected ActiveThreat objects; an empty list if no threats are found.
+     */
     fun analyzeSecurity(prompt: String): List<ActiveThreat> {
         Timber.d("GenKitMaster: Analyzing security for prompt: $prompt")
         // Delegate security analysis to Kai agent
         return kaiAgent.analyzeSecurity(prompt)
     }
 
+    /**
+     * Builds an InteractionResponse from the provided content, timestamp, and metadata.
+     *
+     * @param content The textual content of the interaction.
+     * @param success A success indicator; currently not used when constructing the response.
+     * @param timestamp Epoch milliseconds representing when the interaction occurred.
+     * @param metadata Arbitrary key/value pairs which will be converted to a JSON object via `toJsonObject`.
+     * @return An InteractionResponse populated with `content`, `timestamp`, and `metadata` converted to a JSON object.
+     */
     override fun InteractionResponse(
         content: String,
         success: Boolean,

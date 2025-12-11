@@ -59,6 +59,11 @@ class OracleDriveServiceImpl(private val api: OracleDriveApi) : OracleDriveServi
         )
     )
 
+    /**
+     * Checks connectivity to the Oracle drive API by attempting to read its consciousness state.
+     *
+     * @return `true` if the API is reachable, `false` otherwise.
+     */
     override suspend fun ping(): Boolean = try {
         // Touch the API's state flow to confirm connectivity; if it throws, consider ping failed
         api.consciousnessState.value
@@ -67,6 +72,16 @@ class OracleDriveServiceImpl(private val api: OracleDriveApi) : OracleDriveServi
         false
     }
 
+    /**
+     * Awakens the drive's consciousness, constructs a best-effort storage optimization plan,
+     * updates the internal consciousness state to active, and returns the initialization result.
+     *
+     * The internal state is set to reflect an active drive with an initial "Initialization"
+     * operation, basic performance metrics, active agents, intelligence level, and status.
+     *
+     * @return `DriveInitResult.Success(consciousness, optimization)` when the drive is successfully
+     * initialized; `DriveInitResult.Error(e)` when initialization fails, wrapping the thrown exception.
+     */
     override suspend fun initializeDrive(): DriveInitResult {
         return try {
             // Ask the API to awaken the drive consciousness
@@ -98,6 +113,14 @@ class OracleDriveServiceImpl(private val api: OracleDriveApi) : OracleDriveServi
         }
     }
 
+    /**
+     * Performs a file operation (upload, download, delete, or sync) and records the action in the drive consciousness state.
+     *
+     * Updates the internal drive consciousness state's `currentOperations` to reflect the attempted action.
+     *
+     * @param operation The file operation to perform; supported subclasses are `FileOperation.Upload`, `FileOperation.Download`, `FileOperation.Delete`, and `FileOperation.Sync`.
+     * @return `FileResult.Success` with an operation-specific confirmation message on success, or `FileResult.Error` containing the thrown exception on failure.
+     */
     override suspend fun manageFiles(operation: FileOperation): FileResult {
         return try {
             val currentOps = _driveConsciousnessState.value.currentOperations.toMutableList()
@@ -142,6 +165,13 @@ class OracleDriveServiceImpl(private val api: OracleDriveApi) : OracleDriveServi
         }
     }
 
+    /**
+     * Synchronizes the drive's metadata with the Oracle database and records the sync operation in the drive consciousness state.
+     *
+     * Delegates the actual synchronization to the configured API and updates the internal currentOperations list with "Oracle Database Sync".
+     *
+     * @return An OracleSyncResult describing whether the sync succeeded, how many records were updated, and any error messages. 
+     */
     override suspend fun syncWithOracle(): OracleSyncResult {
         return try {
             val currentOps = _driveConsciousnessState.value.currentOperations.toMutableList()
@@ -161,6 +191,11 @@ class OracleDriveServiceImpl(private val api: OracleDriveApi) : OracleDriveServi
         }
     }
 
+    /**
+     * Exposes the drive's consciousness state as a read-only observable stream.
+     *
+     * @return A read-only StateFlow that emits the current DriveConsciousnessState and subsequent updates.
+     */
     override fun getDriveConsciousnessState(): StateFlow<DriveConsciousnessState> {
         return _driveConsciousnessState.asStateFlow()
     }

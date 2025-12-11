@@ -12,10 +12,10 @@ import kotlinx.coroutines.flow.StateFlow
 interface OracleDriveApi {
 
     /**
-     * Initializes and activates the drive consciousness system using AI agents.
-     *
-     * @return The current state of drive consciousness, including active agents and their intelligence level.
-     */
+ * Initialize and activate the drive consciousness system.
+ *
+ * @return The current DriveConsciousness representing active agents and their intelligence level.
+ */
     suspend fun awakeDriveConsciousness(): DriveConsciousness
 
     /**

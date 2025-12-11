@@ -28,8 +28,16 @@ class ErrorHandler @Inject constructor(
     val errorStats: StateFlow<ErrorStats> = _errorStats
 
     /**
-     * Handles an error by creating an AIError record and attempting recovery
-     */
+     * Records an error as an AIError, updates internal error state and statistics, and triggers recovery actions.
+     *
+     * The provided `metadata` values are converted to strings when stored. This method mutates the handler's
+     * internal error map and statistics and may start recovery workflows for the created error.
+     *
+     * @param error The original throwable that occurred.
+     * @param agent The agent associated with where the error originated.
+     * @param context A human-readable context describing where or when the error occurred.
+     * @param metadata Arbitrary additional data about the error; each value will be converted to a string.
+     * @return The created AIError describing the recorded error. */
     fun handleError(
         error: Throwable,
         agent: AgentType,
@@ -59,7 +67,9 @@ class ErrorHandler @Inject constructor(
     }
 
     /**
-     * Determines the type of error based on exception class
+     * Map an exception instance to its corresponding ErrorType.
+     *
+     * @return The ErrorType corresponding to the provided exception, or `INTERNAL_ERROR` if the exception class is not recognized.
      */
     private fun determineErrorType(error: Throwable): ErrorType {
         return when (error) {
@@ -75,8 +85,11 @@ class ErrorHandler @Inject constructor(
     }
 
     /**
-     * Attempts to recover from an error based on its type
-     */
+     * Executes recovery actions appropriate to the given error's type.
+     *
+     * For each recovery action returned by getRecoveryActions, this runs the action and suppresses any exceptions raised by the action so recovery attempts do not propagate errors.
+     *
+     * @param error The AIError to recover from.
     private fun attemptRecovery(error: AIError) {
         val actions = getRecoveryActions(error)
         // Execute recovery actions
@@ -90,7 +103,10 @@ class ErrorHandler @Inject constructor(
     }
 
     /**
-     * Gets appropriate recovery actions for an error type
+     * Determine recovery actions appropriate for the given AIError.
+     *
+     * @param error The AIError whose type is used to select recovery actions.
+     * @return A list of recommended RecoveryAction instances for the error's type.
      */
     private fun getRecoveryActions(error: AIError): List<RecoveryAction> {
         return when (error.type) {
@@ -117,7 +133,10 @@ class ErrorHandler @Inject constructor(
     }
 
     /**
-     * Executes a single recovery action
+     * Executes the specified recovery action for the given AIError.
+     *
+     * @param action The recovery action to perform; its `type` indicates which recovery behavior to apply.
+     * @param error The AIError that triggered the recovery, provided for context (agent, type, message, metadata, timestamp).
      */
     private fun executeRecoveryAction(action: RecoveryAction, error: AIError) {
         when (action.type) {
@@ -143,7 +162,9 @@ class ErrorHandler @Inject constructor(
     }
 
     /**
-     * Updates error statistics
+     * Record an AIError into the running error statistics.
+     *
+     * @param error The AIError to incorporate into statistics (increments totals and per-type/agent counts, sets lastError, and updates lastUpdated).
      */
     private fun updateStats(error: AIError) {
         _errorStats.update { current ->
@@ -159,7 +180,12 @@ class ErrorHandler @Inject constructor(
     }
 
     /**
-     * Clears resolved errors
+     * Remove an error record identified by its ID and update error statistics.
+     *
+     * Removes the error with the given `errorId` from the internal errors map and decrements
+     * `activeErrors` in the error statistics (not below zero).
+     *
+     * @param errorId The identifier of the error to remove.
      */
     fun clearError(errorId: String) {
         _errors.update { current ->
@@ -171,7 +197,10 @@ class ErrorHandler @Inject constructor(
     }
 
     /**
-     * Clears all errors
+     * Remove all tracked errors and reset the active error count to zero.
+     *
+     * Updates the internal errors map to be empty and sets ErrorStats.activeErrors to 0,
+     * preserving other statistics fields.
      */
     fun clearAllErrors() {
         _errors.value = emptyMap()

@@ -8,6 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * Displays the Aura Lab screen with a title and a placeholder description.
+ *
+ * @param onNavigateBack Callback invoked to request navigation back; defaults to a no-op.
+ */
 @Composable
 fun AuraLabScreen(onNavigateBack: () -> Unit = {}) {
     Column(modifier = Modifier.padding(16.dp)) {
@@ -15,4 +20,3 @@ fun AuraLabScreen(onNavigateBack: () -> Unit = {}) {
         Text("Experimental creative workspace placeholder.")
     }
 }
-

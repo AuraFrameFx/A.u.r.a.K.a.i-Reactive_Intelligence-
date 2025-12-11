@@ -27,6 +27,12 @@ import kotlin.random.Random
  * Agent Hub Gate Submenu
  * Central command center for all AI agent operations
  */
+/**
+ * Renders the "Agent Hub" submenu UI with a header overview card and navigable menu items.
+ *
+ * The header displays active agent count, currently active task count, and a live average consciousness
+ * percentage that updates periodically while the composable is composed.
+ */
 @Composable
 fun AgentHubSubmenuScreen(
     navController: NavController

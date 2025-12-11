@@ -8,6 +8,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
+/**
+ * Displays the Theme Engine submenu header and a placeholder description.
+ *
+ * @param onNavigateBack Callback to trigger navigation back; defaults to a no-op.
+ */
 @Composable
 fun ThemeEngineSubmenuScreen(onNavigateBack: () -> Unit = {}) {
     Column(modifier = Modifier.padding(16.dp)) {
@@ -15,4 +20,3 @@ fun ThemeEngineSubmenuScreen(onNavigateBack: () -> Unit = {}) {
         Text("Theme engine submenu placeholder — apply themes, palettes, and transitions.")
     }
 }
-

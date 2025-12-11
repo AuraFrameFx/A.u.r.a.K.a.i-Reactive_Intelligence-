@@ -461,6 +461,14 @@ fun generateSkillNodes(): List<SkillNode> {
     )
 }
 
+/**
+ * Displays a details card for the given skill node and provides an unlock action when the node is locked.
+ *
+ * Shows the node's name and description; if the node is not unlocked, an "UNLOCK (1 SP)" button is displayed
+ * that invokes [onUnlock] when pressed.
+ *
+ * @param node The skill node whose information is presented.
+ * @param onUnlock Callback invoked when the user taps the unlock button. */
 @Composable
 fun NodeDetailsCard(
     node: SkillNode,
