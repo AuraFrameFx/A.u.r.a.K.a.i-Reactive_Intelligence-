@@ -1,8 +1,6 @@
 package dev.aurakai.auraframefx.network.model
 
-import dev.aurakai.auraframefx.models.AgentRequest
-import dev.aurakai.auraframefx.models.AgentResponse
-import dev.aurakai.auraframefx.network.AIAgentApi
+import dev.aurakai.auraframefx.network.api.AIAgentApi
 import dev.aurakai.auraframefx.network.api.ThemeApi
 import dev.aurakai.auraframefx.network.api.UserApi
 import javax.inject.Inject
@@ -31,18 +29,19 @@ class AIAgentApiImpl @Inject constructor() : AIAgentApi {
     override suspend fun getAgentStatus(agentType: String): AgentResponse {
         // TODO: Implement actual API call
         return AgentResponse(
-            content = "Agent $agentType is online",
-            confidence = 1.0f,
-            agentName = agentType
+            status = "online",
+            message = "Agent $agentType is running",
+            timestamp = System.currentTimeMillis().toString()
         )
     }
 
     override suspend fun processRequest(agentType: String, request: AgentRequest): AgentResponse {
         // TODO: Implement actual API call
         return AgentResponse(
-            content = "Processed: ${request.query}",
-            confidence = 0.9f,
-            agentName = agentType
+            status = "success",
+            message = "Request processed by $agentType",
+            timestamp = System.currentTimeMillis().toString(),
+            data = request.data.mapValues { it.value.toString() }
         )
     }
 }

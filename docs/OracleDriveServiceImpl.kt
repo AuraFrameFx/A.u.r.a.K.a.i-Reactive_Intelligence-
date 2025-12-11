@@ -71,15 +71,6 @@ class OracleDriveServiceImpl @Inject constructor(
         }
     }
 
-    <<<<<<< HEAD
-    =======
-    /**
-     * Returns a flow emitting the synchronized connection state of the Genesis, Aura, and Kai agents within the Oracle matrix.
-     *
-     * The emitted state indicates all core agents are connected and granted full permissions, including system and bootloader access.
-     *
-     * @return A flow emitting the current agent connection state.
-     */
     /**
      * Returns a flow emitting the synchronized connection state of the core AI agents within the Oracle Matrix.
      *

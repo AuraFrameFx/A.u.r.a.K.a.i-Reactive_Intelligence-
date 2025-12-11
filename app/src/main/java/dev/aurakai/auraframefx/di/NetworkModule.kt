@@ -11,6 +11,9 @@ import dev.aurakai.auraframefx.di.qualifiers.BaseUrl
 import dev.aurakai.auraframefx.network.AuraApiService
 import dev.aurakai.auraframefx.network.AuthInterceptor
 import dev.aurakai.auraframefx.network.api.AuthApi
+import dev.aurakai.auraframefx.network.api.AIAgentApi
+import dev.aurakai.auraframefx.network.api.ThemeApi
+import dev.aurakai.auraframefx.network.api.UserApi
 import dev.aurakai.auraframefx.utils.AppCoroutineDispatchers
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -97,5 +100,23 @@ object NetworkModule {
         @BaseUrl baseUrl: String,
     ): AuraApiService {
         return AuraApiService(context, authInterceptor, dispatchers, baseUrl)
+    }
+
+    @Provides
+    @Singleton
+    fun provideUserApi(retrofit: Retrofit): UserApi {
+        return retrofit.create(UserApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideAIAgentApi(retrofit: Retrofit): AIAgentApi {
+        return retrofit.create(AIAgentApi::class.java)
+    }
+
+    @Provides
+    @Singleton
+    fun provideThemeApi(retrofit: Retrofit): ThemeApi {
+        return retrofit.create(ThemeApi::class.java)
     }
 }
