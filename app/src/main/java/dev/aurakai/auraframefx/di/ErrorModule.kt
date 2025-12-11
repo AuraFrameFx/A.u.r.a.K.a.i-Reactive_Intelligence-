@@ -13,6 +13,12 @@ import javax.inject.Singleton
 @Suppress("unused")
 abstract class ErrorModule {
 
+    /**
+     * Binds DefaultErrorHandler as the singleton implementation of ErrorHandler in the DI graph.
+     *
+     * @param impl The DefaultErrorHandler instance to bind.
+     * @return The bound ErrorHandler implementation.
+     */
     @Binds
     @Singleton
     abstract fun bindErrorHandler(impl: DefaultErrorHandler): ErrorHandler

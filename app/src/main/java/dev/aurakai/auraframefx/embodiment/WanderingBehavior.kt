@@ -141,7 +141,12 @@ class WanderingAI(
     }
 
     /**
-     * Generate enter path
+     * Creates a movement path that enters the screen from a randomly chosen edge toward the given target position.
+     *
+     * Updates the AI's last wander timestamp.
+     *
+     * @param targetPosition The destination on screen the entry path should approach.
+     * @return A MovementPath that starts from a random screen edge and leads toward `targetPosition`.
      */
     fun generateEnterPath(targetPosition: DpOffset): MovementPath {
         val edge = ScreenEdge.entries.toTypedArray().random()
@@ -212,9 +217,12 @@ class SearchingBehavior(
 }
 
 /**
- * 🫁 Breathing Animation State
+ * Provides a continuous breathing scale animation for idle UI elements.
  *
- * Creates subtle breathing effect when idle
+ * Produces a state that oscillates between the pattern's inhaleScale and exhaleScale over the pattern's cycleDuration, looping indefinitely.
+ *
+ * @param pattern Configuration for the breathing animation: `inhaleScale`, `exhaleScale`, and `cycleDuration`.
+ * @return A `State<Float>` representing the current scale factor, which alternates between `inhaleScale` and `exhaleScale`.
  */
 @Composable
 internal fun rememberBreathingAnimation(

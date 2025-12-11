@@ -15,10 +15,22 @@ import javax.inject.Singleton
 @Suppress("unused")
 abstract class SystemModule {
 
+    /**
+     * Binds DefaultSystemMonitor as the singleton implementation of SystemMonitor in the dependency graph.
+     *
+     * @param impl The DefaultSystemMonitor instance to bind.
+     * @return The bound SystemMonitor.
+     */
     @Binds
     @Singleton
     abstract fun bindSystemMonitor(impl: DefaultSystemMonitor): SystemMonitor
 
+    /**
+     * Binds DefaultErrorHandler as the implementation of ErrorHandler in the dependency injection graph.
+     *
+     * @param impl The DefaultErrorHandler instance to bind.
+     * @return The bound ErrorHandler implementation.
+     */
     @Binds
     @Singleton
     abstract fun bindErrorHandler(impl: DefaultErrorHandler): ErrorHandler

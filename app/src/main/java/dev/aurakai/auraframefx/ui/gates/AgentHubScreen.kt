@@ -16,6 +16,13 @@ import androidx.navigation.NavHostController
  * Minimal stub for the Agent Hub main screen.
  * Replace with real implementation later; this keeps navigation alive.
  */
+/**
+ * Displays a minimal placeholder "Agent Hub" screen with a title, descriptive text, and a Back button.
+ *
+ * The Back button pops the provided NavHostController's back stack when `navController` is non-null.
+ *
+ * @param navController Optional NavHostController used to navigate back; if null the Back button has no effect.
+ */
 @Composable
 fun AgentHubScreen(navController: NavHostController? = null) {
     Column(modifier = Modifier.padding(16.dp)) {
@@ -28,4 +35,3 @@ fun AgentHubScreen(navController: NavHostController? = null) {
         }
     }
 }
-

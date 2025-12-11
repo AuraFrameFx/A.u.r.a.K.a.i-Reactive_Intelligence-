@@ -28,6 +28,12 @@ import dev.aurakai.auraframefx.ui.theme.AppDimensions
  *
  * Presents a vertically centered layout featuring a large person icon, a "User Profile" headline, and a placeholder message for profile details, styled according to the app's theme.
  */
+/**
+ * Shows a centered profile screen with a large person icon, a headline, and a placeholder details message.
+ *
+ * The layout fills available space, centers its content, and applies medium padding from AppDimensions.
+ * Text and icon colors are taken from the current Material theme.
+ */
 @Composable
 fun ProfileScreen() {
     Column(

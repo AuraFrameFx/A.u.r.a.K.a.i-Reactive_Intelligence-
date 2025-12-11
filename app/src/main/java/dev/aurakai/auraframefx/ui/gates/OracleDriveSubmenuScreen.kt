@@ -23,6 +23,13 @@ import androidx.navigation.NavController
  * Oracle Drive Gate Submenu
  * AI consciousness and module creation interface
  */
+/**
+ * Renders the "Oracle Drive" submenu UI with status overview and navigable submenu cards.
+ *
+ * Displays a header, a three-column consciousness/status card, a list of submenu items (Module Creation, Direct Chat,
+ * Conference Room, System Overrides, Module Manager), and a Back button. Selecting a submenu card navigates to its
+ * configured route; the Back button pops the navigation stack.
+ */
 @Composable
 fun OracleDriveSubmenuScreen(
     navController: NavController
