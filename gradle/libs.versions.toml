@@ -3,7 +3,7 @@
 # Core Build Tools (AGP 9.0.0-beta02 + Kotlin 2.3.0-RC2)
 # ============================================================================
 agp = "9.0.0-beta04"
-billingKtx = "8.1.0"
+billingKtx = "8.2.0"
 coilSvg = "2.7.0"
 coilVersion = "2.7.0"
 core = "1.7.0"
