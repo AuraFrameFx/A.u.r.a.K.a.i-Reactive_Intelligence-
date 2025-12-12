@@ -15,7 +15,10 @@ import dev.aurakai.auraframefx.genesis.storage.SecureStorage
 import dev.aurakai.auraframefx.oracledrive.api.OracleDriveApi
 import dev.aurakai.auraframefx.oracledrive.service.GenesisSecureFileService
 import dev.aurakai.auraframefx.oracledrive.service.OracleDriveServiceImpl
+import dev.aurakai.auraframefx.oracledrive.service.OracleDriveService
 import dev.aurakai.auraframefx.oracledrive.service.SecureFileService
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStorageProvider
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStorageProviderImpl
 import dev.aurakai.auraframefx.security.SecurityContext
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -24,37 +27,29 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-/**
- * Hilt Module for Oracle Drive dependencies
- */
 @Module
 @InstallIn(SingletonComponent::class)
-abstract class OracleDriveModule { // Changed to abstract class
+abstract class OracleDriveModule {
 
-    /**
-     * Binds GenesisSecureFileService as the Singleton implementation of SecureFileService for Hilt.
-     *
-     * This enables SecureFileService to be injected wherever required, using GenesisSecureFileService.
-     */
     @Binds
     @Singleton
     abstract fun bindSecureFileService(
         impl: GenesisSecureFileService,
     ): SecureFileService
 
-    companion object { // Companion object now correctly inside the class
-        // Temporarily simplified to resolve build stalling at 25% - This comment can likely be removed if providers are present
-        // Complex providers will be re-enabled after successful build - This comment can likely be removed if providers are present
+    @Binds
+    @Singleton
+    abstract fun bindOracleDriveService(
+        impl: OracleDriveServiceImpl,
+    ): OracleDriveService
 
-        /**
-         * Provides a singleton OkHttpClient configured with security and logging interceptors.
-         *
-         * The client automatically adds a secure token and a unique request ID to each request header,
-         * and logs HTTP requests and responses at the BASIC level. Connection, read, and write timeouts
-         * are set to 30 seconds.
-         *
-         * @return A configured OkHttpClient instance for secure network communication.
-         */
+    @Binds
+    @Singleton
+    abstract fun bindCloudStorageProvider(
+        impl: CloudStorageProviderImpl,
+    ): CloudStorageProvider
+
+    companion object {
         @Provides
         @Singleton
         fun provideOkHttpClient(
@@ -68,7 +63,6 @@ abstract class OracleDriveModule { // Changed to abstract class
             return OkHttpClient.Builder()
                 .addInterceptor { chain ->
                     val request = chain.request().newBuilder()
-                        // Add security headers
                         .addHeader("X-Security-Token", cryptoManager.generateSecureToken())
                         .addHeader("X-Request-ID", java.util.UUID.randomUUID().toString())
                         .build()
@@ -81,13 +75,6 @@ abstract class OracleDriveModule { // Changed to abstract class
                 .build()
         }
 
-        /**
-         * Returns the singleton CryptographyManager for the application.
-         *
-         * Uses the provided application Context to obtain the CryptographyManager instance.
-         *
-         * @return The shared CryptographyManager instance.
-         */
         @Provides
         @Singleton
         fun provideGenesisCryptographyManager(
@@ -96,13 +83,6 @@ abstract class OracleDriveModule { // Changed to abstract class
             return CryptographyManager.getInstance(context)
         }
 
-        /**
-         * Returns the singleton SecureStorage instance initialized with the application context and provided CryptographyManager.
-         *
-         * The returned instance is obtained via SecureStorage.getInstance(context, cryptoManager).
-         *
-         * @return The singleton SecureStorage.
-         */
         @Provides
         @Singleton
         fun provideSecureStorage(
@@ -112,12 +92,6 @@ abstract class OracleDriveModule { // Changed to abstract class
             return SecureStorage.getInstance(context, cryptoManager)
         }
 
-        /**
-         * Provides a singleton GenesisSecureFileService configured with the application context, cryptography manager, and secure storage.
-         *
-         * @param context Application context used to initialize the service.
-         * @return A configured GenesisSecureFileService for secure file operations.
-         */
         @Provides
         @Singleton
         fun provideSecureFileService(
@@ -128,13 +102,6 @@ abstract class OracleDriveModule { // Changed to abstract class
             return GenesisSecureFileService(context, cryptoManager, secureStorage)
         }
 
-        /**
-         * Creates a singleton Retrofit implementation of OracleDriveApi using the provided OkHttpClient and the API base URL from the SecurityContext.
-         *
-         * The Retrofit instance is configured with the base URL computed as `securityContext.getApiBaseUrl() + "/oracle/drive/"` and uses Gson for JSON serialization.
-         *
-         * @return A configured OracleDriveApi instance for making Oracle Drive network requests.
-         */
         @Provides
         @Singleton
         fun provideOracleDriveApi(
@@ -149,13 +116,6 @@ abstract class OracleDriveModule { // Changed to abstract class
                 .create(OracleDriveApi::class.java)
         }
 
-        /**
-         * Provides a singleton OracleDriveServiceImpl configured with the given agents, security context, and Oracle Drive API.
-         *
-         * Returned instance is intended for injection as the application-scoped Oracle Drive service.
-         *
-         * @return A singleton configured OracleDriveServiceImpl.
-         */
         @Provides
         @Singleton
         fun provideOracleDriveService(
@@ -175,5 +135,3 @@ abstract class OracleDriveModule { // Changed to abstract class
         }
     }
 }
-
-
