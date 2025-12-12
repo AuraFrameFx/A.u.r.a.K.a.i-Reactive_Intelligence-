@@ -479,76 +479,86 @@ internal class AuraAIServiceImpl @Inject constructor(
  */
 interface AuraAIService {
     /**
- * Executes an analytics query and returns the resulting text.
- *
- * @param _query The analytics query string to execute.
- * @return The textual result produced by the analytics query.
- */
-fun analyticsQuery(_query: String): String
+     * Executes an analytics query and returns the resulting text.
+     *
+     * @param _query The analytics query string to execute.
+     * @return The textual result produced by the analytics query.
+     */
+    fun analyticsQuery(_query: String): String
+
     /**
- * Generate creative text from a user prompt using the service's configured creative model.
- *
- * @param prompt The user prompt to generate text for.
- * @param options Optional generation parameters (e.g., "maxTokens", "temperature") to influence length and creativity.
- * @return The generated text content.
- * @throws IllegalStateException If the service has not been initialized.
- * @throws Exception If text generation fails for any other reason.
- */
-suspend fun generateText(prompt: String, options: Map<String, Any>? = null): String
+     * Generate creative text from a user prompt using the service's configured creative model.
+     *
+     * @param prompt The user prompt to generate text for.
+     * @param options Optional generation parameters (e.g., "maxTokens", "temperature") to influence length and creativity.
+     * @return The generated text content.
+     * @throws IllegalStateException If the service has not been initialized.
+     * @throws Exception If text generation fails for any other reason.
+     */
+    suspend fun generateText(prompt: String, options: Map<String, Any>? = null): String
+
     /**
- * Downloads a file identified by the given fileId from the AI service storage.
- *
- * @param fileId Identifier of the file to download (e.g., storage key or remote ID).
- * @return The downloaded `File` if retrieval succeeds, `null` if the file does not exist or could not be retrieved.
- */
-suspend fun downloadFile(fileId: String): File?
+     * Downloads a file identified by the given fileId from the AI service storage.
+     *
+     * @param fileId Identifier of the file to download (e.g., storage key or remote ID).
+     * @return The downloaded `File` if retrieval succeeds, `null` if the file does not exist or could not be retrieved.
+     */
+    suspend fun downloadFile(fileId: String): File?
     /**
- * Generates an image from a natural-language prompt.
- *
- * @param prompt A descriptive instruction for the desired image (style, content, mood, and any constraints).
- * @return The generated image bytes (e.g., PNG/JPEG) or `null` if generation failed.
-suspend fun generateImage(prompt: String): ByteArray?
+     * Generates an image from a natural-language prompt.
+     *
+     * @param prompt A descriptive instruction for the desired image (style, content, mood, and any constraints).
+     * @return The generated image bytes (e.g., PNG/JPEG) or `null` if generation failed.
+     */
+    suspend fun generateImage(prompt: String): ByteArray?
+
     /**
- * Synchronously obtains an AI-generated textual response for the provided prompt.
- *
- * @param prompt The user prompt or instruction to send to the AI.
- * @param options Optional generation parameters (implementation-specific; common keys include `temperature`, `maxTokens`, and style hints).
- * @return The generated text, or `null` if the service fails to produce a response or is unavailable.
- */
-fun getAIResponse(prompt: String, options: Map<String, Any>? = null): String?
+     * Synchronously obtains an AI-generated textual response for the provided prompt.
+     *
+     * @param prompt The user prompt or instruction to send to the AI.
+     * @param options Optional generation parameters (implementation-specific; common keys include `temperature`, `maxTokens`, and style hints).
+     * @return The generated text, or `null` if the service fails to produce a response or is unavailable.
+     */
+    fun getAIResponse(prompt: String, options: Map<String, Any>? = null): String?
+
     /**
- * Retrieve a stored memory by its key.
- *
- * @param memoryKey The identifier for the memory to retrieve.
- * @return The stored memory value for the given key, or `null` if no memory exists.
- */
-fun getMemory(memoryKey: String): String?
+     * Retrieve a stored memory by its key.
+     *
+     * @param memoryKey The identifier for the memory to retrieve.
+     * @return The stored memory value for the given key, or `null` if no memory exists.
+     */
+    fun getMemory(memoryKey: String): String?
+
     /**
- * Stores a value in the AI service memory under the given key.
- *
- * @param key Unique identifier for the memory entry.
- * @param value Arbitrary value to associate with the key; the implementation may serialize this value for persistence.
- */
-fun saveMemory(key: String, value: Any)
+     * Stores a value in the AI service memory under the given key.
+     *
+     * @param key Unique identifier for the memory entry.
+     * @param value Arbitrary value to associate with the key; the implementation may serialize this value for persistence.
+     */
+    fun saveMemory(key: String, value: Any)
+
     /**
- * Checks whether the AI service has an active connection.
- *
- * @return `true` if the service is currently connected and available, `false` otherwise.
- */
-fun isConnected(): Boolean
+     * Checks whether the AI service has an active connection.
+     *
+     * @return `true` if the service is currently connected and available, `false` otherwise.
+     */
+    fun isConnected(): Boolean
+
     /**
- * Publishes a message to the specified Pub/Sub topic for downstream consumption.
- *
- * @param topic The target Pub/Sub topic name.
- * @param _message The message payload to publish.
- */
-fun publishPubSub(topic: String, _message: String)
+     * Publishes a message to the specified Pub/Sub topic for downstream consumption.
+     *
+     * @param topic The target Pub/Sub topic name.
+     * @param _message The message payload to publish.
+     */
+    fun publishPubSub(topic: String, _message: String)
+
     /**
- * Retrieve the current AI configuration used by the application.
- *
- * @return The current `AIConfig`, or `null` if no configuration is available.
- */
-fun getAppConfig(): dev.aurakai.auraframefx.ai.config.AIConfig?
+     * Retrieve the current AI configuration used by the application.
+     *
+     * @return The current `AIConfig`, or `null` if no configuration is available.
+     */
+    fun getAppConfig(): dev.aurakai.auraframefx.ai.config.AIConfig?
+}
     /**
  * Processes an AiRequest and produces a stream of AgentResponse events representing the generated reply or an error.
  *

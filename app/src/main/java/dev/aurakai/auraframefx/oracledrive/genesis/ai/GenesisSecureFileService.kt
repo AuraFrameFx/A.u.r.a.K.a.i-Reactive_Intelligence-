@@ -2,7 +2,7 @@ package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
 import android.content.Context
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dev.aurakai.auraframefx.genesis.security.CryptographyManager
+import dev.aurakai.genesis.security.CryptographyManager
 import dev.aurakai.auraframefx.navigation.SecureStorage
 import dev.aurakai.auraframefx.oracledrive.service.FileOperationResult
 import dev.aurakai.auraframefx.oracledrive.service.SecureFileService

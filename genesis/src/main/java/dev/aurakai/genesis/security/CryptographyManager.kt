@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.genesis.security
+package dev.aurakai.genesis.security
 
 import android.content.Context
 import javax.inject.Inject
@@ -11,14 +11,14 @@ import javax.inject.Singleton
 class CryptographyManager @Inject constructor(
     private val context: Context
 ) {
-    
+
     /**
  * Generates a secure token for Genesis operations.
  *
  * @return The token string `genesis-stub-token` (stub implementation).
  */
 fun generateSecureToken(): String = "genesis-stub-token"
-    
+
     /**
      * Encrypts the provided plaintext string.
      *
@@ -31,7 +31,7 @@ fun generateSecureToken(): String = "genesis-stub-token"
         // Stub implementation - replace with actual encryption
         return data
     }
-    
+
     /**
      * Decrypts an encrypted string and returns the plaintext.
      *
@@ -42,7 +42,7 @@ fun generateSecureToken(): String = "genesis-stub-token"
         // Stub implementation - replace with actual decryption
         return data
     }
-    
+
     /**
      * Encrypts the provided plaintext bytes.
      *
@@ -55,7 +55,7 @@ fun generateSecureToken(): String = "genesis-stub-token"
         // Stub - implement actual encryption
         return data
     }
-    
+
     /**
      * Decrypts an encrypted byte array.
      *
@@ -63,7 +63,13 @@ fun generateSecureToken(): String = "genesis-stub-token"
      * @return The decrypted bytes.
      */
     fun decryptBytes(data: ByteArray): ByteArray {
-        // Stub - implement actual decryption  
+        // Stub - implement actual decryption
         return data
+    }
+
+    companion object {
+        fun getInstance(context: Context): CryptographyManager {
+            TODO("Not yet implemented")
+        }
     }
 }

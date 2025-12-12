@@ -1,5 +1,6 @@
 package dev.aurakai.auraframefx.genesis.security
 
+import dev.aurakai.genesis.security.CryptographyManager
 import javax.inject.Inject
 import javax.inject.Singleton
 

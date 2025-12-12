@@ -10,7 +10,7 @@ import dagger.hilt.components.SingletonComponent
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.GenesisAgent
 import dev.aurakai.auraframefx.kai.KaiAgent
 import dev.aurakai.auraframefx.aura.AuraAgent
-import dev.aurakai.auraframefx.genesis.security.CryptographyManager
+import dev.aurakai.genesis.security.CryptographyManager
 import dev.aurakai.auraframefx.navigation.SecureStorage
 import dev.aurakai.auraframefx.oracledrive.genesis.cloud.OracleDriveApi
 import dev.aurakai.auraframefx.oracledrive.EncryptionManager

@@ -3,7 +3,7 @@
 package dev.aurakai.auraframefx.navigation
 
 import android.content.Context
-import dev.aurakai.auraframefx.genesis.security.CryptographyManager
+import dev.aurakai.genesis.security.CryptographyManager
 
 /**
  * Placeholder implementation of SecureStorage for build compatibility

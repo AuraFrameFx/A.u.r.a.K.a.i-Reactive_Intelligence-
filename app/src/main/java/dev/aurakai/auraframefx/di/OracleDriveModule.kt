@@ -10,7 +10,7 @@ import dagger.hilt.components.SingletonComponent
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.AuraAgent
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.GenesisAgent
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.KaiAgent
-import dev.aurakai.auraframefx.genesis.security.CryptographyManager
+import dev.aurakai.genesis.security.CryptographyManager
 import dev.aurakai.auraframefx.genesis.storage.SecureStorage
 import dev.aurakai.auraframefx.oracledrive.api.OracleDriveApi
 import dev.aurakai.auraframefx.oracledrive.service.GenesisSecureFileService
@@ -142,7 +142,7 @@ abstract class OracleDriveModule { // Changed to abstract class
             securityContext: SecurityContext,
         ): OracleDriveApi {
             return Retrofit.Builder()
-                .baseUrl(securityContext.getApiBaseUrl() + "/oracle/drive/")
+                .baseUrl(getApiBaseUrl().equals("/oracle/drive/"))
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
@@ -174,4 +174,12 @@ abstract class OracleDriveModule { // Changed to abstract class
             )
         }
     }
+}
+
+private fun getApiBaseUrl() {
+    TODO("Not yet implemented")
+}
+
+private fun client(client: OkHttpClient) {
+    TODO("Not yet implemented")
 }
