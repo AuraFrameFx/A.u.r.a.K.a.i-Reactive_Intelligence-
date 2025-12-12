@@ -41,7 +41,9 @@ class GenesisLibraryHiltPlugin : Plugin<Project> {
     override fun apply(project: Project) {
         with(project) {
             // Apply plugins in correct order
-            // Note: Kotlin is built into AGP 9.0+ (android.builtInKotlin=true)
+            // CRITICAL: Hilt requires explicit Kotlin Android plugin even with built-in Kotlin
+            // See: https://github.com/google/dagger/issues/4049
+            pluginManager.apply("org.jetbrains.kotlin.android")  // Required for Hilt!
             pluginManager.apply("com.android.library")
             pluginManager.apply("org.jetbrains.kotlin.plugin.compose")
             pluginManager.apply("com.google.dagger.hilt.android")  // ← HILT PLUGIN
