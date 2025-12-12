@@ -1,7 +1,16 @@
 plugins {
     id("com.android.application")
-    id("genesis.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("com.google.devtools.ksp")
+    id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.plugin.compose")
+    id("org.jetbrains.kotlin.plugin.serialization")
+    // NOTE: Do not apply `genesis.android.application` here because some plugins
+    // (like Hilt applied by genesis) expect the Android BaseExtension to exist
+    // before they run. We'll apply it after the Android plugin is configured.
 }
+
+
 
 android {
     namespace = "dev.aurakai.auraframefx"
@@ -90,23 +99,7 @@ android {
         isCoreLibraryDesugaringEnabled = true
     }
 
-    // Modern Kotlin 2.2+ compiler options (NOT kotlinOptions!)
-    kotlin {
-        compilerOptions {
-            // JVM target for Kotlin 2.2+
-            jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
 
-            // Opt-in annotations
-            optIn.add("kotlin.RequiresOptIn")
-
-            // Context parameters (Kotlin 2.2+ experimental feature)
-            freeCompilerArgs.add("-Xcontext-parameters")
-
-            // Annotation default target - apply to both param and field (KT-73255)
-            // See https://youtrack.jetbrains.com/issue/KT-73255
-            freeCompilerArgs.add("-Xannotation-default-target=param-property")
-        }
-    }
 
     lint {
         baseline = file("lint-baseline.xml")
@@ -408,3 +401,16 @@ tasks.register("aegenesisAppStatus") {
 }
 
 apply(from = "cleanup-tasks.gradle.kts")
+
+kotlin {
+    compilerOptions {
+        // JVM target for Kotlin 2.2+
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
+        // Opt-in annotations
+        optIn.add("kotlin.RequiresOptIn")
+        // Context parameters (Kotlin 2.2+ experimental feature)
+        freeCompilerArgs.add("-Xcontext-parameters")
+        // Annotation default target - apply to both param and field (KT-73255)
+        freeCompilerArgs.add("-Xannotation-default-target=param-property")
+    }
+}

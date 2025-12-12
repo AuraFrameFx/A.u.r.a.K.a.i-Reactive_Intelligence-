@@ -9,7 +9,7 @@ import dagger.hilt.components.SingletonComponent
 import dev.aurakai.auraframefx.BuildConfig
 import dev.aurakai.auraframefx.config.VertexAIConfig
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.RealVertexAIClientImpl
-import dev.aurakai.auraframefx.oracledrive.genesis.ai.VertexAIClient
+import dev.aurakai.auraframefx.ai.clients.VertexAIClient
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.VertexAIClientImpl
 import dev.aurakai.auraframefx.security.SecurityContext
 import dev.aurakai.auraframefx.utils.AuraFxLogger

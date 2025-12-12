@@ -27,7 +27,7 @@ object GenesisJvmConfig {
      * - Maximum target supported by Kotlin 2.2.x/2.3.x
      * - Enables modern Java features with backward compatibility via desugaring
      */
-    const val JVM_VERSION = 25
+    const val JVM_VERSION = 24
 
     /**
      * Configure the Kotlin JVM toolchain and Kotlin compilation options for the given Gradle project.

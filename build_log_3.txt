@@ -1,37 +1,23 @@
-﻿Configuration on demand is an incubating feature.
-> Task :build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :build-logic:compileKotlin UP-TO-DATE
-> Task :build-logic:compileJava NO-SOURCE
-> Task :build-logic:pluginDescriptors UP-TO-DATE
-> Task :build-logic:processResources UP-TO-DATE
-> Task :build-logic:classes UP-TO-DATE
-> Task :build-logic:jar UP-TO-DATE
+Configuration on demand is an incubating feature.
 
-> Configure project :aura:reactivedesign:collabcanvas
-WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
-The current default is 'true'.
-It will be removed in version 10.0 of the Android Gradle plugin.
-WARNING: The option setting 'android.newDsl=false' is deprecated.
-The current default is 'true'.
-It will be removed in version 10.0 of the Android Gradle plugin.
+FAILURE: Build failed with an exception.
 
-> Task :aura:reactivedesign:collabcanvas:preBuild UP-TO-DATE
-> Task :aura:reactivedesign:collabcanvas:preDebugBuild UP-TO-DATE
-> Task :aura:reactivedesign:collabcanvas:compileDebugAidl NO-SOURCE
-> Task :aura:reactivedesign:collabcanvas:generateDebugBuildConfig UP-TO-DATE
-> Task :aura:reactivedesign:collabcanvas:generateDebugResources UP-TO-DATE
-> Task :aura:reactivedesign:collabcanvas:packageDebugResources UP-TO-DATE
-> Task :aura:reactivedesign:collabcanvas:processDebugNavigationResources UP-TO-DATE
-> Task :aura:reactivedesign:collabcanvas:parseDebugLocalResources UP-TO-DATE
-> Task :aura:reactivedesign:collabcanvas:generateDebugRFile UP-TO-DATE
+* Where:
+Build file 'C:\Final\A.u.r.a.K.a.i-Reactive_Intelligence-\app\build.gradle.kts' line: 1
 
-> Task :aura:reactivedesign:collabcanvas:kspDebugKotlin FAILED
-e: [ksp] [YukiHookAPI] Cannot identify your Module App's package name, please make sure "BuildConfig.java" is generated correctly
-Looking for help? Please see the documentation link below
-- English: https://highcapable.github.io/YukiHookAPI/en/config/xposed-using
-- Chinese (Simplified): https://highcapable.github.io/YukiHookAPI/zh-cn/config/xposed-using
-e: [ksp] java.lang.RuntimeException: [YukiHookAPI] Cannot identify your Module App's package name, please make sure "BuildConfig.java" is generated correctly
-Looking for help? Please see the documentation link below
-- English: https://highcapable.github.io/YukiHookAPI/en/config/xposed-using
-- Chinese (Simplified): https://highcapable.github.io/YukiHookAPI/zh-cn/config/xposed-using
-11 actionable tasks: 1 executed, 10 up-to-date
+* What went wrong:
+An exception occurred applying plugin request [id: 'org.jetbrains.kotlin.android']
+> Failed to apply plugin 'org.jetbrains.kotlin.android'.
+   > Failed to apply plugin 'org.jetbrains.kotlin.android'
+     The 'org.jetbrains.kotlin.android' plugin is not compatible with AGP's 9.0 new DSL (`android.newDsl=true` is enabled by default).
+     Solution: Set `android.builtInKotlin=true` in `gradle.properties` and migrate to built-in Kotlin (see https://kotl.in/gradle/agp-built-in-kotlin for guidance), or set `android.newDsl=false` in `gradle.properties` to temporarily bypass this issue.
+     See https://kotl.in/gradle/agp-new-dsl for more details.
+      > class com.android.build.gradle.internal.dsl.ApplicationExtensionImpl$AgpDecorated_Decorated cannot be cast to class com.android.build.gradle.BaseExtension (com.android.build.gradle.internal.dsl.ApplicationExtensionImpl$AgpDecorated_Decorated and com.android.build.gradle.BaseExtension are in unnamed module of loader org.gradle.internal.classloader.VisitableURLClassLoader$InstrumentingVisitableURLClassLoader @33923fc3)
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 6s

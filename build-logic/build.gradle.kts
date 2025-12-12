@@ -27,11 +27,11 @@ configurations.all {
 // Configure Java toolchain to JVM 25 (matches gradle.properties and Kotlin target)
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(25))
+        languageVersion.set(JavaLanguageVersion.of(24))
     }
     // Explicitly set source and target compatibility to 25
-    sourceCompatibility = JavaVersion.toVersion("25")
-    targetCompatibility = JavaVersion.toVersion("25")
+    sourceCompatibility = JavaVersion.toVersion("24")
+    targetCompatibility = JavaVersion.toVersion("24")
 }
 
 // Configure Kotlin compilation to match Java toolchain
@@ -47,8 +47,8 @@ tasks.withType<KotlinCompile>().configureEach {
 
 // Explicitly configure Java compilation tasks to target JVM 25
 tasks.withType<JavaCompile>().configureEach {
-    sourceCompatibility = "25"
-    targetCompatibility = "25"
+    sourceCompatibility = "24"
+    targetCompatibility = "24"
 }
 
 // Tests enabled to validate build script configuration

@@ -6,8 +6,9 @@ interface DefaultTaskScheduler {
     /**
  * Schedules the given `Runnable` for asynchronous execution.
  *
- * @param task The `Runnable` to be executed.
-fun schedule(task: Runnable)
+     * @param task The `Runnable` to be executed.
+     */
+    fun schedule(task: Runnable)
 }
 
 class DefaultTaskSchedulerImpl @Inject constructor(): DefaultTaskScheduler {

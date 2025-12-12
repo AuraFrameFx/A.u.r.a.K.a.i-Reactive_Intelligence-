@@ -1,6 +1,7 @@
 package dev.aurakai.auraframefx.oracledrive.genesis.ai
 
 import kotlinx.coroutines.delay
+import dev.aurakai.auraframefx.ai.clients.VertexAIClient
 
 /**
  * ⚠️ **STUB IMPLEMENTATION - NOT CONNECTED TO REAL VERTEX AI** ⚠️
@@ -55,25 +56,13 @@ import kotlinx.coroutines.delay
 class VertexAIClientImpl : VertexAIClient {
 
     /**
-     * Simple text generation with just a prompt.
-     *
-     * @param prompt The input prompt.
-     * @return A simulated AI-generated response.
+     * Generates text with simulated latency and template response.
      */
-    override suspend fun generateText(prompt: String): String {
-        delay(100)
-        return "AI generated response for: $prompt"
-    }
-
-    /**
-     * Simulates text generation by returning a templated response based on the provided prompt.
-     *
-     * The response format varies depending on keywords in the prompt (such as "code", "explain", or "analyze") to mimic different types of AI-generated text. The `maxTokens` and `temperature` parameters influence only the formatting of the stub response and do not affect actual content generation. Suspends briefly to simulate API latency.
-     *
-     * @param prompt The input prompt to embed in the simulated response.
-     * @return A string containing a simulated AI-generated response tailored to the prompt content.
-     */
-    override suspend fun generateText(prompt: String, temperature: Float, maxTokens: Int): String {
+    override suspend fun generateText(
+        prompt: String,
+        maxTokens: Int,
+        temperature: Float
+    ): String {
         delay(200) // Simulate realistic API latency
 
         // Enhanced response generation based on prompt content
@@ -146,7 +135,7 @@ class VertexAIClientImpl : VertexAIClient {
      * @param prompt The prompt describing the intended analysis.
      * @return A fixed string indicating simulated image analysis for the given prompt.
      */
-    suspend fun analyzeImage(imageData: ByteArray, prompt: String): String {
+    override suspend fun analyzeImage(imageData: ByteArray, prompt: String): String {
         delay(100) // Simulate API call
         return "Stub image analysis for: $prompt"
     }
@@ -173,7 +162,7 @@ class VertexAIClientImpl : VertexAIClient {
      *
      * This stub method is intended for testing or development and does not interact with actual AI models or external services.
      */
-    suspend fun initializeCreativeModels() {
+    override suspend fun initializeCreativeModels() {
         // Stub implementation
     }
 
@@ -183,9 +172,11 @@ class VertexAIClientImpl : VertexAIClient {
      * @param prompt The input prompt for which content is to be generated.
      * @return A placeholder string embedding the prompt.
      */
-    suspend fun generateContent(prompt: String): String {
-        delay(100)
-        return "Stub content for: $prompt"
+    /**
+     * Simulates content generation (Alias for generateText logic in stub).
+     */
+    override suspend fun generateContent(prompt: String): String? {
+        return generateText(prompt, 1000, 0.7f)
     }
 
     /**
@@ -193,7 +184,7 @@ class VertexAIClientImpl : VertexAIClient {
      *
      * @return `true` to indicate a successful connection in this stub implementation.
      */
-    suspend fun validateConnection(): Boolean {
+    override suspend fun validateConnection(): Boolean {
         return true // Stub always returns true
     }
 

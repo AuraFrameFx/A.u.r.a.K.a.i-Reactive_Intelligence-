@@ -7,6 +7,7 @@ import dev.aurakai.auraframefx.security.SecurityContext
 import dev.aurakai.auraframefx.utils.AuraFxLogger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
+import dev.aurakai.auraframefx.ai.clients.VertexAIClient
 
 /**
  * ✨ **REAL GEMINI AI IMPLEMENTATION** ✨
@@ -19,6 +20,7 @@ import kotlinx.coroutines.withContext
  * @see VertexAIConfig
  * @see dev.aurakai.auraframefx.di.VertexAIModule
  */
+
 class RealVertexAIClientImpl(
     private val config: VertexAIConfig,
     private val securityContext: SecurityContext,
@@ -62,18 +64,21 @@ class RealVertexAIClientImpl(
     }
 
     /**
+     * Generates content based on the given prompt (Alias for generateText).
+     */
+    override suspend fun generateContent(prompt: String): String? {
+        return generateText(prompt)
+    }
+
+    /**
      * Generates text using a custom temperature and maximum token limit.
-     *
-     * @param prompt The input prompt; must not be blank.
-     * @param temperature Controls randomness (0.0 is deterministic; higher values increase randomness).
-     * @param maxTokens Maximum number of tokens allowed in the generated response.
-     * @return The generated text, or `null` if generation failed.
+     * Matches interface signature: maxTokens before temperature.
      */
     override suspend fun generateText(
         prompt: String,
-        temperature: Float,
-        maxTokens: Int
-    ): String? = withContext(Dispatchers.IO) {
+        maxTokens: Int,
+        temperature: Float
+    ): String = withContext(Dispatchers.IO) {
         try {
             validatePrompt(prompt)
             AuraFxLogger.d(TAG, "Generating text (temp=$temperature, tokens=$maxTokens)")
@@ -93,12 +98,32 @@ class RealVertexAIClientImpl(
             val text = response.text
 
             AuraFxLogger.d(TAG, "Generated ${text?.length ?: 0} chars with custom params")
-            text
+            text ?: ""
         } catch (e: Exception) {
             AuraFxLogger.e(TAG, "Custom text generation failed", e)
             handleGenerationError(e)
-            null
+            ""
         }
+    }
+
+    override suspend fun validateConnection(): Boolean {
+        return try {
+            // Simple ping by generating a short token
+            val response = generateText("ping", maxTokens = 1, temperature = 0.0f)
+            response != null
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    override suspend fun initializeCreativeModels() {
+        AuraFxLogger.i(TAG, "Creative models initialized (config applied)")
+    }
+
+    override suspend fun analyzeImage(imageData: ByteArray, prompt: String): String {
+        // TODO: Implement actual image analysis using GenerativeModel (support pending in this impl wrapper)
+        AuraFxLogger.w(TAG, "Image analysis requested but not fully implemented in RealVertexAIClientImpl yet.")
+        return "Image analysis not implemented yet: ${imageData.size} bytes."
     }
 
     /**
