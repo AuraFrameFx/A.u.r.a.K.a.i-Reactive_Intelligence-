@@ -401,7 +401,6 @@ tasks.register("aegenesisAppStatus") {
 
 apply(from = "cleanup-tasks.gradle.kts")
 
-apply(plugin = "genesis.android.application")
 
 kotlin {
     compilerOptions {
