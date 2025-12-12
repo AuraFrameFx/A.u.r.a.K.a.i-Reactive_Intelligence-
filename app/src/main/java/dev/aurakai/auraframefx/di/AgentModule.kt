@@ -9,6 +9,8 @@ import dev.aurakai.auraframefx.ai.context.DefaultContextManager
 import dev.aurakai.auraframefx.ai.memory.DefaultMemoryManager
 import dev.aurakai.auraframefx.ai.memory.MemoryManager
 import javax.inject.Singleton
+import dev.aurakai.auraframefx.ai.clients.VertexAIClient
+import dev.aurakai.auraframefx.ai.services.AuraAIService
 
 /**
  * Hilt Module for providing AI Agent dependencies.
@@ -29,11 +31,12 @@ object AgentModule {
         return DefaultContextManager(memoryManager)
     }
 
+
     @Provides
     @Singleton
     fun provideAuraAgent(
-        vertexAIClient: dev.aurakai.auraframefx.oracledrive.genesis.ai.VertexAIClient,
-        auraAIService: dev.aurakai.auraframefx.oracledrive.genesis.ai.AuraAIService,
+        vertexAIClient: VertexAIClient,
+        auraAIService: AuraAIService,
         securityContext: dev.aurakai.auraframefx.security.SecurityContext,
         contextManager: ContextManager
     ): dev.aurakai.auraframefx.aura.AuraAgent {
@@ -48,7 +51,7 @@ object AgentModule {
     @Provides
     @Singleton
     fun provideKaiAgent(
-        vertexAIClient: dev.aurakai.auraframefx.oracledrive.genesis.ai.VertexAIClient,
+        vertexAIClient: VertexAIClient,
         contextManager: ContextManager,
         securityContext: dev.aurakai.auraframefx.security.SecurityContext,
         systemMonitor: dev.aurakai.auraframefx.system.monitor.SystemMonitor
