@@ -4,7 +4,7 @@ plugins {
     id("com.google.devtools.ksp")
     id("org.jetbrains.kotlin.plugin.compose")
     id("org.jetbrains.kotlin.plugin.serialization")
-    // NOTE: Do not apply `genesis.android.application` here because some plugins
+    id("com.google.dagger.hilt.android")
     // (like Hilt applied by genesis) expect the Android BaseExtension to exist
     // before they run. We'll apply it after the Android plugin is configured.
 }
@@ -352,9 +352,9 @@ configurations.all {
     }
 
     // Exclude YukiHook API from KSP configurations to avoid duplicate class errors
-    if (name.startsWith("ksp")) {
-        exclude(group = "com.highcapable.yukihookapi", module = "api")
-    }
+    // if (name.startsWith("ksp")) {
+    //    exclude(group = "com.highcapable.yukihookapi", module = "api")
+    // }
 
     resolutionStrategy {
         force("org.jetbrains:annotations:26.0.2-1")
