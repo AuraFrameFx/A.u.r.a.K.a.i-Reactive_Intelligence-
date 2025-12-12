@@ -1,4 +1,5 @@
 plugins {
+    id("com.android.application")
     id("genesis.android.application")
 }
 
