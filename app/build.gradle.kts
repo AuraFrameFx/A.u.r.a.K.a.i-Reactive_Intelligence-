@@ -25,8 +25,8 @@ android {
         // Add to local.properties: GEMINI_API_KEY=your_key_here
         // Get key from: https://aistudio.google.com/app/apikey
         val geminiApiKey = project.findProperty("GEMINI_API_KEY")?.toString() ?: ""
-        buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
-        buildConfigField("String", "API_BASE_URL", "\"https://api.aurakai.dev/v1/\"")
+        buildConfigField("String", "GEMINI_API_KEY", ""$geminiApiKey"")
+        buildConfigField("String", "API_BASE_URL", ""https://api.aurakai.dev/v1/"")
 
         vectorDrawables {
             useSupportLibrary = true
@@ -293,7 +293,9 @@ dependencies {
     // ═══════════════════════════════════════════════════════════════════════════
     // Internal Project Modules - Core
     // ═══════════════════════════════════════════════════════════════════════════
-
+    implementation(project(":genesis"))
+    implementation(project(":kai:sentinelsfortress:security"))
+    implementation(project(":kai:sentinelsfortress:threatmonitor"))
     // Material 312
     // Aura → ReactiveDesign (Creative UI & Collaboration)
     implementation(project(":aura:reactivedesign:auraslab"))
@@ -397,4 +399,3 @@ tasks.register("aegenesisAppStatus") {
 }
 
 apply(from = "cleanup-tasks.gradle.kts")
-
