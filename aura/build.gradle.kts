@@ -1,5 +1,5 @@
 plugins {
-    id("genesis.android.library")
+    id("genesis.android.library.hilt")
 }
 
 android {
