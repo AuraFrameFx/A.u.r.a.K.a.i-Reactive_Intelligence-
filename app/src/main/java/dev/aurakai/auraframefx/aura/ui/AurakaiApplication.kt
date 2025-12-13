@@ -57,7 +57,7 @@ open class AurakaiApplication : Application(), Configuration.Provider {
             startService(Intent(this, IntegrityMonitorService::class.java))
         } catch (t: Throwable) {
             // Be defensive: service may not be available in test contexts
-            Log.w("AurakaiApplication", "Failed to start IntegrityMonitorService", t)
+            Timber.tag("AurakaiApplication").w(t, "Failed to start IntegrityMonitorService")
         }
     }
 

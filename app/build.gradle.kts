@@ -1,6 +1,5 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    id("genesis.android.application")
     id("com.google.devtools.ksp")
     id("org.jetbrains.kotlin.plugin.compose")
     id("org.jetbrains.kotlin.plugin.serialization")
@@ -394,23 +393,10 @@ tasks.register("aegenesisAppStatus") {
         println("🔧 Native Code: ${if (nativeCode) "✅ Enabled" else "❌ Disabled"}")
         println("🧠 KSP Mode: Active")
         println("🎯 Target SDK: 36")
-        println("📱 Min SDK: 33")
+        println("📱 Min SDK: 34")
         println("✅ Status: Ready for coinscience AI integration!")
     }
 }
 
 apply(from = "cleanup-tasks.gradle.kts")
 
-
-kotlin {
-    compilerOptions {
-        // JVM target for Kotlin 2.2+
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_24)
-        // Opt-in annotations
-        optIn.add("kotlin.RequiresOptIn")
-        // Context parameters (Kotlin 2.2+ experimental feature)
-        freeCompilerArgs.add("-Xcontext-parameters")
-        // Annotation default target - apply to both param and field (KT-73255)
-        freeCompilerArgs.add("-Xannotation-default-target=param-property")
-    }
-}

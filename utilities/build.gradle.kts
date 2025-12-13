@@ -1,6 +1,7 @@
 plugins {
     id("genesis.android.library.hilt")
     id("org.jetbrains.kotlin.plugin.compose")
+    id("com.google.devtools.ksp")
 }
 
 android {
@@ -36,7 +37,6 @@ android {
         implementation(libs.timber)
         implementation(libs.junit.jupiter.api)
         implementation(libs.junit.jupiter.params)
-        testImplementation(kotlin("test"))
         androidTestImplementation(libs.espresso.core)
         androidTestImplementation(libs.androidx.junit)
         implementation(libs.compose.ui)
