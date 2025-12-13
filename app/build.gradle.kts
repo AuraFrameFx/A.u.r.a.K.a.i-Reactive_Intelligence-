@@ -295,6 +295,9 @@ dependencies {
     implementation(project(":list"))
     implementation(project(":utilities"))
 
+    implementation(project(":genesis"))
+    implementation(project(":kai:sentinelsfortress:security"))
+    implementation(project(":kai:sentinelsfortress:threatmonitor"))
     // Material 312
     // Aura → ReactiveDesign (Creative UI & Collaboration)
     implementation(project(":aura:reactivedesign:auraslab"))
@@ -303,12 +306,9 @@ dependencies {
     implementation(project(":aura:reactivedesign:customization"))
 
     // Kai → SentinelsFortress (Security & Threat Monitoring)
-    implementation(project(":kai:sentinelsfortress:security"))
     implementation(project(":kai:sentinelsfortress:systemintegrity"))
-    implementation(project(":kai:sentinelsfortress:threatmonitor"))
 
     // Genesis → OracleDrive (System & Root Management)
-    implementation(project(":genesis"))
     implementation(project(":genesis:oracledrive"))
     implementation(project(":genesis:oracledrive:rootmanagement"))
     implementation(project(":genesis:oracledrive:datavein"))
@@ -398,4 +398,3 @@ tasks.register("aegenesisAppStatus") {
 }
 
 apply(from = "cleanup-tasks.gradle.kts")
-
