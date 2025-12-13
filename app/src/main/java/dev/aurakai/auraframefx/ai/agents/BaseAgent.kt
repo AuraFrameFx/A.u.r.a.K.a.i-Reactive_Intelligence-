@@ -4,6 +4,7 @@ import dev.aurakai.auraframefx.models.AgentResponse
 import dev.aurakai.auraframefx.model.AgentType
 import dev.aurakai.auraframefx.models.AiRequest
 import dev.aurakai.auraframefx.models.InteractionResponse
+import dev.aurakai.auraframefx.utils.toKotlinJsonObject
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
@@ -60,7 +61,7 @@ abstract class BaseAgent(
     ): InteractionResponse {
          return InteractionResponse(
             content = content,
-            metadata = dev.aurakai.auraframefx.utils.toJsonObject(metadata),
+            metadata = metadata.toKotlinJsonObject(),
             timestamp = timestamp
         )
     }
@@ -82,8 +83,8 @@ abstract class BaseAgent(
      *  - `base_implemented`: `true` indicating the base agent implementation is present.
      */
     fun getCapabilities(): Map<String, Any> = mapOf(
-        "name" to _agentName,
-        "type" to _agentType,
+        "name" to agentName,
+        "type" to agentTypeStr,
         "base_implemented" to true
     )
 
@@ -124,11 +125,11 @@ abstract class BaseAgent(
      */
     open fun iRequest(query: String, type: String, context: Map<String, String>) {
         // default no-op; override in implementations that require non-suspending adapters
-        Timber.d("iRequest called on %s with query=%s type=%s", _agentName, query, type)
+        Timber.d("iRequest called on %s with query=%s type=%s", agentName, query, type)
     }
 
     /** Optional initialization hook for adaptive protection/security subsystems. */
     open fun initializeAdaptiveProtection() {
-        Timber.d("initializeAdaptiveProtection called for %s", _agentName)
+        Timber.d("initializeAdaptiveProtection called for %s", agentName)
     }
 }

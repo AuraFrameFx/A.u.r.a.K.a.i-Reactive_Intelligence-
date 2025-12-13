@@ -78,6 +78,17 @@ fun Modifier.digitalPixelEffect() = this
         shape = RoundedCornerShape(1.dp)
     )
 
+/**
+ * Conditionally applies a pixelated cyberpunk effect based on the visible parameter.
+ *
+ * @param visible If true, applies the digital pixel effect; otherwise returns the modifier unchanged.
+ */
+fun Modifier.digitalPixelEffect(visible: Boolean) = if (visible) {
+    this.digitalPixelEffect()
+} else {
+    this
+}
+
 enum class CornerStyle {
     ROUNDED,
     SHARP,
