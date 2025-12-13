@@ -47,5 +47,16 @@ enum class AgentType {
     /**
      * User - Represents a human user interacting with the system.
      */
-    USER
+    USER;
+
+    val displayName: String
+        get() = when (this) {
+            AURA -> "Aura"
+            CASCADE -> "Cascade"
+            GENESIS -> "Genesis"
+            KAI -> "Kai"
+            NEURAL_WHISPER -> "Neural Whisper"
+            AURASHIELD -> "Aura Shield"
+            USER -> "User"
+        }
 }

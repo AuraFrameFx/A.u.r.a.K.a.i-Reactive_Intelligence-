@@ -148,7 +148,6 @@ dependencies {
     // Gemini AI
     // Use the project version-catalog alias for Google Generative AI client
     implementation(libs.generativeai)
-    // Hilt KSP already declared above; avoid duplicate KSP entries
 
     // Core Android
     implementation(libs.androidx.core.ktx)
@@ -156,8 +155,6 @@ dependencies {
     implementation(libs.androidx.material)
     implementation(libs.androidx.activity.compose)
 
-    // MultiDex support for 64K+ methods
-        //STOP ADDING IT ONLY NEEDS TO BE PLACED IN TOML
     // Compose BOM & UI
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.compose.ui)
@@ -208,8 +205,6 @@ dependencies {
     implementation(libs.yukihook.api)
     ksp(libs.yukihook.ksp)
 
-    // KavaRef for YukiHook
-
     // Firebase BOM (Bill of Materials) for version management
     implementation(platform(libs.firebase.bom))
     implementation(libs.bundles.firebase)
@@ -220,7 +215,6 @@ dependencies {
     implementation(libs.okhttp.logging.interceptor)
     implementation(libs.retrofit)
     implementation(libs.retrofit.converter.kotlinx.serialization)
-    implementation(libs.retrofit.converter.moshi)
     implementation(libs.retrofit.converter.scalars)
 
     // Kotlinx Serialization
@@ -237,41 +231,20 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.retrofit.converter.gson)
 
-    // Retrofit Scalars Converter (for String responses)
-    implementation(libs.retrofit.converter.scalars)
-
-    // Coil Image Loading with SVG support
-    implementation(libs.coil)
-    implementation(libs.coil.kt.coil.svg)
-
     // Ktor Client
     implementation(libs.ktor.client.core)
     implementation(libs.ktor.client.okhttp)  // OkHttp engine for Ktor
     implementation(libs.ktor.client.content.negotiation)  // Content negotiation
     implementation(libs.ktor.serialization.kotlinx.json)  // JSON serialization
     implementation(libs.ktor.client.logging)  // Logging
-    implementation(libs.kotlinx.serialization.json)  // Kotlinx Serialization JSON
-
-    // Moshi (JSON - for Retrofit)
-    implementation(libs.moshi)
-    implementation(libs.moshi.kotlin)
-    ksp(libs.moshi.kotlin.codegen)
 
     // Kotlin DateTime & Coroutines
     implementation(libs.kotlinx.datetime)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
 
-
-
-    // Compose Material Icons
-    implementation(libs.androidx.compose.material.icons.extended)
-
     // Animations
     implementation(libs.lottie.compose)
-
-    // Logging
-    implementation(libs.timber)
 
     // Memory Leak Detection
     debugImplementation(libs.leakcanary.android)
@@ -298,27 +271,17 @@ dependencies {
     implementation(project(":genesis"))
     implementation(project(":kai:sentinelsfortress:security"))
     implementation(project(":kai:sentinelsfortress:threatmonitor"))
-    // Material 312
-    // Aura → ReactiveDesign (Creative UI & Collaboration)
     implementation(project(":aura:reactivedesign:auraslab"))
     implementation(project(":aura:reactivedesign:collabcanvas"))
     implementation(project(":aura:reactivedesign:chromacore"))
     implementation(project(":aura:reactivedesign:customization"))
-
-    // Kai → SentinelsFortress (Security & Threat Monitoring)
     implementation(project(":kai:sentinelsfortress:systemintegrity"))
-
-    // Genesis → OracleDrive (System & Root Management)
     implementation(project(":genesis:oracledrive"))
     implementation(project(":genesis:oracledrive:rootmanagement"))
     implementation(project(":genesis:oracledrive:datavein"))
-
-    // Cascade → DataStream (Data Routing & Delivery)
     implementation(project(":cascade:datastream:routing"))
     implementation(project(":cascade:datastream:delivery"))
     implementation(project(":cascade:datastream:taskmanager"))
-
-    // Agents → GrowthMetrics (AI Agent Evolution)
     implementation(project(":agents:growthmetrics:metareflection"))
     implementation(project(":agents:growthmetrics:nexusmemory"))
     implementation(project(":agents:growthmetrics:spheregrid"))
@@ -348,11 +311,6 @@ configurations.all {
     if (name.contains("AndroidTest")) {
         return@all
     }
-
-    // Exclude YukiHook API from KSP configurations to avoid duplicate class errors
-    // if (name.startsWith("ksp")) {
-    //    exclude(group = "com.highcapable.yukihookapi", module = "api")
-    // }
 
     resolutionStrategy {
         force("org.jetbrains:annotations:26.0.2-1")

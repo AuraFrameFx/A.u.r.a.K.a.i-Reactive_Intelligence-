@@ -1,15 +1,10 @@
 ﻿package dev.aurakai.auraframefx.ai.agents
 
+import dev.aurakai.auraframefx.model.AgentType
 import dev.aurakai.auraframefx.models.AgentResponse
-import dev.aurakai.auraframefx.models.AgentType
 import dev.aurakai.auraframefx.models.AiRequest
 import dev.aurakai.auraframefx.models.InteractionResponse
 import kotlinx.coroutines.flow.Flow
-
-/**
- * Top-level value declaration for versioning or identification.
- */
-const val TOPL_VL: String = "1.0.0"
 
 /**
  * Interface representing an AI agent.
