@@ -40,7 +40,7 @@
         android:protectionLevel="signature" />
 
     <application
-        android:name="dev.aurakai.auraframefx.aura.ui.AurakaiApplication"
+        android:name="dev.aurakai.auraframefx.AurakaiApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/AuraKai"
@@ -127,7 +127,7 @@
             android:exported="false"
             android:foregroundServiceType="dataSync" />
         <service android:name="dev.aurakai.auraframefx.services.AmbientMusicService" />
-        <service android:name="dev.aurakai.auraframefx.ipc.AuraDriveService" />
+        <service android:name="dev.aurakai.auraframefx.services.AuraDriveService" />
 
         <!-- Receivers -->
         <receiver

@@ -42,4 +42,5 @@ dependencies {
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
+    implementation(project(":cascade"))
 }

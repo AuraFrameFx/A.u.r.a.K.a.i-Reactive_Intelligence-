@@ -1,9 +1,5 @@
 plugins {
     id("genesis.android.application")
-    id("com.google.devtools.ksp")
-    id("org.jetbrains.kotlin.plugin.compose")
-    id("org.jetbrains.kotlin.plugin.serialization")
-    id("com.google.dagger.hilt.android")
     // (like Hilt applied by genesis) expect the Android BaseExtension to exist
     // before they run. We'll apply it after the Android plugin is configured.
 }
@@ -295,6 +291,9 @@ dependencies {
     // ═══════════════════════════════════════════════════════════════════════════
     // Internal Project Modules - Core
     // ═══════════════════════════════════════════════════════════════════════════
+    implementation(project(":aura"))
+    implementation(project(":list"))
+    implementation(project(":utilities"))
 
     // Material 312
     // Aura → ReactiveDesign (Creative UI & Collaboration)
