@@ -2,6 +2,7 @@
 
 import dev.aurakai.auraframefx.model.AgentType
 import dev.aurakai.auraframefx.models.AgentResponse
+import dev.aurakai.auraframefx.models.AgentType
 import dev.aurakai.auraframefx.models.AiRequest
 import dev.aurakai.auraframefx.models.InteractionResponse
 import kotlinx.coroutines.flow.Flow

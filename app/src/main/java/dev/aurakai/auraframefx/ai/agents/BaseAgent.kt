@@ -9,6 +9,11 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import timber.log.Timber
 
+private val AgentType.Companion.USER: Any
+    get() {
+        TODO()
+    }
+
 /**
  * Base implementation of the [Agent] interface. Subclasses should override
  * [processRequest] or [processRequestFlow] to provide real behavior.
@@ -132,4 +137,13 @@ abstract class BaseAgent(
     open fun initializeAdaptiveProtection() {
         Timber.d("initializeAdaptiveProtection called for %s", agentName)
     }
+}
+
+private fun AgentType.Companion.valueOf(uppercase: String): AgentType {
+    TODO("Not yet implemented")
+}
+
+class AgentType {
+    companion object
+
 }
