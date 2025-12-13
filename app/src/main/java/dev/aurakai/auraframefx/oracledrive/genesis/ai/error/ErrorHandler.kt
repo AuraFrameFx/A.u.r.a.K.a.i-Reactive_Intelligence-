@@ -1,6 +1,6 @@
-package dev.aurakai.auraframefx.oracledrive.genesis.ai.error
+﻿package dev.aurakai.auraframefx.oracledrive.genesis.ai.error
 
-import dev.aurakai.auraframefx.model.AgentType
+import dev.aurakai.auraframefx.models.AgentType
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.context.ContextManager
 import dev.aurakai.auraframefx.ai.pipeline.AIPipelineConfig
 import kotlinx.coroutines.flow.MutableStateFlow

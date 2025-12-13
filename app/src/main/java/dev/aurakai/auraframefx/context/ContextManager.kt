@@ -1,11 +1,11 @@
-package dev.aurakai.auraframefx.context
+﻿package dev.aurakai.auraframefx.context
 
-import dev.aurakai.auraframefx.model.EnhancedInteractionData
-import dev.aurakai.auraframefx.model.InteractionData
-import dev.aurakai.auraframefx.model.InteractionResponse
-import dev.aurakai.auraframefx.model.InteractionType
-import dev.aurakai.auraframefx.model.SecurityAnalysis
-import dev.aurakai.auraframefx.model.ThreatLevel
+import dev.aurakai.auraframefx.models.EnhancedInteractionData
+import dev.aurakai.auraframefx.models.InteractionData
+import dev.aurakai.auraframefx.models.InteractionResponse
+import dev.aurakai.auraframefx.models.InteractionType
+import dev.aurakai.auraframefx.models.SecurityAnalysis
+import dev.aurakai.auraframefx.models.ThreatLevel
 import dev.aurakai.auraframefx.utils.AuraFxLogger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers

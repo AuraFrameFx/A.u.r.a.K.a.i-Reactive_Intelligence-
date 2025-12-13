@@ -1,12 +1,12 @@
-package dev.aurakai.auraframefx.viewmodel
+﻿package dev.aurakai.auraframefx.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.aurakai.auraframefx.ai.task.HistoricalTask
-import dev.aurakai.auraframefx.model.AgentPriority
-import dev.aurakai.auraframefx.model.AgentRole
-import dev.aurakai.auraframefx.model.AgentType
-import dev.aurakai.auraframefx.model.HierarchyAgentConfig
+import dev.aurakai.auraframefx.models.AgentPriority
+import dev.aurakai.auraframefx.models.AgentRole
+import dev.aurakai.auraframefx.models.AgentType
+import dev.aurakai.auraframefx.models.HierarchyAgentConfig
 import dev.aurakai.auraframefx.utils.AppConstants.STATUS_ERROR
 import dev.aurakai.auraframefx.utils.AppConstants.STATUS_IDLE
 import dev.aurakai.auraframefx.utils.AppConstants.STATUS_PROCESSING

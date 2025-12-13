@@ -7,10 +7,11 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+import dev.aurakai.auraframefx.ui.theme.service.ThemeService
 
 @HiltViewModel
 class ThemeViewModel @Inject constructor(
-    private val themeService: Unit,
+    private val themeService: ThemeService,
 ) : ViewModel() {
 
     private val _theme = MutableStateFlow(Theme.DARK)

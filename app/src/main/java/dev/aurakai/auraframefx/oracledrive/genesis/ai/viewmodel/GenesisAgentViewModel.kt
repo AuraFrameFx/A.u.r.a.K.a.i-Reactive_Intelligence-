@@ -1,13 +1,13 @@
-package dev.aurakai.auraframefx.oracledrive.genesis.ai.viewmodel
+﻿package dev.aurakai.auraframefx.oracledrive.genesis.ai.viewmodel
 
 import AgentPriority
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.task.HistoricalTask
-import dev.aurakai.auraframefx.model.AgentRole
-import dev.aurakai.auraframefx.model.AgentType
-import dev.aurakai.auraframefx.model.HierarchyAgentConfig
+import dev.aurakai.auraframefx.models.AgentRole
+import dev.aurakai.auraframefx.models.AgentType
+import dev.aurakai.auraframefx.models.HierarchyAgentConfig
 import dev.aurakai.auraframefx.utils.AppConstants.STATUS_ERROR
 import dev.aurakai.auraframefx.utils.AppConstants.STATUS_IDLE
 import dev.aurakai.auraframefx.utils.AppConstants.STATUS_PROCESSING

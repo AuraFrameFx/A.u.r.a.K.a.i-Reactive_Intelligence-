@@ -1,8 +1,8 @@
-package dev.aurakai.auraframefx.ai.task
+﻿package dev.aurakai.auraframefx.ai.task
 
 import dev.aurakai.auraframefx.ai.error.ErrorHandler
 import dev.aurakai.auraframefx.ai.pipeline.AIPipelineConfig
-import dev.aurakai.auraframefx.model.AgentType
+import dev.aurakai.auraframefx.models.AgentType
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
