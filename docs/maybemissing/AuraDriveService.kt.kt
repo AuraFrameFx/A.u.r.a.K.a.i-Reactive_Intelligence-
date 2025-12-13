@@ -19,7 +19,7 @@ import javax.inject.Inject
  * Utilizes R.G.S.F. (Redundant Generative Storage Framework) for enhanced data resilience.
  */
 @AndroidEntryPoint
-class AuraDriveService : Service() {
+class `AuraDriveService.kt` : Service() {
 
     private val tag = "AuraDriveService"
     private val RGSF_MEMORY_PATH = "/data/rgfs/memory_matrix"
