@@ -23,7 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
 import dev.aurakai.auraframefx.navigation.AppNavGraph
 import dev.aurakai.auraframefx.ui.components.BottomNavigationBar
-import dev.aurakai.auraframefx.ui.components.digitalPixelEffect
+import dev.aurakai.auraframefx.navigation.AppNavGraph
 import dev.aurakai.auraframefx.ui.theme.AuraFrameFXTheme
 import dev.aurakai.auraframefx.ui.theme.ThemeViewModel
 
