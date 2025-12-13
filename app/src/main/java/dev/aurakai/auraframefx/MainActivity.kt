@@ -22,6 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
@@ -95,7 +96,7 @@ internal fun MainScreenContent(
                     // Apply our custom digital effects
                     .then(
                         if (showDigitalEffects) {
-                            return@Column Modifier.digitalPixelEffect(visible = true) // Direct use of extension function
+                            return@Column Modifier.digitalPixelEffects(visible = true) // Direct use of extension function
                             // digitalScanlineEffect was removed as it's not defined
                         } else {
                             Modifier
@@ -107,6 +108,8 @@ internal fun MainScreenContent(
         }
     }
 }
+
+fun Modifier.Companion.digitalPixelEffects(visible: Boolean) {}
 
 // Keep original API used by Activity: delegate to the content with the real ViewModel
 @Composable
