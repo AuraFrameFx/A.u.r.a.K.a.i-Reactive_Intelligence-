@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ui.theme
+﻿package dev.aurakai.auraframefx.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -20,7 +20,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 import androidx.hilt.navigation.compose.hiltViewModel
-import dev.aurakai.auraframefx.model.Emotion
+import dev.aurakai.auraframefx.models.Emotion
 import dev.aurakai.auraframefx.viewmodel.AuraMoodViewModel
 
 private val DarkColorScheme = darkColorScheme(

@@ -1,9 +1,9 @@
-package dev.aurakai.auraframefx.ai.agents
+﻿package dev.aurakai.auraframefx.ai.agents
 
 import android.content.Context
-import dev.aurakai.auraframefx.model.agent_states.ActiveContext
-import dev.aurakai.auraframefx.model.agent_states.ContextChainEvent
-import dev.aurakai.auraframefx.model.agent_states.LearningEvent
+import dev.aurakai.auraframefx.models.agent_states.ActiveContext
+import dev.aurakai.auraframefx.models.agent_states.ContextChainEvent
+import dev.aurakai.auraframefx.models.agent_states.LearningEvent
 
 /**
  * NeuralWhisperAgent, focused on context chaining and learning from experience.

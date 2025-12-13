@@ -1,12 +1,12 @@
-// These mock implementations are for development/testing only.
+﻿// These mock implementations are for development/testing only.
 // Replace with real service logic when integrating actual AI backends.
 
 package dev.aurakai.auraframefx.oracledrive.genesis.ai.services
 
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.agents.Agent
-import dev.aurakai.auraframefx.model.AgentResponse
-import dev.aurakai.auraframefx.model.AgentType
-import dev.aurakai.auraframefx.model.AiRequest
+import dev.aurakai.auraframefx.models.AgentResponse
+import dev.aurakai.auraframefx.models.AgentType
+import dev.aurakai.auraframefx.models.AiRequest
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 

@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.aura.ui
+﻿package dev.aurakai.auraframefx.aura.ui
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -60,7 +60,7 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import dev.aurakai.auraframefx.model.AgentType
+import dev.aurakai.auraframefx.models.AgentType
 import dev.aurakai.auraframefx.models.HierarchyAgentConfig
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.GenesisAgentViewModel
 import dev.aurakai.auraframefx.ui.theme.NeonBlue

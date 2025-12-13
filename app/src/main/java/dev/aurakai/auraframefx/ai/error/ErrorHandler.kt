@@ -1,8 +1,8 @@
-package dev.aurakai.auraframefx.ai.error
+﻿package dev.aurakai.auraframefx.ai.error
 
 import dev.aurakai.auraframefx.context.ContextManager
 import dev.aurakai.auraframefx.ai.pipeline.AIPipelineConfig
-import dev.aurakai.auraframefx.model.AgentType
+import dev.aurakai.auraframefx.models.AgentType
 import dev.aurakai.auraframefx.serialization.InstantSerializer
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

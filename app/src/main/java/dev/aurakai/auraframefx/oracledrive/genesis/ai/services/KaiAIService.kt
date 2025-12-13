@@ -1,8 +1,8 @@
-package dev.aurakai.auraframefx.oracledrive.genesis.ai.services
+﻿package dev.aurakai.auraframefx.oracledrive.genesis.ai.services
 
-import dev.aurakai.auraframefx.model.AgentResponse
-import dev.aurakai.auraframefx.model.AgentType
-import dev.aurakai.auraframefx.model.AiRequest
+import dev.aurakai.auraframefx.models.AgentResponse
+import dev.aurakai.auraframefx.models.AgentType
+import dev.aurakai.auraframefx.models.AiRequest
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.context.ContextManager
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.error.ErrorHandler
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.memory.MemoryManager

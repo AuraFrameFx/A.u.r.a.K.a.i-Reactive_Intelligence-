@@ -1,4 +1,4 @@
-package dev.aurakai.auraframefx.ai.task.execution
+﻿package dev.aurakai.auraframefx.ai.task.execution
 
 import dev.aurakai.auraframefx.ai.agents.AuraAgent
 import dev.aurakai.auraframefx.ai.agents.GenesisAgent
@@ -6,10 +6,10 @@ import dev.aurakai.auraframefx.ai.agents.KaiAgent
 import dev.aurakai.auraframefx.ai.task.TaskResult
 import dev.aurakai.auraframefx.ai.task.TaskStatus
 import dev.aurakai.auraframefx.data.logging.AuraFxLogger
-import dev.aurakai.auraframefx.model.AgentRequest
-import dev.aurakai.auraframefx.model.AgentResponse
-import dev.aurakai.auraframefx.model.AgentType
-import dev.aurakai.auraframefx.model.AiRequest
+import dev.aurakai.auraframefx.models.AgentRequest
+import dev.aurakai.auraframefx.models.AgentResponse
+import dev.aurakai.auraframefx.models.AgentType
+import dev.aurakai.auraframefx.models.AiRequest
 import dev.aurakai.auraframefx.security.SecurityContext
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
