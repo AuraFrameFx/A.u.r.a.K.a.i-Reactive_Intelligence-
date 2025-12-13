@@ -42,7 +42,6 @@
     <application
         android:name="dev.aurakai.auraframefx.AurakaiApplication"
         android:allowBackup="true"
-        android:name="dev.aurakai.auraframefx.aura.ui.Hilt_AurakaiApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/AuraKai"
         android:supportsRtl="true"

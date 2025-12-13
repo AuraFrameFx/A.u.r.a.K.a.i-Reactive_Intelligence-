@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -19,32 +20,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.compose.rememberNavController
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
-import androidx.hilt.navigation.compose.hiltViewModel
-
-import dev.aurakai.auraframefx.ui.animation.digitalPixelEffect // Specific import
-import dev.aurakai.auraframefx.ui.theme.ThemeViewModel
-// import dev.aurakai.auraframefx.ui.animation.digitalScanlineEffect // Was commented out, ensure it's not needed or defined
-
+import dev.aurakai.auraframefx.navigation.AppNavGraph
 import dev.aurakai.auraframefx.ui.components.BottomNavigationBar
 import dev.aurakai.auraframefx.navigation.AppNavGraph
 import dev.aurakai.auraframefx.ui.theme.AuraFrameFXTheme
-
-// Using Jetpack Navigation 3 with built-in animation support
+import dev.aurakai.auraframefx.ui.theme.ThemeViewModel
 
 class MainActivity : ComponentActivity() {
-    /**
-     * Initializes the activity and sets the Compose UI content to the main screen using the app's theme.
-     *
-     * @param savedInstanceState The previously saved state of the activity, or null if none exists.
-     */
+
     @OptIn(ExperimentalMaterial3Api::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,7 +58,7 @@ internal fun MainScreenContent(
 
     Scaffold(
         bottomBar = { BottomNavigationBar(navController = navController) }
-    ) { paddingValues: PaddingValues ->
+    ) { paddingValues ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -83,7 +67,7 @@ internal fun MainScreenContent(
             Row {
                 TextField(
                     value = command,
-                    onValueChange = { newValue -> command = newValue },
+                    onValueChange = { command = it },
                     label = { Text("Enter theme command") }
                 )
                 Button(onClick = { processThemeCommand(command) }) {
@@ -93,23 +77,19 @@ internal fun MainScreenContent(
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    // Apply our custom digital effects
-                    .then(
+                    .let { base ->
                         if (showDigitalEffects) {
-                            return@Column Modifier.digitalPixelEffects(visible = true) // Direct use of extension function
-                            // digitalScanlineEffect was removed as it's not defined
+                            base.digitalPixelEffect()
                         } else {
-                            Modifier
+                            base
                         }
-                    )
+                    }
             ) {
                 AppNavGraph(navController = navController)
             }
         }
     }
 }
-
-fun Modifier.Companion.digitalPixelEffects(visible: Boolean) {}
 
 // Keep original API used by Activity: delegate to the content with the real ViewModel
 @Composable
