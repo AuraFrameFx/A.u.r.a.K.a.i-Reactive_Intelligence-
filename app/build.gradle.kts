@@ -1,9 +1,7 @@
 plugins {
     id("genesis.android.application")
-    id("com.google.devtools.ksp")
-    id("org.jetbrains.kotlin.plugin.compose")
-    id("org.jetbrains.kotlin.plugin.serialization")
-    id("com.google.dagger.hilt.android")
+
+    // NOTE: Do not apply `genesis.android.application` here because some plugins
     // (like Hilt applied by genesis) expect the Android BaseExtension to exist
     // before they run. We'll apply it after the Android plugin is configured.
 }
