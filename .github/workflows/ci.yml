@@ -35,7 +35,7 @@ jobs:
           cmake-version: 3.22.1
 
       - name: Cache Gradle dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             ~/.gradle/caches
@@ -59,7 +59,7 @@ jobs:
         run: ./gradlew assembleDebug --no-daemon --stacktrace
 
       - name: Upload Debug APK
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: app-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
@@ -67,7 +67,7 @@ jobs:
 
       - name: Upload build outputs
         if: failure()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: build-logs
           path: |
@@ -78,7 +78,7 @@ jobs:
 
       - name: Upload lint reports
         if: always()
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: lint-reports
           path: |
