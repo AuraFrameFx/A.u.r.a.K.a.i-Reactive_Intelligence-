@@ -264,7 +264,6 @@ dependencies {
     // ═══════════════════════════════════════════════════════════════════════════
     // Internal Project Modules - Core
     // ═══════════════════════════════════════════════════════════════════════════
-    implementation(project(":aura"))
     implementation(project(":list"))
     implementation(project(":utilities"))
 
