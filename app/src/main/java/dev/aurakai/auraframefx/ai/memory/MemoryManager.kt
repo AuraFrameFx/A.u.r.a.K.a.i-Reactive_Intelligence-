@@ -1,6 +1,6 @@
 package dev.aurakai.auraframefx.ai.memory
 
-import dev.aurakai.auraframefx.ai.pipeline.AIPipelineConfig
+import dev.aurakai.auraframefx.cascade.pipeline.AIPipelineConfig
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

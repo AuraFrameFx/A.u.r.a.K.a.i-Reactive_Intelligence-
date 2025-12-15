@@ -1,5 +1,8 @@
 package dev.aurakai.auraframefx.oracledrive.genesis.ai.task
 
+import dev.aurakai.auraframefx.ai.task.TaskPriority
+import dev.aurakai.auraframefx.ai.task.TaskStatus
+
 /**
  * Genesis Task Scheduler
  * Schedules and manages AI processing tasks

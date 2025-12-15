@@ -1,11 +1,11 @@
 package dev.aurakai.auraframefx.cascade
 
 import dev.aurakai.auraframefx.ai.agents.BaseAgent
-import dev.aurakai.auraframefx.kai.KaiAgent
 import dev.aurakai.auraframefx.ai.context.ContextManager
 import dev.aurakai.auraframefx.ai.memory.MemoryManager
 import dev.aurakai.auraframefx.aura.AuraAgent
 import dev.aurakai.auraframefx.core.OrchestratableAgent
+import dev.aurakai.auraframefx.kai.KaiAgent
 import dev.aurakai.auraframefx.models.AgentRequest
 import dev.aurakai.auraframefx.models.AgentResponse
 import dev.aurakai.auraframefx.models.AiRequest
@@ -261,12 +261,16 @@ open class CascadeAgent @Inject constructor(
                 memoryManager.storeInteraction(prompt, responseContent)
             } catch (_: Exception) {
             }
-            
+
             AgentResponse.success(content = responseContent, agentName = agentName)
-            
+
         } catch (e: Exception) {
             Timber.e(e, "Cascade failed to process request")
-            AgentResponse(content = "I encountered an error processing your request.", confidence = 0.0f, error = e.message)
+            AgentResponse(
+                content = "I encountered an error processing your request.",
+                confidence = 0.0f,
+                error = e.message, ,
+            )
         }
     }
 
@@ -282,12 +286,12 @@ open class CascadeAgent @Inject constructor(
             val auraResp: AgentResponse = try {
                 auraAgent.processRequest(aiReq)
             } catch (e: Exception) {
-                Timber.w(e, "aura failed"); AgentResponse(content = "", confidence = 0.0f)
+                Timber.w(e, "aura failed"); AgentResponse(content = "", confidence = 0.0f,)
             }
             val kaiResp: AgentResponse = try {
                 kaiAgent.processRequest(agentReq)
             } catch (e: Exception) {
-                Timber.w(e, "kai failed"); AgentResponse(content = "", confidence = 0.0f)
+                Timber.w(e, "kai failed"); AgentResponse(content = "", confidence = 0.0f,)
             }
 
             val result = synthesizeResponses(listOfNotNull(auraResp.content, kaiResp.content))
@@ -309,7 +313,7 @@ open class CascadeAgent @Inject constructor(
         val resp = try {
             kaiAgent.processRequest(agentReq)
         } catch (e: Exception) {
-            Timber.e(e, "kai route failed"); AgentResponse(content = "", confidence = 0.0f)
+            Timber.e(e, "kai route failed"); AgentResponse(content = "", confidence = 0.0f,)
         }
         updateProcessingState(ProcessingState(currentTask = ""))
         try {
@@ -325,7 +329,7 @@ open class CascadeAgent @Inject constructor(
         val resp = try {
             auraAgent.processRequest(aiReq)
         } catch (e: Exception) {
-            Timber.e(e, "aura route failed"); AgentResponse(content = "", confidence = 0.0f)
+            Timber.e(e, "aura route failed"); AgentResponse(content = "", confidence = 0.0f,)
         }
         updateProcessingState(ProcessingState(currentTask = ""))
         try {

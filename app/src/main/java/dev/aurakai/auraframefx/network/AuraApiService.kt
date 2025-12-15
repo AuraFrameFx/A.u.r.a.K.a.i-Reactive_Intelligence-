@@ -5,6 +5,9 @@ import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dev.aurakai.auraframefx.BuildConfig
 import dev.aurakai.auraframefx.di.qualifiers.BaseUrl
+import dev.aurakai.auraframefx.network.api.ThemeApi
+import dev.aurakai.auraframefx.network.api.UserApi
+import dev.aurakai.auraframefx.network.api.AIAgentApi
 import dev.aurakai.auraframefx.utils.AppCoroutineDispatchers
 import kotlinx.coroutines.withContext
 import okhttp3.OkHttpClient
@@ -26,7 +29,7 @@ class AuraApiService @Inject constructor(
     private val context: Context,
     private val authInterceptor: AuthInterceptor,
     private val dispatchers: AppCoroutineDispatchers,
-    @BaseUrl private val baseUrl: String,
+    @param:BaseUrl private val baseUrl: String,
 ) {
     private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
@@ -114,3 +117,5 @@ class AuraApiService @Inject constructor(
         const val BASE_URL = "https://api.auraframefx.com/v1/"
     }
 }
+
+

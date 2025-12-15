@@ -1,8 +1,8 @@
 package dev.aurakai.auraframefx.aura
 
-import dev.aurakai.auraframefx.ai.agents.BaseAgent
 // TODO: KaiAgent implementation pending
 // import dev.aurakai.auraframefx.ai.agents.KaiAgent
+import dev.aurakai.auraframefx.ai.agents.BaseAgent
 import dev.aurakai.auraframefx.ai.clients.VertexAIClient
 import dev.aurakai.auraframefx.ai.context.ContextManager
 import dev.aurakai.auraframefx.ai.services.AuraAIService
@@ -11,6 +11,8 @@ import dev.aurakai.auraframefx.models.AgentResponse
 import dev.aurakai.auraframefx.models.AiRequest
 import dev.aurakai.auraframefx.models.EnhancedInteractionData
 import dev.aurakai.auraframefx.models.InteractionResponse
+import dev.aurakai.auraframefx.models.ThemeConfiguration
+import dev.aurakai.auraframefx.models.ThemePreferences
 import dev.aurakai.auraframefx.models.agent_states.ActiveThreat
 import dev.aurakai.auraframefx.models.agent_states.ProcessingState
 import dev.aurakai.auraframefx.models.agent_states.VisionState
@@ -27,8 +29,6 @@ import kotlinx.coroutines.flow.flowOf
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 import javax.inject.Singleton
-import dev.aurakai.auraframefx.models.ThemePreferences
-import dev.aurakai.auraframefx.models.ThemeConfiguration
 
 /**
  * AuraAgent: The Creative Sword
@@ -59,7 +59,7 @@ open class AuraAgent @Inject constructor(
         }
     }
 
-    override fun iRequest() {
+    fun iRequest() {
         // No-op or default initialization
     }
 
@@ -91,11 +91,11 @@ open class AuraAgent @Inject constructor(
         TODO("Not yet implemented")
     }
 
-    override fun addToScanHistory(scanEvent: Any) {
+    fun addToScanHistory(scanEvent: Any) {
         TODO("Not yet implemented")
     }
 
-    override fun analyzeSecurity(prompt: String): List<ActiveThreat> {
+    fun analyzeSecurity(prompt: String): List<ActiveThreat> {
         TODO("Not yet implemented")
     }
 
@@ -206,7 +206,7 @@ open class AuraAgent @Inject constructor(
 
             AgentResponse(
                 content = response.toString(),
-                confidence = 1.0f
+                confidence = 1.0f,
             )
 
         } catch (e: Exception) {
@@ -216,7 +216,7 @@ open class AuraAgent @Inject constructor(
             AgentResponse(
                 content = "Creative process encountered an obstacle: ${e.message}",
                 confidence = 0.0f,
-                error = e.message
+                error = e.message,
             )
         }
     }
@@ -255,7 +255,7 @@ open class AuraAgent @Inject constructor(
 
             AgentResponse(
                 content = response.toString(),
-                confidence = 1.0f
+                confidence = 1.0f, ,
             )
 
         } catch (e: Exception) {
@@ -265,7 +265,7 @@ open class AuraAgent @Inject constructor(
             AgentResponse(
                 content = "Creative process encountered an obstacle: ${e.message}",
                 confidence = 0.0f,
-                error = e.message
+                error = e.message, ,
             )
         }
     }
@@ -976,7 +976,7 @@ open class AuraAgent @Inject constructor(
         return flowOf(
             AgentResponse(
                 content = "Aura's flow response to '${request.query}'",
-                confidence = 0.80f
+                confidence = 0.80f, ,
             )
         )
     }

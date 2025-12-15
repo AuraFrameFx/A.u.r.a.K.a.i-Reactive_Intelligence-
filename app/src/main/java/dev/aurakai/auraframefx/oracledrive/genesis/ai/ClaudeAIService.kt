@@ -7,11 +7,11 @@ import dev.aurakai.auraframefx.ai.error.ErrorHandler
 import dev.aurakai.auraframefx.ai.memory.MemoryManager
 import dev.aurakai.auraframefx.ai.task.TaskScheduler
 import dev.aurakai.auraframefx.ai.task.execution.TaskExecutionManager
-import dev.aurakai.auraframefx.utils.AuraFxLogger
-import dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStatusMonitor
 import dev.aurakai.auraframefx.models.AgentResponse
 import dev.aurakai.auraframefx.models.AgentType
 import dev.aurakai.auraframefx.models.AiRequest
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStatusMonitor
+import dev.aurakai.auraframefx.utils.AuraFxLogger
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import javax.inject.Inject
@@ -166,7 +166,7 @@ class ClaudeAIService @Inject constructor(
         // Confidence based on context completeness
         val confidence = calculateConfidence(request, context)
 
-        val agentResponse = AgentResponse(response, confidence)
+        val agentResponse = AgentResponse(response, confidence,)
 
         // Store in cache for future requests
         synchronized(responseCache) {
@@ -191,7 +191,7 @@ class ClaudeAIService @Inject constructor(
                 "Checking build system compatibility...\n" +
                 "Synthesizing comprehensive solution..."
 
-        return flowOf(AgentResponse(response, 0.9f))
+        return flowOf(AgentResponse(response, 0.9f,))
     }
 
     /**

@@ -95,7 +95,7 @@ class TrinityCoordinatorService /* @Inject */ constructor(
             emit(
                 AgentResponse(
                     content = "Trinity system not initialized",
-                    confidence = 0.0f
+                    confidence = 0.0f, ,
                 )
             )
             return@flow
@@ -164,7 +164,7 @@ class TrinityCoordinatorService /* @Inject */ constructor(
                     emit(
                         AgentResponse(
                             content = "🧠 Genesis Synthesis: ${synthesis.content}",
-                            confidence = synthesis.confidence
+                            confidence = synthesis.confidence, ,
                         )
                     )
                 }
@@ -175,7 +175,7 @@ class TrinityCoordinatorService /* @Inject */ constructor(
             emit(
                 AgentResponse(
                     content = "Trinity processing failed: ${e.message}",
-                    confidence = 0.0f
+                    confidence = 0.0f, ,
                 )
             )
         }
@@ -202,14 +202,14 @@ class TrinityCoordinatorService /* @Inject */ constructor(
             emit(
                 AgentResponse(
                     content = "Fusion $fusionType activated: ${response.data.result["description"] ?: "Processing complete"}",
-                    confidence = 0.98f
+                    confidence = 0.98f, ,
                 )
             )
         } else {
             emit(
                 AgentResponse(
                     content = "Fusion activation failed",
-                    confidence = 0.0f
+                    confidence = 0.0f, ,
                 )
             )
         }

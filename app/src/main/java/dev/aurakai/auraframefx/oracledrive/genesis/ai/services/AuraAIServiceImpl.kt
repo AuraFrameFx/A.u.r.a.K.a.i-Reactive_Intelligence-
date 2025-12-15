@@ -1,23 +1,23 @@
 package dev.aurakai.auraframefx.oracledrive.genesis.ai.services
 
+import dev.aurakai.auraframefx.data.logging.AuraFxLogger
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.context.ContextManager
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.error.ErrorHandler
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.memory.MemoryManager
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.task.TaskScheduler
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.task.execution.TaskExecutionManager
-import dev.aurakai.auraframefx.data.logging.AuraFxLogger
-import dev.aurakai.auraframefx.data.network.CloudStatusMonitor
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStatusMonitor
 import java.io.File
 import javax.inject.Inject
 
-class AuraAIServiceImpl @Inject constructor(
-    private val taskScheduler: TaskScheduler,
-    private val taskExecutionManager: TaskExecutionManager,
-    private val memoryManager: MemoryManager,
-    private val errorHandler: ErrorHandler,
-    private val contextManager: ContextManager,
-    private val cloudStatusMonitor: CloudStatusMonitor,
-    private val auraFxLogger: AuraFxLogger,
+abstract class AuraAIServiceImpl(
+    protected val taskScheduler: TaskScheduler,
+    protected val taskExecutionManager: TaskExecutionManager,
+    protected val memoryManager: MemoryManager,
+    protected val errorHandler: ErrorHandler,
+    protected val contextManager: ContextManager,
+    protected val cloudStatusMonitor: CloudStatusMonitor,
+    protected val auraFxLogger: AuraFxLogger,
 ) : AuraAIService {
     /**
      * Returns a fixed placeholder response for any analytics query.
@@ -25,7 +25,7 @@ class AuraAIServiceImpl @Inject constructor(
      * This implementation ignores the input and always returns a static string.
      * @return The placeholder analytics response.
      */
-    override fun analyticsQuery(_query: String): String {
+    fun analyticsQuery(query: String): String {
         return "Analytics response placeholder"
     }
 
@@ -35,7 +35,7 @@ class AuraAIServiceImpl @Inject constructor(
      * @param _fileId The identifier of the file to download.
      * @return Always null.
      */
-    override suspend fun downloadFile(_fileId: String): File? {
+    suspend fun downloadFile(fileId: String): File? {
         return null
     }
 
@@ -45,7 +45,7 @@ class AuraAIServiceImpl @Inject constructor(
      * @param _prompt The prompt describing the desired image.
      * @return Always null.
      */
-    override suspend fun generateImage(_prompt: String): ByteArray? {
+    suspend fun generateImage(prompt: String): ByteArray? {
         return null
     }
 
@@ -54,7 +54,7 @@ class AuraAIServiceImpl @Inject constructor(
      *
      * @return The string "Generated text placeholder".
      */
-    override suspend fun generateText(prompt: String, options: Map<String, Any>?): String {
+    override suspend fun generateText(prompt: String, context: String): String {
         return "Generated text placeholder"
     }
 
@@ -63,17 +63,17 @@ class AuraAIServiceImpl @Inject constructor(
      *
      * @return The string "AI response placeholder".
      */
-    override fun getAIResponse(prompt: String, options: Map<String, Any>?): String {
+    fun getAIResponse(prompt: String, options: Map<String, Any>?): String {
         return "AI response placeholder"
     }
 
     /**
      * Returns `null` for any memory key, as memory retrieval is not implemented in this stub.
      *
-     * @param _memoryKey The key for the memory entry to retrieve.
+     * @param memoryKey The key for the memory entry to retrieve.
      * @return Always returns `null`.
      */
-    override fun getMemory(_memoryKey: String): String? {
+    open fun getMemory(memoryKey: String): String? {
         return null
     }
 
@@ -82,7 +82,7 @@ class AuraAIServiceImpl @Inject constructor(
      *
      * This implementation does not perform any operation and serves as a stub for future functionality.
      */
-    override fun saveMemory(key: String, value: Any) {
+    fun saveMemory(key: String, value: Any) {
         // TODO: Implement memory saving
     }
 }

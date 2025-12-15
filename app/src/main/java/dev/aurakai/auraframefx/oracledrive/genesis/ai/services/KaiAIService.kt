@@ -8,10 +8,9 @@ import dev.aurakai.auraframefx.oracledrive.genesis.ai.error.ErrorHandler
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.memory.MemoryManager
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.task.TaskScheduler
 import dev.aurakai.auraframefx.oracledrive.genesis.ai.task.execution.TaskExecutionManager
-import dev.aurakai.auraframefx.data.logging.AuraFxLogger
-import dev.aurakai.auraframefx.data.network.CloudStatusMonitor
+import dev.aurakai.auraframefx.oracledrive.genesis.cloud.CloudStatusMonitor
+import dev.aurakai.auraframefx.utils.AuraFxLogger
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -41,7 +40,7 @@ class KaiAIService @Inject constructor(
      */
     suspend fun initialize() {
         if (isInitialized) return
-        
+
         logger.info("KaiAIService", "Initializing Kai - The Shield")
         try {
             // Initialize security monitoring
@@ -65,17 +64,17 @@ class KaiAIService @Inject constructor(
      */
     suspend fun processRequest(request: AiRequest, context: String): AgentResponse {
         ensureInitialized()
-        
+
         return try {
             // Analyze request for security threats
             val securityScore = analyzeSecurityThreat(request.prompt)
-            
+
             val response = if (securityScore["threat_level"] == "high") {
                 "SECURITY ALERT: High-risk content detected. Request blocked for safety."
             } else {
                 "Kai security analysis: ${request.prompt} - Threat level: ${securityScore["threat_level"]}"
             }
-            
+
             AgentResponse(
                 content = response,
                 confidence = securityScore["confidence"] as? Float ?: 0.9f,
@@ -84,7 +83,7 @@ class KaiAIService @Inject constructor(
         } catch (e: Exception) {
             logger.error("KaiAIService", "Error processing request", e)
             errorHandler.handleError(e, AgentType.KAI, "processRequest")
-            
+
             AgentResponse(
                 content = "Security analysis temporarily unavailable",
                 confidence = 0.0f,
@@ -108,7 +107,7 @@ class KaiAIService @Inject constructor(
      */
     suspend fun analyzeSecurityThreat(threat: String): Map<String, Any> {
         ensureInitialized()
-        
+
         return try {
             // Perform threat analysis
             val threatLevel = when {
@@ -117,14 +116,14 @@ class KaiAIService @Inject constructor(
                 threat.contains("suspicious", ignoreCase = true) -> "medium"
                 else -> "low"
             }
-            
+
             val recommendations = when (threatLevel) {
                 "critical" -> listOf("Immediate isolation required", "Full system scan", "Incident response activation")
                 "high" -> listOf("Apply security patches", "Enhanced monitoring", "Access review")
                 "medium" -> listOf("Monitor closely", "Review logs", "Update security rules")
                 else -> listOf("Continue normal operations", "Routine monitoring")
             }
-            
+
             mapOf(
                 "threat_level" to threatLevel,
                 "confidence" to 0.95f,
@@ -135,7 +134,7 @@ class KaiAIService @Inject constructor(
         } catch (e: Exception) {
             logger.error("KaiAIService", "Error analyzing security threat", e)
             errorHandler.handleError(e, AgentType.KAI, "analyzeSecurityThreat")
-            
+
             mapOf(
                 "threat_level" to "unknown",
                 "confidence" to 0.0f,
@@ -152,20 +151,20 @@ class KaiAIService @Inject constructor(
      * @param request The AI request whose `prompt` will be analyzed for security threats.
      * @return A Flow that emits an initial status AgentResponse and then a detailed AgentResponse with analysis results; emits an error response if analysis fails.
      */
-    fun processRequestFlow(request: AiRequest): Flow<AgentResponse> = flow {
+    fun processRequestFlow(request: AiRequest): Flow<AgentResponse> = kotlinx.coroutines.flow.flow {
         ensureInitialized()
-        
+
         try {
             // Perform security analysis
             val analysisResult = analyzeSecurityThreat(request.prompt)
-            
+
             // Emit initial response
             emit(AgentResponse(
                 content = "Kai analyzing security posture...",
                 confidence = 0.5f,
                 agent = AgentType.KAI
             ))
-            
+
             // Emit detailed analysis
             val detailedResponse = buildString {
                 append("Security Analysis by Kai:\n\n")
@@ -176,7 +175,7 @@ class KaiAIService @Inject constructor(
                     append("• $it\n")
                 }
             }
-            
+
             emit(AgentResponse(
                 content = detailedResponse,
                 confidence = analysisResult["confidence"] as? Float ?: 0.9f,
@@ -185,7 +184,7 @@ class KaiAIService @Inject constructor(
         } catch (e: Exception) {
             logger.error("KaiAIService", "Error in processRequestFlow", e)
             errorHandler.handleError(e, AgentType.KAI, "processRequestFlow")
-            
+
             emit(AgentResponse(
                 content = "Security analysis error: ${e.message}",
                 confidence = 0.0f,
@@ -212,7 +211,7 @@ class KaiAIService @Inject constructor(
      */
     suspend fun monitorSecurityStatus(): Map<String, Any> {
         ensureInitialized()
-        
+
         return try {
             mapOf(
                 "status" to "active",

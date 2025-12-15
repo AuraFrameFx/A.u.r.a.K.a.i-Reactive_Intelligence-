@@ -39,28 +39,28 @@ open class TrinityRepository @Inject constructor(
      */
     fun getAgentStatus(agentType: String) = flow {
         try {
-            val response = apiService.aiAgentApi.getAgentStatus(agentType)
+            val response = apiService.aiAgentApi.getAgentStatus()
             emit(success(mapToDomainAgentStatus(response)))
         } catch (e: Exception) {
             emit(failure(e))
         }
     }
 
-    private fun mapToDomainAgentStatus(agentResponse: AgentResponse): AgentStatus {
+    private fun mapToDomainAgentStatus(agentResponse: AgentStatusResponse): AgentStatus {
         return AgentStatus(
             agentId = agentResponse.agentName ?: "unknown",
-            status = if (agentResponse.confidence > 0.7f) AgentStatus.Status.ACTIVE else AgentStatus.Status.IDLE,
-            lastActiveTimestamp = agentResponse.timestamp,
+            status = if ((agentResponse.confidence ?: 0f) > 0.7f) AgentStatus.Status.ACTIVE else AgentStatus.Status.IDLE,
+            lastActiveTimestamp = agentResponse.timestamp ?: 0L,
             isAvailable = agentResponse.error == null,
             capabilities = emptyList(),
             error = agentResponse.error,
-            metadata = agentResponse.metadata
+            metadata = agentResponse.metadata ?: emptyMap()
         )
     }
 
-    fun processAgentRequest(agentType: String, request: AgentRequest) = flow {
+    fun processAgentRequest(agentType: String, request: AgentRequest) = flow<Result<AgentResponse>> {
         try {
-            val response = apiService.aiAgentApi.processRequest(agentType, request)
+            val response = apiService.aiAgentApi.processAgentRequest(agentType, request)
             emit(success(response))
         } catch (e: Exception) {
             emit(failure(e))

@@ -32,7 +32,7 @@ class DefaultCascadeAIService @Inject constructor() : CascadeAIService {
     override suspend fun processRequest(request: AiRequest, context: String): AgentResponse {
         return AgentResponse(
             content = "Cascade processed: ${request.prompt}",
-            confidence = 0.85f
+            confidence = 0.85f, ,
         )
     }
 }
@@ -49,7 +49,7 @@ class DefaultKaiAIService @Inject constructor() : KaiAIService {
     override suspend fun processRequest(request: AiRequest, context: String): AgentResponse {
         return AgentResponse(
             content = "Kai security analysis: ${request.prompt}",
-            confidence = 0.90f
+            confidence = 0.90f, ,
         )
     }
 

@@ -116,15 +116,52 @@ class ErrorHandler @Inject constructor(
     }
 }
 
+/**
+ * Represents an AI error
+ */
 @Serializable
-data class ErrorStats(
-    val totalErrors: Int = 0,
-    val activeErrors: Int = 0,
-    val lastError: AIError? = null,
-    val errorTypes: Map<ErrorType, Int> = emptyMap(),
+data class AIError(
+    val id: String = java.util.UUID.randomUUID().toString(),
+    val agent: AgentType,
+    val type: ErrorType,
+    val message: String,
+    val context: String,
+    val metadata: Map<String, String> = emptyMap(),
     @Serializable(with = InstantSerializer::class)
-    val lastUpdated: Instant = Clock.System.now()
+    val timestamp: Instant = Clock.System.now()
 )
+
+/**
+ * Types of errors that can occur in the AI system
+ */
+@Serializable
+enum class ErrorType {
+    PROCESSING_ERROR,
+    MEMORY_ERROR,
+    CONTEXT_ERROR,
+    NETWORK_ERROR,
+    TIMEOUT_ERROR,
+    INTERNAL_ERROR
+}
+
+/**
+ * Represents a recovery action that can be taken for an error
+ */
+data class RecoveryAction(
+    val type: RecoveryActionType,
+    val description: String
+)
+
+/**
+ * Types of recovery actions
+ */
+enum class RecoveryActionType {
+    RETRY,
+    RESTART,
+    NOTIFY,
+    CLEAR_CACHE,
+    REBUILD_CONTEXT
+}
 
 // Exception classes
 class ProcessingException(message: String? = null) : Exception(message)
