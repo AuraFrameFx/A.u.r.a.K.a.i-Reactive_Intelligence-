@@ -10,7 +10,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     // Base Kotlin plugins with versions (matching libs.versions.toml)
     // CRITICAL: Use kotlin("android") notation for AGP 9.0 compatibility
-    kotlin("android") version "2.3.0-RC2" apply false
+    kotlin("android") version "2.3.0" apply false
     kotlin("plugin.compose") version "2.3.0-RC2" apply false
     kotlin("plugin.serialization") version "2.3.0-RC2" apply false
     kotlin("plugin.parcelize") version "2.3.0-RC2" apply false
