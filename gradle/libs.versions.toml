@@ -98,7 +98,7 @@ material3 = "1.4.0"
 foundationLayout = "1.10.0"
 foundation = "1.10.0"
 animation = "1.10.0"
-kotlinVersion = "2.3.0-RC2"
+kotlinVersion = "2.3.0"
 
 [libraries]
 # ============================================================================
